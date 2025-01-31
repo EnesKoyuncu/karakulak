@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
 import "../styles/HeroSlider.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,19 +13,18 @@ interface SlideContent {
 
 const slides: SlideContent[] = [
   {
-    image: "/images/slider1.jpg", // Bu yolları kendi resim yollarınızla değiştirin
+    image: "/images/slider/slider1.jpg",
     title: "Türkiye'nin Lider Araç Üstü Ekipman Üreticisi",
     description:
       "40 yılı aşkın tecrübemizle kaliteli ve güvenilir çözümler sunuyoruz",
   },
   {
-    image: "/images/slider2.jpg",
+    image: "/images/slider/slider5.jpg",
     title: "Global Pazarda Güçlü Bir Marka",
     description: "50'den fazla ülkeye ihracat yapan güvenilir çözüm ortağınız",
   },
-
   {
-    image: "/images/slider3.jpg",
+    image: "/images/slider/slider4.jpg",
     title: "Yenilikçi Teknolojiler",
     description: "Modern üretim tesislerimizde en son teknolojilerle üretim",
   },
@@ -32,16 +32,23 @@ const slides: SlideContent[] = [
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef<Slider>(null);
+  const autoPlayRef = useRef<number>();
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 8000,
     fade: true,
+    draggable: true,
+    swipe: true,
+    touchThreshold: 10,
+    swipeToSlide: true,
+    waitForAnimate: false,
     beforeChange: (oldIndex: number, newIndex: number) =>
       setCurrentSlide(newIndex),
     customPaging: (i: number) => (
@@ -49,9 +56,51 @@ export default function HeroSlider() {
     ),
   };
 
+  useEffect(() => {
+    autoPlayRef.current = window.setInterval(() => {
+      if (sliderRef.current) {
+        sliderRef.current.slickNext();
+      }
+    }, settings.autoplaySpeed);
+
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, []);
+
+  const handleSwipe = (direction: "left" | "right") => {
+    if (sliderRef.current) {
+      if (direction === "left") {
+        sliderRef.current.slickNext();
+      } else {
+        sliderRef.current.slickPrev();
+      }
+    }
+  };
+
   return (
-    <div className="hero-slider-container">
-      <Slider {...settings}>
+    <div
+      className="hero-slider-container"
+      onTouchStart={(e) => {
+        const touch = e.touches[0];
+        const startX = touch.clientX;
+
+        const handleTouchEnd = (e: TouchEvent) => {
+          const touch = e.changedTouches[0];
+          const endX = touch.clientX;
+          const diff = startX - endX;
+
+          if (Math.abs(diff) > 50) {
+            handleSwipe(diff > 0 ? "left" : "right");
+          }
+        };
+
+        document.addEventListener("touchend", handleTouchEnd, { once: true });
+      }}
+    >
+      <Slider ref={sliderRef} {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="hero-slide">
             <div
@@ -59,17 +108,21 @@ export default function HeroSlider() {
               style={{ backgroundImage: `url(${slide.image})` }}
             />
             <div className="slide-content">
-              <div className="content-wrapper">
+              <motion.div
+                className="content-wrapper"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
                 <h1>{slide.title}</h1>
                 <p>{slide.description}</p>
                 <button className="cta-button">Daha Fazla Bilgi</button>
-              </div>
+              </motion.div>
             </div>
           </div>
         ))}
       </Slider>
 
-      {/* Custom Navigation */}
       <div className="slider-navigation">
         <div className="progress-bar">
           <div

@@ -67,6 +67,41 @@ const products: Product[] = [
     image: "/images/products/kanal-acma.jpg",
     description: "Profesyonel kanal temizleme sistemi",
   },
+  {
+    id: 9,
+    name: "Yol Süpürme",
+    category: "Tümü",
+    image: "/images/products/yol-supurme.jpg",
+    description: "Profesyonel yol süpürme sistemi",
+  },
+  {
+    id: 10,
+    name: "İtfaiye Damper",
+    category: "Tümü",
+    image: "/images/products/itfaiye-damper.jpg",
+    description: "Profesyonel itfaiye damper sistemi",
+  },
+  {
+    id: 11,
+    name: "Monoblok Çöp Kamyonu",
+    category: "Tümü",
+    image: "/images/products/monoblok-cop-kamyonu.jpg",
+    description: "Profesyonel monoblok çöp kamyonu",
+  },
+  {
+    id: 12,
+    name: "Konteyner Yıkama",
+    category: "Tümü",
+    image: "/images/products/konteyner-yikama.jpg",
+    description: "Profesyonel konteyner yıkama sistemi",
+  },
+  {
+    id: 13,
+    name: "Semi Treyler",
+    category: "Tümü",
+    image: "/images/products/semi-treyler.jpg",
+    description: "Profesyonel semi treyler sistemi",
+  },
 ];
 
 const categories = [
@@ -80,11 +115,17 @@ const categories = [
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const filteredProducts =
     selectedCategory === "Tümü"
       ? products
       : products.filter((product) => product.category === selectedCategory);
+
+  // İlk 6 ürünü göster, showAll true ise tümünü göster
+  const displayedProducts = showAll
+    ? filteredProducts
+    : filteredProducts.slice(0, 6);
 
   return (
     <div className="products-section">
@@ -116,17 +157,20 @@ export default function Products() {
         </motion.div>
       </div>
 
-      <motion.div className="products-grid" layout>
-        <AnimatePresence>
-          {filteredProducts.map((product) => (
+      <motion.div className="products-grid" layout="position">
+        <AnimatePresence mode="wait">
+          {displayedProducts.map((product) => (
             <motion.div
               key={product.id}
               className="product-card"
               layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.4 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
               onHoverStart={() => setHoveredProduct(product.id)}
               onHoverEnd={() => setHoveredProduct(null)}
             >
@@ -152,6 +196,29 @@ export default function Products() {
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {filteredProducts.length > 6 && (
+        <motion.div
+          className="show-more-container"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          <button
+            className="show-more-btn"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? "Daha Az Göster" : "Daha Fazla Göster"}
+            <motion.span
+              className="arrow-icon"
+              animate={{ rotate: showAll ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              ▼
+            </motion.span>
+          </button>
+        </motion.div>
+      )}
     </div>
   );
 }

@@ -1,0 +1,142 @@
+.map-location-section {
+  padding: 80px 20px;
+  background: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-location-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.contact-info {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.info-divider {
+  width: 60px;
+  height: 4px;
+  background: #e74c3c;
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+
+.contact-details h3 {
+  color: #e74c3c;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.address {
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contact-item .label {
+  min-width: 80px;
+  color: #666;
+  font-weight: 500;
+}
+
+.contact-item .value {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item .value:hover {
+  color: #e74c3c;
+}
+
+.map-container {
+  height: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.map-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #e74c3c;
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+@media (max-width: 968px) {
+  .map-location-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .map-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-location-section {
+    padding: 60px 20px;
+  }
+
+  .contact-info {
+    padding: 30px;
+  }
+
+  .contact-info h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-details h3 {
+    font-size: 1.2rem;
+  }
+
+  .address {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-container {
+    height: 300px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .contact-item .label {
+    min-width: auto;
+  }
+}
