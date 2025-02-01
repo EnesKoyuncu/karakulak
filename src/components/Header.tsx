@@ -16,7 +16,7 @@ const navItems: MenuItem[] = [
   {
     title: "Kurumsal",
     submenu: [
-      { title: "Yönetim Kurulu Başkanı", link: "/yonetim-kurulu-baskani" },
+      { title: "Yönetim Kurulu Başkanı", link: "/yonetim-kurul-baskani" },
       { title: "Tarihçe", link: "/tarihce" },
       { title: "İhracat Ağı", link: "/ihracat-agi" },
       { title: "Teknik Şartnameler", link: "/teknik-sartnameler" },

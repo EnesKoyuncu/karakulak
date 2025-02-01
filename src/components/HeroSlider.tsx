@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import "../styles/HeroSlider.css";
@@ -49,8 +49,7 @@ export default function HeroSlider() {
     touchThreshold: 10,
     swipeToSlide: true,
     waitForAnimate: false,
-    beforeChange: (oldIndex: number, newIndex: number) =>
-      setCurrentSlide(newIndex),
+    beforeChange: (_: number, newIndex: number) => setCurrentSlide(newIndex),
     customPaging: (i: number) => (
       <div className={`custom-dot ${i === currentSlide ? "active" : ""}`} />
     ),
@@ -68,7 +67,7 @@ export default function HeroSlider() {
         clearInterval(autoPlayRef.current);
       }
     };
-  }, []);
+  }, [settings.autoplaySpeed]);
 
   const handleSwipe = (direction: "left" | "right") => {
     if (sliderRef.current) {

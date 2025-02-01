@@ -1,0 +1,144 @@
+.yonetim-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.yonetim-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.yonetim-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.yonetim-text h1 {
+  color: #333;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: #e74c3c;
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+
+.message-content {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.message-content p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.message-content p:last-child {
+  margin-bottom: 30px;
+}
+
+.signature-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.signature-block .name {
+  color: #e74c3c;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.signature-block .title {
+  color: #666;
+  font-size: 1rem;
+}
+
+.yonetim-image {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.yonetim-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.yonetim-image:hover img {
+  transform: scale(1.05);
+}
+
+.image-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(231, 76, 60, 0.1) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 968px) {
+  .yonetim-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .yonetim-image {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .yonetim-section {
+    padding: 60px 0;
+  }
+
+  .yonetim-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .message-content {
+    font-size: 1rem;
+  }
+
+  .signature-block {
+    margin-top: 30px;
+  }
+
+  .signature-block .name {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .yonetim-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .message-content {
+    font-size: 0.95rem;
+  }
+}

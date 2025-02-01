@@ -1,0 +1,110 @@
+.tarihce-section {
+  position: relative;
+  padding: 80px 0;
+  background: #fff;
+}
+
+.tarihce-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tarihce-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tarihce-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: #e74c3c;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.content-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.history-section {
+  text-align: center;
+  padding: 40px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.main-text {
+  font-size: 1.3rem;
+  color: #333;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.facility-section,
+.quality-section,
+.customer-section {
+  padding: 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.facility-section h3,
+.quality-section h3 {
+  color: #e74c3c;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.facility-section p,
+.quality-section p,
+.customer-section p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .tarihce-section {
+    padding: 60px 0;
+  }
+
+  .tarihce-header h1 {
+    font-size: 2rem;
+  }
+
+  .main-text {
+    font-size: 1.2rem;
+  }
+
+  .facility-section,
+  .quality-section,
+  .customer-section {
+    padding: 30px;
+  }
+
+  .facility-section h3,
+  .quality-section h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tarihce-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .main-text {
+    font-size: 1.1rem;
+  }
+}
