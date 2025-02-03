@@ -1,0 +1,221 @@
+{
+  "products": [
+    {
+      "id": "garbage-truck",
+      "category": "garbage-truck",
+      "name": "Çöp Kamyonu - Hidrolik Sıkıştırmalı Çöp Kasası",
+      "description": "AYALKA GARBAGE COMPACTOR – AYALKA GARBAGE TRUCK",
+      "vehicleSpecifications": [
+        {
+          "model": "Ford Cargo 18.33 DC",
+          "wheelbase": "4250mm",
+          "garbageBinVolume": "15+1.5m³"
+        },
+        {
+          "model": "Ford Cargo 18.33 D",
+          "wheelbase": "3800mm",
+          "garbageBinVolume": "13+1.5m³"
+        },
+        {
+          "model": "Scania P250",
+          "wheelbase": "3900mm / 4300mm",
+          "garbageBinVolume": "15+ 1.5m³"
+        },
+        {
+          "model": "Mercedes Arocs 2032 K Garbage Package",
+          "wheelbase": "3600mm",
+          "garbageBinVolume": "13/14+1.5m³"
+        },
+        {
+          "model": "Mercedes Atego 16.21 K Garbage Package",
+          "wheelbase": "3560mm",
+          "garbageBinVolume": "11/12/13+1.0m³"
+        },
+        {
+          "model": "Mercedes Atego 15.18 K",
+          "wheelbase": "3560mm",
+          "garbageBinVolume": "12.7+1m³"
+        },
+        {
+          "model": "Iveco Euro Cargo 180E29",
+          "wheelbase": "4185mm",
+          "garbageBinVolume": "14/15+1.5m³"
+        },
+        {
+          "model": "Iveco Euro Cargo 150E19",
+          "wheelbase": "3690mm",
+          "garbageBinVolume": "11/12+1m³"
+        },
+        {
+          "model": "Iveco Euro Cargo 100E19",
+          "wheelbase": "3330mm",
+          "garbageBinVolume": "8/9+1m³"
+        },
+        {
+          "model": "Isuzu NPR8",
+          "wheelbase": "3365mm",
+          "garbageBinVolume": "6+1m³"
+        },
+        {
+          "model": "Isuzu NPR 10",
+          "wheelbase": "3365mm",
+          "garbageBinVolume": "7/8+1m³"
+        },
+        {
+          "model": "Otokar Atlas",
+          "wheelbase": "3360mm",
+          "garbageBinVolume": "7+1m³"
+        },
+        {
+          "model": "Ford Cargo 25.33 DC",
+          "wheelbase": "4250mm +1350mm",
+          "garbageBinVolume": "18/20+1.5m3"
+        },
+        {
+          "model": "MAN TGS 28.320",
+          "wheelbase": "3900+1350mm",
+          "garbageBinVolume": "18+1.5m3"
+        }
+      ],
+      "generalFeatures": [
+        "Ayalka, Rear Loading type hydraulic compaction garbage bodies (garbage compactors) have been developed according to the need for waste management, and their main purpose is to transport domestic waste with more capacity per waste transfer and on the other hand, they are designed considering the importance of saving time by increasing efficiency for operators and achieving a shorter collection time.",
+        "Ayalka ergonomically designed garbage body (garbage truck) complies with the vehicle chassis suitability and load capacity in order to have a lighter and more durable structure. It also has a structure that reduces the vehicle mass / collected garbage mass ratio.",
+        "Container Lifting System, can be specially manufactured for different capacities and standard containers to be poured into the hopper, as well as being designed specifically for the customer by considering the technical requirements of the requested region.",
+        "Different production types can be manufactured according to vehicle features and purpose of use, and each type of Hydraulic compression garbage body (garbage truck) can be customized according to different vehicle chassis type and vehicle technical features and purpose of use."
+      ],
+      "advantages": [
+        {
+          "title": "Possibility of producing garbage bodies in suitable sizes for different truck chassis",
+          "description": "Ayalka manufactures the most suitable garbage body by taking into account the size and axle of each truck."
+        },
+        {
+          "title": "It offers certified and expert production",
+          "description": "Garbage containers are produced in accordance with CE quality standards and with expert personnel."
+        },
+        {
+          "title": "Provides optimum compression capacity",
+          "description": "Ayalka provides the highest compression capacity suitable for every truck and garbage body volume."
+        }
+      ],
+      "keywords": [
+        "Ayalka Garbage Body",
+        "Ayalka Garbage Truck",
+        "Garbage Truck",
+        "Garbage compactor",
+        "Waste compactor",
+        "Refuse truck",
+        "garbage truck turkey",
+        "garbage compactor turkey",
+        "garbage truck hydraulic system"
+      ],
+      "images": [
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Bmc-Garbage-Case.jpg",
+          "alt": "BMC Garbage Case"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Bmc-Garbage-Case2.jpg",
+          "alt": "BMC Garbage Case 2"
+        },
+
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Ford-Garbage-Truck.jpg",
+          "alt": "Ford Garbage Truck"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Foton-Garbage-Truck.jpg",
+          "alt": "Foton Garbage Truck"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Garbage-Case-Karakulak.jpg",
+          "alt": "Garbage Case Karakulak"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Garbage-Case.jpg",
+          "alt": "Garbage Case"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Garbage-Compactor-Foot.jpg",
+          "alt": "Garbage Compactor Foot"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Garbage-Compactor.jpg",
+          "alt": "Garbage Compactor"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Garbage-Truck-Iveco.jpg",
+          "alt": "Garbage Truck Iveco"
+        },
+
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Garbage-Truck-Türkiye.jpg",
+          "alt": "Garbage Türkiye"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Garbage-Truck-Türkiye2.jpg",
+          "alt": "Garbage Türkiye 2"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Garbage-Truck.jpg",
+          "alt": "Garbage Truck"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Garbage-Truck2.jpg",
+          "alt": "Garbage Truck 2"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Garbage-Truck3.jpg",
+          "alt": "Garbage Truck 3"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Karakulak-Garbage-Case.jpg",
+          "alt": "Karakulak Garbage Case"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Mercedes-Garbage-Compactor.jpg",
+          "alt": "Mercedes Garbage Compactor"
+        },
+
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Mercedes-Garbage-Truck.jpg",
+          "alt": "Mercedes Garbage Truck"
+        },
+        {
+          "url": "/images/allProducts/GarbageTruck-HydraulicGarbageCase/Refuse-Compactor.jpg",
+          "alt": "Refuse Compactor"
+        }
+      ],
+
+      "features": [
+        {
+          "title": "Yükleme Kapasitesi",
+          "description": "6 ila 10 hidrolik sıkıştırmalı çöp sıkıştırma ekipmanı"
+        },
+        {
+          "title": "Yapı",
+          "description": "Yüksek kaliteli özel üretim kauçuk sızdırmazlık elemanı, ST52 çelik plakalar"
+        }
+      ],
+      "technicalSpecifications": {
+        "dimensions": {
+          "length": "8500 mm",
+          "width": "2550 mm",
+          "height": "3950 mm"
+        },
+        "capacity": {
+          "volume": "25 m³",
+          "weight": "7500 kg"
+        },
+        "materials": [
+          "ST52 çelik plakalar",
+          "Özel üretim kauçuk sızdırmazlık elemanı"
+        ],
+        "hydraulicSystem": {
+          "pressure": "250 bar",
+          "flowRate": "120 lt/min",
+          "tankCapacity": "150 lt"
+        }
+      }
+    }
+  ]
+}

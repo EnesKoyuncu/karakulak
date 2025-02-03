@@ -4,10 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Header.css";
+import { useProducts } from "../context/ProductContext";
+import { useNavigate } from "react-router-dom";
 
 interface MenuItem {
   title: string;
   link?: string;
+  id?: string;
+  category?: string;
   submenu?: MenuItem[];
 }
 
@@ -27,9 +31,11 @@ const navItems: MenuItem[] = [
     submenu: [
       {
         title: "Çöp Kamyonu - Hidrolik Sıkıştırmalı Çöp Kasası",
-        link: "/urunler/cop-kamyonu",
+        id: "garbage-truck",
+        category: "garbage-truck",
       },
       { title: "Mini Pack", link: "/urunler/mini-pack" },
+
       { title: "Su Tankeri", link: "/urunler/su-tankeri" },
       { title: "Vidanjör", link: "/urunler/vidanjor" },
       { title: "Hooklift", link: "/urunler/hooklift" },
@@ -57,6 +63,8 @@ const navItems: MenuItem[] = [
 export default function Header() {
   const [openMenu, setOpenMenu] = useState<number | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { products, setSelectedProduct } = useProducts();
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -67,6 +75,20 @@ export default function Header() {
     if (e.target === e.currentTarget) {
       setIsMobileMenuOpen(false);
       setOpenMenu(null);
+    }
+  };
+
+  const handleProductSelect = (item: MenuItem) => {
+    if (item.id && item.category) {
+      const product = products.find((p) => p.id === item.id);
+      if (product) {
+        setSelectedProduct(product);
+        setIsMobileMenuOpen(false);
+        setOpenMenu(null);
+        navigate(`/products/${item.category}/${item.id}`);
+      }
+    } else if (item.link) {
+      navigate(item.link);
     }
   };
 
@@ -180,12 +202,18 @@ export default function Header() {
                   setOpenMenu(openMenu === index ? null : index)
                 }
               >
-                <Link to={item.link || "#"} className="nav-link">
-                  {item.title}
-                  {item.submenu && <span className="dropdown-arrow">▾</span>}
-                </Link>
+                {item.submenu ? (
+                  <span className="nav-link">
+                    {item.title}
+                    <span className="dropdown-arrow">▾</span>
+                  </span>
+                ) : (
+                  <Link to={item.link || "#"} className="nav-link">
+                    {item.title}
+                  </Link>
+                )}
 
-                <AnimatePresence>
+                <AnimatePresence mode="sync">
                   {item.submenu && openMenu === index && (
                     <motion.ul
                       className="dropdown-menu"
@@ -201,10 +229,9 @@ export default function Header() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: subIndex * 0.1 }}
+                          onClick={() => handleProductSelect(sub)}
                         >
-                          <Link to={sub.link || "#"} className="dropdown-link">
-                            {sub.title}
-                          </Link>
+                          <span className="dropdown-link">{sub.title}</span>
                         </motion.li>
                       ))}
                     </motion.ul>

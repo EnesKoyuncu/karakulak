@@ -10,10 +10,12 @@ import Tarihce from "./components/miniComponents/Tarihce";
 import ExportNetwork from "./components/ExportNetwork";
 import TechnicalSpecification from "./components/TechnicalSpecification";
 import PressKit from "./components/PressKit";
+import { ProductProvider } from "./context/ProductContext";
+import ProductAllInfo from "./components/ProductAllInfo";
 
 function App() {
   return (
-    <>
+    <ProductProvider>
       <Router>
         <Header />
         <Routes>
@@ -34,10 +36,11 @@ function App() {
             element={<AfterSalesServices />}
           />
           <Route path="/iletisim" element={<Contact />} />
+          <Route path="/products/:category/:id" element={<ProductAllInfo />} />
         </Routes>
         <Footer />
       </Router>
-    </>
+    </ProductProvider>
   );
 }
 

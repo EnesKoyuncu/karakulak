@@ -1,0 +1,225 @@
+.product-all-info-wrapper {
+  min-height: calc(100vh - 160px); /* Header ve footer için alan bırakıyoruz */
+  padding: 6rem 0; /* Üst ve alttan boşluk */
+  background-color: #f8f9fa;
+}
+
+.product-all-info {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 4rem;
+  padding: 0 1rem;
+}
+
+.features-section {
+  width: 100%;
+  max-width: 1000px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.features-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 2rem;
+  background: white;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(231, 76, 60, 0.1);
+  transition: all 0.3s ease;
+}
+
+.features-header:hover {
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+.features-header h3 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.chevron-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  transition: all 0.3s ease;
+}
+
+.features-header:hover .chevron-icon {
+  background-color: rgba(231, 76, 60, 0.2);
+}
+
+.features-content {
+  padding: 0 2rem;
+  overflow: hidden;
+  background-color: white;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(231, 76, 60, 0.1);
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.feature-bullet {
+  color: #e74c3c;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-right: 1rem;
+  margin-top: 0.2rem;
+}
+
+.feature-item p {
+  color: #34495e;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .product-all-info-wrapper {
+    padding: 4rem 0;
+  }
+
+  .features-header {
+    padding: 1.4rem 1.5rem;
+  }
+
+  .features-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .features-content {
+    padding: 0 1.5rem;
+  }
+
+  .feature-item {
+    padding: 1rem 0;
+  }
+}
+
+.tech-specs {
+  margin-top: 2rem;
+}
+
+.tech-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.tech-specs-section {
+  background: rgba(231, 76, 60, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.tech-specs-section h4 {
+  color: #e74c3c;
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(231, 76, 60, 0.2);
+}
+
+.tech-specs-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-specs-section li {
+  color: #34495e;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(231, 76, 60, 0.1);
+}
+
+.tech-specs-section li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .tech-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .tech-specs-section {
+    padding: 1rem;
+  }
+}
+
+.vehicle-specs-table {
+  padding: 1rem 2rem;
+  overflow-x: auto;
+}
+
+.vehicle-specs-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vehicle-specs-table th,
+.vehicle-specs-table td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(231, 76, 60, 0.1);
+}
+
+.vehicle-specs-table th {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.advantages-container {
+  padding: 1.5rem 2rem;
+}
+
+.advantage-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(231, 76, 60, 0.1);
+}
+
+.advantage-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.advantage-item h4 {
+  color: #e74c3c;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.advantage-item p {
+  color: #34495e;
+  line-height: 1.6;
+}

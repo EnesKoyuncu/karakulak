@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { FaTools, FaShieldAlt, FaComments } from "react-icons/fa";
 import "../../styles/miniComponentsStyle/AfterSalesServices.css";
