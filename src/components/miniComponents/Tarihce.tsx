@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import "../../styles/miniComponentsStyle/Tarihce.css";
+import { useLocation } from "react-router-dom";
 
-export default function Tarihce() {
+const Tarihce: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <section className="tarihce-section">
       <div className="tarihce-container">
@@ -64,4 +71,6 @@ export default function Tarihce() {
       </div>
     </section>
   );
-}
+};
+
+export default Tarihce;

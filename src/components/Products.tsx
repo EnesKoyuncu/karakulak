@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
+import { useProducts } from "../context/ProductContext";
 import "../styles/Products.css";
 
 interface Product {
@@ -8,6 +10,7 @@ interface Product {
   category: string;
   image: string;
   description: string;
+  routeCategory?: string;
 }
 
 const products: Product[] = [
@@ -17,6 +20,7 @@ const products: Product[] = [
     category: "Atık Yönetimi",
     image: "/images/products/cop-kamyonu.jpg",
     description: "Yüksek kapasiteli hidrolik sıkıştırma sistemi",
+    routeCategory: "garbage-truck",
   },
   {
     id: 2,
@@ -24,6 +28,7 @@ const products: Product[] = [
     category: "Atık Yönetimi",
     image: "/images/products/mini-pack.jpg",
     description: "Kompakt boyutlu atık toplama çözümü",
+    routeCategory: "mini-pack",
   },
   {
     id: 3,
@@ -31,6 +36,7 @@ const products: Product[] = [
     category: "Su Sistemleri",
     image: "/images/products/su-tankeri.jpg",
     description: "Yüksek kapasiteli su taşıma ve püskürtme sistemi",
+    routeCategory: "water-tank",
   },
   {
     id: 4,
@@ -38,6 +44,7 @@ const products: Product[] = [
     category: "Su Sistemleri",
     image: "/images/products/vidanjor.jpg",
     description: "Profesyonel atık su ve kanalizasyon temizleme aracı",
+    routeCategory: "vacuum-truck",
   },
   {
     id: 5,
@@ -45,6 +52,7 @@ const products: Product[] = [
     category: "Yükleme Sistemleri",
     image: "/images/products/hooklift.jpg",
     description: "Çok amaçlı kanca yükleme sistemi",
+    routeCategory: "hooklift",
   },
   {
     id: 6,
@@ -52,6 +60,7 @@ const products: Product[] = [
     category: "Yükleme Sistemleri",
     image: "/images/products/skip-loader.jpg",
     description: "Konteyner taşıma ve boşaltma sistemi",
+    routeCategory: "skip-loader",
   },
   {
     id: 7,
@@ -59,6 +68,7 @@ const products: Product[] = [
     category: "Platform Sistemleri",
     image: "/images/products/teleskopik-platform.jpg",
     description: "Yüksek erişimli çalışma platformu",
+    routeCategory: "telescopic-platform",
   },
   {
     id: 8,
@@ -66,6 +76,7 @@ const products: Product[] = [
     category: "Su Sistemleri",
     image: "/images/products/kanal-acma.jpg",
     description: "Profesyonel kanal temizleme sistemi",
+    routeCategory: "canal-jetting",
   },
   {
     id: 9,
@@ -73,34 +84,47 @@ const products: Product[] = [
     category: "Tümü",
     image: "/images/products/yol-supurme.jpg",
     description: "Profesyonel yol süpürme sistemi",
+    routeCategory: "road-sweeper",
   },
   {
     id: 10,
+    name: "İtfaiye",
+    category: "Tümü",
+    image: "/images/products/itfaiye.jpg",
+    description: "Profesyonel itfaiye aracı",
+    routeCategory: "fire-truck",
+  },
+  {
+    id: 11,
     name: "İtfaiye Damper",
     category: "Tümü",
     image: "/images/products/itfaiye-damper.jpg",
     description: "Profesyonel itfaiye damper sistemi",
+    routeCategory: "tipper-truck",
   },
   {
-    id: 11,
+    id: 12,
     name: "Monoblok Çöp Kamyonu",
     category: "Tümü",
     image: "/images/products/monoblok-cop-kamyonu.jpg",
     description: "Profesyonel monoblok çöp kamyonu",
+    routeCategory: "monoblock-garbage",
   },
   {
-    id: 12,
+    id: 13,
     name: "Konteyner Yıkama",
     category: "Tümü",
     image: "/images/products/konteyner-yikama.jpg",
     description: "Profesyonel konteyner yıkama sistemi",
+    routeCategory: "container-washer",
   },
   {
-    id: 13,
+    id: 14,
     name: "Semi Treyler",
     category: "Tümü",
     image: "/images/products/semi-treyler.jpg",
     description: "Profesyonel semi treyler sistemi",
+    routeCategory: "semi-trailer",
   },
 ];
 
@@ -113,19 +137,32 @@ const categories = [
 ];
 
 export default function Products() {
+  const { products: contextProducts } = useProducts();
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const location = useLocation();
 
   const filteredProducts =
     selectedCategory === "Tümü"
       ? products
       : products.filter((product) => product.category === selectedCategory);
 
-  // İlk 6 ürünü göster, showAll true ise tümünü göster
   const displayedProducts = showAll
     ? filteredProducts
     : filteredProducts.slice(0, 6);
+
+  const findContextProduct = (routeCategory: string) => {
+    return contextProducts.find((p) => p.category === routeCategory);
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  const handleProductClick = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div className="products-section">
@@ -159,41 +196,70 @@ export default function Products() {
 
       <motion.div className="products-grid" layout="position">
         <AnimatePresence mode="wait">
-          {displayedProducts.map((product) => (
-            <motion.div
-              key={product.id}
-              className="product-card"
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{
-                duration: 0.3,
-                ease: "easeInOut",
-              }}
-              onHoverStart={() => setHoveredProduct(product.id)}
-              onHoverEnd={() => setHoveredProduct(null)}
-            >
-              <div className="product-image">
-                <img src={product.image} alt={product.name} />
-                <motion.div
-                  className="product-overlay"
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: hoveredProduct === product.id ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <button className="view-details">İncele</button>
-                </motion.div>
-              </div>
-              <div className="product-content">
-                <span className="product-category-tag">{product.category}</span>
-                <h3>{product.name}</h3>
-                <p>{product.description}</p>
-              </div>
-            </motion.div>
-          ))}
+          {displayedProducts.map((product) => {
+            const contextProduct = product.routeCategory
+              ? findContextProduct(product.routeCategory)
+              : null;
+
+            return (
+              <motion.div
+                key={product.id}
+                className="product-card"
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                }}
+                onHoverStart={() => setHoveredProduct(product.id)}
+                onHoverEnd={() => setHoveredProduct(null)}
+              >
+                {contextProduct ? (
+                  <Link
+                    to={`/products/${contextProduct.category}/${contextProduct.id}`}
+                    className="product-link"
+                    onClick={handleProductClick}
+                  >
+                    <div className="product-image">
+                      <img src={product.image} alt={product.name} />
+                      <motion.div
+                        className="product-overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{
+                          opacity: hoveredProduct === product.id ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="view-details">İncele</span>
+                      </motion.div>
+                    </div>
+                    <div className="product-content">
+                      <span className="product-category-tag">
+                        {product.category}
+                      </span>
+                      <h3>{product.name}</h3>
+                      <p>{product.description}</p>
+                    </div>
+                  </Link>
+                ) : (
+                  <div>
+                    <div className="product-image">
+                      <img src={product.image} alt={product.name} />
+                    </div>
+                    <div className="product-content">
+                      <span className="product-category-tag">
+                        {product.category}
+                      </span>
+                      <h3>{product.name}</h3>
+                      <p>{product.description}</p>
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </motion.div>
 

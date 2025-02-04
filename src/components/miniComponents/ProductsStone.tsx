@@ -23,13 +23,53 @@ const Products: React.FC<ProductsProps> = ({
   images = [],
   additionalInfo,
 }) => {
-  const [selectedImage, setSelectedImage] = React.useState<string>(() => {
-    return images && images.length > 0 ? images[0] : "";
-  });
+  const [selectedImage, setSelectedImage] = React.useState<string>("");
   const [startIndex, setStartIndex] = React.useState(0);
   const [isOpen, setIsOpen] = React.useState(false);
   const [photoIndex, setPhotoIndex] = React.useState(0);
-  const thumbnailsToShow = 5;
+  const [visibleThumbnails, setVisibleThumbnails] = React.useState(5);
+
+  React.useEffect(() => {
+    if (images && images.length > 0) {
+      setSelectedImage(images[0]);
+      setStartIndex(0);
+      setPhotoIndex(0);
+    }
+
+    const updateVisibleThumbnails = () => {
+      if (window.innerWidth <= 768) {
+        setVisibleThumbnails(4);
+      } else {
+        setVisibleThumbnails(5);
+      }
+    };
+
+    updateVisibleThumbnails();
+    window.addEventListener("resize", updateVisibleThumbnails);
+
+    return () => {
+      window.removeEventListener("resize", updateVisibleThumbnails);
+    };
+  }, [images]);
+
+  const maxStartIndex = Math.max(0, images.length - visibleThumbnails);
+
+  const handlePrevClick = () => {
+    setStartIndex((prev) => Math.max(0, prev - 1));
+  };
+
+  const handleNextClick = () => {
+    setStartIndex((prev) => Math.min(maxStartIndex, prev + 1));
+  };
+
+  const handleImageClick = (index: number) => {
+    setPhotoIndex(index);
+    setIsOpen(true);
+  };
+
+  const thumbnailStyle = {
+    transform: `translateX(-${startIndex * (120 + 16)}px)`,
+  };
 
   if (!images || images.length === 0) {
     return (
@@ -44,19 +84,6 @@ const Products: React.FC<ProductsProps> = ({
       </div>
     );
   }
-
-  const handlePrevClick = () => {
-    setStartIndex(Math.max(0, startIndex - 1));
-  };
-
-  const handleNextClick = () => {
-    setStartIndex(Math.min(images.length - thumbnailsToShow, startIndex + 1));
-  };
-
-  const handleImageClick = (index: number) => {
-    setPhotoIndex(index);
-    setIsOpen(true);
-  };
 
   return (
     <>
@@ -82,25 +109,23 @@ const Products: React.FC<ProductsProps> = ({
               </button>
             )}
 
-            <div className="thumbnail-container">
-              {images
-                .slice(startIndex, startIndex + thumbnailsToShow)
-                .map((image, index) => (
-                  <motion.div
-                    key={startIndex + index}
-                    className={`thumbnail ${
-                      selectedImage === image ? "active" : ""
-                    }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setSelectedImage(image)}
-                  >
-                    <img src={image} alt={`${title}-${startIndex + index}`} />
-                  </motion.div>
-                ))}
+            <div className="thumbnail-container" style={thumbnailStyle}>
+              {images.map((image, index) => (
+                <motion.div
+                  key={index}
+                  className={`thumbnail ${
+                    selectedImage === image ? "active" : ""
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <img src={image} alt={`${title}-${index}`} />
+                </motion.div>
+              ))}
             </div>
 
-            {startIndex < images.length - thumbnailsToShow && (
+            {startIndex < maxStartIndex && (
               <button className="slider-button next" onClick={handleNextClick}>
                 <FaChevronRight />
               </button>

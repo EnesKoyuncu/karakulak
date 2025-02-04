@@ -216,6 +216,787 @@
           "tankCapacity": "150 lt"
         }
       }
+    },
+    {
+      "id": "mini-pack",
+      "category": "mini-pack",
+      "name": "Karakulak Mini Pack",
+      "description": "MINIPAK\"Minipaker\",olarak da adlandırılan bu ekipman modeli,büyük şehirlerin karmaşık, dar sokaklarında veya hareket kabiliyeti olmayan dar alanlarda evsel atıklar toplayarak büyük hacimli çöp toplama ekipmanlrına, Semi-Treyler katı atık transfer ekipmanları yada büyük damperli çöp araçları gibi atık transferinde kullanılan ekipmanlara uydu ekipman olarak destek vermesi için üretilmektedir.",
+      "images": [
+        {
+          "url": "/images/allProducts/MiniPack/Karakulak-Mini-Garbage-Bin.jpg",
+          "alt": "Karakulak Mini Garbage Bin"
+        },
+        {
+          "url": "/images/allProducts/MiniPack/Karakulak-Mini-Garbage-Truck.jpg",
+          "alt": "Karakulak Mini Garbage Truck"
+        },
+        {
+          "url": "/images/allProducts/MiniPack/Karakulak-Mini-Packer.jpg",
+          "alt": "Karakulak Mini Packer"
+        },
+
+        {
+          "url": "/images/allProducts/MiniPack/Karakulak-Mini-Packer2.jpg",
+          "alt": "Karakulak Mini Packer 2"
+        },
+        {
+          "url": "/images/allProducts/MiniPack/Karakulak-Mini-Taxi.jpg",
+          "alt": "Karakulak Mini Taxi"
+        },
+
+        {
+          "url": "/images/allProducts/MiniPack/Karakulak-Minipack.jpg",
+          "alt": "Karakulak Minipack"
+        },
+        {
+          "url": "/images/allProducts/MiniPack/Karakulak-Minipack2.jpg",
+          "alt": "Karakulak Minipack 2"
+        },
+        {
+          "url": "/images/allProducts/MiniPack/Karakulak-Minipack3.jpg",
+          "alt": "Karakulak Minipack 3"
+        },
+        {
+          "url": "/images/allProducts/MiniPack/Karakulak-Trash-Taxi.jpg",
+          "alt": "Karakulak Trash Taxi"
+        }
+      ],
+      "generalFeatures": [
+        "MINIPAK\"Minipaker\",olarak da adlandırılan bu ekipman modeli,büyük şehirlerin karmaşık, dar sokaklarında veya hareket kabiliyeti olmayan dar alanlarda evsel atıklar toplayarak büyük hacimli çöp toplama ekipmanlarına,Semi-Treyler katı atık transfer ekipmanları yada büyük damperli çöp araçları gibi atık transferinde kullanılan ekipmanlara uydu ekipman olarak destek vermesi için üretilmektedir.çöp toplamaya yardımcı olmak için özel olarak tasarlanmış,mini damperli olarak da adlandırılır.",
+        "Tüm modellerinin ana gövde arka kısmında, devrilme silindirleri vasıtasıyla standart atık toplama ekipmanlarında olduğu gibi, farklı kapasitedeki çöp konteynerlerinin boşaltılabilmesi için konteyner kaldırma aparatına sahiptirler.",
+        "Atık boşaltma esnasında ekipman ana gövdesinde en az 60 derecelik bir devrilme gerçekleştiği için Aracın dengesini korumak adına, şaseye monteli iki payanda(denge ayağı) kullanılır; bu şekilde yükleme esnasında bir denge noktası oluşturarak aracın devrilme riski ortadan kaldırılmış olur ve araca zarar verebilecek denge kaybı engellenmiş olur.",
+        "Minipacker ekipmanının üretimi sırasında, Müşterinin gereksinimleri göz önünde bulundurularak çeşitli hacimsel kapasitelerde ve talep edilmesi halinde teknik olarak farklı özelliklerde de tasarlanabilir."
+      ],
+      "keywords": [
+        "minipak çöp aktarma",
+        "çöp taksi",
+        "monoblok çöp aktarma",
+        "monoblok çöp kamyonu",
+        "minipak çöp kamyonu ISUZU",
+        "minipak çöp kamyonu IVECO",
+        "minipak çöp kasası"
+      ]
+    },
+    {
+      "id": "water-tank",
+      "category": "water-tank",
+      "name": "AYALKA SU TANKERİ - AYALKA WATER TANK",
+      "description": "Ayalka su tankerleri, suyu taşımak ve dağıtmak için tasarlanmıştır.",
+      "images": [
+        {
+          "url": "/images/allProducts/WaterTanker/Water-Tanker1.jpg",
+          "alt": "Water Tanker 1"
+        },
+
+        {
+          "url": "/images/allProducts/WaterTanker/Water-Tanker2.jpg",
+          "alt": "Water Tanker 2"
+        },
+
+        {
+          "url": "/images/allProducts/WaterTanker/Water-Tanker3.jpg",
+          "alt": "Water Tanker 3"
+        },
+
+        {
+          "url": "/images/allProducts/WaterTanker/Water-Tanker4.jpg",
+          "alt": "Water Tanker 4"
+        },
+
+        {
+          "url": "/images/allProducts/WaterTanker/Water-Tanker5.jpg",
+          "alt": "Water Tanker 5"
+        },
+
+        {
+          "url": "/images/allProducts/WaterTanker/Water-Tanker6.jpg",
+          "alt": "Water Tanker 6"
+        },
+
+        {
+          "url": "/images/allProducts/WaterTanker/Water-Tanker7.jpg",
+          "alt": "Water Tanker 7"
+        },
+
+        {
+          "url": "/images/allProducts/WaterTanker/Water-Tanker8.jpg",
+          "alt": "Water Tanker 8"
+        },
+
+        {
+          "url": "/images/allProducts/WaterTanker/Water-Tanker9.jpg",
+          "alt": "Water Tanker 9"
+        }
+      ],
+      "generalFeatures": [
+        "Karakulak su tankerleri, suyu taşımak ve dağıtmak için tasarlanmıştır. İstenilen suyun amacına göre farklı malzemelerden üretilebilirler. Bir pompa ve tesisattan oluşan ana gövdenin yapısı, krom nikelden veya içme suyunun taşınması için başka bir amaçtan yapılabilir.",
+        "Ekipmanın tüm fonksiyonları ve yük dağılımı, üzerine monte edildiği şasinin teknik özelliklerine göre düzenlenir."
+      ],
+      "keywords": [
+        "ayalka su tankeri",
+        "ayalka water tank",
+        "watertank",
+        "ayalka üstten monitörlü su tankeri",
+        "ön sulamalı su tankeri",
+        "ayalka water tanker",
+        "Su Tankeri",
+        "İtfaiye Tankeri",
+        "Römork",
+        "Tanker İmalatı",
+        "İlaçlama Tankı"
+      ]
+    },
+    {
+      "id": "vacuum-truck",
+      "category": "vacuum-truck",
+      "name": "KARAKULAK VİDANJÖR",
+      "description": "Karakulak vidanjörleri, kanalizasyon atık ve çamurunu bir vakum pompası vasıtasıyla emmek ve taşımak için tasarlanmıştır.",
+      "images": [
+        {
+          "url": "/images/allProducts/SewageTruck/Sewage-Truck-1.jpg",
+          "alt": "Sewage Truck 1"
+        },
+        {
+          "url": "/images/allProducts/SewageTruck/Sewage-Truck-2.jpg",
+          "alt": "Sewage Truck 2"
+        },
+
+        {
+          "url": "/images/allProducts/SewageTruck/Sewage-Truck-3.jpg",
+          "alt": "Sewage Truck 3"
+        },
+
+        {
+          "url": "/images/allProducts/SewageTruck/Sewage-Truck-4.jpg",
+          "alt": "Sewage Truck 4"
+        },
+
+        {
+          "url": "/images/allProducts/SewageTruck/Sewage-Truck-5.jpg",
+          "alt": "Sewage Truck 5"
+        },
+
+        {
+          "url": "/images/allProducts/SewageTruck/Sewage-Truck-6.jpg",
+          "alt": "Sewage Truck 6"
+        },
+
+        {
+          "url": "/images/allProducts/SewageTruck/Sewage-Truck-7.jpg",
+          "alt": "Sewage Truck 7"
+        },
+
+        {
+          "url": "/images/allProducts/SewageTruck/Sewage-Truck8.jpg",
+          "alt": "Sewage Truck 8"
+        },
+
+        {
+          "url": "/images/allProducts/SewageTruck/Sewage-Truck-9.jpg",
+          "alt": "Sewage Truck 9"
+        }
+      ],
+      "generalFeatures": [
+        "Ayalak vidanjörleri, kanalizasyon atık ve çamurunu bir vakum pompası vasıtasıyla emmek ve taşımak için tasarlanmıştır.ekipman ana gövdesi,aracın şasisine, bir alt şasi üzerine silindirik yapıda tasarlanan tank gövdesisin montajı ile gerçekleşir.",
+        "Manuel yada isteğe bağlı olarak hidrolik silinidir vasıtası ile açılan tam sızdırmaz özellikte komple bir kapak ile çevre duyarlılığında oldukça titiz olarak üretilen ekipman aracın dişli kutusuna monte edilmiş PTO yada bir ara şanzuman aracılığı ile araç dişli kutusundan tahrik olan vakum sistemi sayasinde 7 m derinliğe kadar atık ve foseptik çekebilen kapasiteye sahiptir.",
+        "Ekipman,Atık boşaltım işlemini, ana gövdenin geriye eğimli bir açıyla konuşlandırılması yada isteğe bağlı olarak gövde önünde tasarlanmış bir hidrolik silindir vasıtasıyla gövdesinin yukarı doğru eğim kazandırılarak, yerçekmi etkisiyle kendiliğinden gerçekleşebilmektedir.",
+        "Tüm fonksiyonlar ve ekipmanın yük dağılımı, üzerine monte edileceği şasinin teknik özellikleri mühendislerimiz tarafından hesaplanarak dikkatli bir şekilde tasarlanır. Ekipman, yasal düzenlemelerde dikkate alınarak seri üretim prensiplerine riayet edilerek üretilmektedir."
+      ],
+      "keywords": [
+        "ayalka vidanjor",
+        "ayalka vacuum tank",
+        "ayalka vakum tanker",
+        "vindanjor kamyonu",
+        "vidanjor aracı",
+        "vidanjor kamyonu imalatçısı",
+        "vidanjor kamyonu üreticisi"
+      ]
+    },
+    {
+      "id": "hooklift",
+      "category": "hooklift",
+      "name": "AYALKA HOOKLIFT",
+      "description": "Ayalka hooklift (kancalı kaldırıcı), kapalı yada açık konteynerlerin kamyon üzerine alınarak taşınması amacıyla kullanılmaktadır.",
+      "images": [
+        {
+          "url": "/images/allProducts/Hooklift/Hooklift-1.jpg",
+          "alt": "Ayalka Hooklift"
+        },
+        {
+          "url": "/images/allProducts/Hooklift/Hooklift-2.jpg",
+          "alt": "Kancalı Kaldırıcı"
+        },
+
+        {
+          "url": "/images/allProducts/Hooklift/Hooklift-3.jpg",
+          "alt": "Hook-lift"
+        },
+
+        {
+          "url": "/images/allProducts/Hooklift/Hooklift-4.jpg",
+          "alt": "Kancalı Asansör"
+        },
+
+        {
+          "url": "/images/allProducts/Hooklift/Hooklift-5.jpg",
+          "alt": "Ayalka Kancalı Hooklift"
+        },
+
+        {
+          "url": "/images/allProducts/Hooklift/Hooklift-6.jpg",
+          "alt": "Hooklift Sistem"
+        }
+      ],
+      "generalFeatures": [
+        "Ayalka Hook Lift Kasa hacimleri 5 m3 – 25 m3 arasında değişmektedir.",
+        "Konteyner kilitleme sistemi sayesinde güvenli taşımayı sağlamaktadır.",
+        "Güvenli yan bariyerler",
+        "Teleskopik bom hareket emniyet sistemi",
+        "Hortum patlamasına karşı pistonlar üzerinde yük tutma valfi",
+        "Yüksek kalite bomlar"
+      ],
+      "keywords": [
+        "Ayalka hooklift",
+        "kancalı hooklift",
+        "hook-lift",
+        "kancalı asansör",
+        "ayalka kancalı hooklift"
+      ]
+    },
+    {
+      "id": "skip-loader",
+      "category": "skip-loader",
+      "name": "AYALKA SKIP LOADER | HİDROLİFT",
+      "description": "Ekipman, DIN 30720 standardına göre kamyon şasisi üzerine monte edilmiş platformuyla konteynırları kaldırmak için tasarlanmıştır. Ayrıca konteynırların çöpünü de boşaltır. Ekipman; 1 adet platform, 2 adet yükleme kolu, iniş ayakları ve hidrolik & pnömatik kurulumdan oluşur.",
+      "images": [
+        {
+          "url": "/images/allProducts/SkipLoader-Hydrolift/Double-Arm-Lifter.jpg",
+          "alt": "Double Arm Lifter"
+        },
+        {
+          "url": "/images/allProducts/SkipLoader-Hydrolift/Karakulak-Hydrolift-1.jpg",
+          "alt": "Karakulak Hydrolift 1"
+        },
+
+        {
+          "url": "/images/allProducts/SkipLoader-Hydrolift/Karakulak-Hydrolift-2.jpg",
+          "alt": "Karakulak Hydrolift 2"
+        },
+
+        {
+          "url": "/images/allProducts/SkipLoader-Hydrolift/Karakulak-Skip-Loader-1.jpg",
+          "alt": "Karakulak Skip Loader 1"
+        }
+      ],
+      "generalFeatures": [
+        "1 adet platform, 2 adet yükleme kolu, iniş ayakları ve hidrolik & pnömatik kurulumdan oluşur.",
+        "Platfomun yanlarında 2 adet ağır hizmet tipi hidrolik kaldırma- indirme kolu bulunmaktadır.",
+        "Konteynırların kaldırılması süresi boyunca sabitliği sağlamak için ekipmanın arka tarafında 2 adet iniş ayağı bulunmaktadır. Ayaklar hidrolik olarak çalıştırılır ve bağımsız olarak kontrol edilir.",
+        "Platformun üzerinde konteynır kaldırma işlemi boyunca düzgün çalışma sağlanması için hidrolik kurulum üzerinde çiftli merkezi vana vardır."
+      ],
+      "keywords": [
+        "Ayalka hidrolift",
+        "skip loader",
+        "çift kollu kaldırıcı",
+        "ayalka skiploader",
+        "hidrolift kaldırıcı"
+      ]
+    },
+    {
+      "id": "side-loading-garbage",
+      "category": "side-loading-garbage",
+      "name": "YANDAN YÜKLEMELİ ÇÖP KASASI",
+      "description": "Ayalka Çöp Kasaları(Çöp Kamyonları), çöplerin mekanik ve manuel olarak toplanması ve bertaraf yerlerine taşınması için tasarlanmıştır.",
+      "images": [
+        {
+          "url": "/images/allProducts/SideLoadingGarbageTruck/SideLoadingGarbageTruck-1.jpg",
+          "alt": "Yandan Yüklemeli Çöp Kamyonu 1"
+        },
+        {
+          "url": "/images/allProducts/SideLoadingGarbageTruck/SideLoadingGarbageTruck-2.jpg",
+          "alt": "Yandan Yüklemeli Çöp Kamyonu 2"
+        },
+
+        {
+          "url": "/images/allProducts/SideLoadingGarbageTruck/SideLoadingGarbageTruck-3.jpg",
+          "alt": "Yandan Yüklemeli Çöp Kamyonu 3"
+        },
+
+        {
+          "url": "/images/allProducts/SideLoadingGarbageTruck/SideLoadingGarbageTruck-4.jpg",
+          "alt": "Yandan Yüklemeli Çöp Kamyonu 4"
+        },
+
+        {
+          "url": "/images/allProducts/SideLoadingGarbageTruck/SideLoadingGarbageTruck-5.jpg",
+          "alt": "Yandan Yüklemeli Çöp Kamyonu 5"
+        },
+
+        {
+          "url": "/images/allProducts/SideLoadingGarbageTruck/SideLoadingGarbageTruck-6.jpg",
+          "alt": "Yandan Yüklemeli Çöp Kamyonu 6"
+        }
+      ],
+      "generalFeatures": [
+        "Tasarım: Tasarım inşaat ve montaj vücut karşılamak için sağlık ve Güvenlik. Kullanımı ve işletilmesi ile ilgili olarak Türkiye'nin düzenlenmesi",
+        "Kalite belgesi ve yeteneği Ayalka şu anda reg: inşaat ve kaynak için ilgili kayıt standartları ile istered ve DIN EN 1501 standartlarına göre gerekli olması durumunda proof üretim ve satış yapabiliyor.",
+        "Üstyapı montajı, kamyon üstyapı montaj talimatlarına göre gerçekleştirilecektir. Üst yapı, gerekli esnekliği sağlamak için arkada sert bağlantı ve önünde esnek bağlantı ile monte edilmelidir.",
+        "Çöp Kasası (Çöp Kamyonu) boyutları sadece kamyon şasi boyutlarına göre verilebilir (*ekipman şasi MERCEDES-Benz, IVECO, maz, KAMAZ, SCANİA, MAN ve tüm modellerine monte edilmiştir.)",
+        "Gövde ST-52 kalınlığında gövde saclarına kaynak yapılmış tüm gövde takviyeleri."
+      ],
+      "bagajKapagi": [
+        "Toplama & sweeper ve sledge silindir ile gövde üzerinde çöp ulaşmak Sıkıştırma.",
+        "İki çift etkili hidrolik silindir tarafından sağlanan kaldırma güvenliği.",
+        "Hazne kapasitesi deşarj sırasında kendi kendini temizleme yeteneği.",
+        "Kilitleme, yol koşulları nedeniyle atık suyun sızıntısını önler.",
+        "DIN 2391 ° C normlarına göre hidrolik silindir boruları",
+        "Hidrolik hortumlar SAE 100R2 standartlarına uygundur.",
+        "Boyama kumlama ve fırın boyama vurdu."
+      ],
+      "genel": [
+        "Arka uçlarda lastik kapaklı iki çelik çamurluk.",
+        "1 dönen işaretleri ışık bagaj kapağı.",
+        "Haznenin üstünde 2 aydınlatma lambası",
+        "Arka görüş kamerası (isteğe bağlı)",
+        "İşletim / bakım / yedek parça manuel."
+      ],
+      "keywords": [
+        "Ayalka Çöp Kasası",
+        "Ayalka Çöp Kasasi",
+        "Ayalka Çöp Kamyonu",
+        "Garbage Truck",
+        "Garbage compactor",
+        "Waste compactor",
+        "Refuse truck",
+        "DMO Çöp Kamyonu"
+      ]
+    },
+    {
+      "id": "telescopic-platform",
+      "category": "telescopic-platform",
+      "name": "AYALKA TELESKOPİK PLATFORM (AYALKA TELECOPİC PLATFORM)",
+      "description": "Sepetli teleskopik platform (teleskopik vinç) teknik olarak ayalka mühendisleri tarafından onaylanan yeterli şasiye monte edilecektir.",
+      "images": [
+        {
+          "url": "/images/allProducts/TelescopicPlatform/Telescopic-Platform-1.jpg",
+          "alt": "Ayalka Teleskopik Platform 1"
+        },
+        {
+          "url": "/images/allProducts/TelescopicPlatform/Telescopic-Platform-2.jpg",
+          "alt": "Ayalka Eklemeli Platform"
+        },
+
+        {
+          "url": "/images/allProducts/TelescopicPlatform/Telescopic-Platform-3.jpg",
+          "alt": "Teleskopik Platform"
+        },
+
+        {
+          "url": "/images/allProducts/TelescopicPlatform/Telescopic-Platform-4.jpg",
+          "alt": "Ayalka Teleskopik Platform 2"
+        },
+
+        {
+          "url": "/images/allProducts/TelescopicPlatform/Telescopic-Platform-5.jpg",
+          "alt": "Eklemeli Platform"
+        },
+
+        {
+          "url": "/images/allProducts/TelescopicPlatform/Telescopic-Platform-6.jpg",
+          "alt": "Teleskopik Platform Ekipmanı"
+        }
+      ],
+      "generalFeatures": [
+        "Sepetli teleskopik platform (teleskopik vinç) teknik olarak ayalka mühendisleri tarafından onaylanan yeterli şasiye monte edilecektir",
+        "Maksimum çalışma yüksekliği noktası en az 14 metre olacaktır. Yan uzatma 7 metredir.",
+        "Kulenin dönüşüm sonsuz derecede olacaktır.",
+        "Sepetin kapasitesi 2 kişi için 200 kg olacaktır",
+        "Sistemin kamyon şasisine oturması için çelikten hidrolik şasi yapılacaktır.",
+        "Yapılacak şasi, kamyonun çelik cıvata şasisi ile bağlanacaktır kaynak olmadan",
+        "Tüm platform elemanı ve bacaklara güvenmek, çelik cıvata ile şasiye bağlanacak ve bunları kolayca kamyona monte edebilecektir.",
+        "Platformun zemini uygun boyutlar ve ölçüler olacak, saç fileleri ile kaplanacak ve nihayet sidle'dan çıkış merdiveni ile katmanlı pasta fille yapılacaktır."
+      ],
+      "keywords": [
+        "ayalka teleskopik platform",
+        "ayalka eklemeli platform aracı",
+        "ayalka telescopic platform ekipmanı",
+        "garbage truck turkey"
+      ]
+    },
+    {
+      "id": "canal-jetting",
+      "category": "canal-jetting",
+      "name": "AYALKA KANAL AÇMA (COMBINED CANAL JETTING)",
+      "description": "AYALKA Kombine kanal Ekipmanı, hem tıkanmış kanalizasyon hem de drenaj boru hatlarını bir Yüksek basınç pompası vasıtası ile açarak temizlemek hemde güçlü bir vakum pompası aracılığıyla çamur vedrenajı tahliye ederek boşaltıp taşımak için iki farklı alanda kullanılmak üzere imal edilir.",
+      "images": [
+        {
+          "url": "/images/allProducts/CanalJetting/Canal-Jetting-1.jpg",
+          "alt": "Ayalka Combined Canal Jetting 1"
+        },
+        {
+          "url": "/images/allProducts/CanalJetting/Canal-Jetting-2.jpg",
+          "alt": "Ayalka Kanal Açma"
+        },
+        {
+          "url": "/images/allProducts/CanalJetting/Canal-Jetting-3.jpg",
+          "alt": "Ayalka Jetting"
+        },
+        {
+          "url": "/images/allProducts/CanalJetting/Canal-Jetting-4.jpg",
+          "alt": "Combined Jetting Truck"
+        },
+        {
+          "url": "/images/allProducts/CanalJetting/Canal-Jetting-5.jpg",
+          "alt": "Kanal Açma Ekipmanı"
+        },
+        {
+          "url": "/images/allProducts/CanalJetting/Canal-Jetting-6.jpg",
+          "alt": "Jetting Truck"
+        }
+      ],
+      "generalFeatures": [
+        "AYALKA Kombine kanal Ekipmanı, hem tıkanmış kanalizasyon hem de drenaj boru hatlarını bir Yüksek basınç pompası vasıtası ile açarak temizlemek hemde güçlü bir vakum pompası aracılığıyla çamur ve drenajı tahliye ederek boşaltıp taşımak için iki farklı alanda kullanılmak üzere imal edilir.",
+        "İki farklı bölmeden(temiz sutankı/atık tankı) tasarlanarak,üretilmekte olan ekipman,Septik tank ve drenaj temizleme işlemleri normal erişimde ağır çamur ve atığı en az 7 metre derinlikten yüksek emiş sayesinde kaldırarak tankın atık haznesine doldurabilir.",
+        "Ekipman, araç şasisine bağlı bir alt şasi üzerine orantılı silindirik bir yapıda imal edilerek sabitlenir, hidrolik olarak açılan tam sızdırmaz yükleme arka kapağından ve dişli kutusu üzerine monte edilmiş PTO / Ara şanzuman vasıtası ile bir şaft Mili tarafından tahrik olan vakum ve yüksek basınç pompalarından oluşur.",
+        "Tüm fonksiyonlar ve ekipmanın yük dağılımı, üzerine monte edildiği şasinin teknik özelliklerine göre düzenlenmiştir.",
+        "Ekipman, yasal düzenlemeler dikkate alınarak seri üretim prensiplerinde üretilmektedir."
+      ],
+      "keywords": [
+        "ayalka kanal açma",
+        "ayalka jetting",
+        "ayalka combined jetting",
+        "combined jetting truck",
+        "ayalka jetting production",
+        "ayalka kanal açma ekipmanı imalatı",
+        "jetting truck"
+      ]
+    },
+    {
+      "id": "road-sweeper",
+      "category": "road-sweeper",
+      "name": "ROAD SWEEPER",
+      "description": "Ayalka Yol Süpürme ekipmanları, hız ve kalitesi bakımından kanıtlanmış performansa sahip azami kapasiteye bağlı olarak farklı hacimsel boyutlarda üretilmektedir.",
+      "images": [
+        {
+          "url": "/images/allProducts/RoadSweeper/Road-Sweeper-1.jpg",
+          "alt": "Ayalka Road Sweeper 1"
+        },
+        {
+          "url": "/images/allProducts/RoadSweeper/Road-Sweeper-2.jpg",
+          "alt": "Ayalka Yol Süpürme"
+        },
+        {
+          "url": "/images/allProducts/RoadSweeper/Road-Sweeper-3.jpg",
+          "alt": "Ayalka Vakumlu Yol Süpürme"
+        },
+        {
+          "url": "/images/allProducts/RoadSweeper/Road-Sweeper-4.jpg",
+          "alt": "Road Sweeper ISUZU"
+        },
+        {
+          "url": "/images/allProducts/RoadSweeper/Road-Sweeper-5.jpg",
+          "alt": "Yol Süpürge Araçları"
+        },
+        {
+          "url": "/images/allProducts/RoadSweeper/Road-Sweeper-6.jpg",
+          "alt": "Road Sweeper Truck"
+        }
+      ],
+      "generalFeatures": [
+        "Ayalka Yol Süpürme ekipmanları, hız ve kalitesi bakımından kanıtlanmış performansa sahip azami kapasiteye bağlı olarak farklı hacimsel boyutlarda üretilmektedir.",
+        "Ekipman,Sağlam tasarım gövde yapısı, fırçaları, nozulları, esnek fırça sistemi, güçlü vakum sistemleri, emme fanı gibi bileşenlerden oluşmaktadır.",
+        "Süpürme sistemi kalın fırçalar ve vakum emiş sistemi ile donatıldığı için büyük boyutlu atıklar ve çeşitli atık-yapraklar, çöp, plastik, kağıt ve enkaz – kir, toz, kum, moloz, tuz, atık Şişeler, küçük taşlar, yüzer maddeler, kırık camlar, ve vb.gibi atıklar için gereken yeterliliği sağlayarak verimli ve kaliteli performansı ve hidrolik sistemi ile standartlarının üzerine çıkmayı başarmıştır.",
+        "Müşterilerinin talepleri doğrultusunda istenilen hacimsel kapasitede ve nitelikte üretim yaparak müşteri memnuniyetinide en üst seviyede tutmanın önemini çok iyi bilmektedir."
+      ],
+      "keywords": [
+        "ayalka yol süpürme aracı",
+        "ayalka vakumlu yol süpürme aracı",
+        "ayalka road sweeper",
+        "road sweeper ISUZU",
+        "yol süpürge araçları",
+        "road sweeper truck"
+      ]
+    },
+    {
+      "id": "fire-truck",
+      "category": "fire-truck",
+      "name": "İTFAİYE",
+      "description": "Ayalka İtfaiye Araçları, şehir koşullarına bakılarak ihtiyaç duyulan yerlerde İtfaiyecilerin gereksinimlerine göz önünde bulundurulunarak dizayn edilmiştir.",
+      "images": [
+        {
+          "url": "/images/allProducts/FireTruck/Fire-Truck-1.jpg",
+          "alt": "Ayalka İtfaiye Aracı 1"
+        },
+        {
+          "url": "/images/allProducts/FireTruck/Fire-Truck-2.jpg",
+          "alt": "Ayalka İtfaiye Aracı 2"
+        },
+        {
+          "url": "/images/allProducts/FireTruck/Fire-Truck-3.jpg",
+          "alt": "Özel Donanımlı İtfaiye"
+        },
+        {
+          "url": "/images/allProducts/FireTruck/Fire-Truck-4.jpg",
+          "alt": "Merdivenli İtfaiye"
+        },
+        {
+          "url": "/images/allProducts/FireTruck/Fire-Truck-5.jpg",
+          "alt": "İtfaiye Arazözü"
+        },
+        {
+          "url": "/images/allProducts/FireTruck/Fire-Truck-6.jpg",
+          "alt": "İtfaiye Destek Tankeri"
+        }
+      ],
+      "generalFeatures": [
+        "Ayalka İtfaiye Araçları, şehir koşullarına bakılarak ihtiyaç duyulan yerlerde İtfaiyecilerin gereksinimlerine göz önünde bulundurulunarak dizayn edilmiştir.",
+        "Ayalka yangınla mücadele ekipmanları; KENTSEL İTFAİYE ARAÇLARI, OFF-ROAD (4X4) YANGIN MÜDEHALE ARAÇLARI,HİDROLİK MERDİVENLİ İTFAİYE ARAÇLARI,ANİ MÜDEHALE ARAÇALARI ve ARAZÖZ gibi çeşitli yangınla mücadele ekipman modelleriyle otoritesinin gereksinimlerine göre farklı tiplerde üretim yapmaktadır.",
+        "Deneyimli İtfaiyeciler tarafından ihtiyaç duyulan her İtfaiye aracı modeli; azami çabasıyla ulaşılabilecek en kısa süre dikkate alınarak optimize edilmiş, hızlı ve yüksek manevra kabiliyeti, işlevselliği, teknolojisi ve tasarımı ile kentsel itfaiyeciler için çözümler sunmaya devam etmektedir."
+      ],
+      "keywords": [
+        "Ayalka Fire Fighting Truck",
+        "Ayalka İtfaiye Aracı",
+        "Özel Donanımlı İtfaiye Araçları",
+        "Merdivenli İtfaiye Araçları",
+        "Fire Fightiing",
+        "Teleskopik Boomlu İtfaiye Araçları",
+        "İtfaiye Arazözleri",
+        "İtfaiye Destek Tankerleri",
+        "İtfaiye İlk Müdahale ve Kurtarma Araçları",
+        "Hidrolik Merdivenli İtfaiye Araçları",
+        "Satılık itfaiye aracı",
+        "itfaiye aracı özellikleri",
+        "yerli üretim itfaiye aracı",
+        "itfaiye aracı imalatı"
+      ]
+    },
+    {
+      "id": "tipper-truck",
+      "category": "tipper-truck",
+      "name": "AYALKA DAMPER (AYALKA TIPPER TRUCK)",
+      "description": "AYALKA Damperli ekipmanlar, inşaat için kum, çakıl veya yıkım atıkları gibi gevşek malzemelerin taşınması veya geri dönüşüm tesislerine atıkların taşınması için tasarlanmış ve üretilmiştir.",
+      "images": [
+        {
+          "url": "/images/allProducts/TipperTruck/Tipper-Truck-1.jpg",
+          "alt": "Ayalka Damper 1"
+        },
+        {
+          "url": "/images/allProducts/TipperTruck/Tipper-Truck-2.jpg",
+          "alt": "Ayalka Tipper Truck"
+        },
+        {
+          "url": "/images/allProducts/TipperTruck/Tipper-Truck-3.jpg",
+          "alt": "Ayalka Damper Kamyon"
+        },
+        {
+          "url": "/images/allProducts/TipperTruck/Tipper-Truck-4.jpg",
+          "alt": "IVECO Tipper Truck"
+        },
+        {
+          "url": "/images/allProducts/TipperTruck/Tipper-Truck-5.jpg",
+          "alt": "Ayalka Mini Damper"
+        },
+        {
+          "url": "/images/allProducts/TipperTruck/Tipper-Truck-6.jpg",
+          "alt": "ISUZU Tipper Truck"
+        }
+      ],
+      "generalFeatures": [
+        "AYALKA Damperli ekipmanlar, inşaat için kum, çakıl veya yıkım atıkları gibi gevşek malzemelerin taşınması veya geri dönüşüm tesislerine atıkların taşınması için tasarlanmış ve üretilmiştir.",
+        "Damperli Kamyonlar, kasanın üzerine oturan üstü açık bir gövdeye sahip olup, gövdeye istiflenmiş yükü boşaltmak için bir hidrolik piston vasıtasi ile devirerek sağlar.",
+        "Damperli Kamyonlar en çok yıkım enkaz atığı,inşaat malzemesi gibi ağır kütleye sahip yükleri bir hedeften diğerine taşımak için kullnıldığı için için güçlendirilmiş gövde yapısına ve Uzun ömürlü isteğe bağlı olarak Hardox 450 veya ST52 gibi nitelikli ve gerekli kalınlıktaki çelik malzemeden imal edilir."
+      ],
+      "keywords": [
+        "ayalka damper",
+        "ayalka tipper truck",
+        "damper kamyonu",
+        "tipper truck",
+        "damperli kamyon",
+        "inşaat kamyonu",
+        "hafriyat kamyonu"
+      ]
+    },
+    {
+      "id": "monoblock-garbage",
+      "category": "monoblock-garbage",
+      "name": "GARBAGE COMPACTOR WITH UPPER SHOVEL | ÜSTTEN KEPÇELİ ÇÖP KASASI",
+      "description": "Monoblok üst kompaktörler, toplamada hızlı ve ekonomik bir çözümdür. Modern, temiz ve yenilikçi bir görünüm sağlar.",
+      "images": [
+        {
+          "url": "/images/allProducts/MonoblockGarbageTruck/Monoblock-Garbage-Truck-1.jpg",
+          "alt": "Garbage Compactor With Upper Shovel"
+        },
+        {
+          "url": "/images/allProducts/MonoblockGarbageTruck/Monoblock-Garbage-Truck-2.jpg",
+          "alt": "Üstten Kepçeli Çöp Kasası"
+        },
+
+        {
+          "url": "/images/allProducts/MonoblockGarbageTruck/Monoblock-Garbage-Truck-3.jpg",
+          "alt": "Ayalka Monoblok Çöp Kasası"
+        },
+
+        {
+          "url": "/images/allProducts/MonoblockGarbageTruck/Monoblock-Garbage-Truck-4.jpg",
+          "alt": "Monoblok Çöp Kamyonu"
+        },
+
+        {
+          "url": "/images/allProducts/MonoblockGarbageTruck/Monoblock-Garbage-Truck-5.jpg",
+          "alt": "Üstten Yüklemeli Çöp Kasası"
+        },
+
+        {
+          "url": "/images/allProducts/MonoblockGarbageTruck/Monoblock-Garbage-Truck-6.jpg",
+          "alt": "ISUZU Çöp Kasası"
+        },
+        {
+          "url": "/images/allProducts/MonoblockGarbageTruck/Monoblock-Garbage-Truck-7.jpg",
+          "alt": "ISUZU Çöp Kasası"
+        },
+
+        {
+          "url": "/images/allProducts/MonoblockGarbageTruck/Monoblock-Garbage-Truck-8.jpg",
+          "alt": "ISUZU Çöp Kasası"
+        },
+
+        {
+          "url": "/images/allProducts/MonoblockGarbageTruck/Monoblock-Garbage-Truck-9.jpg",
+          "alt": "ISUZU Çöp Kasası"
+        }
+      ],
+      "generalFeatures": [
+        "Monoblok üst kompaktörler, toplamada hızlı ve ekonomik bir çözümdür. Modern, temiz ve yenilikçi bir görünüm sağlar.",
+        "Monoblok atık su sızdırmaz. Monoblok, yekpare bir gövdeden oluştuğu için atık suyun sızabileceği bir arka kapak bulunmamaktadır. Bu nedenle herhangi bir sızdırmazlık elemanına ihtiyaç duyulmadan görevini başarıyla gerçekleştirir.",
+        "Kaliteli ve çok daha hafiftir.",
+        "'Üst yükleme ve sıkıştırma Hidrolik çöp Sıkıştırıcısı', kullanıcı manuel yükleme yapmak ve konteyner kaldırma sistemi daha fazla ekonomik ve sistem sadeliği nedeniyle test bakımı daha kolaydır.",
+        "Bu sıkıştırıcı, normal çöp sıkıştırıcılarına transfer yapabilir. İzin verir küçük araç dar sokaklarında kolayca çalışma."
+      ],
+      "keywords": [
+        "çöp kasası",
+        "çöp kamyonu",
+        "çöp sıkıştırıcı",
+        "garbage compactor",
+        "garbage truck",
+        "waste compactor",
+        "refuse truck",
+        "IVECO truck",
+        "Ford truck",
+        "MAN",
+        "UD truck",
+        "Mercedes"
+      ]
+    },
+    {
+      "id": "container-washer",
+      "category": "container-washer",
+      "name": "KONTEYNER YIKAMA",
+      "description": "Konteyner yıkama Ekipmanları konteynerleri yıkamak için üretilmiştir.",
+      "images": [
+        {
+          "url": "/images/allProducts/ContainerWasher/Container-Washer-1.jpg",
+          "alt": "Konteyner Yıkama 1"
+        },
+        {
+          "url": "/images/allProducts/ContainerWasher/Container-Washer-2.jpg",
+          "alt": "Konteyner Yıkama 2"
+        },
+        {
+          "url": "/images/allProducts/ContainerWasher/Container-Washer-3.jpg",
+          "alt": "Konteyner Yıkama 3"
+        },
+        {
+          "url": "/images/allProducts/ContainerWasher/Container-Washer-4.jpg",
+          "alt": "Konteyner Yıkama 4"
+        },
+        {
+          "url": "/images/allProducts/ContainerWasher/Container-Washer-5.jpg",
+          "alt": "Konteyner Yıkama 5"
+        }
+      ],
+      "generalFeatures": [
+        "Konteyner yıkama Ekipmanları konteynerleri yıkamak için üretilmiştir hem dahili hem de harici olarak 120-240-1100lt volumetrics kutuları.",
+        "Bir tank ve yıkama odası tarafından oluşturulan ekipman kimliği, konteynerleri kaldırma ve devrilme kolları,dönen bir nozul ile ve hidrolik intallation ve elektrik kontrol panosu için modüler bir grup.",
+        "Tank ağaç bölmelerine ayrılmıştır. Merkezi bölmeler kirli su içindir ve ikincisi temiz su.yıkama için son bölme işleyiş.ayrıca, her bölmelerin içine ulaşılabilir bir menholün araçları",
+        "Sistemin tam kapasitesi 6000 lt'dir",
+        "Temiz su tankı kapasitesi: 3mm kalınlığında çelik inşa eden 3 ton",
+        "Atık su tankı kapasitesi: 3mm kalınlığında çelik inşa eden 3 ton",
+        "Yıkama odası çamur üzücü tankı: karşı 800 lt crome nikel korozyon",
+        "Konteyner yıkama sisteminin kapasitesi ve yeterliliği yaklaşık yıkayın.Günde 50 miktar kutu",
+        "Yıkama işlemi sırasında: kirli su aşağı düşen önlemek için yer.",
+        "Hazne takviye ve bir ile destekleyerek tam sızdırmazlık var bagaj kapağı etrafında monte edilen conta kauçuğu."
+      ],
+      "keywords": [
+        "Ayalka Çöp Kasası",
+        "Ayalka Çöp Kasasi",
+        "Ayalka Çöp Kamyonu",
+        "Garbage Truck",
+        "Garbage compactor",
+        "Waste compactor",
+        "Refuse truck",
+        "çöp kasası",
+        "çöp kamyonu",
+        "çöp sıkıştırıcı",
+        "IVECO truck",
+        "Ford truck",
+        "MAN",
+        "UD truck",
+        "Mercedes"
+      ]
+    },
+    {
+      "id": "semi-trailer",
+      "category": "semi-trailer",
+      "name": "AYALKA SEMİ TRAILER (AYALKA SEMİ TREYLER)",
+      "description": "Semi treyler atık transfer ekipmanları şehirlerde toplanan çöpleri ekonomik olarak geri dönüşüm tesislerine ve imha alanlarına taşımak için kullanılmaktadır.",
+      "images": [
+        {
+          "url": "/images/allProducts/SemiTrailer/Karakulak-Semi-Trailer-1.jpg",
+          "alt": "Karakulak Semi Trailer 1"
+        },
+        {
+          "url": "/images/allProducts/SemiTrailer/Karakulak-Semi-Trailer-2.jpg",
+          "alt": "Karakulak Semi Trailer 2"
+        },
+
+        {
+          "url": "/images/allProducts/SemiTrailer/Karakulak-Semi-Trailer-3.jpg",
+          "alt": "Karakulak Semi Trailer 3"
+        },
+
+        {
+          "url": "/images/allProducts/SemiTrailer/Karakulak-Semi-Trailer-4.jpg",
+          "alt": "Karakulak Semi Trailer 4"
+        },
+
+        {
+          "url": "/images/allProducts/SemiTrailer/Karakulak-Semi-Trailer-5.jpg",
+          "alt": "Karakulak Semi Trailer 5"
+        },
+
+        {
+          "url": "/images/allProducts/SemiTrailer/Karakulak-Semi-Trailer-6.jpg",
+          "alt": "Karakulak Semi Trailer 6"
+        }
+      ],
+      "generalFeatures": [
+        "Semi treyler atık transfer ekipmanları şehirlerde toplanan çöpleri ekonomik olarak geri dönüşüm tesislerine ve imha alanlarına taşımak için kullanılmaktadır.",
+        "Bir Semi-Treyler atık transfer ekipmanı, bir döngü periyodunda 6 ile 10 adet hidrolik sıkıştırmalı atık sıkıştırma ekipmamın yükünü istifleyip, transfer edebilir.",
+        "Bu ekipmanlar isteğe bağlı olarak hem arkadan hem de üstten yükleme yapabilecek şekilde 2 ayrı tipte üretilmektedir.",
+        "ARKADAN YÜKLENEN TİP, yüksek kalitede özel olarak üretilmiş kauçuk sızdırmazlık elemanı ile ST52 çelik plakalardan yapılmış gövdenin arka kısmında standard arkadan yüklemeli çöp toplama ekipmanlarında olduğu gibi hidolik sıkıştırmalı bir arka kapağa sahiptir.",
+        "Gövde içine istiflenen atık boşaltma perdesi vası tasıyla boşaltılırken Hidrolik sıkıştırmalı bu kapak iki hidrolik silindir vasıtasıyla yukarı açılır ve işlem tamamlandıktan sonra kapanarak otomatik olarak kilitlenir.",
+        "Bu sistem, geri dönüşüm tesislerine toplanan atık transferinin yanı sıra, geniş sokaklardaki standart çöp konteynerlerinden, sahip olduğu konteyner kaldırma düzeneği sayesinde evsel atıkları toplayarak büyük bir avantaja ve öneme sahiptir.",
+        "ÜST YÜKLENEN TİP, gövde çatısı üzerinde evsel atıkların ana gövde içerisine, çeşitli çöp araçlarından bir rampa vasıtası ile yada bir vinç veya özel bir yükleyici ile istiflenebilmesi için belirli ölçülerde tasarlanmış bir dolum ağzına ve 2 hidrolik silindir vasıtasyla açılıp kapanabilen yatay sürgülü bir kapağa sahiptir.",
+        "Bu tip Semi-Treylerde arka kapaktan atık yüklemesi yapılmadığı için üstten yüklenen atık, geri dönüşüm tesislerine boşaltma işlemininin gerçekleştirebilmesi için arka kapak gövde çatısındaki yatay dolum kapağına benzeyen ancak yine 2 adet hidrolik silindir vasıtasıyla bukez dikey hareket ederek yukarı-aşağı açılıp, kapanabilen sürgülü bir kapağa sahiptir."
+      ],
+      "keywords": [
+        "Ayalka atık transfer römorkları",
+        "ayalka semi treyler",
+        "ayalka semi-trailer",
+        "sıkıştırmalı çöp transfer semi treyler",
+        "ayalka arkadan yüklemeli çöp transfer semi treyler"
+      ]
     }
   ]
 }

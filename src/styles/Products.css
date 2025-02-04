@@ -72,6 +72,7 @@
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .product-card:hover {
@@ -180,6 +181,13 @@
 .arrow-icon {
   display: inline-block;
   font-size: 0.8rem;
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
 }
 
 @media (max-width: 768px) {

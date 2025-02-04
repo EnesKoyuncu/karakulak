@@ -1,70 +1,76 @@
 .yonetim-section {
-  padding: 80px 0;
-  background: #f8f9fa;
-  position: relative;
-  overflow: hidden;
+  padding: 60px 20px;
+  background: #fff;
 }
 
 .yonetim-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .yonetim-content {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 60px;
-  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+}
+
+.yonetim-text {
+  text-align: center;
 }
 
 .yonetim-text h1 {
-  color: #333;
   font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 .title-underline {
   width: 80px;
   height: 4px;
   background: #e74c3c;
-  margin-bottom: 30px;
+  margin: 0 auto 50px;
   border-radius: 2px;
 }
 
 .message-content {
-  color: #666;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  padding-top: 20px;
 }
 
 .message-content p {
-  margin-bottom: 20px;
-  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 25px;
 }
 
 .message-content p:last-child {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .signature-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   margin-top: 40px;
+  padding-right: 40px;
 }
 
 .signature-block .name {
-  color: #e74c3c;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
+  color: #2c3e50;
   margin-bottom: 5px;
 }
 
 .signature-block .title {
-  color: #666;
   font-size: 1rem;
+  color: #7f8c8d;
+  font-style: italic;
 }
 
 .yonetim-image {
@@ -99,37 +105,34 @@
   pointer-events: none;
 }
 
-@media (max-width: 968px) {
-  .yonetim-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .yonetim-image {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-}
-
 @media (max-width: 768px) {
   .yonetim-section {
-    padding: 60px 0;
+    padding: 40px 15px;
+  }
+
+  .yonetim-content {
+    padding: 30px 20px;
   }
 
   .yonetim-text h1 {
     font-size: 1.8rem;
   }
 
-  .message-content {
+  .message-content p {
     font-size: 1rem;
+    line-height: 1.6;
   }
 
   .signature-block {
-    margin-top: 30px;
+    padding-right: 20px;
   }
 
   .signature-block .name {
     font-size: 1.2rem;
+  }
+
+  .signature-block .title {
+    font-size: 0.9rem;
   }
 }
 

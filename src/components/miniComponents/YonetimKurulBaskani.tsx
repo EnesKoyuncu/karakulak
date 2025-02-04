@@ -16,7 +16,13 @@ export default function YonetimKurulBaskani() {
             <h1>YÖNETİM KURULU BAŞKANI</h1>
             <div className="title-underline"></div>
 
-            <div className="message-content">
+            <motion.div
+              className="message-content"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <p>
                 Firmamız ve çalışanlarımız "her noktada kalite" anlayışını,
                 "SÜREKLİ İŞ GELİŞTİRME MODELİ" sistemi ve "TOPLAM KALİTE
@@ -31,27 +37,19 @@ export default function YonetimKurulBaskani() {
                 müşterilerimizin güvenlerini kazanmanın haklı gururunu
                 yaşıyoruz.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="signature-block">
+            <motion.div
+              className="signature-block"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               <span className="name">KERİM KARAKULAK</span>
               <span className="title">Yönetim Kurulu Başkanı</span>
-            </div>
+            </motion.div>
           </div>
-
-          <motion.div
-            className="yonetim-image"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <img
-              src="/images/yonetim/baskan.jpg"
-              alt="Yönetim Kurulu Başkanı"
-            />
-            <div className="image-pattern"></div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

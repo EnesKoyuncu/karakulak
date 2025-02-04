@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FlickeringGrid } from "../ui/FlickeringGrid";
 import "../../styles/miniComponentsStyle/WhoWeAreMini.css";
+import { Link, useLocation } from "react-router-dom";
 
-export default function WhoWeAreMini() {
+const WhoWeAreMini: React.FC = () => {
+  const location = useLocation();
+
+  // Sayfa değiştiğinde scroll pozisyonunu sıfırla
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <section className="whoweare-section">
       {/* Background Grid */}
@@ -69,18 +77,26 @@ export default function WhoWeAreMini() {
           </motion.div>
         </div>
 
-        <motion.button
-          className="more-info-btn"
+        <motion.div
+          className="more-info-btn-container"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
         >
-          Tarihçe
-        </motion.button>
+          <Link
+            to="/tarihce"
+            className="more-info-btn"
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
+            Tarihçe
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
-}
+};
+
+export default WhoWeAreMini;

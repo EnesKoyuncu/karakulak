@@ -30,6 +30,17 @@ interface TechnicalSpecifications {
   };
 }
 
+interface VehicleSpecification {
+  model: string;
+  wheelbase: string;
+  garbageBinVolume: string;
+}
+
+interface Advantage {
+  title: string;
+  description: string;
+}
+
 export interface Product {
   id: string;
   category: string;
@@ -38,7 +49,10 @@ export interface Product {
   images: ProductImage[];
   features: ProductFeature[];
   generalFeatures: string[];
-  technicalSpecifications: TechnicalSpecifications;
+  technicalSpecifications?: TechnicalSpecifications;
+  vehicleSpecifications?: VehicleSpecification[];
+  advantages?: Advantage[];
+  keywords?: string[];
 }
 
 // Context için tip tanımlaması

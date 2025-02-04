@@ -79,6 +79,7 @@
   height: 100%;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 /* Dropdown ile nav-item arasındaki boşluğu dolduracak pseudo-element */
@@ -467,4 +468,16 @@
 
 .mobile-only {
   display: none;
+}
+
+.submenu-item {
+  cursor: pointer;
+}
+
+.submenu li {
+  cursor: pointer;
+}
+
+.submenu a {
+  cursor: pointer;
 }

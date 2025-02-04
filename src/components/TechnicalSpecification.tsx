@@ -57,7 +57,9 @@ const specifications: Specification[] = [
 ];
 
 export default function TechnicalSpecification() {
-  const [selectedDoc, setSelectedDoc] = useState<Specification | null>(null);
+  const [selectedDoc, setSelectedDoc] = useState<Specification>(
+    specifications[0]
+  );
 
   const handleDocClick = (doc: Specification) => {
     setSelectedDoc(doc);

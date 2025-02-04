@@ -36,57 +36,59 @@ const ProductAllInfo = () => {
         />
 
         <div className="features-container">
-          <motion.div className="features-section">
-            <motion.div
-              className="features-header"
-              onClick={() => setIsVehicleOpen(!isVehicleOpen)}
-              whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
-            >
-              <h3>Vehicle Specifications</h3>
+          {selectedProduct.vehicleSpecifications && (
+            <motion.div className="features-section">
               <motion.div
-                className="chevron-icon"
-                animate={{ rotate: isVehicleOpen ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
+                className="features-header"
+                onClick={() => setIsVehicleOpen(!isVehicleOpen)}
+                whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
               >
-                <FaChevronDown />
-              </motion.div>
-            </motion.div>
-
-            <AnimatePresence mode="sync">
-              {isVehicleOpen && (
+                <h3>Vehicle Specifications</h3>
                 <motion.div
-                  className="features-content"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
+                  className="chevron-icon"
+                  animate={{ rotate: isVehicleOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="vehicle-specs-table">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Truck Brand</th>
-                          <th>Wheelbase</th>
-                          <th>Garbage Bin Volume</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {selectedProduct.vehicleSpecifications.map(
-                          (spec, index) => (
-                            <tr key={index}>
-                              <td>{spec.model}</td>
-                              <td>{spec.wheelbase}</td>
-                              <td>{spec.garbageBinVolume}</td>
-                            </tr>
-                          )
-                        )}
-                      </tbody>
-                    </table>
-                  </div>
+                  <FaChevronDown />
                 </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+              </motion.div>
+
+              <AnimatePresence mode="sync">
+                {isVehicleOpen && (
+                  <motion.div
+                    className="features-content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="vehicle-specs-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Truck Brand</th>
+                            <th>Wheelbase</th>
+                            <th>Garbage Bin Volume</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {selectedProduct.vehicleSpecifications.map(
+                            (spec, idx) => (
+                              <tr key={idx}>
+                                <td>{spec.model}</td>
+                                <td>{spec.wheelbase}</td>
+                                <td>{spec.garbageBinVolume}</td>
+                              </tr>
+                            )
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          )}
 
           <motion.div className="features-section">
             <motion.div
@@ -130,43 +132,45 @@ const ProductAllInfo = () => {
             </AnimatePresence>
           </motion.div>
 
-          <motion.div className="features-section">
-            <motion.div
-              className="features-header"
-              onClick={() => setIsAdvantagesOpen(!isAdvantagesOpen)}
-              whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
-            >
-              <h3>Advantages</h3>
+          {selectedProduct.advantages && (
+            <motion.div className="features-section">
               <motion.div
-                className="chevron-icon"
-                animate={{ rotate: isAdvantagesOpen ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
+                className="features-header"
+                onClick={() => setIsAdvantagesOpen(!isAdvantagesOpen)}
+                whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
               >
-                <FaChevronDown />
-              </motion.div>
-            </motion.div>
-
-            <AnimatePresence mode="sync">
-              {isAdvantagesOpen && (
+                <h3>Advantages</h3>
                 <motion.div
-                  className="features-content"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
+                  className="chevron-icon"
+                  animate={{ rotate: isAdvantagesOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="advantages-container">
-                    {selectedProduct.advantages.map((advantage, index) => (
-                      <div key={index} className="advantage-item">
-                        <h4>{advantage.title}</h4>
-                        <p>{advantage.description}</p>
-                      </div>
-                    ))}
-                  </div>
+                  <FaChevronDown />
                 </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+              </motion.div>
+
+              <AnimatePresence mode="sync">
+                {isAdvantagesOpen && (
+                  <motion.div
+                    className="features-content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="advantages-container">
+                      {selectedProduct.advantages.map((advantage, idx) => (
+                        <div key={idx} className="advantage-item">
+                          <h4>{advantage.title}</h4>
+                          <p>{advantage.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          )}
         </div>
       </div>
     </div>
