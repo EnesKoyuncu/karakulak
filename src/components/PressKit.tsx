@@ -9,6 +9,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import "../styles/PressKit.css";
+import { SEO } from "./SEO";
 
 interface PressKitItem {
   id: number;
@@ -85,221 +86,239 @@ const cardVariants = {
 
 export default function PressKit() {
   return (
-    <section className="press-kit">
-      <motion.div
-        className="header"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <h1>BASIN KİTİ</h1>
-        <div className="title-underline"></div>
-      </motion.div>
+    <>
+      <SEO
+        title="Basın Kiti | Ayalka Makina"
+        description="Ayalka Makina kurumsal kimlik öğeleri, logolar, sosyal medya hesapları ve basın materyalleri. Markamızla ilgili tüm medya kaynaklarına buradan ulaşabilirsiniz."
+        keywords="ayalka basın kiti, ayalka logo, ayalka kurumsal kimlik, ayalka sosyal medya, ayalka makina kurumsal"
+        image="/press-kit/ayalka-logo.png"
+      />
 
-      <div className="press-kit-grid">
-        {pressKitItems.map((item) => (
-          <Tilt key={item.id} options={defaultTiltOptions}>
-            <motion.div
-              className="press-kit-item"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="preview-container">
-                <img src={item.preview} alt={item.title} />
-                <div className="overlay">
-                  <motion.a
-                    href={item.fileUrl}
-                    download
-                    className="download-btn"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+      <main className="press-kit" role="main" aria-label="Basın Kiti İçeriği">
+        <motion.header
+          className="header"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1>BASIN KİTİ</h1>
+          <div className="title-underline" aria-hidden="true"></div>
+        </motion.header>
+
+        <section
+          className="press-kit-grid"
+          aria-label="Kurumsal Logolar ve İndirilebilir Materyaller"
+        >
+          {pressKitItems.map((item) => (
+            <Tilt key={item.id} options={defaultTiltOptions}>
+              <motion.article
+                className="press-kit-item"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <figure className="preview-container">
+                  <img src={item.preview} alt={`${item.title} Önizleme`} />
+                  <figcaption className="overlay">
+                    <motion.a
+                      href={item.fileUrl}
+                      download
+                      className="download-btn"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      aria-label={`${item.title} dosyasını indir`}
+                    >
+                      <FaDownload aria-hidden="true" />
+                      <span>İNDİR</span>
+                    </motion.a>
+                  </figcaption>
+                </figure>
+                <div className="item-info">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <div
+                    className="file-type"
+                    aria-label={`Dosya tipi: ${item.type.toUpperCase()}`}
                   >
-                    <FaDownload />
-                    <span>İNDİR</span>
-                  </motion.a>
+                    {item.type === "png" ? (
+                      <FaImage aria-hidden="true" />
+                    ) : (
+                      <FaFilePdf aria-hidden="true" />
+                    )}
+                    <span>{item.type.toUpperCase()}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="item-info">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <div className="file-type">
-                  {item.type === "png" ? <FaImage /> : <FaFilePdf />}
-                  <span>{item.type.toUpperCase()}</span>
-                </div>
-              </div>
-            </motion.div>
-          </Tilt>
-        ))}
-      </div>
+              </motion.article>
+            </Tilt>
+          ))}
+        </section>
 
-      <motion.div
-        className="social-media-section"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-      >
-        <div className="company-brand">
-          <motion.img
-            src="https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png"
-            alt="Ayalka Logo"
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
-          />
-        </div>
+        <section
+          className="social-media-section"
+          aria-label="Sosyal Medya Platformları"
+        >
+          <div className="company-brand" role="banner">
+            <motion.img
+              src="https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png"
+              alt="Ayalka Kurumsal Logo"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+            />
+          </div>
 
-        <div className="social-platforms">
-          <motion.div
-            className="platform instagram-card"
-            variants={cardVariants}
-            initial="initial"
-            whileHover="hover"
-            custom="instagram"
-            animate={{
-              scale: 1,
-              transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-              },
-            }}
-          >
-            <div className="platform-content">
-              <div className="platform-header">
-                <FaInstagram className="platform-icon" />
-                <h3>Instagram</h3>
-              </div>
-              <p>Araçlarımızın görsellerini takip edebilirsiniz</p>
-              <div className="instagram-preview">
-                <div className="instagram-grid">
-                  {/* Instagram grid görüntüsü için küçük resimler */}
-                  <div
-                    className="insta-img"
-                    style={{
-                      backgroundImage: "url(/images/social/insta1.jpg)",
-                    }}
-                  ></div>
-                  <div
-                    className="insta-img"
-                    style={{
-                      backgroundImage: "url(/images/social/insta2.jpg)",
-                    }}
-                  ></div>
-                  <div
-                    className="insta-img"
-                    style={{
-                      backgroundImage: "url(/images/social/insta3.jpg)",
-                    }}
-                  ></div>
-                </div>
-              </div>
-              <motion.a
-                href="https://www.instagram.com/garbagetruckturkey/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="platform-link instagram-link"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Takip Et
-              </motion.a>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="platform facebook-card"
-            variants={cardVariants}
-            initial="initial"
-            whileHover="hover"
-            custom="facebook"
-            animate={{
-              scale: 1,
-              transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-              },
-            }}
-          >
-            <div className="platform-content">
-              <div className="platform-header">
-                <FaFacebookF className="platform-icon" />
-                <h3>Facebook</h3>
-              </div>
-              <p>En son haberler ve güncellemeler için</p>
-              <div className="facebook-preview">
+          <div className="social-platforms">
+            <motion.article
+              className="platform instagram-card"
+              variants={cardVariants}
+              initial="initial"
+              whileHover="hover"
+              custom="instagram"
+              animate={{
+                scale: 1,
+                transition: { type: "spring", stiffness: 300, damping: 20 },
+              }}
+            >
+              <div className="platform-content">
+                <header className="platform-header">
+                  <FaInstagram className="platform-icon" aria-hidden="true" />
+                  <h3>Instagram</h3>
+                </header>
+                <p>Araçlarımızın görsellerini takip edebilirsiniz</p>
                 <div
-                  className="fb-cover"
-                  style={{
-                    backgroundImage: "url(/images/social/fb-cover.jpg)",
-                  }}
-                ></div>
-                <div className="fb-stats">
-                  <span>5K+ Takipçi</span>
-                  <span>4.8 ★</span>
+                  className="instagram-preview"
+                  aria-label="Instagram Önizleme Görselleri"
+                >
+                  <div className="instagram-grid">
+                    <div
+                      className="insta-img"
+                      style={{
+                        backgroundImage: "url(/images/social/insta1.jpg)",
+                      }}
+                      role="img"
+                      aria-label="Instagram Paylaşım Önizleme 1"
+                    ></div>
+                    <div
+                      className="insta-img"
+                      style={{
+                        backgroundImage: "url(/images/social/insta2.jpg)",
+                      }}
+                      role="img"
+                      aria-label="Instagram Paylaşım Önizleme 2"
+                    ></div>
+                    <div
+                      className="insta-img"
+                      style={{
+                        backgroundImage: "url(/images/social/insta3.jpg)",
+                      }}
+                      role="img"
+                      aria-label="Instagram Paylaşım Önizleme 3"
+                    ></div>
+                  </div>
                 </div>
+                <motion.a
+                  href="https://www.instagram.com/garbagetruckturkey/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="platform-link instagram-link"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label="Instagram Sayfamızı Takip Et"
+                >
+                  Takip Et
+                </motion.a>
               </div>
-              <motion.a
-                href="https://www.facebook.com/ayalka.com.tr/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="platform-link facebook-link"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Sayfamızı Beğen
-              </motion.a>
-            </div>
-          </motion.div>
+            </motion.article>
 
-          <motion.div
-            className="platform linkedin-card"
-            variants={cardVariants}
-            initial="initial"
-            whileHover="hover"
-            custom="linkedin"
-            animate={{
-              scale: 1,
-              transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-              },
-            }}
-          >
-            <div className="platform-content">
-              <div className="platform-header">
-                <FaLinkedinIn className="platform-icon" />
-                <h3>LinkedIn</h3>
-              </div>
-              <p>Kurumsal haberler ve iş fırsatları</p>
-              <div className="linkedin-preview">
-                <div
-                  className="linkedin-banner"
-                  style={{
-                    backgroundImage: "url(/images/social/linkedin-banner.jpg)",
-                  }}
-                ></div>
-                <div className="linkedin-stats">
-                  <span>Kurumsal Sayfa</span>
-                  <span>500+ Takipçi</span>
+            <motion.article
+              className="platform facebook-card"
+              variants={cardVariants}
+              initial="initial"
+              whileHover="hover"
+              custom="facebook"
+              animate={{
+                scale: 1,
+                transition: { type: "spring", stiffness: 300, damping: 20 },
+              }}
+            >
+              <div className="platform-content">
+                <header className="platform-header">
+                  <FaFacebookF className="platform-icon" aria-hidden="true" />
+                  <h3>Facebook</h3>
+                </header>
+                <p>En son haberler ve güncellemeler için</p>
+                <div className="facebook-preview">
+                  <div
+                    className="fb-cover"
+                    style={{
+                      backgroundImage: "url(/images/social/fb-cover.jpg)",
+                    }}
+                  ></div>
+                  <div className="fb-stats">
+                    <span>5K+ Takipçi</span>
+                    <span>4.8 ★</span>
+                  </div>
                 </div>
+                <motion.a
+                  href="https://www.facebook.com/ayalka.com.tr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="platform-link facebook-link"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label="Facebook Sayfamızı Beğen"
+                >
+                  Sayfamızı Beğen
+                </motion.a>
               </div>
-              <motion.a
-                href="https://www.linkedin.com/in/garbage-truck-ayalka-52a080177/?originalSubdomain=tr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="platform-link linkedin-link"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Bağlantı Kur
-              </motion.a>
-            </div>
-          </motion.div>
-        </div>
-      </motion.div>
-    </section>
+            </motion.article>
+
+            <motion.article
+              className="platform linkedin-card"
+              variants={cardVariants}
+              initial="initial"
+              whileHover="hover"
+              custom="linkedin"
+              animate={{
+                scale: 1,
+                transition: { type: "spring", stiffness: 300, damping: 20 },
+              }}
+            >
+              <div className="platform-content">
+                <header className="platform-header">
+                  <FaLinkedinIn className="platform-icon" aria-hidden="true" />
+                  <h3>LinkedIn</h3>
+                </header>
+                <p>Kurumsal haberler ve iş fırsatları</p>
+                <div className="linkedin-preview">
+                  <div
+                    className="linkedin-banner"
+                    style={{
+                      backgroundImage:
+                        "url(/images/social/linkedin-banner.jpg)",
+                    }}
+                  ></div>
+                  <div className="linkedin-stats">
+                    <span>Kurumsal Sayfa</span>
+                    <span>500+ Takipçi</span>
+                  </div>
+                </div>
+                <motion.a
+                  href="https://www.linkedin.com/in/garbage-truck-ayalka-52a080177/?originalSubdomain=tr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="platform-link linkedin-link"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label="LinkedIn Bağlantı Kur"
+                >
+                  Bağlantı Kur
+                </motion.a>
+              </div>
+            </motion.article>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }

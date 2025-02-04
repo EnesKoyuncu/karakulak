@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import "../styles/ProductAllInfo.css";
+import { SEO } from "./SEO";
 
 const ProductAllInfo = () => {
   const { id } = useParams();
@@ -27,153 +28,187 @@ const ProductAllInfo = () => {
   }
 
   return (
-    <div className="product-all-info-wrapper">
-      <div className="product-all-info">
-        <ProductsStone
-          title={selectedProduct.name}
-          description={selectedProduct.description}
-          images={selectedProduct.images.map((img) => img.url)}
-        />
+    <>
+      <SEO
+        title={`${selectedProduct.name} | Ayalka Makina`}
+        description={`${selectedProduct.name} detaylı teknik özellikleri, araç spesifikasyonları ve avantajları. ${selectedProduct.description}`}
+        keywords={`ayalka ${selectedProduct.name.toLowerCase()}, ${
+          selectedProduct.category
+        }, araç üstü ekipman, teknik özellikler, ${selectedProduct.name.toLowerCase()} özellikleri`}
+        image={selectedProduct.images[0]?.url || "/images/default-product.jpg"}
+      />
 
-        <div className="features-container">
-          {selectedProduct.vehicleSpecifications && (
-            <motion.div className="features-section">
-              <motion.div
-                className="features-header"
-                onClick={() => setIsVehicleOpen(!isVehicleOpen)}
-                whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
-              >
-                <h3>Vehicle Specifications</h3>
-                <motion.div
-                  className="chevron-icon"
-                  animate={{ rotate: isVehicleOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
+      <main className="product-all-info-wrapper" role="main">
+        <article className="product-all-info">
+          <ProductsStone
+            title={selectedProduct.name}
+            description={selectedProduct.description}
+            images={selectedProduct.images.map((img) => img.url)}
+          />
+
+          <div className="features-container">
+            {selectedProduct.vehicleSpecifications && (
+              <section className="features-section">
+                <motion.header
+                  className="features-header"
+                  onClick={() => setIsVehicleOpen(!isVehicleOpen)}
+                  whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
+                  role="button"
+                  aria-expanded={isVehicleOpen}
+                  aria-controls="vehicle-specs-content"
                 >
-                  <FaChevronDown />
-                </motion.div>
-              </motion.div>
-
-              <AnimatePresence mode="sync">
-                {isVehicleOpen && (
-                  <motion.div
-                    className="features-content"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
+                  <h2>Vehicle Specifications</h2>
+                  <motion.span
+                    className="chevron-icon"
+                    animate={{ rotate: isVehicleOpen ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
+                    aria-hidden="true"
                   >
-                    <div className="vehicle-specs-table">
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>Truck Brand</th>
-                            <th>Wheelbase</th>
-                            <th>Garbage Bin Volume</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {selectedProduct.vehicleSpecifications.map(
-                            (spec, idx) => (
-                              <tr key={idx}>
-                                <td>{spec.model}</td>
-                                <td>{spec.wheelbase}</td>
-                                <td>{spec.garbageBinVolume}</td>
-                              </tr>
-                            )
-                          )}
-                        </tbody>
-                      </table>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          )}
+                    <FaChevronDown />
+                  </motion.span>
+                </motion.header>
 
-          <motion.div className="features-section">
-            <motion.div
-              className="features-header"
-              onClick={() => setIsGeneralOpen(!isGeneralOpen)}
-              whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
-            >
-              <h3>General Features</h3>
-              <motion.div
-                className="chevron-icon"
-                animate={{ rotate: isGeneralOpen ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <FaChevronDown />
-              </motion.div>
-            </motion.div>
-
-            <AnimatePresence mode="sync">
-              {isGeneralOpen && (
-                <motion.div
-                  className="features-content"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {selectedProduct.generalFeatures.map((feature, index) => (
+                <AnimatePresence mode="sync">
+                  {isVehicleOpen && (
                     <motion.div
-                      key={index}
-                      className="feature-item"
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: index * 0.1 }}
+                      id="vehicle-specs-content"
+                      className="features-content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <span className="feature-bullet">•</span>
-                      <p>{feature}</p>
+                      <div
+                        className="vehicle-specs-table"
+                        role="region"
+                        aria-label="Araç Spesifikasyonları Tablosu"
+                      >
+                        <table>
+                          <caption className="sr-only">
+                            Araç Spesifikasyonları
+                          </caption>
+                          <thead>
+                            <tr>
+                              <th scope="col">Truck Brand</th>
+                              <th scope="col">Wheelbase</th>
+                              <th scope="col">Garbage Bin Volume</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {selectedProduct.vehicleSpecifications.map(
+                              (spec, idx) => (
+                                <tr key={idx}>
+                                  <td>{spec.model}</td>
+                                  <td>{spec.wheelbase}</td>
+                                  <td>{spec.garbageBinVolume}</td>
+                                </tr>
+                              )
+                            )}
+                          </tbody>
+                        </table>
+                      </div>
                     </motion.div>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+                  )}
+                </AnimatePresence>
+              </section>
+            )}
 
-          {selectedProduct.advantages && (
-            <motion.div className="features-section">
-              <motion.div
+            <section className="features-section">
+              <motion.header
                 className="features-header"
-                onClick={() => setIsAdvantagesOpen(!isAdvantagesOpen)}
+                onClick={() => setIsGeneralOpen(!isGeneralOpen)}
                 whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
+                role="button"
+                aria-expanded={isGeneralOpen}
+                aria-controls="general-features-content"
               >
-                <h3>Advantages</h3>
-                <motion.div
+                <h2>General Features</h2>
+                <motion.span
                   className="chevron-icon"
-                  animate={{ rotate: isAdvantagesOpen ? 180 : 0 }}
+                  animate={{ rotate: isGeneralOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
+                  aria-hidden="true"
                 >
                   <FaChevronDown />
-                </motion.div>
-              </motion.div>
+                </motion.span>
+              </motion.header>
 
               <AnimatePresence mode="sync">
-                {isAdvantagesOpen && (
+                {isGeneralOpen && (
                   <motion.div
+                    id="general-features-content"
                     className="features-content"
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="advantages-container">
-                      {selectedProduct.advantages.map((advantage, idx) => (
-                        <div key={idx} className="advantage-item">
-                          <h4>{advantage.title}</h4>
-                          <p>{advantage.description}</p>
-                        </div>
+                    <ul className="features-list" role="list">
+                      {selectedProduct.generalFeatures.map((feature, index) => (
+                        <motion.li
+                          key={index}
+                          className="feature-item"
+                          initial={{ x: -20, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          {feature}
+                        </motion.li>
                       ))}
-                    </div>
+                    </ul>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
-          )}
-        </div>
-      </div>
-    </div>
+            </section>
+
+            {selectedProduct.advantages && (
+              <section className="features-section">
+                <motion.header
+                  className="features-header"
+                  onClick={() => setIsAdvantagesOpen(!isAdvantagesOpen)}
+                  whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
+                  role="button"
+                  aria-expanded={isAdvantagesOpen}
+                  aria-controls="advantages-content"
+                >
+                  <h2>Advantages</h2>
+                  <motion.span
+                    className="chevron-icon"
+                    animate={{ rotate: isAdvantagesOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    aria-hidden="true"
+                  >
+                    <FaChevronDown />
+                  </motion.span>
+                </motion.header>
+
+                <AnimatePresence mode="sync">
+                  {isAdvantagesOpen && (
+                    <motion.div
+                      id="advantages-content"
+                      className="features-content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <dl className="advantages-container" role="list">
+                        {selectedProduct.advantages.map((advantage, idx) => (
+                          <div key={idx} className="advantage-item">
+                            <dt>{advantage.title}</dt>
+                            <dd>{advantage.description}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </section>
+            )}
+          </div>
+        </article>
+      </main>
+    </>
   );
 };
 

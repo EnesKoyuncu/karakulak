@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import Globe from "react-globe.gl";
 import { motion } from "framer-motion";
 import "../styles/ExportNetwork.css";
+import { SEO } from "./SEO";
 
 interface Country {
   name: string;
@@ -72,84 +73,112 @@ export default function ExportNetwork() {
   }, []);
 
   return (
-    <section className="export-network">
-      <div className="content">
-        <div className="top-section">
-          <motion.div
-            className="header"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1>İHRACAT AĞI</h1>
-            <div className="title-underline"></div>
-            <p className="subtitle">
-              40'tan fazla ülkeye ihracat yapan güvenilir çözüm ortağınız
-            </p>
-          </motion.div>
+    <>
+      <SEO
+        title="İhracat Ağı | Ayalka Makina - 40+ Ülkeye İhracat"
+        description="Ayalka Makina, 40'tan fazla ülkeye araç üstü ekipman ihracatı yapan global bir üreticidir. Avrupa, Asya ve Afrika'da güçlü bir ihracat ağına sahibiz."
+        keywords="ayalka ihracat, ayalka global, ayalka uluslararası, araç üstü ekipman ihracat, türk ihracat, global üretici"
+      />
 
-          <div className="globe-container">
-            <Globe
-              globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
-              pointsData={filteredCountries}
-              pointLat={(d) => (d as Country).coordinates[0]}
-              pointLng={(d) => (d as Country).coordinates[1]}
-              pointColor={() => "#e74c3c"}
-              pointAltitude={0.05}
-              pointRadius={0.8}
-              pointLabel={(d) => (d as Country).name}
-              backgroundColor="rgba(0,0,0,0)"
-              atmosphereColor="#e74c3c"
-              atmosphereAltitude={0.15}
-              width={500}
-              height={500}
-              onPointClick={(point) => handleCountryClick(point as Country)}
-              enablePointerInteraction={true}
-              pointsMerge={false}
-              pointResolution={3}
-            />
-          </div>
-        </div>
+      <main className="export-network">
+        <div className="content">
+          <header className="top-section">
+            <motion.div
+              className="header"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1>İHRACAT AĞI</h1>
+              <div className="title-underline" role="presentation"></div>
+              <p className="subtitle">
+                40'tan fazla ülkeye ihracat yapan güvenilir çözüm ortağınız
+              </p>
+            </motion.div>
 
-        <div className="countries-section">
-          <div className="region-filters">
-            {["Avrupa", "Asya", "Afrika"].map((region) => (
-              <button
-                key={region}
-                className={`region-btn ${
-                  selectedRegion === region ? "active" : ""
-                }`}
-                onClick={() =>
-                  setSelectedRegion(selectedRegion === region ? null : region)
-                }
-              >
-                {region}
-              </button>
-            ))}
-          </div>
+            <figure
+              className="globe-container"
+              aria-label="İhracat yapılan ülkelerin interaktif dünya haritası"
+            >
+              <Globe
+                globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
+                pointsData={filteredCountries}
+                pointLat={(d) => (d as Country).coordinates[0]}
+                pointLng={(d) => (d as Country).coordinates[1]}
+                pointColor={() => "#e74c3c"}
+                pointAltitude={0.05}
+                pointRadius={0.8}
+                pointLabel={(d) => (d as Country).name}
+                backgroundColor="rgba(0,0,0,0)"
+                atmosphereColor="#e74c3c"
+                atmosphereAltitude={0.15}
+                width={500}
+                height={500}
+                onPointClick={(point) => handleCountryClick(point as Country)}
+                enablePointerInteraction={true}
+                pointsMerge={false}
+                pointResolution={3}
+                aria-label="Dünya üzerinde ihracat noktaları"
+              />
+            </figure>
+          </header>
 
-          <motion.div
-            className="countries-grid"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            {filteredCountries.map((country) => (
+          <section className="countries-section">
+            <nav className="region-filters" aria-label="Bölge filtreleri">
+              {["Avrupa", "Asya", "Afrika"].map((region) => (
+                <button
+                  key={region}
+                  className={`region-btn ${
+                    selectedRegion === region ? "active" : ""
+                  }`}
+                  onClick={() =>
+                    setSelectedRegion(selectedRegion === region ? null : region)
+                  }
+                  aria-pressed={selectedRegion === region}
+                  aria-label={`${region} bölgesini ${
+                    selectedRegion === region ? "kaldır" : "filtrele"
+                  }`}
+                >
+                  {region}
+                </button>
+              ))}
+            </nav>
+
+            <article className="countries-list">
               <motion.div
-                key={country.name}
-                className={`country-card ${
-                  highlightedCountry?.name === country.name ? "highlighted" : ""
-                }`}
-                whileHover={{ scale: 1.05 }}
-                onClick={() => handleCountryClick(country)}
+                className="countries-grid"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                role="list"
               >
-                <span className="country-name">{country.name}</span>
-                <span className="region-tag">{country.region}</span>
+                {filteredCountries.map((country) => (
+                  <motion.div
+                    key={country.name}
+                    className={`country-card ${
+                      highlightedCountry?.name === country.name
+                        ? "highlighted"
+                        : ""
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                    onClick={() => handleCountryClick(country)}
+                    role="listitem"
+                    aria-selected={highlightedCountry?.name === country.name}
+                  >
+                    <strong className="country-name">{country.name}</strong>
+                    <span
+                      className="region-tag"
+                      aria-label={`${country.region} bölgesi`}
+                    >
+                      {country.region}
+                    </span>
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
+            </article>
+          </section>
         </div>
-      </div>
-    </section>
+      </main>
+    </>
   );
 }

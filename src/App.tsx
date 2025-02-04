@@ -13,35 +13,48 @@ import PressKit from "./components/PressKit";
 import { ProductProvider } from "./context/ProductContext";
 import ProductAllInfo from "./components/ProductAllInfo";
 import Gallery from "./components/Gallery";
+import { SEO } from "./components/SEO";
+
 function App() {
   return (
-    <ProductProvider>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route
-            path="/yonetim-kurul-baskani"
-            element={<YonetimKurulBaskani />}
-          />
-          <Route path="/Tarihce" element={<Tarihce />} />
-          <Route path="/ihracat-agi" element={<ExportNetwork />} />
-          <Route
-            path="/teknik-sartnameler"
-            element={<TechnicalSpecification />}
-          />
-          <Route path="/basin-kiti" element={<PressKit />} />
-          <Route
-            path="/satis-sonrasi-hizmetler"
-            element={<AfterSalesServices />}
-          />
-          <Route path="/iletisim" element={<Contact />} />
-          <Route path="/products/:category/:id" element={<ProductAllInfo />} />
-          <Route path="/galeri" element={<Gallery />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </ProductProvider>
+    <>
+      <SEO
+        title="Ayalka Makina | Araç Üstü Ekipman Üreticisi"
+        description="Ayalka Makina, 40'tan fazla ülkeye ihracat yapan, çöp kasası, su tankeri, vidanjör, hooklift ve diğer araç üstü ekipman üreticisidir."
+        keywords="ayalka makina, çöp kasası, su tankeri, vidanjör, hooklift, araç üstü ekipman, garbage truck, water tank"
+      />
+
+      <ProductProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/yonetim-kurul-baskani"
+              element={<YonetimKurulBaskani />}
+            />
+            <Route path="/Tarihce" element={<Tarihce />} />
+            <Route path="/ihracat-agi" element={<ExportNetwork />} />
+            <Route
+              path="/teknik-sartnameler"
+              element={<TechnicalSpecification />}
+            />
+            <Route path="/basin-kiti" element={<PressKit />} />
+            <Route
+              path="/satis-sonrasi-hizmetler"
+              element={<AfterSalesServices />}
+            />
+            <Route path="/iletisim" element={<Contact />} />
+            <Route
+              path="/products/:category/:id"
+              element={<ProductAllInfo />}
+            />
+            <Route path="/galeri" element={<Gallery />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </ProductProvider>
+    </>
   );
 }
 
