@@ -20,58 +20,53 @@
 }
 
 .features-section {
-  width: 100%;
-  max-width: 1000px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
   overflow: hidden;
-  transition: all 0.3s ease;
-  margin: 0 auto;
 }
 
 .features-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem 2rem;
-  background: white;
+  padding: 1.5rem;
   cursor: pointer;
-  border-bottom: 1px solid rgba(231, 76, 60, 0.1);
-  transition: all 0.3s ease;
+  background: #fff;
+  border: none;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
-.features-header:hover {
-  background-color: rgba(231, 76, 60, 0.05);
-}
-
-.features-header h3 {
-  color: #2c3e50;
-  font-size: 1.8rem;
-  margin: 0;
+.section-title {
+  font-size: 1.5rem;
   font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
 }
 
 .chevron-icon {
+  color: #e74c3c;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: rgba(231, 76, 60, 0.1);
-  color: #e74c3c;
-  transition: all 0.3s ease;
-}
-
-.features-header:hover .chevron-icon {
-  background-color: rgba(231, 76, 60, 0.2);
 }
 
 .features-content {
-  padding: 0 2rem;
+  padding: 0 1.5rem 1.5rem;
   overflow: hidden;
-  background-color: white;
+}
+
+/* Hover efekti */
+.features-header:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* Aktif durum */
+.features-section.active .features-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .feature-item {
@@ -222,4 +217,131 @@
 .advantage-item p {
   color: #34495e;
   line-height: 1.6;
+}
+
+/* İçerik yazıları için stiller */
+.features-list {
+  list-style: none;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+
+.features-list li {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.7;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.features-list li:hover {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Advantages bölümü için stiller */
+.advantages-container {
+  padding: 0.5rem 1rem;
+}
+
+.advantage-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 0.8rem 0;
+  transition: all 0.2s ease;
+}
+
+.advantage-item:hover {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.advantage-item dt {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e74c3c;
+  margin-bottom: 0.8rem;
+}
+
+.advantage-item dd {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Vehicle Specifications tablosu için stiller */
+.vehicle-specs-table {
+  padding: 0.5rem 1rem;
+}
+
+.vehicle-specs-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vehicle-specs-table th {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  background-color: #f8f9fa;
+  padding: 1rem 1.2rem;
+  text-align: left;
+}
+
+.vehicle-specs-table td {
+  font-size: 1rem;
+  color: #4a5568;
+  padding: 1rem 1.2rem;
+  border-top: 1px solid #edf2f7;
+}
+
+.vehicle-specs-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 768px) {
+  .features-list {
+    padding: 0.5rem;
+  }
+
+  .features-list li {
+    padding: 0.8rem;
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+  }
+
+  .advantage-item {
+    padding: 1rem;
+    margin: 0.6rem 0;
+  }
+
+  .advantage-item dt {
+    font-size: 1rem;
+  }
+
+  .advantage-item dd {
+    font-size: 0.95rem;
+  }
+
+  .vehicle-specs-table {
+    padding: 0.5rem;
+  }
+
+  .vehicle-specs-table th,
+  .vehicle-specs-table td {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
 }

@@ -1,56 +1,62 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useProducts } from "../context/ProductContext";
 import "../styles/Gallery.css";
+import { useImagePreload } from "../utils/performance";
+import { SEO } from "./SEO";
+
+// Lightbox ve stil importları
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import { SEO } from "./SEO";
 
 const Gallery: React.FC = () => {
   const { products } = useProducts();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [allImages, setAllImages] = useState<
-    { src: string; category: string; alt: string }[]
-  >([]);
-  const [filteredImages, setFilteredImages] = useState<
-    { src: string; category: string; alt: string }[]
-  >([]);
   const [loading, setLoading] = useState(true);
 
-  // Tüm resimleri topla
-  useEffect(() => {
-    const images = products.flatMap((product) =>
+  // Tüm resimleri useMemo ile hesapla
+  const allImages = useMemo(() => {
+    return products.flatMap((product) =>
       product.images.map((image) => ({
         src: image.url,
         category: product.category,
         alt: image.alt,
+        loaded: false,
       }))
     );
-    setAllImages(images);
-    setFilteredImages(images);
-    setLoading(false);
   }, [products]);
 
-  // Kategorileri oluştur
-  const categories = [
-    "all",
-    ...new Set(products.map((product) => product.category)),
-  ];
+  // Filtrelenmiş resimleri useMemo ile hesapla
+  const filteredImages = useMemo(() => {
+    return selectedCategory === "all"
+      ? allImages
+      : allImages.filter((image) => image.category === selectedCategory);
+  }, [allImages, selectedCategory]);
 
-  // Kategori filtreleme
+  // Kategorileri useMemo ile hesapla
+  const categories = useMemo(() => {
+    return ["all", ...new Set(products.map((product) => product.category))];
+  }, [products]);
+
+  // İlk 6 resmi önbelleğe al
+  useImagePreload(allImages.slice(0, 6).map((img) => img.src));
+
+  // Sayfa ilk yüklendiğinde
+  useEffect(() => {
+    if (products.length > 0) {
+      setLoading(false);
+    }
+  }, [products]);
+
+  // Kategori değiştirme - artık daha performanslı
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    setFilteredImages(
-      category === "all"
-        ? allImages
-        : allImages.filter((image) => image.category === category)
-    );
   };
 
   // Resim tıklama
@@ -70,10 +76,9 @@ const Gallery: React.FC = () => {
   return (
     <>
       <SEO
-        title="Ürün Galerisi | Ayalka Makina"
-        description="Ayalka Makina'nın geniş ürün yelpazesini keşfedin. Damper, römork, treyler ve diğer araç üstü ekipmanlarımızın yüksek kaliteli fotoğraflarını inceleyin."
-        keywords="ayalka galeri, ayalka ürünler, damper galerisi, römork galerisi, treyler galerisi, araç üstü ekipman görselleri, ayalka makina ürünleri"
-        image="/images/gallery-og-image.jpg"
+        title="Galeri | Ayalka Makina"
+        description="Ayalka Makina ürün galerisi. Çöp kasaları, su tankerleri ve diğer araç üstü ekipmanlarımızın fotoğraflarını inceleyin."
+        keywords="ayalka galeri, ürün görselleri, çöp kasası görselleri, su tankeri görselleri"
       />
 
       <section className="gallery-container" aria-label="Ürün Galerisi">
@@ -101,31 +106,30 @@ const Gallery: React.FC = () => {
               }`}
               onClick={() => handleCategoryChange(category)}
               aria-pressed={selectedCategory === category}
-              aria-label={`${
-                category === "all" ? "Tümü" : category.replace(/-/g, " ")
-              } kategorisini göster`}
             >
               {category === "all" ? "Tümü" : category.replace(/-/g, " ")}
             </button>
           ))}
         </motion.nav>
 
-        <motion.main
+        <motion.div
           className="gallery-grid"
           layout
-          role="region"
-          aria-label="Galeri Görüntüleri"
+          initial={false} // İlk yüklemede animasyon olmasın
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             {filteredImages.map((image, index) => (
               <motion.article
                 key={image.src}
                 className="gallery-item"
                 layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  opacity: { duration: 0.2 },
+                  layout: { duration: 0.3 },
+                }}
                 onClick={() => handleImageClick(index)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -133,52 +137,48 @@ const Gallery: React.FC = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  loading="lazy"
+                  loading={index < 6 ? "eager" : "lazy"}
                   width="300"
                   height="169"
-                  aria-label={`${image.alt} - Büyütmek için tıklayın`}
+                  onLoad={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    img.style.opacity = "1";
+                  }}
                 />
-                <div className="image-overlay" aria-hidden="true">
+                <div className="image-overlay">
                   <span>Büyütmek için tıklayın</span>
                 </div>
               </motion.article>
             ))}
           </AnimatePresence>
-        </motion.main>
+        </motion.div>
 
-        <Lightbox
-          open={isOpen}
-          close={() => setIsOpen(false)}
-          index={currentImageIndex}
-          slides={filteredImages.map((img) => ({
-            src: img.src,
-            alt: img.alt,
-            title: img.alt,
-          }))}
-          plugins={[Zoom, Thumbnails, Fullscreen]}
-          carousel={{
-            finite: true,
-            preload: 1,
-          }}
-          zoom={{
-            maxZoomPixelRatio: 3,
-            zoomInMultiplier: 2,
-          }}
-          thumbnails={{
-            position: "bottom",
-            width: 120,
-            height: 80,
-            gap: 16,
-          }}
-          a11y={{
-            closeLabel: "Galeriden çık",
-            nextLabel: "Sonraki resim",
-            prevLabel: "Önceki resim",
-            zoomInLabel: "Yakınlaştır",
-            zoomOutLabel: "Uzaklaştır",
-            fullscreenLabel: "Tam ekran",
-          }}
-        />
+        {isOpen && (
+          <Lightbox
+            open={isOpen}
+            close={() => setIsOpen(false)}
+            index={currentImageIndex}
+            slides={filteredImages.map((img) => ({
+              src: img.src,
+              alt: img.alt,
+            }))}
+            plugins={[Zoom, Thumbnails, Fullscreen]}
+            carousel={{
+              finite: true,
+              preload: 1,
+            }}
+            zoom={{
+              maxZoomPixelRatio: 3,
+              zoomInMultiplier: 2,
+            }}
+            thumbnails={{
+              position: "bottom",
+              width: 120,
+              height: 80,
+              gap: 16,
+            }}
+          />
+        )}
       </section>
     </>
   );

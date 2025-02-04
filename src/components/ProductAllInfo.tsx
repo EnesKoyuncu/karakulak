@@ -57,7 +57,7 @@ const ProductAllInfo = () => {
                   aria-expanded={isVehicleOpen}
                   aria-controls="vehicle-specs-content"
                 >
-                  <h2>Vehicle Specifications</h2>
+                  <h2 className="section-title">Vehicle Specifications</h2>
                   <motion.span
                     className="chevron-icon"
                     animate={{ rotate: isVehicleOpen ? 180 : 0 }}
@@ -122,7 +122,7 @@ const ProductAllInfo = () => {
                 aria-expanded={isGeneralOpen}
                 aria-controls="general-features-content"
               >
-                <h2>General Features</h2>
+                <h2 className="section-title">General Features</h2>
                 <motion.span
                   className="chevron-icon"
                   animate={{ rotate: isGeneralOpen ? 180 : 0 }}
@@ -171,7 +171,7 @@ const ProductAllInfo = () => {
                   aria-expanded={isAdvantagesOpen}
                   aria-controls="advantages-content"
                 >
-                  <h2>Advantages</h2>
+                  <h2 className="section-title">Advantages</h2>
                   <motion.span
                     className="chevron-icon"
                     animate={{ rotate: isAdvantagesOpen ? 180 : 0 }}

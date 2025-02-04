@@ -293,3 +293,30 @@
 .contact-info::-webkit-scrollbar-thumb:hover {
   background: #d63c2d;
 }
+
+.maps-consent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.consent-button {
+  margin-top: 16px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.consent-button:hover {
+  background-color: #0056b3;
+}

@@ -3,6 +3,7 @@ import Globe from "react-globe.gl";
 import { motion } from "framer-motion";
 import "../styles/ExportNetwork.css";
 import { SEO } from "./SEO";
+import { useLocalStorageCache } from "../utils/cache";
 
 interface Country {
   name: string;
@@ -58,15 +59,24 @@ const countries: Country[] = [
   { name: "Senegal", coordinates: [14.4974, -14.4524], region: "Afrika" },
 ];
 
-export default function ExportNetwork() {
+const ExportNetwork: React.FC = () => {
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
   const [highlightedCountry, setHighlightedCountry] = useState<Country | null>(
     null
   );
 
+  // Cache'i sadece ek ülkeler için kullanalım
+  const [additionalCountries] = useLocalStorageCache(
+    "export_network_extra",
+    []
+  );
+
+  // Varsayılan ve ek ülkeleri birleştir
+  const allCountries = [...countries, ...additionalCountries];
+
   const filteredCountries = selectedRegion
-    ? countries.filter((country) => country.region === selectedRegion)
-    : countries;
+    ? allCountries.filter((country) => country.region === selectedRegion)
+    : allCountries;
 
   const handleCountryClick = useCallback((country: Country) => {
     setHighlightedCountry(country);
@@ -181,4 +191,6 @@ export default function ExportNetwork() {
       </main>
     </>
   );
-}
+};
+
+export default ExportNetwork;

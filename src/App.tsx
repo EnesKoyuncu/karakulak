@@ -14,47 +14,78 @@ import { ProductProvider } from "./context/ProductContext";
 import ProductAllInfo from "./components/ProductAllInfo";
 import Gallery from "./components/Gallery";
 import { SEO } from "./components/SEO";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import { usePageTracking, trackPerformance } from "./utils/analytics";
+import { useEffect } from "react";
+import { CookieConsentProvider } from "./context/CookieConsentContext";
+import CookieBanner from "./components/CookieBanner";
+
+// Analytics için wrapper component oluşturalım
+const AnalyticsWrapper: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  usePageTracking();
+
+  // trackPerformance'ı sadece bir kez çalıştır
+  useEffect(() => {
+    // Sayfa tam yüklendiğinde performans metriklerini ölç
+    const timer = setTimeout(() => {
+      trackPerformance();
+    }, 0);
+
+    return () => clearTimeout(timer);
+  }, []); // Boş dependency array ile sadece mount'ta çalışır
+
+  return <>{children}</>;
+};
 
 function App() {
   return (
-    <>
-      <SEO
-        title="Ayalka Makina | Araç Üstü Ekipman Üreticisi"
-        description="Ayalka Makina, 40'tan fazla ülkeye ihracat yapan, çöp kasası, su tankeri, vidanjör, hooklift ve diğer araç üstü ekipman üreticisidir."
-        keywords="ayalka makina, çöp kasası, su tankeri, vidanjör, hooklift, araç üstü ekipman, garbage truck, water tank"
-      />
+    <CookieConsentProvider>
+      <ErrorBoundary>
+        <SEO
+          title="Ayalka Makina | Araç Üstü Ekipman Üreticisi"
+          description="Ayalka Makina, 40'tan fazla ülkeye ihracat yapan, çöp kasası, su tankeri, vidanjör, hooklift ve diğer araç üstü ekipman üreticisidir."
+          keywords="ayalka makina, çöp kasası, su tankeri, vidanjör, hooklift, araç üstü ekipman, garbage truck, water tank"
+        />
 
-      <ProductProvider>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route
-              path="/yonetim-kurul-baskani"
-              element={<YonetimKurulBaskani />}
-            />
-            <Route path="/Tarihce" element={<Tarihce />} />
-            <Route path="/ihracat-agi" element={<ExportNetwork />} />
-            <Route
-              path="/teknik-sartnameler"
-              element={<TechnicalSpecification />}
-            />
-            <Route path="/basin-kiti" element={<PressKit />} />
-            <Route
-              path="/satis-sonrasi-hizmetler"
-              element={<AfterSalesServices />}
-            />
-            <Route path="/iletisim" element={<Contact />} />
-            <Route
-              path="/products/:category/:id"
-              element={<ProductAllInfo />}
-            />
-            <Route path="/galeri" element={<Gallery />} />
-          </Routes>
-          <Footer />
-        </Router>
-      </ProductProvider>
-    </>
+        <ProductProvider>
+          <Router>
+            <AnalyticsWrapper>
+              <Header />
+              <ErrorBoundary>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route
+                    path="/yonetim-kurul-baskani"
+                    element={<YonetimKurulBaskani />}
+                  />
+                  <Route path="/Tarihce" element={<Tarihce />} />
+                  <Route path="/ihracat-agi" element={<ExportNetwork />} />
+                  <Route
+                    path="/teknik-sartnameler"
+                    element={<TechnicalSpecification />}
+                  />
+                  <Route path="/basin-kiti" element={<PressKit />} />
+                  <Route
+                    path="/satis-sonrasi-hizmetler"
+                    element={<AfterSalesServices />}
+                  />
+                  <Route path="/iletisim" element={<Contact />} />
+                  <Route
+                    path="/products/:category/:id"
+                    element={<ProductAllInfo />}
+                  />
+                  <Route path="/galeri" element={<Gallery />} />
+                </Routes>
+              </ErrorBoundary>
+              <Footer />
+            </AnalyticsWrapper>
+          </Router>
+        </ProductProvider>
+        <CookieBanner />
+      </ErrorBoundary>
+    </CookieConsentProvider>
   );
 }
 

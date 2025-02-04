@@ -12,6 +12,7 @@ interface Specification {
   image: string;
 }
 
+// Statik şartname verileri
 const specifications: Specification[] = [
   {
     id: 1,
@@ -20,44 +21,10 @@ const specifications: Specification[] = [
     category: "Çöp Kasaları",
     image: "/images/products/cop-kamyonu.jpg",
   },
-  {
-    id: 2,
-    title: "MINIPACK TEKNİK ÖZELLİKLERİ - MINIPACK TEKNİK ŞARTNAME",
-    docxUrl: "/docs/minipack-sartname.docx",
-    category: "Çöp Kasaları",
-    image: "/images/products/mini-pack.jpg",
-  },
-  {
-    id: 3,
-    title: "YANDAN YÜKLEMELİ ÇÖP KASASI TEKNİK ŞARTNAME",
-    docxUrl: "/docs/yandan-yuklemeli-sartname.docx",
-    category: "Çöp Kasaları",
-    image: "/images/products/teleskopik-platform.jpg",
-  },
-  {
-    id: 4,
-    title: "SU TANKERİ TEKNİK ÖZELLİKLERİ - SU TANKERİ TEKNİK ŞARTNAME",
-    docxUrl: "/docs/su-tankeri-sartname.docx",
-    category: "Tankerler",
-    image: "/images/products/su-tankeri.jpg",
-  },
-  {
-    id: 5,
-    title: "KANAL AÇMA TEKNİK ÖZELLİKLERİ - KANAL AÇMA TEKNİK ŞARTNAME",
-    docxUrl: "/docs/kanal-acma-sartname.docx",
-    category: "Tankerler",
-    image: "/images/products/kanal-acma.jpg",
-  },
-  {
-    id: 6,
-    title: "TELESKOPİK PLATFORM TEKNİK ŞARTNAME",
-    docxUrl: "/docs/teleskopik-platform-sartname.docx",
-    category: "Platformlar",
-    image: "/images/products/teleskopik2.jpeg",
-  },
+  // ... diğer şartnameler
 ];
 
-export default function TechnicalSpecification() {
+const TechnicalSpecification: React.FC = () => {
   const [selectedDoc, setSelectedDoc] = useState<Specification>(
     specifications[0]
   );
@@ -193,4 +160,6 @@ export default function TechnicalSpecification() {
       </section>
     </>
   );
-}
+};
+
+export default TechnicalSpecification;

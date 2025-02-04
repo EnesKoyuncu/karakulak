@@ -136,7 +136,7 @@ const categories = [
   "Platform Sistemleri",
 ];
 
-export default function Products() {
+const Products: React.FC = () => {
   const { products: contextProducts } = useProducts();
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
@@ -165,8 +165,8 @@ export default function Products() {
   };
 
   return (
-    <div className="products-section">
-      <div className="products-header">
+    <section className="products-section">
+      <motion.div className="products-header">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -192,10 +192,10 @@ export default function Products() {
             </button>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
 
-      <motion.div className="products-grid" layout="position">
-        <AnimatePresence mode="wait">
+      <div className="products-grid">
+        <AnimatePresence mode="sync">
           {displayedProducts.map((product) => {
             const contextProduct = product.routeCategory
               ? findContextProduct(product.routeCategory)
@@ -206,13 +206,10 @@ export default function Products() {
                 key={product.id}
                 className="product-card"
                 layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeInOut",
-                }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
                 onHoverStart={() => setHoveredProduct(product.id)}
                 onHoverEnd={() => setHoveredProduct(null)}
               >
@@ -261,7 +258,7 @@ export default function Products() {
             );
           })}
         </AnimatePresence>
-      </motion.div>
+      </div>
 
       {filteredProducts.length > 6 && (
         <motion.div
@@ -285,6 +282,8 @@ export default function Products() {
           </button>
         </motion.div>
       )}
-    </div>
+    </section>
   );
-}
+};
+
+export default Products;

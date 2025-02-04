@@ -1,5 +1,12 @@
-import React, { createContext, useContext } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
 import productData from "../data/products.json";
+import { useLocalStorageCache } from "../utils/cache";
 
 // Ürün tipi tanımlaması
 interface ProductImage {
@@ -7,10 +14,11 @@ interface ProductImage {
   alt: string;
 }
 
-interface ProductFeature {
-  title: string;
-  description: string;
-}
+// ProductFeature interface'ini kaldırdık çünkü kullanılmıyor
+// interface ProductFeature {
+//   title: string;
+//   description: string;
+// }
 
 interface TechnicalSpecifications {
   dimensions: {
@@ -36,22 +44,23 @@ interface VehicleSpecification {
   garbageBinVolume: string;
 }
 
-interface Advantage {
+interface ProductAdvantage {
   title: string;
   description: string;
 }
 
-export interface Product {
+interface Product {
   id: string;
   category: string;
   name: string;
   description: string;
   images: ProductImage[];
-  features: ProductFeature[];
+  // features özelliğini kaldırdık çünkü kullanılmıyor
+  // features: ProductFeature[];
   generalFeatures: string[];
   technicalSpecifications?: TechnicalSpecifications;
   vehicleSpecifications?: VehicleSpecification[];
-  advantages?: Advantage[];
+  advantages?: ProductAdvantage[];
   keywords?: string[];
 }
 
@@ -60,25 +69,56 @@ interface ProductContextType {
   products: Product[];
   selectedProduct: Product | null;
   setSelectedProduct: (product: Product | null) => void;
+  loading: boolean;
+  error: string | null;
 }
 
 // Context oluşturma
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
 
 // Provider component
-export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
+interface ProductProviderProps {
+  children: ReactNode;
+}
+
+export const ProductProvider: React.FC<ProductProviderProps> = ({
   children,
 }) => {
-  const [selectedProduct, setSelectedProduct] = React.useState<Product | null>(
-    null
+  const [products, setProducts] = useLocalStorageCache<Product[]>(
+    "ayalka_products",
+    [],
+    { expireIn: 24 * 60 * 60 * 1000 } // 24 saat
   );
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  useEffect(() => {
+    const initializeProducts = () => {
+      try {
+        if (products.length === 0) {
+          // JSON dosyasından ürünleri al
+          setProducts(productData.products);
+        }
+        setLoading(false);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Bir hata oluştu");
+        setLoading(false);
+      }
+    };
+
+    initializeProducts();
+  }, [products.length, setProducts]);
 
   return (
     <ProductContext.Provider
       value={{
-        products: productData.products,
+        products,
         selectedProduct,
         setSelectedProduct,
+        loading,
+        error,
       }}
     >
       {children}
@@ -94,3 +134,6 @@ export const useProducts = () => {
   }
   return context;
 };
+
+// Gerekli export'ları ekleyelim
+export type { Product, ProductContextType };
