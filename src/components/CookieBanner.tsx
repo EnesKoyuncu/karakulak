@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useCookieConsent } from "../context/CookieConsentContext";
+import { useCookieConsent } from "../hooks/useCookieContest";
 import "../styles/CookieBanner.css";
 
 const CookieBanner: React.FC = () => {

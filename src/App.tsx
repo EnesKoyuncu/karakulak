@@ -17,7 +17,7 @@ import { SEO } from "./components/SEO";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { usePageTracking, trackPerformance } from "./utils/analytics";
 import { useEffect } from "react";
-import { CookieConsentProvider } from "./context/CookieConsentContext";
+import { CookieConsentProvider } from "./context/CookieConsentProvider";
 import CookieBanner from "./components/CookieBanner";
 import React, { Suspense, lazy } from "react";
 import LoadingSpinner from "./components/LoadingSpinner";

@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 import "../styles/Contact.css";
 import { SEO } from "./SEO";
-import { useCookieConsent } from "../context/CookieConsentContext";
+import { useCookieConsent } from "../hooks/useCookieContest";
 
 interface ContactInfoProps {
   title: string;
@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
           >
             <div className="map-content">
               <figure className="map-container">
-                {consent.maps ? (
+                {consent.functional ? (
                   <iframe
                     title="Ayalka Makina Konum Haritası"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.8106391253986!2d27.339486776491437!3d38.43510997257307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b962058436e8f1%3A0x6e731f5a4891c0e2!2sAyalka%20Makina!5e0!3m2!1str!2str!4v1693840561520!5m2!1str!2str"
@@ -197,7 +197,7 @@ const Contact: React.FC = () => {
                     </p>
                     <button
                       onClick={() => {
-                        const newConsent = { ...consent, maps: true };
+                        const newConsent = { ...consent, functional: true };
                         setConsent(newConsent);
                       }}
                       className="consent-button"
