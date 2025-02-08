@@ -1,0 +1,8 @@
+/* Kritik olmayan stiller buraya */
+.animated-elements {
+  transition: all 0.3s ease;
+}
+
+.fancy-effects {
+  animation: fadeIn 0.5s;
+}

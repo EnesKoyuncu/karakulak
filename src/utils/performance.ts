@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+// getCLS ve diğer importları kaldırıyoruz
+// import { getCLS, getFID, getLCP, type Metric } from "web-vitals";
 
 // Görsel önbelleğe alma hook'u
 export const useImagePreload = (imagePaths: string[]) => {
@@ -84,15 +86,43 @@ export const useDynamicImport = <T>(
   return { component, error, loading };
 };
 
-// Performans metrikleri için util
-export const measurePerformance = (metricName: string) => {
-  const start = performance.now();
-  return {
-    end: () => {
-      const duration = performance.now() - start;
-      console.log(`${metricName} took ${duration}ms`);
-      // Burada analytics servisi entegre edilebilir
-      return duration;
-    },
-  };
+// Core Web Vitals ölçümünü güncelliyoruz
+export const measureWebVitals = async () => {
+  try {
+    const { onCLS, onFID, onLCP } = await import("web-vitals");
+
+    onCLS((metric) => {
+      console.log("CLS:", metric.value);
+    });
+
+    onFID((metric) => {
+      console.log("FID:", metric.value);
+    });
+
+    onLCP((metric) => {
+      console.log("LCP:", metric.value);
+    });
+  } catch (error) {
+    console.error("Web Vitals ölçümü başlatılamadı:", error);
+  }
 };
+
+// reportWebVitals fonksiyonunu da güncelliyoruz
+export async function reportWebVitals() {
+  try {
+    const { onCLS, onFID, onLCP } = await import("web-vitals");
+
+    onCLS(console.log);
+    onFID(console.log);
+    onLCP(console.log);
+  } catch (error) {
+    console.error("Web Vitals raporlama hatası:", error);
+  }
+}
+
+export function measureTiming() {
+  if (performance && performance.getEntriesByType) {
+    const timing = performance.getEntriesByType("navigation")[0];
+    console.log("Navigation Timing:", timing);
+  }
+}

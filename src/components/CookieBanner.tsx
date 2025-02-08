@@ -7,12 +7,30 @@ const CookieBanner: React.FC = () => {
   const { showBanner, setShowBanner, setConsent } = useCookieConsent();
 
   const handleAcceptAll = () => {
-    setConsent({ analytics: true, maps: true });
+    setConsent({
+      essential: true,
+      functional: true,
+      analytics: true,
+    });
     setShowBanner(false);
   };
 
-  const handleRejectAll = () => {
-    setConsent({ analytics: false, maps: false });
+  const handleAcceptEssential = () => {
+    setConsent({
+      essential: true,
+      functional: false,
+      analytics: false,
+    });
+    setShowBanner(false);
+  };
+
+  const handleCustomize = () => {
+    // Burada özel ayarlar modalı açılabilir
+    setConsent({
+      essential: true,
+      functional: false,
+      analytics: false,
+    });
     setShowBanner(false);
   };
 
@@ -26,17 +44,25 @@ const CookieBanner: React.FC = () => {
           exit={{ y: 100, opacity: 0 }}
         >
           <div className="cookie-content">
-            <h3>Çerez Politikası</h3>
+            <h3>Çerez Tercihleri</h3>
             <p>
-              Size daha iyi bir deneyim sunabilmek için çerezleri kullanıyoruz.
-              Bu çerezler konum bilgisi ve site analizi için kullanılmaktadır.
+              Web sitemizde size en iyi deneyimi sunabilmek için çerezleri
+              kullanıyoruz. Zorunlu çerezler site fonksiyonları için gereklidir.
+              Diğer çerezler site deneyiminizi iyileştirmek ve analiz için
+              kullanılır.
             </p>
             <div className="cookie-buttons">
-              <button onClick={handleAcceptAll} className="accept-button">
+              <button onClick={handleAcceptAll} className="accept-all-button">
                 Tümünü Kabul Et
               </button>
-              <button onClick={handleRejectAll} className="reject-button">
-                Reddet
+              <button
+                onClick={handleAcceptEssential}
+                className="essential-button"
+              >
+                Sadece Zorunlu Çerezler
+              </button>
+              <button onClick={handleCustomize} className="customize-button">
+                Özelleştir
               </button>
             </div>
           </div>

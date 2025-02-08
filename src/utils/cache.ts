@@ -125,3 +125,29 @@ export const clearCache = (type: "all" | "local" | "session" | "memory") => {
       break;
   }
 };
+
+export const cacheConfig = {
+  maxAge: 24 * 60 * 60 * 1000, // 24 saat
+  strategies: {
+    products: {
+      type: "stale-while-revalidate",
+      maxItems: 50,
+    },
+    images: {
+      type: "cache-first",
+      maxItems: 100,
+    },
+  },
+};
+
+export const preloadCriticalAssets = () => {
+  const criticalImages = ["/images/hero-banner.webp", "/images/logo.webp"];
+
+  criticalImages.forEach((src) => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = src;
+    document.head.appendChild(link);
+  });
+};

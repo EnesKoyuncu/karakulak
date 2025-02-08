@@ -13,18 +13,19 @@ interface SlideContent {
 
 const slides: SlideContent[] = [
   {
-    image: "/images/slider/slider1.jpg",
+    image: "/images/slider/slider1.webp",
     title: "Türkiye'nin Lider Araç Üstü Ekipman Üreticisi",
     description:
       "40 yılı aşkın tecrübemizle kaliteli ve güvenilir çözümler sunuyoruz",
   },
   {
-    image: "/images/slider/slider5.jpg",
+    image: "/images/slider/slider5.webp",
     title: "Global Pazarda Güçlü Bir Marka",
     description: "50'den fazla ülkeye ihracat yapan güvenilir çözüm ortağınız",
   },
+
   {
-    image: "/images/slider/slider4.jpg",
+    image: "/images/slider/slider4.webp",
     title: "Yenilikçi Teknolojiler",
     description: "Modern üretim tesislerimizde en son teknolojilerle üretim",
   },

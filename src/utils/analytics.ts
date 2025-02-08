@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Metric } from "web-vitals";
 
 // Event tipleri için type tanımları
 export type EventCategory =
@@ -76,37 +77,43 @@ export const usePageTracking = () => {
 };
 
 // Performans metriklerini ölçme
-export const trackPerformance = () => {
-  if (typeof window.performance !== "undefined") {
-    const navigation = performance.getEntriesByType(
-      "navigation"
-    )[0] as PerformanceNavigationTiming;
-    const paint = performance.getEntriesByType("paint");
+export const trackPerformance = async () => {
+  try {
+    const { onCLS, onFID, onFCP, onLCP, onTTFB } = await import("web-vitals");
 
-    const metrics = {
-      // Sayfa yükleme metrikleri
-      pageLoadTime: navigation.loadEventEnd - navigation.loadEventStart,
-      domLoadTime:
-        navigation.domContentLoadedEventEnd -
-        navigation.domContentLoadedEventStart,
-      firstPaint: paint.find((entry) => entry.name === "first-paint")
-        ?.startTime,
-      firstContentfulPaint: paint.find(
-        (entry) => entry.name === "first-contentful-paint"
-      )?.startTime,
+    onCLS((metric: Metric) => {
+      console.log("CLS:", metric.value);
+      // Analytics gönderimi
+    });
 
-      // Resource metrikleri
-      resourceCount: performance.getEntriesByType("resource").length,
-      resourceLoadTime: performance
-        .getEntriesByType("resource")
-        .reduce((total, resource) => {
-          return total + (resource.responseEnd - resource.startTime);
-        }, 0),
-    };
+    onFID((metric: Metric) => {
+      console.log("FID:", metric.value);
+      // Analytics gönderimi
+    });
 
-    devLogger.log("Performance Metrics:", metrics);
-    return metrics;
+    onLCP((metric: Metric) => {
+      console.log("LCP:", metric.value);
+      // Analytics gönderimi
+    });
+
+    onFCP((metric: Metric) => {
+      console.log("FCP:", metric.value);
+      // Analytics gönderimi
+    });
+
+    onTTFB((metric: Metric) => {
+      console.log("TTFB:", metric.value);
+      // Analytics gönderimi
+    });
+  } catch (error) {
+    console.error("Web Vitals yüklenirken hata:", error);
   }
+};
+
+const calculateResourceTiming = (resources: PerformanceResourceTiming[]) => {
+  return resources.reduce((total, resource) => {
+    return total + (resource.responseEnd - resource.startTime);
+  }, 0);
 };
 
 // Kullanıcı etkileşimlerini izleme

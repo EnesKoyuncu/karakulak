@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useProducts } from "../context/ProductContext";
 import "../styles/Gallery.css";
 import { useImagePreload } from "../utils/performance";
-import { SEO } from "./SEO";
+import { SEO } from "../components/SEO";
 
 // Lightbox ve stil importları
 import Lightbox from "yet-another-react-lightbox";

@@ -2,10 +2,15 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 interface CookieConsentContextType {
   consent: {
-    analytics: boolean;
-    maps: boolean;
+    essential: boolean; // Zorunlu çerezler
+    functional: boolean; // Site fonksiyonları için gerekli
+    analytics: boolean; // Analytics
   };
-  setConsent: (consent: { analytics: boolean; maps: boolean }) => void;
+  setConsent: (consent: {
+    essential: boolean;
+    functional: boolean;
+    analytics: boolean;
+  }) => void;
   showBanner: boolean;
   setShowBanner: (show: boolean) => void;
 }
@@ -19,24 +24,62 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [showBanner, setShowBanner] = useState(true);
   const [consent, setConsent] = useState({
+    essential: true, // Her zaman aktif
+    functional: false,
     analytics: false,
-    maps: false,
   });
 
   useEffect(() => {
-    const savedConsent = localStorage.getItem("cookie_consent");
-    if (savedConsent) {
-      setConsent(JSON.parse(savedConsent));
-      setShowBanner(false);
+    // Modern tarayıcılar için CookieStore API kullanımı
+    if ("cookieStore" in window) {
+      const checkConsent = async () => {
+        try {
+          const cookie = await window.cookieStore.get("cookie_consent");
+          if (cookie?.value) {
+            setConsent(JSON.parse(cookie.value));
+            setShowBanner(false);
+          }
+        } catch (error) {
+          console.error("Cookie okuma hatası:", error);
+        }
+      };
+      checkConsent();
+    } else {
+      // Fallback için localStorage
+      const savedConsent = localStorage.getItem("cookie_consent");
+      if (savedConsent) {
+        setConsent(JSON.parse(savedConsent));
+        setShowBanner(false);
+      }
     }
   }, []);
 
-  const handleSetConsent = (newConsent: {
+  const handleSetConsent = async (newConsent: {
+    essential: boolean;
+    functional: boolean;
     analytics: boolean;
-    maps: boolean;
   }) => {
     setConsent(newConsent);
-    localStorage.setItem("cookie_consent", JSON.stringify(newConsent));
+
+    // Modern tarayıcılar için CookieStore API kullanımı
+    if ("cookieStore" in window) {
+      try {
+        await window.cookieStore.set({
+          name: "cookie_consent",
+          value: JSON.stringify(newConsent),
+          expires: Date.now() + 365 * 24 * 60 * 60 * 1000, // 1 yıl
+          sameSite: "strict",
+          secure: true,
+        });
+      } catch (error) {
+        console.error("Cookie yazma hatası:", error);
+        // Fallback
+        localStorage.setItem("cookie_consent", JSON.stringify(newConsent));
+      }
+    } else {
+      // Fallback için localStorage
+      localStorage.setItem("cookie_consent", JSON.stringify(newConsent));
+    }
   };
 
   return (
