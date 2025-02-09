@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import "../../styles/miniComponentsStyle/MapLocationShowcase.css";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function MapLocationShowcase() {
+  const { language } = useLanguage();
+
   return (
     <section className="map-location-section">
       <div className="map-location-container">
@@ -12,12 +15,21 @@ export default function MapLocationShowcase() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2>KARAKULAK İLETİŞİM</h2>
+          <h2>
+            {" "}
+            {language === "tr"
+              ? "KARAKULAK İLETİŞİM"
+              : "KARAKULAK CONTACT"}{" "}
+          </h2>
           <div className="info-divider"></div>
 
           <div className="contact-details">
-            <h3>MERKEZ OFİS</h3>
-            <p className="address">O.S.B. Mh.8 Sk.No:6 Kemalpaşa / İzmir</p>
+            <h3> {language === "tr" ? "MERKEZ OFİS" : "CENTRAL OFFICE"} </h3>
+            <p className="address">
+              {language === "tr"
+                ? "O.S.B. Mh.8 Sk.No:6 Kemalpaşa / İzmir"
+                : "OSB Neighborhood 8, Street No. 6, Kemalpaşa, İzmir, Turkey"}
+            </p>
 
             <div className="contact-item">
               <span className="label">E-mail:</span>
@@ -27,14 +39,18 @@ export default function MapLocationShowcase() {
             </div>
 
             <div className="contact-item">
-              <span className="label">Tel:</span>
+              <span className="label">
+                {language === "tr" ? "Tel:" : "Phone:"}
+              </span>
               <a href="tel:905326830891" className="value">
                 90 532 683 0891
               </a>
             </div>
 
             <div className="contact-item">
-              <span className="label">Faks:</span>
+              <span className="label">
+                {language === "tr" ? "Faks:" : "Fax:"}
+              </span>
               <span className="value">90 533 329 963</span>
             </div>
           </div>

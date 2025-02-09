@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import "../../styles/miniComponentsStyle/YonetimKurulBaskani.css";
 import { SEO } from "../SEO";
+import { useLanguage } from "@/hooks/useLanguage";
 
-export default function YonetimKurulBaskani() {
+export default function ChairmanOfTheBoard() {
+  const { language } = useLanguage();
+
   return (
     <>
       <SEO
@@ -22,7 +25,12 @@ export default function YonetimKurulBaskani() {
             transition={{ duration: 0.6 }}
           >
             <header className="yonetim-text">
-              <h1 id="yonetim-baslik">YÖNETİM KURULU BAŞKANI</h1>
+              <h1 id="yonetim-baslik">
+                {" "}
+                {language === "tr"
+                  ? "YÖNETİM KURULU BAŞKANI"
+                  : "CHAIRMAN OF THE BOARD"}{" "}
+              </h1>
               <div className="title-underline" aria-hidden="true"></div>
 
               <motion.div
@@ -34,18 +42,22 @@ export default function YonetimKurulBaskani() {
               >
                 <blockquote>
                   <p>
-                    Firmamız ve çalışanlarımız "her noktada kalite" anlayışını,
+                    {language === "tr"
+                      ? `Firmamız ve çalışanlarımız "her noktada kalite" anlayışını,
                     "SÜREKLİ İŞ GELİŞTİRME MODELİ" sistemi ve "TOPLAM KALİTE
                     YÖNETİMİ"ni ilke olarak benimsemiş, KURUMSALLAŞMAYA BÜYÜK
                     ÖNEM vererek alanında uzman kişiler aracılığı ile müşteri
-                    memnuniyetini kalite odaklı olarak sağlamayı hedeflemiştir.
+                    memnuniyetini kalite odaklı olarak sağlamayı hedeflemiştir.`
+                      : `Our company and employees have adopted the understanding of "quality at every point", the "CONTINUOUS BUSINESS IMPROVEMENT MODEL" system and "TOTAL QUALITY MANAGEMENT" as a principle, and aims to ensure customer satisfaction in a quality-oriented manner through expert individuals by attaching great importance to INSTITUTIONALIZATION.`}
                   </p>
                   <p>
-                    Üretim aşamalarının her evresinde insan sağlığını ve
+                    {language === "tr"
+                      ? `Üretim aşamalarının her evresinde insan sağlığını ve
                     değerini, müşteri memnuniyetinden ve Ayalka kalitesinden
                     ödün vermeden gözetmekteyiz. Bu nedenle yurtdışı ve yurtiçi
                     memnun edilmiş müşterilerimizin güvenlerini kazanmanın haklı
-                    gururunu yaşıyoruz.
+                    gururunu yaşıyoruz.`
+                      : `At every stage of the production process, we take care of human health and value, without compromising customer satisfaction and Ayalka quality. Therefore, we are proud to have gained the trust of satisfied customers from abroad and domestic.`}
                   </p>
                 </blockquote>
               </motion.div>
@@ -59,7 +71,9 @@ export default function YonetimKurulBaskani() {
               >
                 <cite className="name">KERİM KARAKULAK</cite>
                 <span className="title" aria-label="Pozisyon">
-                  Yönetim Kurulu Başkanı
+                  {language === "tr"
+                    ? "Yönetim Kurulu Başkanı"
+                    : "Chairman of the Board"}
                 </span>
               </motion.footer>
             </header>

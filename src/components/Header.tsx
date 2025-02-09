@@ -6,9 +6,13 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Header.css";
 import { useProducts } from "../hooks/useProduct";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface MenuItem {
-  title: string;
+  title: {
+    tr: string;
+    en: string;
+  };
   link?: string;
   id?: string;
   category?: string;
@@ -16,65 +20,205 @@ interface MenuItem {
 }
 
 const navItems: MenuItem[] = [
-  { title: "Anasayfa", link: "/" },
   {
-    title: "Kurumsal",
+    title: {
+      tr: "Anasayfa",
+      en: "Homepage",
+    },
+    link: "/",
+  },
+  {
+    title: {
+      tr: "Kurumsal",
+      en: "Corporate",
+    },
     submenu: [
-      { title: "Yönetim Kurulu Başkanı", link: "/yonetim-kurul-baskani" },
-      { title: "Tarihçe", link: "/tarihce" },
-      { title: "İhracat Ağı", link: "/ihracat-agi" },
-      { title: "Teknik Şartnameler", link: "/teknik-sartnameler" },
+      {
+        title: {
+          tr: "Yönetim Kurulu Başkanı",
+          en: "Chairman of the Board",
+        },
+        link: "/chairman-of-the-board",
+      },
+      {
+        title: {
+          tr: "Tarihçe",
+          en: "History",
+        },
+        link: "/history",
+      },
+      {
+        title: {
+          tr: "İhracat Ağı",
+          en: "Export Network",
+        },
+        link: "/export-network",
+      },
+      {
+        title: {
+          tr: "Teknik Şartnameler",
+          en: "Technical Specifications",
+        },
+        link: "/teknik-sartnameler",
+      },
     ],
   },
   {
-    title: "Ürünler",
+    title: {
+      tr: "Ürünler",
+      en: "Products",
+    },
     submenu: [
       {
-        title: "Çöp Kamyonu - Hidrolik Sıkıştırmalı Çöp Kasası",
+        title: {
+          tr: "Çöp Kamyonu - Hidrolik Sıkıştırmalı Çöp Kasası",
+          en: "Garbage Truck - Hydraulic Compactor Garbage",
+        },
         id: "garbage-truck",
         category: "garbage-truck",
       },
-      { title: "Mini Pack", id: "mini-pack", category: "mini-pack" },
-      { title: "Su Tankeri", id: "water-tank", category: "water-tank" },
-      { title: "Vidanjör", id: "vacuum-truck", category: "vacuum-truck" },
-      { title: "Hooklift", id: "hooklift", category: "hooklift" },
       {
-        title: "Skip Loader | Hidrolift",
+        title: {
+          tr: "Mini Pack",
+          en: "Mini Pack",
+        },
+        id: "mini-pack",
+        category: "mini-pack",
+      },
+      {
+        title: {
+          tr: "Su Tankeri",
+          en: "Water Tank",
+        },
+        id: "water-tank",
+        category: "water-tank",
+      },
+      {
+        title: {
+          tr: "Vidanjör",
+          en: "Vacuum Truck",
+        },
+        id: "vacuum-truck",
+        category: "vacuum-truck",
+      },
+      {
+        title: {
+          tr: "Hooklift",
+          en: "Hooklift",
+        },
+        id: "hooklift",
+        category: "hooklift",
+      },
+      {
+        title: {
+          tr: "Skip Loader | Hidrolift",
+          en: "Skip Loader | Hidrolift",
+        },
         id: "skip-loader",
         category: "skip-loader",
       },
       {
-        title: "Yandan Yüklemeli Çöp Kasası",
+        title: {
+          tr: "Yandan Yüklemeli Çöp Kasası",
+          en: "Side Loading Garbage",
+        },
         id: "side-loading-garbage",
         category: "side-loading-garbage",
       },
-      { title: "Konteyner", link: "/urunler/konteyner" },
       {
-        title: "Teleskopik Platform",
+        title: {
+          tr: "Teleskopik Platform",
+          en: "Telescopic Platform",
+        },
         id: "telescopic-platform",
         category: "telescopic-platform",
       },
-      { title: "Kanal Açma", id: "canal-jetting", category: "canal-jetting" },
-      { title: "Yol Süpürme", id: "road-sweeper", category: "road-sweeper" },
-      { title: "İtfaiye", id: "fire-truck", category: "fire-truck" },
-      { title: "İtfaiye Damper", id: "tipper-truck", category: "tipper-truck" },
       {
-        title: "Monoblok Çöp Kamyonu",
+        title: {
+          tr: "Kanal Açma",
+          en: "Canal Jetting",
+        },
+        id: "canal-jetting",
+        category: "canal-jetting",
+      },
+      {
+        title: {
+          tr: "Yol Süpürme",
+          en: "Road Sweeper",
+        },
+        id: "road-sweeper",
+        category: "road-sweeper",
+      },
+      {
+        title: {
+          tr: "İtfaiye",
+          en: "Fire Truck",
+        },
+        id: "fire-truck",
+        category: "fire-truck",
+      },
+      {
+        title: {
+          tr: "İtfaiye Damper",
+          en: "Tipper Truck",
+        },
+        id: "tipper-truck",
+        category: "tipper-truck",
+      },
+      {
+        title: {
+          tr: "Monoblok Çöp Kamyonu",
+          en: "Monoblock Garbage Truck",
+        },
         id: "monoblock-garbage",
         category: "monoblock-garbage",
       },
       {
-        title: "Konteyner Yıkama",
+        title: {
+          tr: "Konteyner Yıkama",
+          en: "Container Washer",
+        },
         id: "container-washer",
         category: "container-washer",
       },
-      { title: "Semi Treyler", id: "semi-trailer", category: "semi-trailer" },
+      {
+        title: {
+          tr: "Semi Treyler",
+          en: "Semi Trailer",
+        },
+        id: "semi-trailer",
+        category: "semi-trailer",
+      },
     ],
   },
-  { title: "Basın Kiti", link: "/basin-kiti" },
-  { title: "Galeri", link: "/galeri" },
-  { title: "Satış Sonrası Hizmetler", link: "/satis-sonrasi-hizmetler" },
-  { title: "İletişim", link: "/iletisim" },
+  {
+    title: {
+      tr: "Basın Kiti",
+      en: "Press Kit",
+    },
+    link: "/basin-kiti",
+  },
+  {
+    title: {
+      tr: "Galeri",
+      en: "Gallery",
+    },
+    link: "/galeri",
+  },
+  {
+    title: {
+      tr: "Satış Sonrası Hizmetler",
+      en: "After Sales Services",
+    },
+    link: "/satis-sonrasi-hizmetler",
+  },
+  {
+    title: {
+      tr: "İletişim",
+      en: "Contact",
+    },
+    link: "/iletisim",
+  },
 ];
 
 export default function Header() {
@@ -82,6 +226,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { products, setSelectedProduct } = useProducts();
   const navigate = useNavigate();
+  const { language, setLanguage } = useLanguage();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -144,7 +289,10 @@ export default function Header() {
         </div>
         <div className="header-top-info-phone">+90 555 555 5555</div>
         <div className="header-top-language-switch desktop-only">
-          <button className="lang-btn active">
+          <button
+            className={`lang-btn ${language === "tr" ? "active" : ""}`}
+            onClick={() => setLanguage("tr")}
+          >
             <img
               src="https://flagcdn.com/16x12/tr.png"
               width="16"
@@ -152,7 +300,10 @@ export default function Header() {
               alt="Turkish Flag"
             />
           </button>
-          <button className="lang-btn">
+          <button
+            className={`lang-btn ${language === "en" ? "active" : ""}`}
+            onClick={() => setLanguage("en")}
+          >
             <img
               src="https://flagcdn.com/16x12/gb.png"
               width="16"
@@ -221,12 +372,12 @@ export default function Header() {
               >
                 {item.submenu ? (
                   <span className="nav-link">
-                    {item.title}
+                    {item.title[language]}
                     <span className="dropdown-arrow">▾</span>
                   </span>
                 ) : (
                   <Link to={item.link || "#"} className="nav-link">
-                    {item.title}
+                    {item.title[language]}
                   </Link>
                 )}
 
@@ -248,7 +399,9 @@ export default function Header() {
                           transition={{ delay: subIndex * 0.1 }}
                           onClick={() => handleProductSelect(sub)}
                         >
-                          <span className="dropdown-link">{sub.title}</span>
+                          <span className="dropdown-link">
+                            {sub.title[language]}
+                          </span>
                         </motion.li>
                       ))}
                     </motion.ul>

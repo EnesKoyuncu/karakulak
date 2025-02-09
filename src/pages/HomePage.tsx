@@ -18,6 +18,10 @@ export default function HomePage() {
           Ayalka Makina - Araç Üstü Ekipman Üreticisi
         </h1>
 
+        {/* buraya h2 ile bir şeyler koy */}
+
+        <h2 className="visually-hidden">Ana Sayfa</h2>
+
         <HeroSlider />
         <WhoWeAreMini />
         <Products />

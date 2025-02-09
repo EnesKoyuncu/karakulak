@@ -1,30 +1,33 @@
-import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useEffect, Suspense, lazy } from "react";
+import "./App.css";
 import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import LoadingSpinner from "./components/LoadingSpinner";
+import CookieBanner from "./components/CookieBanner";
+
 import { ProductProvider } from "./context/ProductProvider";
+import { LanguageProvider } from "./context/LanguageProvider";
 import { SEO } from "./components/SEO";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { usePageTracking, trackPerformance } from "./utils/analytics";
-import { useEffect, Suspense, lazy } from "react";
 import { CookieConsentProvider } from "./context/CookieConsentProvider";
-import CookieBanner from "./components/CookieBanner";
-import LoadingSpinner from "./components/LoadingSpinner";
+
 // İçe aktardığımız performans fonksiyonları
 import { measureWebVitals, measureTiming } from "./utils/performance";
 
 // Lazy load components
 const ProductAllInfo = lazy(() => import("./components/ProductAllInfo"));
 const Gallery = lazy(() => import("./components/Gallery"));
-const YonetimKurulBaskani = lazy(
-  () => import("./components/miniComponents/YonetimKurulBaskani")
+const ChairmanOfTheBoard = lazy(
+  () => import("./components/miniComponents/ChairmanOfTheBoard")
 );
 const Contact = lazy(() => import("./components/Contact"));
 const AfterSalesServices = lazy(
   () => import("./components/miniComponents/AfterSalesServices")
 );
-const Tarihce = lazy(() => import("./components/miniComponents/Tarihce"));
+const History = lazy(() => import("./components/miniComponents/History"));
 const ExportNetwork = lazy(() => import("./components/ExportNetwork"));
 const TechnicalSpecification = lazy(
   () => import("./components/TechnicalSpecification")
@@ -91,89 +94,91 @@ function App() {
   }, []);
 
   return (
-    <CookieConsentProvider>
-      <ErrorBoundary>
-        <SEO
-          title="Ayalka Makina | Araç Üstü Ekipman Üreticisi"
-          description="Ayalka Makina, 40'tan fazla ülkeye ihracat yapan, çöp kasası, su tankeri, vidanjör, hooklift ve diğer araç üstü ekipman üreticisidir."
-          keywords="ayalka makina, çöp kasası, su tankeri, vidanjör, hooklift, araç üstü ekipman, garbage truck, water tank"
-        />
+    <LanguageProvider>
+      <CookieConsentProvider>
+        <ErrorBoundary>
+          <SEO
+            title="Ayalka Makina | Araç Üstü Ekipman Üreticisi"
+            description="Ayalka Makina, 40'tan fazla ülkeye ihracat yapan, çöp kasası, su tankeri, vidanjör, hooklift ve diğer araç üstü ekipman üreticisidir."
+            keywords="ayalka makina, çöp kasası, su tankeri, vidanjör, hooklift, araç üstü ekipman, garbage truck, water tank"
+          />
 
-        <ProductProvider>
-          <Router>
-            <AnalyticsWrapper>
-              <Header />
-              <ErrorBoundary>
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route
-                    path="/yonetim-kurul-baskani"
-                    element={
-                      <Suspense fallback={<LoadingSpinner />}>
-                        <YonetimKurulBaskani />
-                      </Suspense>
-                    }
-                  />
-                  <Route
-                    path="/Tarihce"
-                    element={
-                      <Suspense fallback={<LoadingSpinner />}>
-                        <Tarihce />
-                      </Suspense>
-                    }
-                  />
-                  <Route
-                    path="/ihracat-agi"
-                    element={
-                      <Suspense fallback={<LoadingSpinner />}>
-                        <ExportNetwork />
-                      </Suspense>
-                    }
-                  />
-                  <Route
-                    path="/teknik-sartnameler"
-                    element={
-                      <Suspense fallback={<LoadingSpinner />}>
-                        <TechnicalSpecification />
-                      </Suspense>
-                    }
-                  />
-                  <Route path="/basin-kiti" element={<PressKit />} />
-                  <Route
-                    path="/satis-sonrasi-hizmetler"
-                    element={
-                      <Suspense fallback={<LoadingSpinner />}>
-                        <AfterSalesServices />
-                      </Suspense>
-                    }
-                  />
-                  <Route path="/iletisim" element={<Contact />} />
-                  <Route
-                    path="/products/:category/:id"
-                    element={
-                      <Suspense fallback={<LoadingSpinner />}>
-                        <ProductAllInfo />
-                      </Suspense>
-                    }
-                  />
-                  <Route
-                    path="/galeri"
-                    element={
-                      <Suspense fallback={<LoadingSpinner />}>
-                        <Gallery />
-                      </Suspense>
-                    }
-                  />
-                </Routes>
-              </ErrorBoundary>
-              <Footer />
-            </AnalyticsWrapper>
-          </Router>
-        </ProductProvider>
-        <CookieBanner />
-      </ErrorBoundary>
-      <style dangerouslySetInnerHTML={{ __html: criticalStyles }} />
-    </CookieConsentProvider>
+          <ProductProvider>
+            <Router>
+              <AnalyticsWrapper>
+                <Header />
+                <ErrorBoundary>
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route
+                      path="/yonetim-kurul-baskani"
+                      element={
+                        <Suspense fallback={<LoadingSpinner />}>
+                          <ChairmanOfTheBoard />
+                        </Suspense>
+                      }
+                    />
+                    <Route
+                      path="/history"
+                      element={
+                        <Suspense fallback={<LoadingSpinner />}>
+                          <History />
+                        </Suspense>
+                      }
+                    />
+                    <Route
+                      path="/export-network"
+                      element={
+                        <Suspense fallback={<LoadingSpinner />}>
+                          <ExportNetwork />
+                        </Suspense>
+                      }
+                    />
+                    <Route
+                      path="/teknik-sartnameler"
+                      element={
+                        <Suspense fallback={<LoadingSpinner />}>
+                          <TechnicalSpecification />
+                        </Suspense>
+                      }
+                    />
+                    <Route path="/basin-kiti" element={<PressKit />} />
+                    <Route
+                      path="/satis-sonrasi-hizmetler"
+                      element={
+                        <Suspense fallback={<LoadingSpinner />}>
+                          <AfterSalesServices />
+                        </Suspense>
+                      }
+                    />
+                    <Route path="/iletisim" element={<Contact />} />
+                    <Route
+                      path="/products/:category/:id"
+                      element={
+                        <Suspense fallback={<LoadingSpinner />}>
+                          <ProductAllInfo />
+                        </Suspense>
+                      }
+                    />
+                    <Route
+                      path="/galeri"
+                      element={
+                        <Suspense fallback={<LoadingSpinner />}>
+                          <Gallery />
+                        </Suspense>
+                      }
+                    />
+                  </Routes>
+                </ErrorBoundary>
+                <Footer />
+              </AnalyticsWrapper>
+            </Router>
+          </ProductProvider>
+          <CookieBanner />
+        </ErrorBoundary>
+        <style dangerouslySetInnerHTML={{ __html: criticalStyles }} />
+      </CookieConsentProvider>
+    </LanguageProvider>
   );
 }
 

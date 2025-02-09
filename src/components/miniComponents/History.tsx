@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import "../../styles/miniComponentsStyle/Tarihce.css";
 import { useLocation } from "react-router-dom";
 import { SEO } from "../SEO";
-
-const Tarihce: React.FC = () => {
+import { useLanguage } from "@/hooks/useLanguage";
+const History: React.FC = () => {
   const location = useLocation();
-
+  const { language } = useLanguage();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -29,7 +29,10 @@ const Tarihce: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h1 id="tarihce-baslik">TARİHÇE</h1>
+            <h1 id="tarihce-baslik">
+              {" "}
+              {language === "tr" ? "TARİHÇE" : "History of Karakulak"}{" "}
+            </h1>
             <div className="title-underline" aria-hidden="true"></div>
           </motion.header>
 
@@ -46,8 +49,10 @@ const Tarihce: React.FC = () => {
                 aria-label="Kuruluş Hikayemiz"
               >
                 <p className="main-text">
-                  Şirketimiz, 1998 yılında belediye ve özel sektör kuruluşlarına
-                  yönelik araç üstü ekipman üretimi amacıyla kurulmuştur.
+                  {language === "tr"
+                    ? `Şirketimiz, 1998 yılında belediye ve özel sektör kuruluşlarına
+                  yönelik araç üstü ekipman üretimi amacıyla kurulmuştur.`
+                    : `Our company was established in 1998 to produce upper equipment for municipalities and private sector organizations.`}
                 </p>
               </section>
 
@@ -55,12 +60,19 @@ const Tarihce: React.FC = () => {
                 className="facility-section"
                 aria-labelledby="tesis-baslik"
               >
-                <h2 id="tesis-baslik">Üretim Tesisimiz</h2>
+                <h2 id="tesis-baslik">
+                  {" "}
+                  {language === "tr"
+                    ? "Üretim Tesisimiz"
+                    : "Our Production Facility"}{" "}
+                </h2>
                 <p>
-                  Yenmiş Fabrika Yolu Küme evler No:31 Kemalpaşa Organize Sanayi
+                  {language === "tr"
+                    ? `Yenmiş Fabrika Yolu Küme evler No:31 Kemalpaşa Organize Sanayi
                   Bölgesi'ndeki modern tesisimizde, ISO9001:2000 ve CE kalite
                   standartlarında, alanında uzman personeliyle üretim
-                  yapmaktayız.
+                  yapmaktayız.`
+                    : `In our modern facility located at Yenmiş Factory Road Cluster Houses No: 31 Kemalpaşa Organized Industrial Zone, we produce with expert personnel in ISO9001:2000 and CE quality standards.`}
                 </p>
               </section>
 
@@ -68,12 +80,19 @@ const Tarihce: React.FC = () => {
                 className="quality-section"
                 aria-labelledby="kalite-baslik"
               >
-                <h2 id="kalite-baslik">Kalite Anlayışımız</h2>
+                <h2 id="kalite-baslik">
+                  {" "}
+                  {language === "tr"
+                    ? "Kalite Anlayışımız"
+                    : "Our Understanding of Quality"}{" "}
+                </h2>
                 <p>
-                  Belediyelerimiz ve değerli halkımızın hizmetinde, güvenilir,
+                  {language === "tr"
+                    ? `Belediyelerimiz ve değerli halkımızın hizmetinde, güvenilir,
                   çevre dostu ve üstün hizmet anlayışına dayalı faaliyet
                   göstermekteyiz. Ürünlerimiz, hizmet kalitesini yükseltmek
-                  amacıyla özenle tasarlanmaktadır.
+                  amacıyla özenle tasarlanmaktadır.`
+                    : `We operate based on a reliable, environmentally friendly, and superior service understanding in the service of our municipalities and valuable people. Our products are carefully designed to improve service quality.`}
                 </p>
               </section>
 
@@ -82,10 +101,12 @@ const Tarihce: React.FC = () => {
                 aria-label="Müşteri Odaklı Yaklaşımımız"
               >
                 <p>
-                  AYALKA olarak, müşterilerimize en kaliteli ürünleri, en uygun
+                  {language === "tr"
+                    ? `AYALKA olarak, müşterilerimize en kaliteli ürünleri, en uygun
                   ödeme koşullarıyla sunmaktayız. Bizimle çalışan değerli
                   müşterilerimiz, uygun fiyatlar ve üstün hizmet anlayışıyla her
-                  alanda AYALKA ayrıcalıklarını yaşamaktadır.
+                  alanda AYALKA ayrıcalıklarını yaşamaktadır.`
+                    : `As AYALKA, we offer our customers the highest quality products with the most suitable payment terms. Our valuable customers working with us experience AYALKA privileges in every field with affordable prices and superior service understanding.`}
                 </p>
               </section>
             </motion.section>
@@ -96,4 +117,4 @@ const Tarihce: React.FC = () => {
   );
 };
 
-export default Tarihce;
+export default History;

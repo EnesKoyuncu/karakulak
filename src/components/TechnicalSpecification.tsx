@@ -3,12 +3,19 @@ import { motion } from "framer-motion";
 import { FaFilePdf, FaDownload, FaEye } from "react-icons/fa";
 import "../styles/TechnicalSpecification.css";
 import { SEO } from "./SEO";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface Specification {
   id: number;
-  title: string;
+  title: {
+    tr: string;
+    en: string;
+  };
   docxUrl: string;
-  category: string;
+  category: {
+    tr: string;
+    en: string;
+  };
   image: string;
 }
 
@@ -16,37 +23,67 @@ interface Specification {
 const specifications: Specification[] = [
   {
     id: 1,
-    title: "HİDROLİK SIKIŞTIRMALI ÇÖP KASASI TEKNİK ŞARTNAME",
+    title: {
+      tr: "HİDROLİK SIKIŞTIRMALI ÇÖP KASASI TEKNİK ŞARTNAME",
+      en: "HYDRAULIC COMPACTOR GARBAGE TRUCK TECHNICAL SPECIFICATION",
+    },
     docxUrl: "/docs/hidrolik-cop-kasasi-sartname.docx",
-    category: "Çöp Kasaları",
+    category: {
+      tr: "Çöp Kasaları",
+      en: "Garbage Trucks",
+    },
     image: "/images/products/cop-kamyonu.webp",
   },
   {
     id: 2,
-    title: "SU TANKERİ TEKNİK ŞARTNAME",
+    title: {
+      tr: "SU TANKERİ TEKNİK ŞARTNAME",
+      en: "WATER TANKER TECHNICAL SPECIFICATION",
+    },
     docxUrl: "/docs/su-tankeri-sartname.docx",
-    category: "Su Tankerleri",
+    category: {
+      tr: "Su Tankerleri",
+      en: "Water Tankers",
+    },
     image: "/images/products/su-tankeri.webp",
   },
   {
     id: 3,
-    title: "TELESOKOPİK PLATFORM ŞARTNAME",
+    title: {
+      tr: "TELESOKOPİK PLATFORM ŞARTNAME",
+      en: "TELESCOPIC PLATFORM SPECIFICATION",
+    },
     docxUrl: "/docs/platform-sartname.docx",
-    category: "Platformlar",
+    category: {
+      tr: "Platformlar",
+      en: "Platforms",
+    },
     image: "/images/products/teleskopik-platform.webp",
   },
   {
     id: 4,
-    title: "VİDANJÖR TEKNİK ŞARTNAME",
+    title: {
+      tr: "VİDANJÖR TEKNİK ŞARTNAME",
+      en: "VACUUM TRUCK TECHNICAL SPECIFICATION",
+    },
     docxUrl: "/docs/vidanjor-sartname.docx",
-    category: "Vidanjörler",
+    category: {
+      tr: "Vidanjörler",
+      en: "Vacuum Trucks",
+    },
     image: "/images/products/vidanjor.webp",
   },
   {
     id: 5,
-    title: "SKIP LOADER TEKNİK ŞARTNAME",
+    title: {
+      tr: "SKIP LOADER TEKNİK ŞARTNAME",
+      en: "SKIP LOADER TECHNICAL SPECIFICATION",
+    },
     docxUrl: "/docs/skip-loader-sartname.docx",
-    category: "Skip Loaderlar",
+    category: {
+      tr: "Skip Loaderlar",
+      en: "Skip Loaders",
+    },
     image: "/images/products/skip-loader.webp",
   },
 ];
@@ -55,6 +92,7 @@ const TechnicalSpecification: React.FC = () => {
   const [selectedDoc, setSelectedDoc] = useState<Specification>(
     specifications[0]
   );
+  const { language } = useLanguage();
 
   const handleDocClick = (doc: Specification) => {
     setSelectedDoc(doc);
@@ -67,9 +105,21 @@ const TechnicalSpecification: React.FC = () => {
   return (
     <>
       <SEO
-        title="Teknik Şartnameler | Ayalka Makina"
-        description="Ayalka Makina ürünlerine ait teknik şartnameler. Çöp kasaları, tankerler, platformlar ve diğer araç üstü ekipmanların detaylı teknik özellikleri ve standartları."
-        keywords="ayalka teknik şartname, çöp kasası şartname, su tankeri şartname, platform şartname, araç üstü ekipman teknik özellikler"
+        title={
+          language === "tr"
+            ? "Teknik Şartnameler | Ayalka Makina"
+            : "Technical Specifications | Ayalka Makina"
+        }
+        description={
+          language === "tr"
+            ? "Ayalka Makina ürünlerine ait teknik şartnameler. Çöp kasaları, tankerler, platformlar ve diğer araç üstü ekipmanların detaylı teknik özellikleri ve standartları."
+            : "Technical specifications for Ayalka Makina products. Detailed technical features and standards for garbage trucks, tankers, platforms and other vehicle-mounted equipment."
+        }
+        keywords={
+          language === "tr"
+            ? "ayalka teknik şartname, çöp kasası şartname, su tankeri şartname, platform şartname, araç üstü ekipman teknik özellikler"
+            : "ayalka technical specifications, garbage truck specification, water tanker spec, platform specification, vehicle-mounted equipment technical features"
+        }
         image="/images/products/technical-specs-cover.jpg"
       />
 
@@ -80,7 +130,11 @@ const TechnicalSpecification: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1>TEKNİK ŞARTNAMELER</h1>
+          <h1>
+            {language === "tr"
+              ? "TEKNİK ŞARTNAMELER"
+              : "TECHNICAL SPECIFICATIONS"}
+          </h1>
           <div className="title-underline" aria-hidden="true"></div>
         </motion.header>
 
@@ -91,7 +145,9 @@ const TechnicalSpecification: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             role="navigation"
-            aria-label="Şartname Listesi"
+            aria-label={
+              language === "tr" ? "Şartname Listesi" : "Specification List"
+            }
           >
             {specifications.map((doc) => (
               <motion.div
@@ -105,14 +161,18 @@ const TechnicalSpecification: React.FC = () => {
                 role="button"
                 tabIndex={0}
                 aria-selected={selectedDoc?.id === doc.id}
-                aria-label={`${doc.title} şartnamesini görüntüle`}
+                aria-label={
+                  language === "tr"
+                    ? `${doc.title.tr} şartnamesini görüntüle`
+                    : `View the ${doc.title.en} specification`
+                }
               >
                 <span className="doc-icon" aria-hidden="true">
                   <FaFilePdf />
                 </span>
                 <div className="doc-info">
-                  <h3>{doc.title}</h3>
-                  <span className="category">{doc.category}</span>
+                  <h3>{doc.title[language]}</h3>
+                  <span className="category">{doc.category[language]}</span>
                 </div>
               </motion.div>
             ))}
@@ -125,50 +185,67 @@ const TechnicalSpecification: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             aria-live="polite"
             role="region"
-            aria-label="Şartname Önizleme"
+            aria-label={
+              language === "tr" ? "Şartname Önizleme" : "Specification Preview"
+            }
           >
             {selectedDoc ? (
               <>
                 <div className="preview-header">
-                  <h2>{selectedDoc.title}</h2>
+                  <h2>{selectedDoc.title[language]}</h2>
                   <div className="preview-image">
                     <img
                       src={selectedDoc.image}
-                      alt={`${selectedDoc.title} ürün görseli`}
+                      alt={`${selectedDoc.title[language]} ${
+                        language === "tr" ? "ürün görseli" : "product image"
+                      }`}
                       loading="lazy"
                     />
                   </div>
                   <div
                     className="preview-actions"
                     role="group"
-                    aria-label="Şartname İşlemleri"
+                    aria-label={
+                      language === "tr"
+                        ? "Şartname İşlemleri"
+                        : "Specification Actions"
+                    }
                   >
                     <motion.button
                       className="preview-btn"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => window.open(selectedDoc.docxUrl, "_blank")}
-                      aria-label={`${selectedDoc.title} şartnamesini görüntüle`}
+                      aria-label={
+                        language === "tr"
+                          ? `${selectedDoc.title.tr} şartnamesini görüntüle`
+                          : `View the ${selectedDoc.title.en} specification`
+                      }
                     >
                       <FaEye aria-hidden="true" />
-                      <span>Görüntüle</span>
+                      <span>{language === "tr" ? "Görüntüle" : "View"}</span>
                     </motion.button>
                     <motion.button
                       className="download-btn"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => handleDownload(selectedDoc.docxUrl)}
-                      aria-label={`${selectedDoc.title} şartnamesini indir`}
+                      aria-label={
+                        language === "tr"
+                          ? `${selectedDoc.title.tr} şartnamesini indir`
+                          : `Download the ${selectedDoc.title.en} specification`
+                      }
                     >
                       <FaDownload aria-hidden="true" />
-                      <span>İndir</span>
+                      <span>{language === "tr" ? "İndir" : "Download"}</span>
                     </motion.button>
                   </div>
                 </div>
                 <div className="preview-content">
                   <p>
-                    Şartnameyi görüntülemek veya indirmek için yukarıdaki
-                    butonları kullanabilirsiniz.
+                    {language === "tr"
+                      ? "Şartnameyi görüntülemek veya indirmek için yukarıdaki butonları kullanabilirsiniz."
+                      : "Use the buttons above to view or download the specification."}
                   </p>
                 </div>
               </>
@@ -176,10 +253,18 @@ const TechnicalSpecification: React.FC = () => {
               <div
                 className="no-selection"
                 role="alert"
-                aria-label="Şartname Seçilmedi"
+                aria-label={
+                  language === "tr"
+                    ? "Şartname Seçilmedi"
+                    : "No specification selected"
+                }
               >
                 <FaFilePdf aria-hidden="true" />
-                <p>Görüntülemek istediğiniz şartnameyi seçiniz</p>
+                <p>
+                  {language === "tr"
+                    ? "Görüntülemek istediğiniz şartnameyi seçiniz"
+                    : "Please select a specification to view"}
+                </p>
               </div>
             )}
           </motion.div>

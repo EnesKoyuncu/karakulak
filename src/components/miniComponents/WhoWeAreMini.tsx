@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 import { FlickeringGrid } from "../ui/FlickeringGrid";
 import "../../styles/miniComponentsStyle/WhoWeAreMini.css";
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "../../hooks/useLanguage";
 
 const WhoWeAreMini: React.FC = () => {
   const location = useLocation();
-
+  const { language } = useLanguage();
   // Sayfa değiştiğinde scroll pozisyonunu sıfırla
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,7 +36,7 @@ const WhoWeAreMini: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2>Biz Kimiz?</h2>
+          <h2>{language === "tr" ? "Biz Kimiz?" : "Who We Are?"} </h2>
           <div className="title-line"></div>
         </motion.div>
 
@@ -48,10 +49,12 @@ const WhoWeAreMini: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p>
-              Şirketimiz 1998 yılında belediye ve özel sektör kuruluşlarına,
-              araç üzeri itfaye arazörü, malzemeleri, su tankerleri, hidrolik
-              sıkıştırmalı çöp kasaları, vidanjör için üst ekipman üretmek ve
-              siz değerli kuruluşlarımızı hizmetini sunmak amacıyla kurulmuştur.
+              {language === "tr"
+                ? `Şirketimiz 1998 yılında belediye ve özel sektör kuruluşlarına,
+                araç üzeri itfaye arazörü, malzemeleri, su tankerleri, hidrolik
+                sıkıştırmalı çöp kasaları, vidanjör için üst ekipman üretmek ve
+                siz değerli kuruluşlarımızı hizmetini sunmak amacıyla kurulmuştur.`
+                : "Our company was established in 1998 to produce upper equipment for fire trucks, materials, water tankers, hydraulic compactor garbage containers, and vacuum trucks for municipalities and private sector organizations and to offer its services to you, our valuable organizations."}
             </p>
           </motion.div>
 
@@ -64,15 +67,24 @@ const WhoWeAreMini: React.FC = () => {
           >
             <div className="stat-box">
               <span className="stat-number">25+</span>
-              <span className="stat-label">Yıllık Deneyim</span>
+              <span className="stat-label">
+                {" "}
+                {language === "tr" ? "Yıllık Deneyim" : "Years Experience"}{" "}
+              </span>
             </div>
             <div className="stat-box">
               <span className="stat-number">50+</span>
-              <span className="stat-label">İhracat Ülkesi</span>
+              <span className="stat-label">
+                {" "}
+                {language === "tr" ? "İhracat Ülkesi" : "Export Country"}{" "}
+              </span>
             </div>
             <div className="stat-box">
               <span className="stat-number">1000+</span>
-              <span className="stat-label">Mutlu Müşteri</span>
+              <span className="stat-label">
+                {" "}
+                {language === "tr" ? "Mutlu Müşteri" : "Happy Customer"}{" "}
+              </span>
             </div>
           </motion.div>
         </div>
@@ -91,7 +103,7 @@ const WhoWeAreMini: React.FC = () => {
               window.scrollTo(0, 0);
             }}
           >
-            Tarihçe
+            {language === "tr" ? "Tarihçe" : "History"}
           </Link>
         </motion.div>
       </div>
