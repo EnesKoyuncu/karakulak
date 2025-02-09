@@ -19,9 +19,36 @@ const specifications: Specification[] = [
     title: "HİDROLİK SIKIŞTIRMALI ÇÖP KASASI TEKNİK ŞARTNAME",
     docxUrl: "/docs/hidrolik-cop-kasasi-sartname.docx",
     category: "Çöp Kasaları",
-    image: "/images/products/cop-kamyonu.jpg",
+    image: "/images/products/cop-kamyonu.webp",
   },
-  // ... diğer şartnameler
+  {
+    id: 2,
+    title: "SU TANKERİ TEKNİK ŞARTNAME",
+    docxUrl: "/docs/su-tankeri-sartname.docx",
+    category: "Su Tankerleri",
+    image: "/images/products/su-tankeri.webp",
+  },
+  {
+    id: 3,
+    title: "TELESOKOPİK PLATFORM ŞARTNAME",
+    docxUrl: "/docs/platform-sartname.docx",
+    category: "Platformlar",
+    image: "/images/products/teleskopik-platform.webp",
+  },
+  {
+    id: 4,
+    title: "VİDANJÖR TEKNİK ŞARTNAME",
+    docxUrl: "/docs/vidanjor-sartname.docx",
+    category: "Vidanjörler",
+    image: "/images/products/vidanjor.webp",
+  },
+  {
+    id: 5,
+    title: "SKIP LOADER TEKNİK ŞARTNAME",
+    docxUrl: "/docs/skip-loader-sartname.docx",
+    category: "Skip Loaderlar",
+    image: "/images/products/skip-loader.webp",
+  },
 ];
 
 const TechnicalSpecification: React.FC = () => {

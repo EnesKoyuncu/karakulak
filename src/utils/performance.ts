@@ -1,21 +1,32 @@
-import { useEffect, useState } from "react";
-// getCLS ve diğer importları kaldırıyoruz
-// import { getCLS, getFID, getLCP, type Metric } from "web-vitals";
+import { useEffect, useState, DependencyList } from "react";
+
+// -- Tip Tanımlamaları --
+
+// Web Vitals metriklerinin tipini tanımlıyoruz.
+export interface Metric {
+  name: string;
+  value: number;
+  delta: number;
+  id: string;
+  entries?: PerformanceEntry[];
+}
+
+// ReportHandler, metrik bilgisini alan callback fonksiyonu için tip tanımıdır.
+export type ReportHandler = (metric: Metric) => void;
+
+// -- Hook ve Fonksiyonlar --
 
 // Görsel önbelleğe alma hook'u
-export const useImagePreload = (imagePaths: string[]) => {
+export const useImagePreload = (imagePaths: string[]): boolean => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
-    let loadedCount = 0;
-    const totalImages = imagePaths.length;
-
     const preloadImage = (src: string) => {
-      return new Promise((resolve, reject) => {
+      return new Promise<void>((resolve, reject) => {
         const img = new Image();
         img.src = src;
-        img.onload = resolve;
-        img.onerror = reject;
+        img.onload = () => resolve();
+        img.onerror = () => reject(new Error(`Yükleme hatası: ${src}`));
       });
     };
 
@@ -25,11 +36,12 @@ export const useImagePreload = (imagePaths: string[]) => {
       })
       .catch((error) => {
         console.error("Image preloading failed:", error);
-        setImagesLoaded(true); // Hata durumunda da devam et
+        // Hata durumunda da devam etmek isteyebilirsiniz.
+        setImagesLoaded(true);
       });
 
     return () => {
-      // Cleanup
+      // Cleanup: Component unmount olurken state sıfırlanır.
       setImagesLoaded(false);
     };
   }, [imagePaths]);
@@ -64,7 +76,7 @@ export const useIntersectionObserver = (
 // Dinamik import için lazy loading hook'u
 export const useDynamicImport = <T>(
   importFn: () => Promise<{ default: T }>,
-  dependencies: any[] = []
+  dependencies: DependencyList = []
 ) => {
   const [component, setComponent] = useState<T | null>(null);
   const [error, setError] = useState<Error | null>(null);
@@ -81,46 +93,95 @@ export const useDynamicImport = <T>(
         setError(err);
         setLoading(false);
       });
-  }, dependencies);
+    // Bağımlılık dizisine importFn ve gelen diğer bağımlılıkları ekliyoruz.
+  }, [importFn, ...dependencies]);
 
   return { component, error, loading };
 };
 
-// Core Web Vitals ölçümünü güncelliyoruz
-export const measureWebVitals = async () => {
+// Web Vitals ölçümünü başlatan fonksiyon
+export const measureWebVitals = async (): Promise<void> => {
   try {
-    const { onCLS, onFID, onLCP } = await import("web-vitals");
+    // web-vitals modülünü dinamik içe aktarın.
+    // Burada, modülü tip olarak Partial bir obje şeklinde kabul ediyoruz.
+    const webVitalsModule = (await import("web-vitals")) as unknown as Partial<{
+      getCLS: (onReport: ReportHandler) => void;
+      getFID: (onReport: ReportHandler) => void;
+      getLCP: (onReport: ReportHandler) => void;
+      onCLS: (onReport: ReportHandler) => void;
+      onFID: (onReport: ReportHandler) => void;
+      onLCP: (onReport: ReportHandler) => void;
+    }>;
 
-    onCLS((metric) => {
-      console.log("CLS:", metric.value);
-    });
+    // Ortak raporlama fonksiyonu
+    const reportHandler: ReportHandler = (metric) => {
+      console.log(`${metric.name}:`, metric.value);
+    };
 
-    onFID((metric) => {
-      console.log("FID:", metric.value);
-    });
-
-    onLCP((metric) => {
-      console.log("LCP:", metric.value);
-    });
+    if (
+      webVitalsModule.getCLS &&
+      webVitalsModule.getFID &&
+      webVitalsModule.getLCP
+    ) {
+      // Eğer getXXX API'leri mevcutsa, bunları kullanıyoruz.
+      webVitalsModule.getCLS(reportHandler);
+      webVitalsModule.getFID(reportHandler);
+      webVitalsModule.getLCP(reportHandler);
+    } else if (
+      webVitalsModule.onCLS &&
+      webVitalsModule.onFID &&
+      webVitalsModule.onLCP
+    ) {
+      // Aksi halde fallback olarak onXXX API'lerini kullanıyoruz.
+      webVitalsModule.onCLS(reportHandler);
+      webVitalsModule.onFID(reportHandler);
+      webVitalsModule.onLCP(reportHandler);
+    } else {
+      console.error("Web Vitals API bulunamadı.");
+    }
   } catch (error) {
     console.error("Web Vitals ölçümü başlatılamadı:", error);
   }
 };
 
-// reportWebVitals fonksiyonunu da güncelliyoruz
-export async function reportWebVitals() {
+// Web Vitals raporlaması için fonksiyon
+export async function reportWebVitals(): Promise<void> {
   try {
-    const { onCLS, onFID, onLCP } = await import("web-vitals");
+    const webVitalsModule = (await import("web-vitals")) as unknown as Partial<{
+      getCLS: (onReport: ReportHandler) => void;
+      getFID: (onReport: ReportHandler) => void;
+      getLCP: (onReport: ReportHandler) => void;
+      onCLS: (onReport: ReportHandler) => void;
+      onFID: (onReport: ReportHandler) => void;
+      onLCP: (onReport: ReportHandler) => void;
+    }>;
 
-    onCLS(console.log);
-    onFID(console.log);
-    onLCP(console.log);
+    if (
+      webVitalsModule.getCLS &&
+      webVitalsModule.getFID &&
+      webVitalsModule.getLCP
+    ) {
+      webVitalsModule.getCLS(console.log);
+      webVitalsModule.getFID(console.log);
+      webVitalsModule.getLCP(console.log);
+    } else if (
+      webVitalsModule.onCLS &&
+      webVitalsModule.onFID &&
+      webVitalsModule.onLCP
+    ) {
+      webVitalsModule.onCLS(console.log);
+      webVitalsModule.onFID(console.log);
+      webVitalsModule.onLCP(console.log);
+    } else {
+      console.error("Web Vitals API bulunamadı.");
+    }
   } catch (error) {
     console.error("Web Vitals raporlama hatası:", error);
   }
 }
 
-export function measureTiming() {
+// Navigation Timing ölçümünü yapan fonksiyon
+export function measureTiming(): void {
   if (performance && performance.getEntriesByType) {
     const timing = performance.getEntriesByType("navigation")[0];
     console.log("Navigation Timing:", timing);

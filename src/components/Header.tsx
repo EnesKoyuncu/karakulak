@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Header.css";
-import { useProducts } from "../context/ProductContext";
+import { useProducts } from "../hooks/useProduct";
 import { useNavigate } from "react-router-dom";
 
 interface MenuItem {

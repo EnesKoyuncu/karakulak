@@ -29,7 +29,7 @@ interface EventProps {
 
 // Development için basit bir logger
 const devLogger = {
-  log: (eventName: string, data: any) => {
+  log: (eventName: string, data: unknown) => {
     console.log(
       `%c[Analytics] ${eventName}`,
       "color: #2196F3; font-weight: bold;",
@@ -39,7 +39,7 @@ const devLogger = {
   warn: (message: string) => {
     console.warn(`[Analytics Warning] ${message}`);
   },
-  error: (error: any) => {
+  error: (error: unknown) => {
     console.error("[Analytics Error]", error);
   },
 };
@@ -108,12 +108,6 @@ export const trackPerformance = async () => {
   } catch (error) {
     console.error("Web Vitals yüklenirken hata:", error);
   }
-};
-
-const calculateResourceTiming = (resources: PerformanceResourceTiming[]) => {
-  return resources.reduce((total, resource) => {
-    return total + (resource.responseEnd - resource.startTime);
-  }, 0);
 };
 
 // Kullanıcı etkileşimlerini izleme

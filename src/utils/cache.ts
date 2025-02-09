@@ -74,7 +74,7 @@ export const useSessionStorageCache = <T>(key: string, initialData: T) => {
 };
 
 // Memory cache için basit bir util
-const memoryCache = new Map<string, CacheItem<any>>();
+const memoryCache = new Map<string, CacheItem<unknown>>();
 
 export const useMemoryCache = <T>(
   key: string,
@@ -91,7 +91,7 @@ export const useMemoryCache = <T>(
         memoryCache.delete(key);
         return initialData;
       }
-      return cached.data;
+      return cached.data as T; // Burada cast ekliyoruz
     }
     return initialData;
   });

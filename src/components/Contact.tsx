@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 import "../styles/Contact.css";
 import { SEO } from "./SEO";
-import { useCookieConsent } from "../hooks/useCookieContest";
+import { useCookieConsent } from "../hooks/useCookieConsent";
 
 interface ContactInfoProps {
   title: string;
@@ -197,7 +197,7 @@ const Contact: React.FC = () => {
                     </p>
                     <button
                       onClick={() => {
-                        const newConsent = { ...consent, functional: true };
+                        const newConsent = { ...consent, functional: true }; // fonksyionel çerezleri açar
                         setConsent(newConsent);
                       }}
                       className="consent-button"

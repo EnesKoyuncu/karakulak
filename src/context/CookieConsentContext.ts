@@ -1,13 +1,13 @@
 import { createContext } from "react";
 
 // Tip tanımlamaları
-interface CookieConsent {
+export interface CookieConsent {
   essential: boolean; // Zorunlu çerezler
   functional: boolean; // İşlevsel çerezler
   analytics: boolean; // Analitik çerezler
 }
 
-interface CookieConsentContextType {
+export interface CookieConsentContextType {
   consent: CookieConsent;
   setConsent: (consent: CookieConsent) => void;
   showBanner: boolean;

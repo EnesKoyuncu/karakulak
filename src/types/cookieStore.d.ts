@@ -4,6 +4,7 @@ export interface Cookie {
   expires?: Date;
   sameSite?: "lax" | "strict" | "none";
   secure?: boolean;
+  partitioned?: boolean;
 }
 
 export interface CookieStore {

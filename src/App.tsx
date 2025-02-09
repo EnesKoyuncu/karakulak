@@ -3,24 +3,16 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-
-// import YonetimKurulBaskani from "./components/miniComponents/YonetimKurulBaskani";
-// import Contact from "./components/Contact";
-// import AfterSalesServices from "./components/miniComponents/AfterSalesServices";
-// import Tarihce from "./components/miniComponents/Tarihce";
-// import ExportNetwork from "./components/ExportNetwork";
-// import TechnicalSpecification from "./components/TechnicalSpecification";
-// import PressKit from "./components/PressKit";
-
-import { ProductProvider } from "./context/ProductContext";
+import { ProductProvider } from "./context/ProductProvider";
 import { SEO } from "./components/SEO";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { usePageTracking, trackPerformance } from "./utils/analytics";
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import { CookieConsentProvider } from "./context/CookieConsentProvider";
 import CookieBanner from "./components/CookieBanner";
-import React, { Suspense, lazy } from "react";
 import LoadingSpinner from "./components/LoadingSpinner";
+// İçe aktardığımız performans fonksiyonları
+import { measureWebVitals, measureTiming } from "./utils/performance";
 
 // Lazy load components
 const ProductAllInfo = lazy(() => import("./components/ProductAllInfo"));
@@ -39,7 +31,7 @@ const TechnicalSpecification = lazy(
 );
 const PressKit = lazy(() => import("./components/PressKit"));
 
-// Analytics için wrapper component oluşturalım
+// Analytics için wrapper component
 const AnalyticsWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
@@ -49,6 +41,9 @@ const AnalyticsWrapper: React.FC<{ children: React.ReactNode }> = ({
     const loadAnalytics = async () => {
       try {
         await trackPerformance();
+        // Web Vitals ölçümünü başlatıyoruz
+        await measureWebVitals();
+        measureTiming();
       } catch (error) {
         console.error("Performance tracking error:", error);
       }
@@ -76,9 +71,9 @@ function App() {
   useEffect(() => {
     // Kritik olmayan kaynakları lazy load yap
     const lazyResources = [
-      { type: "style", href: "/styles/non-critical.css" as string },
-      { type: "script", src: "/js/analytics.js" as string },
-    ] as const;
+      { type: "style", href: "/styles/non-critical.css" as const },
+      { type: "script", src: "/js/analytics.js" as const },
+    ];
 
     lazyResources.forEach((resource) => {
       if (resource.type === "style" && resource.href) {
@@ -91,6 +86,7 @@ function App() {
         };
         document.head.appendChild(link);
       }
+      // Script lazy load örneği de eklenebilir.
     });
   }, []);
 

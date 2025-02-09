@@ -1,4 +1,4 @@
-import { useProducts } from "../context/ProductContext";
+import { useProducts } from "../hooks/useProduct";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductsStone from "./miniComponents/ProductsStone";
 import { motion, AnimatePresence } from "framer-motion";

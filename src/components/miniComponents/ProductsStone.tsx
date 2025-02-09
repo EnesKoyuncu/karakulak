@@ -126,7 +126,7 @@ const Products: React.FC<ProductsProps> = ({
   };
 
   const handleDragEnd = (
-    event: MouseEvent | TouchEvent | PointerEvent,
+    _event: MouseEvent | TouchEvent | PointerEvent, //framer motion kullanıyor bu yüzden başına _ ekledik. ESlinter hatası almamak için
     info: PanInfo
   ) => {
     const dragDistance = info.offset.x;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { useProducts } from "../context/ProductContext";
+import { useProducts } from "../hooks/useProduct";
 import "../styles/Products.css";
 
 interface Product {

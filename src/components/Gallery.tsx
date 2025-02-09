@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useProducts } from "../context/ProductContext";
+import { useProducts } from "../hooks/useProduct";
 import "../styles/Gallery.css";
 import { useImagePreload } from "../utils/performance";
 import { SEO } from "../components/SEO";
