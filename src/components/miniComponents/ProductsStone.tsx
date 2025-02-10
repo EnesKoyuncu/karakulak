@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import "../../styles/miniComponentsStyle/ProductsStone.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -9,6 +9,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Share from "yet-another-react-lightbox/plugins/share";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface ProductsProps {
   title: string;
@@ -17,7 +18,7 @@ interface ProductsProps {
   additionalInfo?: string;
 }
 
-// Container animasyonu
+// Sadece görsel bölüm için genel container animasyonu (staggered)
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -31,7 +32,6 @@ const containerVariants = {
   },
 };
 
-// Image section animasyonu
 const imageVariants = {
   hidden: { opacity: 0, x: -20 },
   visible: {
@@ -41,17 +41,6 @@ const imageVariants = {
   },
 };
 
-// Info section animasyonu
-const infoVariants = {
-  hidden: { opacity: 0, x: 20 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
-// Thumbnail animasyonu
 const thumbnailVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -67,16 +56,41 @@ const Products: React.FC<ProductsProps> = ({
   images = [],
   additionalInfo,
 }) => {
-  const [selectedImage, setSelectedImage] = React.useState<string>("");
-  const [startIndex, setStartIndex] = React.useState(0);
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [photoIndex, setPhotoIndex] = React.useState(0);
-  const [visibleThumbnails, setVisibleThumbnails] = React.useState(5);
-  const sliderRef = React.useRef<HTMLDivElement>(null);
+  const [selectedImage, setSelectedImage] = useState<string>("");
+  const [startIndex, setStartIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const [visibleThumbnails, setVisibleThumbnails] = useState(5);
+  const sliderRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const dragThreshold = 50;
+  const { language } = useLanguage();
 
-  React.useEffect(() => {
+  // Dil bazlı çeviri metinleri
+  const translations = {
+    tr: {
+      zoomHint: "Büyütmek için tıklayın",
+      swipeHint: "← Kaydırarak görüntüleyin →",
+      mainImageAlt: "Ana Görsel",
+      thumbnailAlt: "Görsel",
+      prevButton: "Önceki görseller",
+      nextButton: "Sonraki görseller",
+      productImagesSection: "Ürün Görselleri",
+      productInfoSection: "Ürün Bilgisi",
+    },
+    en: {
+      zoomHint: "Click to enlarge",
+      swipeHint: "← Swipe to view →",
+      mainImageAlt: "Main Image",
+      thumbnailAlt: "Image",
+      prevButton: "Previous images",
+      nextButton: "Next images",
+      productImagesSection: "Product Images",
+      productInfoSection: "Product Information",
+    },
+  };
+
+  useEffect(() => {
     if (images && images.length > 0) {
       setSelectedImage(images[0]);
       setStartIndex(0);
@@ -93,7 +107,6 @@ const Products: React.FC<ProductsProps> = ({
 
     updateVisibleThumbnails();
     window.addEventListener("resize", updateVisibleThumbnails);
-
     return () => {
       window.removeEventListener("resize", updateVisibleThumbnails);
     };
@@ -121,12 +134,13 @@ const Products: React.FC<ProductsProps> = ({
     }
   };
 
+  // Drag işlemleri: framer-motion ile ana görselde kaydırma hareketlerini kontrol ediyoruz.
   const handleDragStart = () => {
     setIsDragging(true);
   };
 
   const handleDragEnd = (
-    _event: MouseEvent | TouchEvent | PointerEvent, //framer motion kullanıyor bu yüzden başına _ ekledik. ESlinter hatası almamak için
+    _event: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo
   ) => {
     const dragDistance = info.offset.x;
@@ -139,7 +153,6 @@ const Products: React.FC<ProductsProps> = ({
         setSelectedImage(images[currentIndex + 1]);
       }
     }
-
     setTimeout(() => {
       setIsDragging(false);
     }, 100);
@@ -152,44 +165,60 @@ const Products: React.FC<ProductsProps> = ({
     }
   };
 
+  // Klavyeden erişilebilirlik için ana görsele "Enter" veya "Space" tuşuyla tıklama desteği
+  const handleMainImageKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      handleImageClick(images.indexOf(selectedImage));
+    }
+  };
+
   if (!images || images.length === 0) {
     return (
-      <div className="products-container">
-        <div className="products-info-section">
+      <article className="products-container">
+        <section
+          className="products-info-section"
+          aria-label={translations[language].productInfoSection}
+        >
           <h2>{title}</h2>
           <p className="description">{description}</p>
           {additionalInfo && (
             <p className="additional-info">{additionalInfo}</p>
           )}
-        </div>
-      </div>
+        </section>
+      </article>
     );
   }
 
   return (
     <>
-      <motion.div
-        className="products-container"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div className="products-image-section" variants={imageVariants}>
-          <motion.div
+      <article className="products-container">
+        {/* Görsel Bölümü: Animasyonlar containerVariants ile sıralı çalışıyor */}
+        <motion.section
+          className="products-image-section"
+          aria-label={translations[language].productImagesSection}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.figure
             className="main-image-container"
-            whileHover={{ scale: 1.02 }}
+            role="button"
+            tabIndex={0}
+            aria-label={translations[language].zoomHint}
+            onKeyDown={handleMainImageKeyDown}
+            onClick={() => handleImageClick(images.indexOf(selectedImage))}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.2}
             onDragStart={handleDragStart}
             onDragEnd={handleDragEnd}
-            onClick={() => handleImageClick(images.indexOf(selectedImage))}
+            variants={imageVariants}
           >
             <AnimatePresence mode="wait">
               <motion.img
                 key={selectedImage}
                 src={selectedImage}
-                alt={`${title} - Ana Görsel`}
+                alt={`${title} - ${translations[language].mainImageAlt}`}
                 className="main-image"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -198,14 +227,14 @@ const Products: React.FC<ProductsProps> = ({
                 draggable={false}
               />
             </AnimatePresence>
-            <motion.div className="hint-container">
+            <div className="hint-container" aria-hidden="true">
               <motion.div
                 className="zoom-hint"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isDragging ? 0 : 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <span>Büyütmek için tıklayın</span>
+                <span>{translations[language].zoomHint}</span>
               </motion.div>
               <motion.div
                 className="swipe-hint"
@@ -213,18 +242,22 @@ const Products: React.FC<ProductsProps> = ({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
               >
-                <span>← Kaydırarak görüntüleyin →</span>
+                <span>{translations[language].swipeHint}</span>
               </motion.div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </motion.figure>
 
-          <div className="thumbnail-slider-container">
+          <nav
+            className="thumbnail-slider-container"
+            aria-label={translations[language].productImagesSection}
+          >
             {startIndex > 0 && (
               <motion.button
                 className="slider-nav-button prev"
                 onClick={handlePrevClick}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                aria-label={translations[language].prevButton}
               >
                 <FaChevronLeft />
               </motion.button>
@@ -251,10 +284,22 @@ const Products: React.FC<ProductsProps> = ({
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setSelectedImage(image)}
                       layout
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`${title} - ${
+                        translations[language].thumbnailAlt
+                      } ${index + 1}`}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          setSelectedImage(image);
+                        }
+                      }}
                     >
                       <img
                         src={image}
-                        alt={`${title} - Görsel ${index + 1}`}
+                        alt={`${title} - ${
+                          translations[language].thumbnailAlt
+                        } ${index + 1}`}
                         loading="lazy"
                       />
                     </motion.div>
@@ -269,41 +314,29 @@ const Products: React.FC<ProductsProps> = ({
                 onClick={handleNextClick}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                aria-label={translations[language].nextButton}
               >
                 <FaChevronRight />
               </motion.button>
             )}
-          </div>
-        </motion.div>
+          </nav>
+        </motion.section>
 
-        <motion.div className="products-info-section" variants={infoVariants}>
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            {title}
-          </motion.h2>
-          <motion.p
-            className="description"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            {description}
-          </motion.p>
+        {/* Bilgi Bölümü: Görsel animasyonlarından bağımsız, daha hızlı görünüyor */}
+        <motion.section
+          className="products-info-section"
+          aria-label={translations[language].productInfoSection}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <h2>{title}</h2>
+          <p className="description">{description}</p>
           {additionalInfo && (
-            <motion.p
-              className="additional-info"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              {additionalInfo}
-            </motion.p>
+            <p className="additional-info">{additionalInfo}</p>
           )}
-        </motion.div>
-      </motion.div>
+        </motion.section>
+      </article>
 
       <Lightbox
         open={isOpen}

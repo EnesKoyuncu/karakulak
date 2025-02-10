@@ -1,9 +1,18 @@
 import { createContext } from "react";
 
-// Ürün tipi tanımlaması
+export interface TranslatedText {
+  tr: string;
+  en: string;
+}
+
+export interface TranslatedStringArray {
+  tr: string[];
+  en: string[];
+}
+
 export interface ProductImage {
   url: string;
-  alt: string;
+  alt: TranslatedText;
 }
 
 export interface TechnicalSpecifications {
@@ -31,24 +40,32 @@ export interface VehicleSpecification {
 }
 
 export interface ProductAdvantage {
-  title: string;
-  description: string;
+  tr: {
+    title: string;
+    description: string;
+  };
+  en: {
+    title: string;
+    description: string;
+  };
 }
 
 export interface Product {
   id: string;
   category: string;
-  name: string;
-  description: string;
+  name: TranslatedText;
+  description: TranslatedText;
   images: ProductImage[];
-  generalFeatures: string[];
+  generalFeatures: TranslatedStringArray;
   technicalSpecifications?: TechnicalSpecifications;
   vehicleSpecifications?: VehicleSpecification[];
   advantages?: ProductAdvantage[];
-  keywords?: string[];
+  keywords?: TranslatedStringArray;
+  features?: TranslatedStringArray;
+  bagajKapagi?: TranslatedStringArray;
+  genel?: TranslatedStringArray;
 }
 
-// Context için tip tanımlaması
 export interface ProductContextType {
   products: Product[];
   selectedProduct: Product | null;
@@ -57,7 +74,6 @@ export interface ProductContextType {
   error: string | null;
 }
 
-// Context oluşturma
 export const ProductContext = createContext<ProductContextType | undefined>(
   undefined
 );

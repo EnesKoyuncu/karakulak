@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import "../styles/ProductAllInfo.css";
 import { SEO } from "./SEO";
+import { useLanguage } from "@/hooks/useLanguage";
+import { ProductAdvantage } from "../context/ProductContext";
 
 const ProductAllInfo = () => {
   const { id } = useParams();
@@ -14,6 +16,7 @@ const ProductAllInfo = () => {
   const [isGeneralOpen, setIsGeneralOpen] = useState(true);
   const [isVehicleOpen, setIsVehicleOpen] = useState(true);
   const [isAdvantagesOpen, setIsAdvantagesOpen] = useState(true);
+  const { language } = useLanguage();
 
   const selectedProduct = products.find((p) => p.id === id);
 
@@ -27,29 +30,82 @@ const ProductAllInfo = () => {
     return null;
   }
 
+  // Dil bazlı arayüz metinleri (sabit metinler)
+  const translations = {
+    tr: {
+      vehicleSpecifications: "Araç Spesifikasyonları",
+      generalFeatures: "Genel Özellikler",
+      advantages: "Avantajlar",
+      truckBrand: "Marka",
+      wheelbase: "Dingil Mesafesi",
+      garbageBinVolume: "Çöp Kapasitesi",
+      vehicleSpecsTableLabel: "Araç Spesifikasyonları Tablosu",
+      vehicleSpecsCaption: "Araç Spesifikasyonları",
+      productPageMain: "Ürün Detayları",
+    },
+    en: {
+      vehicleSpecifications: "Vehicle Specifications",
+      generalFeatures: "General Features",
+      advantages: "Advantages",
+      truckBrand: "Truck Brand",
+      wheelbase: "Wheelbase",
+      garbageBinVolume: "Garbage Bin Volume",
+      vehicleSpecsTableLabel: "Vehicle Specifications Table",
+      vehicleSpecsCaption: "Vehicle Specifications",
+      productPageMain: "Product Details",
+    },
+  };
+
+  // SEO için açıklama ve anahtar kelimeler; ürünün dil uyumlu alanlarını kullanıyoruz.
+  const seoDescription =
+    language === "tr"
+      ? `${selectedProduct.name[language]} detaylı teknik özellikleri, araç spesifikasyonları ve avantajları. ${selectedProduct.description[language]}`
+      : `${selectedProduct.name[language]} detailed technical features, vehicle specifications, and advantages. ${selectedProduct.description[language]}`;
+
+  const seoKeywords =
+    language === "tr"
+      ? `ayalka ${selectedProduct.name[language].toLowerCase()}, ${
+          selectedProduct.category
+        }, araç üstü ekipman, teknik özellikler, ${selectedProduct.name[
+          language
+        ].toLowerCase()} özellikleri`
+      : `ayalka ${selectedProduct.name[language].toLowerCase()}, ${
+          selectedProduct.category
+        }, vehicle mounted equipment, technical specifications, ${selectedProduct.name[
+          language
+        ].toLowerCase()} features`;
+
   return (
     <>
       <SEO
-        title={`${selectedProduct.name} | Ayalka Makina`}
-        description={`${selectedProduct.name} detaylı teknik özellikleri, araç spesifikasyonları ve avantajları. ${selectedProduct.description}`}
-        keywords={`ayalka ${selectedProduct.name.toLowerCase()}, ${
-          selectedProduct.category
-        }, araç üstü ekipman, teknik özellikler, ${selectedProduct.name.toLowerCase()} özellikleri`}
+        title={`${selectedProduct.name[language]} | Ayalka Makina`}
+        description={seoDescription}
+        keywords={seoKeywords}
         image={selectedProduct.images[0]?.url || "/images/default-product.jpg"}
       />
 
-      <main className="product-all-info-wrapper" role="main">
+      <main
+        className="product-all-info-wrapper"
+        role="main"
+        aria-label={translations[language].productPageMain}
+      >
         <article className="product-all-info">
+          {/* Ürün görsel ve açıklama bileşeni */}
           <ProductsStone
-            title={selectedProduct.name}
-            description={selectedProduct.description}
+            title={selectedProduct.name[language]}
+            description={selectedProduct.description[language]}
             images={selectedProduct.images.map((img) => img.url)}
           />
 
           <div className="features-container">
+            {/* Araç Spesifikasyonları Bölümü */}
             {selectedProduct.vehicleSpecifications && (
-              <section className="features-section">
+              <section
+                className="features-section"
+                aria-labelledby="vehicle-specs-heading"
+              >
                 <motion.header
+                  id="vehicle-specs-heading"
                   className="features-header"
                   onClick={() => setIsVehicleOpen(!isVehicleOpen)}
                   whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
@@ -57,7 +113,9 @@ const ProductAllInfo = () => {
                   aria-expanded={isVehicleOpen}
                   aria-controls="vehicle-specs-content"
                 >
-                  <h2 className="section-title">Vehicle Specifications</h2>
+                  <h2 className="section-title">
+                    {translations[language].vehicleSpecifications}
+                  </h2>
                   <motion.span
                     className="chevron-icon"
                     animate={{ rotate: isVehicleOpen ? 180 : 0 }}
@@ -81,17 +139,25 @@ const ProductAllInfo = () => {
                       <div
                         className="vehicle-specs-table"
                         role="region"
-                        aria-label="Araç Spesifikasyonları Tablosu"
+                        aria-label={
+                          translations[language].vehicleSpecsTableLabel
+                        }
                       >
                         <table>
                           <caption className="sr-only">
-                            Araç Spesifikasyonları
+                            {translations[language].vehicleSpecsCaption}
                           </caption>
                           <thead>
                             <tr>
-                              <th scope="col">Truck Brand</th>
-                              <th scope="col">Wheelbase</th>
-                              <th scope="col">Garbage Bin Volume</th>
+                              <th scope="col">
+                                {translations[language].truckBrand}
+                              </th>
+                              <th scope="col">
+                                {translations[language].wheelbase}
+                              </th>
+                              <th scope="col">
+                                {translations[language].garbageBinVolume}
+                              </th>
                             </tr>
                           </thead>
                           <tbody>
@@ -113,8 +179,13 @@ const ProductAllInfo = () => {
               </section>
             )}
 
-            <section className="features-section">
+            {/* Genel Özellikler Bölümü */}
+            <section
+              className="features-section"
+              aria-labelledby="general-features-heading"
+            >
               <motion.header
+                id="general-features-heading"
                 className="features-header"
                 onClick={() => setIsGeneralOpen(!isGeneralOpen)}
                 whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
@@ -122,7 +193,9 @@ const ProductAllInfo = () => {
                 aria-expanded={isGeneralOpen}
                 aria-controls="general-features-content"
               >
-                <h2 className="section-title">General Features</h2>
+                <h2 className="section-title">
+                  {translations[language].generalFeatures}
+                </h2>
                 <motion.span
                   className="chevron-icon"
                   animate={{ rotate: isGeneralOpen ? 180 : 0 }}
@@ -144,67 +217,83 @@ const ProductAllInfo = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <ul className="features-list" role="list">
-                      {selectedProduct.generalFeatures.map((feature, index) => (
-                        <motion.li
-                          key={index}
-                          className="feature-item"
-                          initial={{ x: -20, opacity: 0 }}
-                          animate={{ x: 0, opacity: 1 }}
-                          transition={{ delay: index * 0.1 }}
-                        >
-                          {feature}
-                        </motion.li>
-                      ))}
+                      {selectedProduct.generalFeatures[language].map(
+                        (feature, index) => (
+                          <motion.li
+                            key={index}
+                            className="feature-item"
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: index * 0.1 }}
+                          >
+                            {feature}
+                          </motion.li>
+                        )
+                      )}
                     </ul>
                   </motion.div>
                 )}
               </AnimatePresence>
             </section>
 
-            {selectedProduct.advantages && (
-              <section className="features-section">
-                <motion.header
-                  className="features-header"
-                  onClick={() => setIsAdvantagesOpen(!isAdvantagesOpen)}
-                  whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
-                  role="button"
-                  aria-expanded={isAdvantagesOpen}
-                  aria-controls="advantages-content"
+            {/* Avantajlar Bölümü */}
+            {selectedProduct.advantages &&
+              Array.isArray(selectedProduct.advantages) && (
+                <section
+                  className="features-section"
+                  aria-labelledby="advantages-heading"
                 >
-                  <h2 className="section-title">Advantages</h2>
-                  <motion.span
-                    className="chevron-icon"
-                    animate={{ rotate: isAdvantagesOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    aria-hidden="true"
+                  <motion.header
+                    id="advantages-heading"
+                    className="features-header"
+                    onClick={() => setIsAdvantagesOpen(!isAdvantagesOpen)}
+                    whileHover={{ backgroundColor: "rgba(231, 76, 60, 0.1)" }}
+                    role="button"
+                    aria-expanded={isAdvantagesOpen}
+                    aria-controls="advantages-content"
                   >
-                    <FaChevronDown />
-                  </motion.span>
-                </motion.header>
-
-                <AnimatePresence mode="sync">
-                  {isAdvantagesOpen && (
-                    <motion.div
-                      id="advantages-content"
-                      className="features-content"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
+                    <h2 className="section-title">
+                      {translations[language].advantages}
+                    </h2>
+                    <motion.span
+                      className="chevron-icon"
+                      animate={{ rotate: isAdvantagesOpen ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
+                      aria-hidden="true"
                     >
-                      <dl className="advantages-container" role="list">
-                        {selectedProduct.advantages.map((advantage, idx) => (
-                          <div key={idx} className="advantage-item">
-                            <dt>{advantage.title}</dt>
-                            <dd>{advantage.description}</dd>
-                          </div>
-                        ))}
-                      </dl>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </section>
-            )}
+                      <FaChevronDown />
+                    </motion.span>
+                  </motion.header>
+
+                  <AnimatePresence mode="sync">
+                    {isAdvantagesOpen && (
+                      <motion.div
+                        id="advantages-content"
+                        className="features-content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <dl className="advantages-container" role="list">
+                          {selectedProduct.advantages.map(
+                            (advantage: ProductAdvantage, idx: number) => {
+                              const advText =
+                                language === "tr" ? advantage.tr : advantage.en;
+                              return (
+                                <div key={idx} className="advantage-item">
+                                  <dt>{advText.title}</dt>
+                                  <dd>{advText.description}</dd>
+                                </div>
+                              );
+                            }
+                          )}
+                        </dl>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </section>
+              )}
           </div>
         </article>
       </main>
