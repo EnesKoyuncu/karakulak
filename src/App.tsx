@@ -111,7 +111,7 @@ function App() {
                   <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route
-                      path="/yonetim-kurul-baskani"
+                      path="/chairman-of-the-board"
                       element={
                         <Suspense fallback={<LoadingSpinner />}>
                           <ChairmanOfTheBoard />
@@ -135,16 +135,16 @@ function App() {
                       }
                     />
                     <Route
-                      path="/teknik-sartnameler"
+                      path="/technical-specification"
                       element={
                         <Suspense fallback={<LoadingSpinner />}>
                           <TechnicalSpecification />
                         </Suspense>
                       }
                     />
-                    <Route path="/basin-kiti" element={<PressKit />} />
+                    <Route path="/press-kit" element={<PressKit />} />
                     <Route
-                      path="/satis-sonrasi-hizmetler"
+                      path="/after-sales-services"
                       element={
                         <Suspense fallback={<LoadingSpinner />}>
                           <AfterSalesServices />
@@ -161,7 +161,7 @@ function App() {
                       }
                     />
                     <Route
-                      path="/galeri"
+                      path="/gallery"
                       element={
                         <Suspense fallback={<LoadingSpinner />}>
                           <Gallery />

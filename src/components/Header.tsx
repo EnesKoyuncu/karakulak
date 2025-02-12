@@ -59,7 +59,7 @@ const navItems: MenuItem[] = [
           tr: "Teknik Şartnameler",
           en: "Technical Specifications",
         },
-        link: "/teknik-sartnameler",
+        link: "/technical-specifications",
       },
     ],
   },
@@ -196,28 +196,28 @@ const navItems: MenuItem[] = [
       tr: "Basın Kiti",
       en: "Press Kit",
     },
-    link: "/basin-kiti",
+    link: "/press-kit",
   },
   {
     title: {
       tr: "Galeri",
       en: "Gallery",
     },
-    link: "/galeri",
+    link: "/gallery",
   },
   {
     title: {
       tr: "Satış Sonrası Hizmetler",
       en: "After Sales Services",
     },
-    link: "/satis-sonrasi-hizmetler",
+    link: "/after-sales-services",
   },
   {
     title: {
       tr: "İletişim",
       en: "Contact",
     },
-    link: "/iletisim",
+    link: "/contact",
   },
 ];
 
