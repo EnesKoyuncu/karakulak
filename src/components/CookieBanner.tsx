@@ -17,28 +17,28 @@ interface ITranslationsLanguageSupport {
   en: ITranslation;
 }
 
+const translations: ITranslationsLanguageSupport = {
+  tr: {
+    heading: "Çerez Tercihleri",
+    message:
+      "Web sitemizde size en iyi deneyimi sunabilmek için çerezleri kullanıyoruz. Zorunlu çerezler site fonksiyonları için gereklidir. Diğer çerezler, site deneyiminizi iyileştirmek ve analiz için kullanılır.",
+    acceptAll: "Tümünü Kabul Et",
+    acceptEssential: "Sadece Zorunlu Çerezler",
+    customize: "Özelleştir",
+  },
+  en: {
+    heading: "Cookie Preferences",
+    message:
+      "We use cookies on our website to give you the best experience. Essential cookies are required for site functionality. Other cookies are used to enhance your experience and for analytics.",
+    acceptAll: "Accept All",
+    acceptEssential: "Accept Only Essential Cookies",
+    customize: "Customize",
+  },
+};
+
 const CookieBanner: React.FC = () => {
   const { showBanner, setShowBanner, setConsent } = useCookieConsent();
   const { language } = useLanguage();
-
-  const translations: ITranslationsLanguageSupport = {
-    tr: {
-      heading: "Çerez Tercihleri",
-      message:
-        "Web sitemizde size en iyi deneyimi sunabilmek için çerezleri kullanıyoruz. Zorunlu çerezler site fonksiyonları için gereklidir. Diğer çerezler, site deneyiminizi iyileştirmek ve analiz için kullanılır.",
-      acceptAll: "Tümünü Kabul Et",
-      acceptEssential: "Sadece Zorunlu Çerezler",
-      customize: "Özelleştir",
-    },
-    en: {
-      heading: "Cookie Preferences",
-      message:
-        "We use cookies on our website to give you the best experience. Essential cookies are required for site functionality. Other cookies are used to enhance your experience and for analytics.",
-      acceptAll: "Accept All",
-      acceptEssential: "Accept Only Essential Cookies",
-      customize: "Customize",
-    },
-  };
 
   const texts = translations[language as keyof ITranslationsLanguageSupport];
 
