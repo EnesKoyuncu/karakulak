@@ -9,6 +9,23 @@ import { SEO } from "./SEO";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ProductAdvantage } from "../context/ProductContext";
 
+interface ITranslation {
+  vehicleSpecifications: string;
+  generalFeatures: string;
+  advantages: string;
+  truckBrand: string;
+  wheelbase: string;
+  garbageBinVolume: string;
+  vehicleSpecsTableLabel: string;
+  vehicleSpecsCaption: string;
+  productPageMain: string;
+}
+
+interface ITranslationsLanguageSupport {
+  tr: ITranslation;
+  en: ITranslation;
+}
+
 const ProductAllInfo = () => {
   const { id } = useParams();
   const { products } = useProducts();
@@ -60,7 +77,13 @@ const ProductAllInfo = () => {
   const seoDescription =
     language === "tr"
       ? `${selectedProduct.name[language]} detaylı teknik özellikleri, araç spesifikasyonları ve avantajları. ${selectedProduct.description[language]}`
-      : `${selectedProduct.name[language]} detailed technical features, vehicle specifications, and advantages. ${selectedProduct.description[language]}`;
+      : `${
+          selectedProduct.name[language as keyof ITranslationsLanguageSupport]
+        } detailed technical features, vehicle specifications, and advantages. ${
+          selectedProduct.description[
+            language as keyof ITranslationsLanguageSupport
+          ]
+        }`;
 
   const seoKeywords =
     language === "tr"
@@ -69,16 +92,20 @@ const ProductAllInfo = () => {
         }, araç üstü ekipman, teknik özellikler, ${selectedProduct.name[
           language
         ].toLowerCase()} özellikleri`
-      : `ayalka ${selectedProduct.name[language].toLowerCase()}, ${
+      : `ayalka ${selectedProduct.name[
+          language as keyof ITranslationsLanguageSupport
+        ].toLowerCase()}, ${
           selectedProduct.category
         }, vehicle mounted equipment, technical specifications, ${selectedProduct.name[
-          language
+          language as keyof ITranslationsLanguageSupport
         ].toLowerCase()} features`;
 
   return (
     <>
       <SEO
-        title={`${selectedProduct.name[language]} | Ayalka Makina`}
+        title={`${
+          selectedProduct.name[language as keyof ITranslationsLanguageSupport]
+        } | Ayalka Makina`}
         description={seoDescription}
         keywords={seoKeywords}
         image={selectedProduct.images[0]?.url || "/images/default-product.jpg"}
@@ -87,13 +114,24 @@ const ProductAllInfo = () => {
       <main
         className="product-all-info-wrapper"
         role="main"
-        aria-label={translations[language].productPageMain}
+        aria-label={
+          translations[language as keyof ITranslationsLanguageSupport]
+            .productPageMain
+        }
       >
         <article className="product-all-info">
           {/* Ürün görsel ve açıklama bileşeni */}
           <ProductsStone
-            title={selectedProduct.name[language]}
-            description={selectedProduct.description[language]}
+            title={
+              selectedProduct.name[
+                language as keyof ITranslationsLanguageSupport
+              ]
+            }
+            description={
+              selectedProduct.description[
+                language as keyof ITranslationsLanguageSupport
+              ]
+            }
             images={selectedProduct.images.map((img) => img.url)}
           />
 
@@ -114,7 +152,11 @@ const ProductAllInfo = () => {
                   aria-controls="vehicle-specs-content"
                 >
                   <h2 className="section-title">
-                    {translations[language].vehicleSpecifications}
+                    {
+                      translations[
+                        language as keyof ITranslationsLanguageSupport
+                      ].vehicleSpecifications
+                    }
                   </h2>
                   <motion.span
                     className="chevron-icon"
@@ -140,23 +182,41 @@ const ProductAllInfo = () => {
                         className="vehicle-specs-table"
                         role="region"
                         aria-label={
-                          translations[language].vehicleSpecsTableLabel
+                          translations[
+                            language as keyof ITranslationsLanguageSupport
+                          ].vehicleSpecsTableLabel
                         }
                       >
                         <table>
                           <caption className="sr-only">
-                            {translations[language].vehicleSpecsCaption}
+                            {
+                              translations[
+                                language as keyof ITranslationsLanguageSupport
+                              ].vehicleSpecsCaption
+                            }
                           </caption>
                           <thead>
                             <tr>
                               <th scope="col">
-                                {translations[language].truckBrand}
+                                {
+                                  translations[
+                                    language as keyof ITranslationsLanguageSupport
+                                  ].truckBrand
+                                }
                               </th>
                               <th scope="col">
-                                {translations[language].wheelbase}
+                                {
+                                  translations[
+                                    language as keyof ITranslationsLanguageSupport
+                                  ].wheelbase
+                                }
                               </th>
                               <th scope="col">
-                                {translations[language].garbageBinVolume}
+                                {
+                                  translations[
+                                    language as keyof ITranslationsLanguageSupport
+                                  ].garbageBinVolume
+                                }
                               </th>
                             </tr>
                           </thead>
@@ -194,7 +254,10 @@ const ProductAllInfo = () => {
                 aria-controls="general-features-content"
               >
                 <h2 className="section-title">
-                  {translations[language].generalFeatures}
+                  {
+                    translations[language as keyof ITranslationsLanguageSupport]
+                      .generalFeatures
+                  }
                 </h2>
                 <motion.span
                   className="chevron-icon"
@@ -217,19 +280,19 @@ const ProductAllInfo = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <ul className="features-list" role="list">
-                      {selectedProduct.generalFeatures[language].map(
-                        (feature, index) => (
-                          <motion.li
-                            key={index}
-                            className="feature-item"
-                            initial={{ x: -20, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ delay: index * 0.1 }}
-                          >
-                            {feature}
-                          </motion.li>
-                        )
-                      )}
+                      {selectedProduct.generalFeatures[
+                        language as keyof ITranslationsLanguageSupport
+                      ].map((feature, index) => (
+                        <motion.li
+                          key={index}
+                          className="feature-item"
+                          initial={{ x: -20, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          {feature}
+                        </motion.li>
+                      ))}
                     </ul>
                   </motion.div>
                 )}
@@ -253,7 +316,11 @@ const ProductAllInfo = () => {
                     aria-controls="advantages-content"
                   >
                     <h2 className="section-title">
-                      {translations[language].advantages}
+                      {
+                        translations[
+                          language as keyof ITranslationsLanguageSupport
+                        ].advantages
+                      }
                     </h2>
                     <motion.span
                       className="chevron-icon"

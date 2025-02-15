@@ -164,7 +164,7 @@ function AppContent() {
               />
               <Route path="/:lang/contact" element={<Contact />} />
               <Route
-                path="/products/:category/:id"
+                path="/:lang/products/:category/:id"
                 element={
                   <Suspense fallback={<LoadingSpinner />}>
                     <ProductAllInfo />

@@ -18,6 +18,22 @@ interface ProductsProps {
   additionalInfo?: string;
 }
 
+interface ITranslation {
+  zoomHint: string;
+  swipeHint: string;
+  mainImageAlt: string;
+  thumbnailAlt: string;
+  prevButton: string;
+  nextButton: string;
+  productImagesSection: string;
+  productInfoSection: string;
+}
+
+interface ITranslationsLanguageSupport {
+  tr: ITranslation;
+  en: ITranslation;
+}
+
 // Sadece görsel bölüm için genel container animasyonu (staggered)
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -67,7 +83,7 @@ const Products: React.FC<ProductsProps> = ({
   const { language } = useLanguage();
 
   // Dil bazlı çeviri metinleri
-  const translations = {
+  const translations: ITranslationsLanguageSupport = {
     tr: {
       zoomHint: "Büyütmek için tıklayın",
       swipeHint: "← Kaydırarak görüntüleyin →",
@@ -177,7 +193,10 @@ const Products: React.FC<ProductsProps> = ({
       <article className="products-container">
         <section
           className="products-info-section"
-          aria-label={translations[language].productInfoSection}
+          aria-label={
+            translations[language as keyof ITranslationsLanguageSupport]
+              .productInfoSection
+          }
         >
           <h2>{title}</h2>
           <p className="description">{description}</p>
@@ -195,7 +214,10 @@ const Products: React.FC<ProductsProps> = ({
         {/* Görsel Bölümü: Animasyonlar containerVariants ile sıralı çalışıyor */}
         <motion.section
           className="products-image-section"
-          aria-label={translations[language].productImagesSection}
+          aria-label={
+            translations[language as keyof ITranslationsLanguageSupport]
+              .productImagesSection
+          }
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -204,7 +226,10 @@ const Products: React.FC<ProductsProps> = ({
             className="main-image-container"
             role="button"
             tabIndex={0}
-            aria-label={translations[language].zoomHint}
+            aria-label={
+              translations[language as keyof ITranslationsLanguageSupport]
+                .zoomHint
+            }
             onKeyDown={handleMainImageKeyDown}
             onClick={() => handleImageClick(images.indexOf(selectedImage))}
             drag="x"
@@ -218,7 +243,10 @@ const Products: React.FC<ProductsProps> = ({
               <motion.img
                 key={selectedImage}
                 src={selectedImage}
-                alt={`${title} - ${translations[language].mainImageAlt}`}
+                alt={`${title} - ${
+                  translations[language as keyof ITranslationsLanguageSupport]
+                    .mainImageAlt
+                }`}
                 className="main-image"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -234,7 +262,12 @@ const Products: React.FC<ProductsProps> = ({
                 animate={{ opacity: isDragging ? 0 : 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <span>{translations[language].zoomHint}</span>
+                <span>
+                  {
+                    translations[language as keyof ITranslationsLanguageSupport]
+                      .zoomHint
+                  }
+                </span>
               </motion.div>
               <motion.div
                 className="swipe-hint"
@@ -242,14 +275,22 @@ const Products: React.FC<ProductsProps> = ({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
               >
-                <span>{translations[language].swipeHint}</span>
+                <span>
+                  {
+                    translations[language as keyof ITranslationsLanguageSupport]
+                      .swipeHint
+                  }
+                </span>
               </motion.div>
             </div>
           </motion.figure>
 
           <nav
             className="thumbnail-slider-container"
-            aria-label={translations[language].productImagesSection}
+            aria-label={
+              translations[language as keyof ITranslationsLanguageSupport]
+                .productImagesSection
+            }
           >
             {startIndex > 0 && (
               <motion.button
@@ -257,7 +298,10 @@ const Products: React.FC<ProductsProps> = ({
                 onClick={handlePrevClick}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                aria-label={translations[language].prevButton}
+                aria-label={
+                  translations[language as keyof ITranslationsLanguageSupport]
+                    .prevButton
+                }
               >
                 <FaChevronLeft />
               </motion.button>
@@ -287,7 +331,9 @@ const Products: React.FC<ProductsProps> = ({
                       role="button"
                       tabIndex={0}
                       aria-label={`${title} - ${
-                        translations[language].thumbnailAlt
+                        translations[
+                          language as keyof ITranslationsLanguageSupport
+                        ].thumbnailAlt
                       } ${index + 1}`}
                       onKeyDown={(event) => {
                         if (event.key === "Enter" || event.key === " ") {
@@ -298,7 +344,9 @@ const Products: React.FC<ProductsProps> = ({
                       <img
                         src={image}
                         alt={`${title} - ${
-                          translations[language].thumbnailAlt
+                          translations[
+                            language as keyof ITranslationsLanguageSupport
+                          ].thumbnailAlt
                         } ${index + 1}`}
                         loading="lazy"
                       />
@@ -314,7 +362,10 @@ const Products: React.FC<ProductsProps> = ({
                 onClick={handleNextClick}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                aria-label={translations[language].nextButton}
+                aria-label={
+                  translations[language as keyof ITranslationsLanguageSupport]
+                    .nextButton
+                }
               >
                 <FaChevronRight />
               </motion.button>
@@ -325,7 +376,10 @@ const Products: React.FC<ProductsProps> = ({
         {/* Bilgi Bölümü: Görsel animasyonlarından bağımsız, daha hızlı görünüyor */}
         <motion.section
           className="products-info-section"
-          aria-label={translations[language].productInfoSection}
+          aria-label={
+            translations[language as keyof ITranslationsLanguageSupport]
+              .productInfoSection
+          }
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3 }}

@@ -4,7 +4,12 @@ import { Link, useLocation } from "react-router-dom";
 import { useProducts } from "../hooks/useProduct";
 import "../styles/Products.css";
 import { useLanguage } from "@/hooks/useLanguage";
-interface Product {
+
+// ! BU SAYFA DA HAYRA ALAMET DURMUYOR DÜZELTİLMESİ GEREK!!!!
+// ! BU SAYFA DA HAYRA ALAMET DURMUYOR DÜZELTİLMESİ GEREK!!!!
+// ! BU SAYFA DA HAYRA ALAMET DURMUYOR DÜZELTİLMESİ GEREK!!!!
+
+interface IProduct {
   id: number;
   name: {
     tr: string;
@@ -22,7 +27,7 @@ interface Product {
   routeCategory?: string;
 }
 
-const products: Product[] = [
+const products: IProduct[] = [
   {
     id: 1,
     name: {
@@ -263,7 +268,13 @@ const products: Product[] = [
   },
 ];
 
-const categories = {
+// ! Just Categories
+interface ICategories {
+  tr: string[];
+  en: string[];
+}
+
+const categories: ICategories = {
   tr: [
     "Tümü",
     "Atık Yönetimi",
@@ -292,7 +303,8 @@ const Products: React.FC = () => {
     selectedCategory === (language === "tr" ? "Tümü" : "All")
       ? products
       : products.filter(
-          (product) => product.category[language] === selectedCategory
+          (product) =>
+            product.category[language as keyof ICategories] === selectedCategory
         );
 
   const displayedProducts = showAll
@@ -332,7 +344,7 @@ const Products: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {categories[language].map((category) => (
+          {categories[language as keyof ICategories].map((category) => (
             <button
               key={category}
               className={`category-btn ${
@@ -372,7 +384,10 @@ const Products: React.FC = () => {
                     onClick={handleProductClick}
                   >
                     <div className="product-image">
-                      <img src={product.image} alt={product.name[language]} />
+                      <img
+                        src={product.image}
+                        alt={product.name[language as keyof IProduct["name"]]}
+                      />
                       <motion.div
                         className="product-overlay"
                         initial={{ opacity: 0 }}
@@ -388,23 +403,50 @@ const Products: React.FC = () => {
                     </div>
                     <div className="product-content">
                       <span className="product-category-tag">
-                        {product.category[language]}
+                        {
+                          product.category[
+                            language as keyof IProduct["category"]
+                          ]
+                        }
                       </span>
-                      <h3>{product.name[language]}</h3>
-                      <p>{product.description[language]}</p>
+                      <h3>
+                        {product.name[language as keyof IProduct["name"]]}
+                      </h3>
+                      <p>
+                        {
+                          product.description[
+                            language as keyof IProduct["description"]
+                          ]
+                        }
+                      </p>
                     </div>
                   </Link>
                 ) : (
                   <div>
                     <div className="product-image">
-                      <img src={product.image} alt={product.name[language]} />
+                      <img
+                        src={product.image}
+                        alt={product.name[language as keyof IProduct["name"]]}
+                      />
                     </div>
                     <div className="product-content">
                       <span className="product-category-tag">
-                        {product.category[language]}
+                        {
+                          product.category[
+                            language as keyof IProduct["category"]
+                          ]
+                        }
                       </span>
-                      <h3>{product.name[language]}</h3>
-                      <p>{product.description[language]}</p>
+                      <h3>
+                        {product.name[language as keyof IProduct["name"]]}
+                      </h3>
+                      <p>
+                        {
+                          product.description[
+                            language as keyof IProduct["description"]
+                          ]
+                        }
+                      </p>
                     </div>
                   </div>
                 )}

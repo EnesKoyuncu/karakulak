@@ -5,7 +5,8 @@ import "../styles/HeroSlider.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useLanguage } from "../hooks/useLanguage";
-interface SlideContent {
+
+interface ISlideContent {
   image: string;
   title: {
     tr: string;
@@ -17,7 +18,7 @@ interface SlideContent {
   };
 }
 
-const slides: SlideContent[] = [
+const slides: ISlideContent[] = [
   {
     image: "/images/slider/slider1.webp",
     title: {
@@ -138,8 +139,14 @@ export default function HeroSlider() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h1>{slide.title[language]}</h1>
-                <p>{slide.description[language]}</p>
+                <h1>{slide.title[language as keyof ISlideContent["title"]]}</h1>
+                <p>
+                  {
+                    slide.description[
+                      language as keyof ISlideContent["description"]
+                    ]
+                  }
+                </p>
                 <button className="cta-button">
                   {language === "tr" ? "Daha Fazla Bilgi" : "Learn More"}
                 </button>

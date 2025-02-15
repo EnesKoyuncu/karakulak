@@ -4,11 +4,24 @@ import { useCookieConsent } from "../hooks/useCookieConsent";
 import "../styles/CookieBanner.css";
 import { useLanguage } from "../hooks/useLanguage";
 
+interface ITranslation {
+  heading: string;
+  message: string;
+  acceptAll: string;
+  acceptEssential: string;
+  customize: string;
+}
+
+interface ITranslationsLanguageSupport {
+  tr: ITranslation;
+  en: ITranslation;
+}
+
 const CookieBanner: React.FC = () => {
   const { showBanner, setShowBanner, setConsent } = useCookieConsent();
   const { language } = useLanguage();
 
-  const translations = {
+  const translations: ITranslationsLanguageSupport = {
     tr: {
       heading: "Çerez Tercihleri",
       message:
@@ -27,7 +40,7 @@ const CookieBanner: React.FC = () => {
     },
   };
 
-  const texts = translations[language];
+  const texts = translations[language as keyof ITranslationsLanguageSupport];
 
   const handleAcceptAll = () => {
     setConsent({

@@ -27,8 +27,28 @@ const Gallery: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const { language } = useLanguage();
 
+  interface InterfaceSEO {
+    title: string;
+    description: string;
+    keywords: string;
+  }
+
+  interface ITranslation {
+    seo: InterfaceSEO;
+    mainAriaLabel: string;
+    headerTitle: string;
+    categoryFilterAriaLabel: string;
+    allCategory: string;
+    enlargeText: string;
+  }
+
+  interface ITranslationsLanguageSupport {
+    tr: ITranslation;
+    en: ITranslation;
+  }
+
   // Çeviri sözlüğü: SEO, başlık, kategori filtreleri, overlay metni ve aria-label’lar
-  const translations = {
+  const translations: ITranslationsLanguageSupport = {
     tr: {
       seo: {
         title: "Galeri | Ayalka Makina",
@@ -59,7 +79,7 @@ const Gallery: React.FC = () => {
     },
   };
 
-  const texts = translations[language];
+  const texts = translations[language as keyof ITranslationsLanguageSupport];
 
   // Tüm resimleri hesapla
   const allImages: GalleryImage[] = useMemo(() => {
@@ -175,7 +195,9 @@ const Gallery: React.FC = () => {
               >
                 <img
                   src={image.src}
-                  alt={image.alt[language]}
+                  alt={
+                    image.alt[language as keyof ITranslationsLanguageSupport]
+                  } //TODO: Aslında bu kullanım yanlış ama geçici olarak kalsın
                   loading={index < 6 ? "eager" : "lazy"}
                   width="300"
                   height="169"
@@ -199,7 +221,7 @@ const Gallery: React.FC = () => {
             index={currentImageIndex}
             slides={filteredImages.map((img) => ({
               src: img.src,
-              alt: img.alt[language],
+              alt: img.alt[language as keyof ITranslationsLanguageSupport],
             }))}
             plugins={[Zoom, Thumbnails, Fullscreen]}
             carousel={{

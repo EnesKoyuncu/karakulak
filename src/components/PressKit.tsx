@@ -12,7 +12,12 @@ import "../styles/PressKit.css";
 import { SEO } from "./SEO";
 import { useLanguage } from "@/hooks/useLanguage";
 
-interface PressKitItem {
+// ! BU SAYFA BAŞTAN SONA TEKRAR DÜZENLENECEK BU NE BÖYLE
+// ! BU SAYFA BAŞTAN SONA TEKRAR DÜZENLENECEK BU NE BÖYLE
+// ! BU SAYFA BAŞTAN SONA TEKRAR DÜZENLENECEK BU NE BÖYLE
+// TODO: YAPMAYI UNUTMA
+
+interface IPressKitItem {
   id: number;
   title: { tr: string; en: string };
   description: { tr: string; en: string };
@@ -21,7 +26,7 @@ interface PressKitItem {
   preview: string;
 }
 
-const pressKitItems: PressKitItem[] = [
+const pressKitItems: IPressKitItem[] = [
   {
     id: 1,
     title: { tr: "LOGO", en: "LOGO" },
@@ -59,6 +64,41 @@ const pressKitItems: PressKitItem[] = [
       "https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png",
   },
 ];
+
+// ! Interfaces for translations
+interface SEO {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+interface SocialMedia {
+  title: string;
+  description: string;
+  followLabel?: string; // Optional çünkü Facebook ve LinkedIn'de yok
+  likeLabel?: string; // Optional çünkü Instagram ve LinkedIn'de yok
+  connectLabel?: string; // Optional çünkü Instagram ve Facebook'ta yok
+  previewAriaLabel?: string; // Optional çünkü Facebook ve LinkedIn'de yok
+}
+
+interface ITranslation {
+  seo: SEO;
+  headerTitle: string;
+  mainAriaLabel: string;
+  gridAriaLabel: string;
+  downloadLabel: string;
+  downloadAriaLabel: (title: string) => string; // Fonksiyon tipi
+  fileTypeAriaLabel: (type: string) => string; // Fonksiyon tipi
+  socialMediaAriaLabel: string;
+  instagram: SocialMedia;
+  facebook: SocialMedia;
+  linkedin: SocialMedia;
+}
+
+interface ITranslationsLanguageSupport {
+  tr: ITranslation;
+  en: ITranslation;
+}
 
 const defaultTiltOptions = {
   reverse: false,
@@ -98,7 +138,8 @@ export default function PressKit() {
   const { language } = useLanguage();
 
   // Çeviri sözlüğü: SEO, başlık, arayüz ve aria-label metinlerini içerir.
-  const translations = {
+  // TODO: Bu translation ne amk bunu düzeltmem gerek doğru gözükmüyor.
+  const translations: ITranslationsLanguageSupport = {
     tr: {
       seo: {
         title: "Basın Kiti | Karakulak Makina",
@@ -165,7 +206,7 @@ export default function PressKit() {
     },
   };
 
-  const texts = translations[language];
+  const texts = translations[language as keyof ITranslationsLanguageSupport];
 
   return (
     <>
@@ -199,9 +240,9 @@ export default function PressKit() {
                 <figure className="preview-container">
                   <img
                     src={item.preview}
-                    alt={`${item.title[language]} ${
-                      language === "tr" ? "Önizleme" : "Preview"
-                    }`}
+                    alt={`${
+                      item.title[language as keyof IPressKitItem["title"]]
+                    } ${language === "tr" ? "Önizleme" : "Preview"}`}
                   />
                   <figcaption className="overlay">
                     <motion.a
@@ -210,7 +251,9 @@ export default function PressKit() {
                       className="download-btn"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      aria-label={texts.downloadAriaLabel(item.title[language])}
+                      aria-label={texts.downloadAriaLabel(
+                        item.title[language as keyof IPressKitItem["title"]]
+                      )}
                     >
                       <FaDownload aria-hidden="true" />
                       <span>{texts.downloadLabel}</span>
@@ -218,8 +261,16 @@ export default function PressKit() {
                   </figcaption>
                 </figure>
                 <div className="item-info">
-                  <h3>{item.title[language]}</h3>
-                  <p>{item.description[language]}</p>
+                  <h3>
+                    {item.title[language as keyof IPressKitItem["title"]]}
+                  </h3>
+                  <p>
+                    {
+                      item.description[
+                        language as keyof IPressKitItem["description"]
+                      ]
+                    }
+                  </p>
                   <div
                     className="file-type"
                     aria-label={texts.fileTypeAriaLabel(item.type)}

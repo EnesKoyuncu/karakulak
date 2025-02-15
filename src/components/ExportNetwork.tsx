@@ -5,6 +5,7 @@ import "../styles/ExportNetwork.css";
 import { SEO } from "./SEO";
 import { useLocalStorageCache } from "../utils/cache";
 import { useLanguage } from "../hooks/useLanguage";
+
 interface Country {
   name: {
     tr: string;
@@ -483,7 +484,8 @@ const ExportNetwork: React.FC = () => {
 
   const filteredCountries = selectedRegion
     ? allCountries.filter(
-        (country) => country.region[language] === selectedRegion
+        (country) =>
+          country.region[language as keyof Country["region"]] === selectedRegion
       )
     : allCountries;
 
@@ -555,7 +557,9 @@ const ExportNetwork: React.FC = () => {
                 pointColor={() => "#e74c3c"}
                 pointAltitude={0.05}
                 pointRadius={0.8}
-                pointLabel={(d) => (d as Country).name[language]}
+                pointLabel={(d) =>
+                  (d as Country).name[language as keyof Country["name"]]
+                }
                 backgroundColor="rgba(0,0,0,0)"
                 atmosphereColor="#e74c3c"
                 atmosphereAltitude={0.15}
@@ -612,7 +616,7 @@ const ExportNetwork: React.FC = () => {
               >
                 {filteredCountries.map((country) => (
                   <motion.div
-                    key={country.name[language]}
+                    key={country.name[language as keyof Country["name"]]}
                     className={`country-card ${
                       highlightedCountry?.name === country.name
                         ? "highlighted"
@@ -624,7 +628,7 @@ const ExportNetwork: React.FC = () => {
                     aria-selected={highlightedCountry?.name === country.name}
                   >
                     <strong className="country-name">
-                      {country.name[language]}
+                      {country.name[language as keyof Country["name"]]}
                     </strong>
                     <span
                       className="region-tag"
@@ -634,7 +638,7 @@ const ExportNetwork: React.FC = () => {
                           : `${country.region.en} region`
                       }
                     >
-                      {country.region[language]}
+                      {country.region[language as keyof Country["region"]]}
                     </span>
                   </motion.div>
                 ))}

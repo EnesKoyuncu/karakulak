@@ -5,7 +5,7 @@ import "../styles/TechnicalSpecification.css";
 import { SEO } from "./SEO";
 import { useLanguage } from "@/hooks/useLanguage";
 
-interface Specification {
+interface ISpecification {
   id: number;
   title: {
     tr: string;
@@ -20,7 +20,7 @@ interface Specification {
 }
 
 // Statik şartname verileri
-const specifications: Specification[] = [
+const specifications: ISpecification[] = [
   {
     id: 1,
     title: {
@@ -89,12 +89,12 @@ const specifications: Specification[] = [
 ];
 
 const TechnicalSpecification: React.FC = () => {
-  const [selectedDoc, setSelectedDoc] = useState<Specification>(
+  const [selectedDoc, setSelectedDoc] = useState<ISpecification>(
     specifications[0]
   );
   const { language } = useLanguage();
 
-  const handleDocClick = (doc: Specification) => {
+  const handleDocClick = (doc: ISpecification) => {
     setSelectedDoc(doc);
   };
 
@@ -171,8 +171,12 @@ const TechnicalSpecification: React.FC = () => {
                   <FaFilePdf />
                 </span>
                 <div className="doc-info">
-                  <h3>{doc.title[language]}</h3>
-                  <span className="category">{doc.category[language]}</span>
+                  <h3>
+                    {doc.title[language as keyof ISpecification["title"]]}
+                  </h3>
+                  <span className="category">
+                    {doc.category[language as keyof ISpecification["category"]]}
+                  </span>
                 </div>
               </motion.div>
             ))}
@@ -192,11 +196,21 @@ const TechnicalSpecification: React.FC = () => {
             {selectedDoc ? (
               <>
                 <div className="preview-header">
-                  <h2>{selectedDoc.title[language]}</h2>
+                  <h2>
+                    {
+                      selectedDoc.title[
+                        language as keyof ISpecification["title"]
+                      ]
+                    }
+                  </h2>
                   <div className="preview-image">
                     <img
                       src={selectedDoc.image}
-                      alt={`${selectedDoc.title[language]} ${
+                      alt={`${
+                        selectedDoc.title[
+                          language as keyof ISpecification["title"]
+                        ]
+                      } ${
                         language === "tr" ? "ürün görseli" : "product image"
                       }`}
                       loading="lazy"

@@ -4,6 +4,33 @@ import "../../styles/miniComponentsStyle/AfterSalesServices.css";
 import { SEO } from "../SEO";
 import { useLanguage } from "@/hooks/useLanguage";
 
+interface ITranslation {
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
+  };
+  headerTitle: string;
+  service1: {
+    title: string;
+    description: string;
+  };
+  service2: {
+    title: string;
+    description: string;
+    note: string;
+  };
+  service3: {
+    title: string;
+    description: string;
+  };
+}
+
+interface ITranslationsLanguageSupport {
+  tr: ITranslation;
+  en: ITranslation;
+}
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -84,7 +111,7 @@ export default function AfterSalesServices() {
     },
   };
 
-  const texts = translations[language];
+  const texts = translations[language as keyof ITranslationsLanguageSupport];
 
   return (
     <>
