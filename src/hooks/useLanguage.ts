@@ -1,11 +1,23 @@
-import { useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
+import { useLocation, useNavigate } from "react-router-dom";
 
-// Custom hook
+const supportedLanguages = ["tr", "en", "de"]; // Desteklenen diller
+
 export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
-  }
-  return context;
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // URL'den dili al
+  const language =
+    supportedLanguages.find((lang) =>
+      location.pathname.startsWith(`/${lang}`)
+    ) || "en"; // Geçerli bir dil yoksa "en" kullan
+
+  const setLanguage = (newLang: string) => {
+    if (supportedLanguages.includes(newLang)) {
+      const newPath = location.pathname.replace(`/${language}`, `/${newLang}`);
+      navigate(newPath, { replace: true });
+    }
+  };
+
+  return { language, setLanguage };
 };
