@@ -50,11 +50,8 @@ const WhoWeAreMini: React.FC = () => {
           >
             <p>
               {language === "tr"
-                ? `Şirketimiz 1998 yılında belediye ve özel sektör kuruluşlarına,
-                araç üzeri itfaye arazörü, malzemeleri, su tankerleri, hidrolik
-                sıkıştırmalı çöp kasaları, vidanjör için üst ekipman üretmek ve
-                siz değerli kuruluşlarımızı hizmetini sunmak amacıyla kurulmuştur.`
-                : "Our company was established in 1998 to produce upper equipment for fire trucks, materials, water tankers, hydraulic compactor garbage containers, and vacuum trucks for municipalities and private sector organizations and to offer its services to you, our valuable organizations."}
+                ? `Şirketimiz 1998 yılında belediyelere ve özel sektörlere hidrolik sıkıştırmalı çöp kamyonu, itfaiye, vidanjör, su tankeri imalatı yapmak ve yedek parça hizmeti sunmak amacıyla kurulmuştur.`
+                : "Our company was established in 1998 in order to manufacture hydraulic compression garbage trucks, fire trucks, vacuum trucks, water tankers and to provide spare parts services to municipalities and private sectors."}
             </p>
           </motion.div>
 

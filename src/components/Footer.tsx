@@ -63,7 +63,7 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
         >
           <div className="copyright">
-            © 2015 – {currentYear}{" "}
+            © 1998 – {currentYear}{" "}
             {language === "tr"
               ? "Karakulak Araç Üstü Ekipman San.Tic. Ltd. Tüm Hakları Saklıdır"
               : "Karakulak Vehicle Mounted Equipment Industry & Trade Ltd. All Rights Reserved"}

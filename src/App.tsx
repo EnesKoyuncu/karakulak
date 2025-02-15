@@ -151,7 +151,7 @@ function App() {
                         </Suspense>
                       }
                     />
-                    <Route path="/iletisim" element={<Contact />} />
+                    <Route path="/contact" element={<Contact />} />
                     <Route
                       path="/products/:category/:id"
                       element={
