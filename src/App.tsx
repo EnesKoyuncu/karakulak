@@ -15,7 +15,7 @@ import CookieBanner from "./components/CookieBanner";
 
 import { ProductProvider } from "./context/ProductProvider";
 
-import { SEO } from "./components/SEO";
+// import { SEO } from "./components/SEO";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { usePageTracking, trackPerformance } from "./utils/analytics";
 import { useLanguage } from "./hooks/useLanguage";
@@ -36,9 +36,7 @@ const AfterSalesServices = lazy(
 );
 const History = lazy(() => import("./components/miniComponents/History"));
 const ExportNetwork = lazy(() => import("./components/ExportNetwork"));
-const TechnicalSpecification = lazy(
-  () => import("./components/TechnicalSpecification")
-);
+
 const PressKit = lazy(() => import("./components/PressKit"));
 
 // Analytics için wrapper component
@@ -110,11 +108,11 @@ function AppContent() {
 
   return (
     <>
-      <SEO
+      {/* <SEO
         title="Ayalka Makina | Araç Üstü Ekipman Üreticisi"
         description="Ayalka Makina, 40'tan fazla ülkeye ihracat yapan, çöp kasası, su tankeri, vidanjör, hooklift ve diğer araç üstü ekipman üreticisidir."
         keywords="ayalka makina, çöp kasası, su tankeri, vidanjör, hooklift, araç üstü ekipman, garbage truck, water tank"
-      />
+      /> */}
       <ProductProvider>
         <AnalyticsWrapper>
           <Header />
@@ -145,14 +143,14 @@ function AppContent() {
                   </Suspense>
                 }
               />
-              <Route
-                path="/:lang/technical-specification"
+              {/* <Route
+                path="/:lang/technical-specifications"
                 element={
                   <Suspense fallback={<LoadingSpinner />}>
                     <TechnicalSpecification />
                   </Suspense>
                 }
-              />
+              /> */}
               <Route path="/:lang/press-kit" element={<PressKit />} />
               <Route
                 path="/:lang/after-sales-services"

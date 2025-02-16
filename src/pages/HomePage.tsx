@@ -2,25 +2,32 @@ import HeroSlider from "../components/HeroSlider";
 import MapLocationShowcase from "../components/miniComponents/MapLocationShowcase";
 import WhoWeAreMini from "../components/miniComponents/WhoWeAreMini";
 import Products from "../components/Products";
-import { SEO } from "../components/SEO";
+import SEO from "../components/SEO";
+import { IseoTextsLanguageSupport, seoTexts } from "@/data/homePageData";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function HomePage() {
+  const { language } = useLanguage();
   return (
     <>
       <SEO
-        title="Ayalka Makina | Araç Üstü Ekipman Üreticisi ve İhracatçısı"
-        description="Ayalka Makina, çöp kasası, su tankeri, vidanjör ve hooklift gibi araç üstü ekipmanların üretiminde 40'tan fazla ülkeye ihracat yapan lider üreticidir."
-        keywords="ayalka makina, araç üstü ekipman, çöp kasası, su tankeri, vidanjör"
+        title={seoTexts[language as keyof IseoTextsLanguageSupport].title}
+        description={
+          seoTexts[language as keyof IseoTextsLanguageSupport].description
+        }
+        keywords={seoTexts[language as keyof IseoTextsLanguageSupport].keywords}
       />
 
       <main>
         <h1 className="visually-hidden">
-          Ayalka Makina - Araç Üstü Ekipman Üreticisi
+          {language === "tr"
+            ? "Karakulak Group - Araç Üstü Ekipman Üreticisi"
+            : "Karakulak Group - On Vehicle Equipment Manufacturer"}
         </h1>
 
-        {/* buraya h2 ile bir şeyler koy */}
-
-        <h2 className="visually-hidden">Ana Sayfa</h2>
+        <h2 className="visually-hidden">
+          {language === "tr" ? "Ana Sayfa" : "Home Page"}
+        </h2>
 
         <HeroSlider />
         <WhoWeAreMini />

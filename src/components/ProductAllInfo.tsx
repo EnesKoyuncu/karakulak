@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import "../styles/ProductAllInfo.css";
-import { SEO } from "./SEO";
+import SEO from "./SEO";
 import { useLanguage } from "@/hooks/useLanguage";
-import { ProductAdvantage } from "../context/ProductContext";
+import { ProductAdvantage, TranslatedText } from "../context/ProductContext";
 import {
   ITranslationsLanguageSupport,
   translations,
@@ -35,41 +35,55 @@ const ProductAllInfo = () => {
   }
 
   // SEO için açıklama ve anahtar kelimeler; ürünün dil uyumlu alanlarını kullanıyoruz.
-  const seoDescription =
-    language === "tr"
-      ? `${selectedProduct.name[language]} detaylı teknik özellikleri, araç spesifikasyonları ve avantajları. ${selectedProduct.description[language]}`
-      : `${
-          selectedProduct.name[language as keyof ITranslationsLanguageSupport]
-        } detailed technical features, vehicle specifications, and advantages. ${
-          selectedProduct.description[
-            language as keyof ITranslationsLanguageSupport
-          ]
-        }`;
+  // const seoDescription =
+  //   language === "tr"
+  //     ? `${selectedProduct.name[language]} detaylı teknik özellikleri, araç spesifikasyonları ve avantajları. ${selectedProduct.description[language]}`
+  //     : `${
+  //         selectedProduct.name[language as keyof ITranslationsLanguageSupport]
+  //       } detailed technical features, vehicle specifications, and advantages. ${
+  //         selectedProduct.description[
+  //           language as keyof ITranslationsLanguageSupport
+  //         ]
+  //       }`;
 
-  const seoKeywords =
-    language === "tr"
-      ? `ayalka ${selectedProduct.name[language].toLowerCase()}, ${
-          selectedProduct.category
-        }, araç üstü ekipman, teknik özellikler, ${selectedProduct.name[
-          language
-        ].toLowerCase()} özellikleri`
-      : `ayalka ${selectedProduct.name[
-          language as keyof ITranslationsLanguageSupport
-        ].toLowerCase()}, ${
-          selectedProduct.category
-        }, vehicle mounted equipment, technical specifications, ${selectedProduct.name[
-          language as keyof ITranslationsLanguageSupport
-        ].toLowerCase()} features`;
+  // const seoKeywords =
+  //   language === "tr"
+  //     ? `ayalka ${selectedProduct.name[language].toLowerCase()}, ${
+  //         selectedProduct.category
+  //       }, araç üstü ekipman, teknik özellikler, ${selectedProduct.name[
+  //         language
+  //       ].toLowerCase()} özellikleri`
+  //     : `ayalka ${selectedProduct.name[
+  //         language as keyof ITranslationsLanguageSupport
+  //       ].toLowerCase()}, ${
+  //         selectedProduct.category
+  //       }, vehicle mounted equipment, technical specifications, ${selectedProduct.name[
+  //         language as keyof ITranslationsLanguageSupport
+  //       ].toLowerCase()} features`;
 
   return (
     <>
-      <SEO
+      {/* <SEO
         title={`${
           selectedProduct.name[language as keyof ITranslationsLanguageSupport]
         } | Ayalka Makina`}
         description={seoDescription}
         keywords={seoKeywords}
         image={selectedProduct.images[0]?.url || "/images/default-product.jpg"}
+      /> */}
+      {/* BURAYI TEKRAR Bİ KONTROL ET */}
+      <SEO
+        title={`${
+          selectedProduct.name[language as keyof TranslatedText]
+        } | Karakulak Group Ürünleri`}
+        description={
+          selectedProduct.description[language as keyof TranslatedText]
+        }
+        image="https://karakulakgroup.com/images/logo/karakulakgroupLogo.webp" // TODO : değiştirilcek logo geldiğinde
+        author="Karakulak Group"
+        publisher="Karakulak Group"
+        keywords={selectedProduct.keywords[language as keyof TranslatedText]}
+        ogType="website"
       />
 
       <main

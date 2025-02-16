@@ -60,7 +60,7 @@ export interface Product {
   technicalSpecifications?: TechnicalSpecifications;
   vehicleSpecifications?: VehicleSpecification[];
   advantages?: ProductAdvantage[];
-  keywords?: TranslatedStringArray;
+  keywords: TranslatedStringArray;
   features?: TranslatedStringArray;
   bagajKapagi?: TranslatedStringArray;
   genel?: TranslatedStringArray;

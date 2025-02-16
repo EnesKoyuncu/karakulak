@@ -33,7 +33,7 @@ interface RawProduct {
     tr: RawAdvantageItem[];
     en: RawAdvantageItem[];
   };
-  keywords?: { tr: string[]; en: string[] };
+  keywords: { tr: string[]; en: string[] };
   images: {
     url: string;
     alt: { tr: string; en: string };
@@ -78,7 +78,7 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({
   children,
 }) => {
   const [products, setProducts] = useLocalStorageCache<Product[]>(
-    "ayalka_products",
+    "karakulak_products",
     [],
     { expireIn: 24 * 60 * 60 * 1000 }
   );

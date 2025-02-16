@@ -1,62 +1,141 @@
 import { Helmet } from "react-helmet-async";
-import { siteMetadata } from "../config/siteMetadata";
+import { useLocation } from "react-router-dom";
+import { useLanguage } from "../hooks/useLanguage";
 
 interface SEOProps {
   title: string;
   description: string;
-  keywords?: string;
   image?: string;
-  noindex?: boolean;
-  nofollow?: boolean;
+  author?: string;
+  publisher?: string;
+  keywords?: string[];
+  ogType?: "website" | "article" | "product" | "profile";
 }
 
-export function SEO({
+export default function SEO({
   title,
   description,
-  keywords,
-  image = "/images/ayalka-og-image.jpg",
-  noindex = false,
-  nofollow = false,
+  image,
+  author,
+  publisher,
+  keywords = [],
+  ogType = "website",
 }: SEOProps) {
-  const { baseUrl, companyName, social } = siteMetadata;
+  const location = useLocation();
+  const { language } = useLanguage();
+
+  // Temel URL ve Canonical URL
+  const baseUrl = "https://karakulakgroup.com";
+  const isErrorPage = location.pathname === "/404";
+  const canonicalUrl = isErrorPage
+    ? baseUrl
+    : `${baseUrl}${location.pathname}${location.search}${location.hash}`;
+
+  // Dinamik Dil Yönetimi
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "tr", name: "Türkçe" },
+    { code: "de", name: "Deutsch" },
+  ];
+
+  const hreflangs = languages.map((lang) => ({
+    lang: lang.code,
+    url: `${baseUrl}/${lang.code}${location.pathname.replace(
+      /^\/(en|tr|de)/,
+      ""
+    )}`,
+  }));
+
+  // Schema.org Markup (JSON-LD)
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: canonicalUrl,
+    name: title,
+    description: description,
+    image: image,
+    author: {
+      "@type": "Person",
+      name: author || "Karakulak Group",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: publisher || "Karakulak Group",
+    },
+  };
 
   return (
     <Helmet>
+      {/* Sayfa Dili */}
+      <html lang={language} />
+
+      {/* Sayfa Başlığı */}
       <title>{title}</title>
+
+      {/* Meta Açıklaması */}
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
 
-      <meta
-        name="robots"
-        content={`${noindex ? "noindex" : "index"}, ${
-          nofollow ? "nofollow" : "follow"
-        }`}
-      />
+      {/* Anahtar Kelimeler */}
+      {keywords.length > 0 && (
+        <meta name="keywords" content={keywords.join(", ")} />
+      )}
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={baseUrl} />
+      {/* Arama Motoru Index ve Follow */}
+      <meta name="robots" content="index, follow" />
+
+      {/* Canonical URL */}
+      <link rel="canonical" href={canonicalUrl} />
+
+      {/* Hreflang Etiketleri */}
+      {hreflangs.map((langData) => (
+        <link
+          rel="alternate"
+          href={langData.url}
+          hrefLang={langData.lang}
+          key={langData.lang}
+        />
+      ))}
+
+      {/* Open Graph (Facebook, LinkedIn vb. için) */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:site_name" content="Karakulak Group" />
+      <meta property="og:locale" content={language} />
+      {image && (
+        <>
+          <meta property="og:image" content={image} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content={title} />
+        </>
+      )}
 
-      {/* Twitter */}
+      {/* Twitter Cards (Twitter Paylaşımı için) */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      {image && (
+        <>
+          <meta name="twitter:image" content={image} />
+          <meta name="twitter:image:alt" content={title} />
+        </>
+      )}
+      <meta name="twitter:site" content="@karakulakgroup" />
+      <meta name="twitter:creator" content={author || "@karakulakgroup"} />
 
-      {/* Schema.org yapısal veri */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: companyName,
-          url: baseUrl,
-          logo: siteMetadata.logo,
-          sameAs: Object.values(social),
-        })}
-      </script>
+      {/* Author & Publisher Meta Etiketleri */}
+      {author && <meta name="author" content={author} />}
+      {publisher && <meta name="publisher" content={publisher} />}
+
+      {/* Güvenlik ve Gizlilik Meta Etiketleri */}
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="referrer" content="origin-when-cross-origin" />
+      <meta name="theme-color" content="#ffffff" />
+
+      {/* Schema.org Markup (JSON-LD) */}
+      <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
     </Helmet>
   );
 }

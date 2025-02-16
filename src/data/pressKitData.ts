@@ -1,8 +1,10 @@
+// TODO : Bu sayfada değiştirilmesi gereken kısımlar var.
+
 // ! Çeviri Kısmı
 export interface SEO {
   title: string;
   description: string;
-  keywords: string;
+  keywords: string[];
 }
 
 export interface SocialMedia {
@@ -36,11 +38,34 @@ export interface ITranslationsLanguageSupport {
 export const translations: ITranslationsLanguageSupport = {
   tr: {
     seo: {
-      title: "Basın Kiti | Karakulak Makina",
+      title:
+        "Basın Kiti | Karakulak Group Basın Kiti ve Sosyal Medya Hesapları",
       description:
-        "Karakulak Makina kurumsal kimlik öğeleri, logolar, sosyal medya hesapları ve basın materyalleri. Markamızla ilgili tüm medya kaynaklarına buradan ulaşabilirsiniz.",
-      keywords:
-        "karakulak basın kiti, karakulak logo, karakulak kurumsal kimlik, karakulak sosyal medya, karakulak makina kurumsal",
+        "Karakulak Group kurumsal kimlik öğeleri, logolar, sosyal medya hesapları ve basın materyalleri. Markamızla ilgili tüm medya kaynaklarına buradan ulaşabilirsiniz. Sosyal medya hesaplarımıza kolayca ulaşabilir ve paylaşımlarımızdan haberdar olmak için takip edebilirsiniz.",
+      keywords: [
+        "karakulak basın kiti",
+        "karakulak group basın kiti",
+        "karakulak logo",
+        "karakulak group logo",
+        "karakulak kurumsal kimlik",
+        "karakulak group kurumsal kimlik",
+        "karakulak sosyal medya",
+        "karakulak group sosyal medya",
+        "karakulak kurumsal",
+        "karakulak group kurumsal",
+        "karakulak facebook",
+        "karakulak group facebook",
+        "karakulak instagram",
+        "karakulak group instagram",
+        "karakulak linkedin",
+        "karakulak group linkedin",
+        "araç üstü ekipmanları basın kiti",
+        "araç üstü ekipmanları logo",
+        "araç üstü ekipmanları kurumsal kimlik",
+        "araç üstü ekipmanları sosyal medya",
+        "araç üstü ekipman",
+        "araç üstü ekipmanları",
+      ],
     },
     headerTitle: "BASIN KİTİ",
     mainAriaLabel: "Basın Kiti İçeriği",
@@ -68,11 +93,33 @@ export const translations: ITranslationsLanguageSupport = {
   },
   en: {
     seo: {
-      title: "Press Kit | Karakulak Makina",
+      title: "Press Kit | Karakulak Group Press Kit and Social Media Accounts",
       description:
-        "Karakulak Makina corporate identity assets, logos, social media accounts and press materials. Access all our media resources here.",
-      keywords:
-        "karakulak press kit, karakulak logo, karakulak corporate identity, karakulak social media, karakulak makina corporate",
+        "Karakulak Group corporate identity elements, logos, social media accounts, and press materials. Access all media resources related to our brand here. You can easily reach our social media accounts and follow us to stay updated on our posts.",
+      keywords: [
+        "karakulak press kit",
+        "karakulak group press kit",
+        "karakulak logo",
+        "karakulak group logo",
+        "karakulak corporate identity",
+        "karakulak group corporate identity",
+        "karakulak social media",
+        "karakulak group social media",
+        "karakulak corporate",
+        "karakulak group corporate",
+        "karakulak facebook",
+        "karakulak group facebook",
+        "karakulak instagram",
+        "karakulak group instagram",
+        "karakulak linkedin",
+        "karakulak group linkedin",
+        "vehicle-mounted equipment press kit",
+        "vehicle-mounted equipment logo",
+        "vehicle-mounted equipment corporate identity",
+        "vehicle-mounted equipment social media",
+        "vehicle-mounted equipment",
+        "vehicle-mounted equipment",
+      ],
     },
     headerTitle: "PRESS KIT",
     mainAriaLabel: "Press Kit Content",
@@ -119,10 +166,10 @@ export const pressKitItems: IPressKitItem[] = [
       tr: "Karakulak kurumsal logosu (PNG)",
       en: "Karakulak corporate logo (PNG)",
     },
-    fileUrl: "/press-kit/ayalka-logo.png",
+    fileUrl: "/images/logo/karakulakGroupLogo.webp", //TODO Değişecek
     type: "png",
     preview:
-      "https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png",
+      "https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png", //TODO Değişecek
   },
   {
     id: 2,
@@ -131,10 +178,10 @@ export const pressKitItems: IPressKitItem[] = [
       tr: "Karakulak sade logo versiyonu (PNG)",
       en: "Karakulak simple logo version (PNG)",
     },
-    fileUrl: "/press-kit/ayalka-logo-simple.png",
-    type: "png",
+    fileUrl: "/images/logo/karakulakGroupLogoSade.png", //TODO Değişecek
+    type: "png", //TODO Değişecek
     preview:
-      "https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png",
+      "https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png", //TODO Değişecek
   },
   {
     id: 3,
@@ -143,9 +190,9 @@ export const pressKitItems: IPressKitItem[] = [
       tr: "Karakulak vektörel logo (PDF)",
       en: "Karakulak vector logo (PDF)",
     },
-    fileUrl: "/press-kit/ayalka-logo-vector.pdf",
+    fileUrl: "/press-kit/ayalka-logo-vector.pdf", //TODO Değişecek
     type: "pdf",
     preview:
-      "https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png",
+      "https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png", //TODO Değişecek
   },
 ];

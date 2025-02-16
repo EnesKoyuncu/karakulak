@@ -1,18 +1,26 @@
 import { motion } from "framer-motion";
 import "../../styles/miniComponentsStyle/YonetimKurulBaskani.css";
-import { SEO } from "../SEO";
+import SEO from "../SEO";
 import { useLanguage } from "@/hooks/useLanguage";
-
+import {
+  IseoTextsLanguageSupport,
+  seoTexts,
+} from "@/data/chairmanOfTheBoardData";
 export default function ChairmanOfTheBoard() {
   const { language } = useLanguage();
+
+  const texts = seoTexts[language as keyof IseoTextsLanguageSupport];
 
   return (
     <>
       <SEO
-        title="Yönetim Kurulu Başkanı | Ayalka Makina"
-        description="Ayalka Makina Yönetim Kurulu Başkanı Kerim Karakulak'ın mesajı. Kalite odaklı üretim, müşteri memnuniyeti ve kurumsallaşma ilkelerimiz hakkında bilgi alın."
-        keywords="kerim karakulak, ayalka yönetim kurulu başkanı, ayalka başkan mesajı, ayalka kalite politikası, ayalka kurumsal değerler"
-        image="/images/yonetim/kerim-karakulak.jpg"
+        title={texts.title}
+        description={texts.description}
+        image="https://karakulakgroup.com/images/karakulakgroupLogo.webp" // TODO : değiştirilcek logo geldiğinde
+        author="Karakulak Group"
+        publisher="Karakulak Group"
+        keywords={texts.keywords}
+        ogType="website"
       />
 
       <section className="yonetim-section" aria-labelledby="yonetim-baslik">
@@ -53,11 +61,11 @@ export default function ChairmanOfTheBoard() {
                   <p>
                     {language === "tr"
                       ? `Üretim aşamalarının her evresinde insan sağlığını ve
-                    değerini, müşteri memnuniyetinden ve Ayalka kalitesinden
+                    değerini, müşteri memnuniyetinden ve Karakulak kalitesinden
                     ödün vermeden gözetmekteyiz. Bu nedenle yurtdışı ve yurtiçi
                     memnun edilmiş müşterilerimizin güvenlerini kazanmanın haklı
                     gururunu yaşıyoruz.`
-                      : `At every stage of the production process, we take care of human health and value, without compromising customer satisfaction and Ayalka quality. Therefore, we are proud to have gained the trust of satisfied customers from abroad and domestic.`}
+                      : `At every stage of the production process, we take care of human health and value, without compromising customer satisfaction and Karakulak quality. Therefore, we are proud to have gained the trust of satisfied customers from abroad and domestic.`}
                   </p>
                 </blockquote>
               </motion.div>

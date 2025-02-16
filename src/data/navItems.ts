@@ -44,13 +44,6 @@ export const navItems: MenuItem[] = [
         },
         link: "/export-network",
       },
-      {
-        title: {
-          tr: "Teknik Şartnameler",
-          en: "Technical Specifications",
-        },
-        link: "/technical-specifications",
-      },
     ],
   },
   {

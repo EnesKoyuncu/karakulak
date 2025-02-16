@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FaTools, FaShieldAlt, FaComments } from "react-icons/fa";
 import "../../styles/miniComponentsStyle/AfterSalesServices.css";
-import { SEO } from "../SEO";
+import SEO from "../SEO";
 import { useLanguage } from "@/hooks/useLanguage";
 import {
   translations,
@@ -40,7 +40,11 @@ export default function AfterSalesServices() {
       <SEO
         title={texts.seo.title}
         description={texts.seo.description}
+        image="https://karakulakgroup.com/images/karakulakgroupLogo.webp" // TODO : değiştirilcek logo geldiğinde
+        author="Karakulak Group"
+        publisher="Karakulak Group"
         keywords={texts.seo.keywords}
+        ogType="website"
       />
 
       <main className="after-sales" role="main">

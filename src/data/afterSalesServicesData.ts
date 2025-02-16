@@ -2,7 +2,7 @@ interface ITranslation {
   seo: {
     title: string;
     description: string;
-    keywords: string;
+    keywords: string[];
   };
   headerTitle: string;
   service1: {
@@ -27,11 +27,46 @@ export interface ITranslationsLanguageSupport {
 export const translations: ITranslationsLanguageSupport = {
   tr: {
     seo: {
-      title: "Satış Sonrası Hizmetler | Ayalka Makina",
+      title: "Satış Sonrası Hizmetler | Karakulak Group Müşteri Memnuniyeti",
       description:
-        "Ayalka Makina satış sonrası servis, garanti ve müşteri hizmetleri. Profesyonel servis ekibimiz ve yedek parça desteğimiz ile yanınızdayız.",
-      keywords:
-        "satış sonrası hizmet, servis hizmeti, garanti, yedek parça, müşteri hizmetleri, teknik destek",
+        "Karakulak Group olarak satış sonrası servis, garanti ve müşteri hizmetleri. Profesyonel servis ekibimiz ve yedek parça desteğimiz ile yanınızdayız. Baştan sona her aşamada müşteri memnuniyetini ön planda tutuyoruz. Hizmetlerimiz hakkında detaylı bilgi almak için iletişim sayfamızdaki iletişim bilgilerinden bize ulaşabilirsiniz.",
+      keywords: [
+        "karakulak hizmetleri",
+        "karakulak group hizmetleri",
+        "karakulak group satış sonrası hizmetleri",
+        "karakulak satış sonrası hizmetleri",
+        "araç üstü ekipman hizmetleri",
+        "araç üstü ekipman satış sonrası hizmet",
+        "karakulak araç üstü ekipman hizmetleri",
+        "karakulak grup araç üstü ekipman hizmetleri",
+        "karakulak araç üstü ekipman satış sonrası hizmet",
+        "çöp kamyonu hizmetleri",
+        "çöp kamyonu satış sonrası hizmet",
+        "karakulak çöp kamyonu hizmetleri",
+        "karakulak grup çöp kamyonu hizmetleri",
+        "karakulak çöp kamyonu satış sonrası hizmet",
+        "karakulak group su tankeri hizmetleri",
+        "karakulak su tankeri hizmetleri",
+        "karakulak su tankeri satış sonrası hizmet",
+        "karakulak group su tankeri satış sonrası hizmet",
+        "satış sonrası hizmet",
+        "servis hizmeti",
+        "garanti",
+        "yedek parça",
+        "araç üstü ekipman yedek parça",
+        "karakulak müşteri hizmetleri",
+        "müşteri hizmetleri",
+        "teknik destek",
+        "teknik destek hizmeti",
+        "karakulak teknik destek",
+        "hooklift destek",
+        "mini pack destek",
+        "teleskopik platform destek",
+        "itfaiye aracı destek",
+        "vidanjör destek",
+        "kanal açma aracı destek",
+        "kanal temizleme aracı destek",
+      ],
     },
     headerTitle: "Satış Sonrası Hizmetler",
     service1: {
@@ -53,11 +88,46 @@ export const translations: ITranslationsLanguageSupport = {
   },
   en: {
     seo: {
-      title: "After-Sales Services | Ayalka Makina",
+      title: "After-Sales Services | Karakulak Group Customer Satisfaction",
       description:
-        "Ayalka Makina after-sales service, warranty, and customer support. Our professional service team and spare parts support are at your service.",
-      keywords:
-        "after-sales services, service support, warranty, spare parts, customer support, technical assistance",
+        "As Karakulak Group, we provide after-sales services, warranties, and customer support. We are with you with our professional service team and spare parts support. We prioritize customer satisfaction at every stage from start to finish. For detailed information about our services, you can reach us through the contact information on our contact page.",
+      keywords: [
+        "karakulak services",
+        "karakulak group services",
+        "karakulak group after-sales services",
+        "karakulak after-sales services",
+        "vehicle-mounted equipment services",
+        "vehicle-mounted equipment after-sales service",
+        "karakulak vehicle-mounted equipment services",
+        "karakulak group vehicle-mounted equipment services",
+        "karakulak vehicle-mounted equipment after-sales service",
+        "garbage truck services",
+        "garbage truck after-sales service",
+        "karakulak garbage truck services",
+        "karakulak group garbage truck services",
+        "karakulak garbage truck after-sales service",
+        "karakulak group water tanker services",
+        "karakulak water tanker services",
+        "karakulak water tanker after-sales service",
+        "karakulak group water tanker after-sales service",
+        "after-sales service",
+        "service support",
+        "warranty",
+        "spare parts",
+        "vehicle-mounted equipment spare parts",
+        "karakulak customer services",
+        "customer services",
+        "technical support",
+        "technical support service",
+        "karakulak technical support",
+        "hooklift support",
+        "mini pack support",
+        "telescopic platform support",
+        "fire truck support",
+        "vacuum truck support",
+        "trenching vehicle support",
+        "channel cleaning vehicle support",
+      ],
     },
     headerTitle: "After-Sales Services",
     service1: {

@@ -71,11 +71,12 @@ export interface ITranslationLanguageSupport {
 export const translations: ITranslationLanguageSupport = {
   tr: {
     seo: {
-      title: "İletişim | Ayalka Makina",
+      title:
+        "İletişim | Karakulak Group Araç Üstü Ekipman Sitesinin İletişim Sayfası",
       description:
-        "Ayalka Makina ile iletişime geçin. Adres: İzmir Kemalpaşa OSB, Telefon: +90-532-683-0891. Araç üstü ekipman üretimi hakkında bilgi almak için bize ulaşın.",
+        "Karakulak Group ile iletişime geçin. Bu sayfa Karakulak Group ile iletişim yapabileceğiniz ve farklı iletişim yolları hakkında bilgi alabileceğiniz bir sayfadır. Şirket içerisinde görev alan kişiler ve onların iletişim bilgileri yer almaktadır. Daha fazlası için info@karakulakgroup.com adresine e-posta gönderebilirsiniz.",
       keywords:
-        "ayalka iletişim, ayalka makina iletişim, ayalka telefon, ayalka adres, ayalka makina konum",
+        "karakulak iletişim, karakulak group iletişim, karakulak araç üstü ekipman iletişim, karakulak group araç üstü ekipman iletişim, karakulak telefon, karakulak group telefon, karakulak adres, karakulak group adres, karakulak  konum, karakulak group konum, araç üstü ekipman iletişim",
     },
     hero: {
       bgAlt: "İletişim sayfası arka plan görseli",
@@ -88,50 +89,50 @@ export const translations: ITranslationLanguageSupport = {
       accounting: "MUHASEBE",
       generalManagerInfo: [
         {
-          href: "mailto:info@ayalka.com.tr",
+          href: "mailto:info@karakulakgroup.com.tr",
           icon: FaEnvelope,
-          text: "info@ayalka.com.tr",
+          text: "info@karakulakgroup.com.tr",
         },
         {
-          href: "tel:+905333329963",
+          href: "tel:+905555555555",
           icon: FaPhone,
-          text: "+90 533 332 9963",
+          text: "+90 555 555 5555",
         },
       ],
       exportManagerInfo: [
         {
-          href: "mailto:ihracat@ayalka.com.tr",
+          href: "mailto:ihracat@karakulakgroup.com.tr",
           icon: FaEnvelope,
-          text: "ihracat@ayalka.com.tr",
+          text: "ihracat@karakulakgroup.com.tr",
         },
         {
-          href: "mailto:export@ayalka.com.tr",
+          href: "mailto:export@karakulakgroup.com.tr",
           icon: FaEnvelope,
-          text: "export@ayalka.com.tr",
+          text: "export@karakulak.com.tr",
         },
         {
-          href: "tel:+905326830891",
+          href: "tel:+905555555555",
           icon: FaPhone,
-          text: "+90 532 683 0891",
+          text: "+90 555 555 5555",
         },
       ],
       generalManagerAssistantInfo: [
         {
-          href: "mailto:info@ayalka.com.tr",
+          href: "mailto:info@karakulak.com.tr",
           icon: FaEnvelope,
-          text: "info@ayalka.com.tr",
+          text: "info@karakulak.com.tr",
         },
         {
-          href: "tel:+905524399257",
+          href: "tel:+9055555555555",
           icon: FaPhone,
-          text: "+90 552 439 9257",
+          text: "+90 555 555 5555",
         },
       ],
       accountingInfo: [
         {
-          href: "mailto:ihracat@ayalka.com.tr",
+          href: "mailto:ihracat@karakulakgroup.com.tr",
           icon: FaEnvelope,
-          text: "ihracat@ayalka.com.tr",
+          text: "ihracat@karakulakgroup.com.tr",
         },
       ],
     },
@@ -139,11 +140,11 @@ export const translations: ITranslationLanguageSupport = {
       officeTitle: "MERKEZ OFİS",
       address: "İskele Köyü Ankara Caddesi No: 99/1 Çankırı/Merkez",
       contactItems: {
-        phone1: "+90 532 683 0891",
-        phone2: "+90 534 274 0325",
-        phone3: "+90 530 149 9993",
-        phone4: "+90 533 332 9963",
-        email: "info@ayalka.com.tr",
+        phone1: "+90 555 555 5555",
+        phone2: "+90 555 555 5555",
+        phone3: "+90 555 555 5555",
+        phone4: "+90 555 555 5555",
+        email: "info@karakulakgroup.com.tr",
       },
       consentMessage:
         "Konumumuzu görmek için çerez politikamızı kabul etmeniz gerekmektedir.",
@@ -153,11 +154,12 @@ export const translations: ITranslationLanguageSupport = {
   },
   en: {
     seo: {
-      title: "Contact | Ayalka Makina",
+      title:
+        "Contact | Contact Page of Karakulak Group Vehicle Mounted Equipment Site",
       description:
-        "Get in touch with Ayalka Makina. Address: İzmir Kemalpaşa OSB, Phone: +90-532-683-0891. Contact us for information on our equipment manufacturing.",
+        "Contact Karakulak Group. This is a page where you can contact Karakulak Group and get information about different ways of communication. It includes the people working in the company and their contact information. For more information, you can send an e-mail to info@karakulakgroup.com.",
       keywords:
-        "ayalka contact, ayalka makina contact, ayalka phone, ayalka address, ayalka makina location",
+        "contact karakulak, karakulak communication, contact karakulak group, karakulak group communication, contact karakulak vehicle mounted equipment, karakulak vehicle mounted equipment communication, contact karakulak group vehicle mounted equipment, karakulak group vehicle mounted equipment communication, karakulak phone number, karakulak telephone, karakulak group phone number, karakulak group telephone, karakulak address, karakulak group address, karakulak location, karakulak group location, vehicle mounted equipment contact, vehicle mounted equipment communication, caracal, vehicle upfitting, truck equipment, contact us, info@karakulakgroup.com.tr",
     },
     hero: {
       bgAlt: "Contact page background image",
@@ -170,50 +172,50 @@ export const translations: ITranslationLanguageSupport = {
       accounting: "ACCOUNTING",
       generalManagerInfo: [
         {
-          href: "mailto:info@ayalka.com.tr",
+          href: "mailto:info@karakulakgroup.com.tr",
           icon: FaEnvelope,
-          text: "info@ayalka.com.tr",
+          text: "info@karakulakgroup.com.tr",
         },
         {
-          href: "tel:+905333329963",
+          href: "tel:+905555555555",
           icon: FaPhone,
-          text: "+90 533 332 9963",
+          text: "+90 555 555 5555",
         },
       ],
       exportManagerInfo: [
         {
-          href: "mailto:ihracat@ayalka.com.tr",
+          href: "mailto:ihracat@karakulakgroup.com.tr",
           icon: FaEnvelope,
-          text: "ihracat@ayalka.com.tr",
+          text: "ihracat@karakulakgroup.com.tr",
         },
         {
-          href: "mailto:export@ayalka.com.tr",
+          href: "mailto:export@karakulakgroup.com.tr",
           icon: FaEnvelope,
-          text: "export@ayalka.com.tr",
+          text: "export@karakulakgroup.com.tr",
         },
         {
-          href: "tel:+905326830891",
+          href: "tel:+905555555555",
           icon: FaPhone,
-          text: "+90 532 683 0891",
+          text: "+90 555 555 5555",
         },
       ],
       generalManagerAssistantInfo: [
         {
-          href: "mailto:info@ayalka.com.tr",
+          href: "mailto:info@karakulakgroup.com.tr",
           icon: FaEnvelope,
-          text: "info@ayalka.com.tr",
+          text: "info@karakulakgroup.com.tr",
         },
         {
-          href: "tel:+905524399257",
+          href: "tel:+905555555555",
           icon: FaPhone,
-          text: "+90 552 439 9257",
+          text: "+90 555 555 5555",
         },
       ],
       accountingInfo: [
         {
-          href: "mailto:l.molva@ayalka.com.tr",
+          href: "mailto:info@karakulakgroup.com.tr",
           icon: FaEnvelope,
-          text: "l.molva@ayalka.com.tr",
+          text: "info@karakulakgroup.com.tr",
         },
       ],
     },
@@ -221,11 +223,11 @@ export const translations: ITranslationLanguageSupport = {
       officeTitle: "HEAD OFFICE",
       address: "İskele Köyü Ankara Caddesi No: 99/1 Çankırı/Merkez",
       contactItems: {
-        phone1: "+90 532 683 0891",
-        phone2: "+90 534 274 0325",
-        phone3: "+90 530 149 9993",
-        phone4: "+90 533 332 9963",
-        email: "info@ayalka.com.tr",
+        phone1: "+90 555 555 5555",
+        phone2: "+90 555 555 5555",
+        phone3: "+90 555 555 5555",
+        phone4: "+90 555 555 5555",
+        email: "info@karakulakgroup.com.tr",
       },
       consentMessage: "You must accept our cookie policy to view our location.",
       consentButton: "Accept Cookies",

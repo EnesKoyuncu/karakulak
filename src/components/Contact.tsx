@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Parallax } from "react-parallax";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import "../styles/Contact.css";
-import { SEO } from "./SEO";
+import SEO from "@/components/SEO";
 import { useCookieConsent } from "../hooks/useCookieConsent";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ITranslationLanguageSupport, translations } from "@/data/contactData"; // Yeni importlar
@@ -21,7 +21,11 @@ const Contact: React.FC = () => {
       <SEO
         title={texts.seo.title}
         description={texts.seo.description}
-        keywords={texts.seo.keywords}
+        image="https://karakulakgroup.com/images/karakulakgroupLogo.webp" // TODO : değiştirilcek logo geldiğinde
+        author="Karakulak Group"
+        publisher="Karakulak Group"
+        keywords={[texts.seo.keywords]}
+        ogType="website"
       />
 
       <header className="hero-section">

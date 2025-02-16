@@ -10,11 +10,6 @@ import {
   ICategories,
   categories,
 } from "@/data/productsData";
-// ! BU SAYFA DA HAYRA ALAMET DURMUYOR DÜZELTİLMESİ GEREK!!!!
-// ! BU SAYFA DA HAYRA ALAMET DURMUYOR DÜZELTİLMESİ GEREK!!!!
-// ! BU SAYFA DA HAYRA ALAMET DURMUYOR DÜZELTİLMESİ GEREK!!!!
-
-// ! Just Categories
 
 const Products: React.FC = () => {
   const { products: contextProducts } = useProducts();

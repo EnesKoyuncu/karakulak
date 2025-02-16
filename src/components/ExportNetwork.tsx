@@ -2,9 +2,14 @@ import { useState, useCallback, useEffect } from "react";
 import Globe from "react-globe.gl";
 import { motion } from "framer-motion";
 import "../styles/ExportNetwork.css";
-import { SEO } from "./SEO";
+import SEO from "./SEO";
 import { useLanguage } from "../hooks/useLanguage";
-import { countries, Country } from "@/data/exportNetworkData";
+import {
+  countries,
+  Country,
+  IseoTextsLanguageSupport,
+  seoTexts,
+} from "@/data/exportNetworkData";
 
 const ExportNetwork: React.FC = () => {
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
@@ -39,7 +44,7 @@ const ExportNetwork: React.FC = () => {
 
   return (
     <>
-      <SEO
+      {/* <SEO
         title={
           language === "tr"
             ? "İhracat Ağı | Ayalka Makina - 40+ Ülkeye İhracat"
@@ -55,6 +60,17 @@ const ExportNetwork: React.FC = () => {
             ? "ayalka ihracat, ayalka global, ayalka uluslararası, araç üstü ekipman ihracat, türk ihracat, global üretici"
             : "ayalka export, ayalka global, ayalka international, vehicle-mounted equipment export, turkish export, global manufacturer"
         }
+      /> */}
+      <SEO
+        title={seoTexts[language as keyof IseoTextsLanguageSupport].title}
+        description={
+          seoTexts[language as keyof IseoTextsLanguageSupport].description
+        }
+        image="https://karakulakgroup.com/images/karakulakgroupLogo.webp" // TODO : değiştirilcek logo geldiğinde
+        author="Karakulak Group"
+        publisher="Karakulak Group"
+        keywords={seoTexts[language as keyof IseoTextsLanguageSupport].keywords}
+        ogType="website"
       />
 
       <main className="export-network">

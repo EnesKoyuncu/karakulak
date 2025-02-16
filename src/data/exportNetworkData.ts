@@ -1,3 +1,66 @@
+// ! This data file have 2 parts.
+
+// * First part is about SEO texts.
+
+export interface IseoTexts {
+  title: string;
+  description: string;
+  keywords: string[];
+}
+
+export interface IseoTextsLanguageSupport {
+  tr: IseoTexts;
+  en: IseoTexts;
+}
+
+export const seoTexts: IseoTextsLanguageSupport = {
+  tr: {
+    title: "İhracat Ağı | Karakulak Group Araç Üstü Ekipman İhracat Ağı",
+    description:
+      "Karakulak Group, 50'den fazla ülkeye araç üstü ekipman, çöp kamyonu ve birçok ürün ihracatı yapan global bir üreticidir. Avrupa, Asya ve Afrika'da güçlü bir ihracat ağına sahibiz. Karakulak Group aktif olarak bu sayfada yer alan ülkelerle iş birligi yapmaktadır.",
+    keywords: [
+      "karakulak ihracat",
+      "karakulak group ihracat",
+      "karakulak global",
+      "karakulak group global",
+      "karakulak uluslararası",
+      "karakulak group uluslararası",
+      "araç üstü ekipman ihracat",
+      "türk ihracat",
+      "global üretici",
+      "karakulak group ihracat ağı",
+      "karakulak ihracat ağı",
+      "karakulak group iş birligi",
+      "karakulak iş birligi",
+      "karakulak group ihracat ağı ülkeleri",
+      "karakulak ihracat ağı ülkeleri",
+    ],
+  },
+  en: {
+    title:
+      "Export Network | Karakulak Group Vehicle Mounted Equipment Export Network",
+    description:
+      "Karakulak Group is a global manufacturer that exports vehicle-mounted equipment, garbage trucks, and many other products to more than 50 countries. We have a strong export network in Europe, Asia, and Africa. Karakulak Group actively collaborates with the countries featured on this page.",
+    keywords: [
+      "karakulak export",
+      "karakulak group export",
+      "karakulak global",
+      "karakulak group global",
+      "karakulak international",
+      "karakulak group international",
+      "vehicle-mounted equipment export",
+      "turkish export",
+      "global manufacturer",
+      "karakulak group export network",
+      "karakulak export network",
+      "karakulak group collaboration",
+      "karakulak collaboration",
+      "karakulak group export network countries",
+      "karakulak export network countries",
+    ],
+  },
+};
+
 export interface Country {
   name: {
     tr: string;

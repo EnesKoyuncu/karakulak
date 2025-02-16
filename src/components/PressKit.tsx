@@ -9,7 +9,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import "../styles/PressKit.css";
-import { SEO } from "./SEO";
+import SEO from "./SEO";
 import { useLanguage } from "@/hooks/useLanguage";
 import {
   translations,
@@ -65,8 +65,11 @@ export default function PressKit() {
       <SEO
         title={texts.seo.title}
         description={texts.seo.description}
+        image="https://karakulakgroup.com/images/karakulakgroupLogo.webp" // TODO : değiştirilcek logo geldiğinde
+        author="Karakulak Group"
+        publisher="Karakulak Group"
         keywords={texts.seo.keywords}
-        image="/press-kit/ayalka-logo.png"
+        ogType="website"
       />
 
       <main className="press-kit" role="main" aria-label={texts.mainAriaLabel}>
@@ -146,7 +149,7 @@ export default function PressKit() {
         >
           <div className="company-brand" role="banner">
             <motion.img
-              src="https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png"
+              src="https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png" // TODO: Logo gelecek
               alt="Karakulak Kurumsal Logo"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
@@ -259,7 +262,7 @@ export default function PressKit() {
                   </div>
                 </div>
                 <motion.a
-                  href="https://www.facebook.com/ayalka.com.tr/"
+                  href="https://www.facebook.com/ayalka.com.tr/" // TODO: Link güncellenecek
                   target="_blank"
                   rel="noopener noreferrer"
                   className="platform-link facebook-link"
@@ -305,7 +308,7 @@ export default function PressKit() {
                   </div>
                 </div>
                 <motion.a
-                  href="https://www.linkedin.com/in/garbage-truck-ayalka-52a080177/?originalSubdomain=tr"
+                  href="https://www.linkedin.com/in/garbage-truck-ayalka-52a080177/?originalSubdomain=tr" // TODO: Link güncellenecek
                   target="_blank"
                   rel="noopener noreferrer"
                   className="platform-link linkedin-link"

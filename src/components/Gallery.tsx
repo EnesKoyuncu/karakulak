@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/Gallery.css";
 import { useImagePreload } from "../utils/performance";
-import { SEO } from "../components/SEO";
+import SEO from "../components/SEO";
 import { useProducts } from "../hooks/useProduct";
 import { useLanguage } from "@/hooks/useLanguage";
 import Lightbox from "yet-another-react-lightbox";
@@ -81,10 +81,21 @@ const Gallery: React.FC = () => {
   return (
     <>
       <SEO
-        title={texts.seo.title}
-        description={texts.seo.description}
-        keywords={texts.seo.keywords}
-        image="/press-kit/ayalka-logo.png"
+        title={
+          translations[language as keyof ITranslationsLanguageSupport].seo.title
+        }
+        description={
+          translations[language as keyof ITranslationsLanguageSupport].seo
+            .description
+        }
+        image="https://karakulakgroup.com/images/karakulakgroupLogo.webp" // TODO : değiştirilcek logo geldiğinde
+        author="Karakulak Group"
+        publisher="Karakulak Group"
+        keywords={
+          translations[language as keyof ITranslationsLanguageSupport].seo
+            .keywords
+        }
+        ogType="website"
       />
 
       <section className="gallery-container" aria-label={texts.mainAriaLabel}>

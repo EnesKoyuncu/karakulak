@@ -2,9 +2,13 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import "../../styles/miniComponentsStyle/Tarihce.css";
 import { useLocation } from "react-router-dom";
-import { SEO } from "../SEO";
+import SEO from "../SEO";
 import { useLanguage } from "@/hooks/useLanguage";
-import { historyTexts } from "@/data/historyData";
+import {
+  historyTexts,
+  seoTexts,
+  IseoTextsLanguageSupport,
+} from "@/data/historyData";
 
 const History: React.FC = () => {
   const location = useLocation();
@@ -17,22 +21,15 @@ const History: React.FC = () => {
   return (
     <>
       <SEO
-        title={
-          historyTexts.seo.title[
-            language as keyof typeof historyTexts.seo.title
-          ]
-        }
+        title={seoTexts[language as keyof IseoTextsLanguageSupport].title}
         description={
-          historyTexts.seo.description[
-            language as keyof typeof historyTexts.seo.description
-          ]
+          seoTexts[language as keyof IseoTextsLanguageSupport].description
         }
-        keywords={
-          historyTexts.seo.keywords[
-            language as keyof typeof historyTexts.seo.keywords
-          ]
-        }
-        image="/images/facility/ayalka-tesis.jpg"
+        image="https://karakulakgroup.com/images/karakulakgroupLogo.webp" // TODO : değiştirilcek logo geldiğinde
+        author="Karakulak Group"
+        publisher="Karakulak Group"
+        keywords={seoTexts[language as keyof IseoTextsLanguageSupport].keywords}
+        ogType="website"
       />
 
       <article className="tarihce-section" aria-labelledby="tarihce-baslik">

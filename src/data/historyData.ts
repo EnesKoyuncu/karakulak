@@ -38,20 +38,6 @@ export interface IHistoryTexts {
       };
     };
   };
-  seo: {
-    title: {
-      tr: string;
-      en: string;
-    };
-    description: {
-      tr: string;
-      en: string;
-    };
-    keywords: {
-      tr: string;
-      en: string;
-    };
-  };
 }
 
 export const historyTexts: IHistoryTexts = {
@@ -93,18 +79,64 @@ export const historyTexts: IHistoryTexts = {
       },
     },
   },
-  seo: {
-    title: {
-      tr: "Tarihçe | Ayalka Makina",
-      en: "History | Ayalka Makina",
-    },
-    description: {
-      tr: "1998'den günümüze Ayalka Makina'nın kuruluş ve gelişim hikayesi. ISO9001:2000 ve CE kalite standartlarında üretim yapan modern tesisimiz ve kalite anlayışımız hakkında bilgi edinin.",
-      en: "From 1998 to the present, the story of Ayalka Makina's establishment and development. Learn about our modern facility producing under ISO9001:2000 and CE quality standards and our understanding of quality.",
-    },
-    keywords: {
-      tr: "ayalka tarihçe, ayalka kuruluş, ayalka makina tarihi, ayalka üretim tesisi, ayalka kalite standartları, kemalpaşa organize sanayi",
-      en: "ayalka history, ayalka establishment, ayalka machinery history, ayalka production facility, ayalka quality standards, kemalpaşa organized industrial zone",
-    },
+};
+
+interface IseoTexts {
+  title: string;
+  description: string;
+  keywords: string[];
+}
+
+export interface IseoTextsLanguageSupport {
+  tr: IseoTexts;
+  en: IseoTexts;
+}
+
+export const seoTexts: IseoTextsLanguageSupport = {
+  tr: {
+    title: "Tarihçe | Karakulak Group Geçmişten Bugüne Tarihçe Sayfası",
+    description:
+      "1998'den günümüze Karakulak Group'un kuruluş ve gelişim hikayesi. ISO9001:2000 ve CE kalite standartlarında üretim yapan modern tesisimiz, vizyonumuz, geleceğe yönelik planlarımız ve  kalite anlayışımız hakkında bilgi edinin. Daha fazlası için iletişim sayfasında bulunan iletişim bilgilerimizden bize ulaşabilirsiniz.",
+    keywords: [
+      "karakulak tarihçe",
+      "karakulak group tarihçe",
+      "karakulak kuruluş",
+      "karakulak group kuruluş",
+      "karakulak tarihi",
+      "karakulak group tarihi",
+      "karakulak üretim tesisi",
+      "karakulak group üretim tesisi",
+      "karakulak kalite standartları",
+      "karakulak group kalite standartları",
+      "geçmişten bugüne karakulak",
+      "geçmişten bugüne karakulak group",
+      "araç üstü ekipman tarihçe",
+      "araç üstü ekipman kuruluş",
+      "araç üstü ekipman tarihi",
+      "araç üstü ekipman üretim tesisi",
+    ],
+  },
+  en: {
+    title: "History | Karakulak Group From Past to Present History Page",
+    description:
+      "The story of Karakulak Group's establishment and development from 1998 to the present. Learn about our modern facility producing with ISO9001:2000 and CE quality standards, our vision, future plans, and our approach to quality. For more information, you can reach us through the contact details on our contact page.",
+    keywords: [
+      "karakulak history",
+      "karakulak group history",
+      "karakulak establishment",
+      "karakulak group establishment",
+      "karakulak historical",
+      "karakulak group historical",
+      "karakulak production facility",
+      "karakulak group production facility",
+      "karakulak quality standards",
+      "karakulak group quality standards",
+      "karakulak from past to present",
+      "karakulak group from past to present",
+      "vehicle-mounted equipment history",
+      "vehicle-mounted equipment establishment",
+      "vehicle-mounted equipment historical",
+      "vehicle-mounted equipment production facility",
+    ],
   },
 };
