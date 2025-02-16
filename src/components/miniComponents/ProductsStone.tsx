@@ -10,29 +10,11 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Share from "yet-another-react-lightbox/plugins/share";
 import { useLanguage } from "@/hooks/useLanguage";
-
-interface ProductsProps {
-  title: string;
-  description: string;
-  images: string[];
-  additionalInfo?: string;
-}
-
-interface ITranslation {
-  zoomHint: string;
-  swipeHint: string;
-  mainImageAlt: string;
-  thumbnailAlt: string;
-  prevButton: string;
-  nextButton: string;
-  productImagesSection: string;
-  productInfoSection: string;
-}
-
-interface ITranslationsLanguageSupport {
-  tr: ITranslation;
-  en: ITranslation;
-}
+import {
+  ITranslationsLanguageSupport,
+  ProductsProps,
+  translations,
+} from "@/data/productsStoneData.ts";
 
 // Sadece görsel bölüm için genel container animasyonu (staggered)
 const containerVariants = {
@@ -66,7 +48,7 @@ const thumbnailVariants = {
   },
 };
 
-const Products: React.FC<ProductsProps> = ({
+const ProductsStone: React.FC<ProductsProps> = ({
   title,
   description,
   images = [],
@@ -83,28 +65,6 @@ const Products: React.FC<ProductsProps> = ({
   const { language } = useLanguage();
 
   // Dil bazlı çeviri metinleri
-  const translations: ITranslationsLanguageSupport = {
-    tr: {
-      zoomHint: "Büyütmek için tıklayın",
-      swipeHint: "← Kaydırarak görüntüleyin →",
-      mainImageAlt: "Ana Görsel",
-      thumbnailAlt: "Görsel",
-      prevButton: "Önceki görseller",
-      nextButton: "Sonraki görseller",
-      productImagesSection: "Ürün Görselleri",
-      productInfoSection: "Ürün Bilgisi",
-    },
-    en: {
-      zoomHint: "Click to enlarge",
-      swipeHint: "← Swipe to view →",
-      mainImageAlt: "Main Image",
-      thumbnailAlt: "Image",
-      prevButton: "Previous images",
-      nextButton: "Next images",
-      productImagesSection: "Product Images",
-      productInfoSection: "Product Information",
-    },
-  };
 
   useEffect(() => {
     if (images && images.length > 0) {
@@ -421,4 +381,4 @@ const Products: React.FC<ProductsProps> = ({
   );
 };
 
-export default Products;
+export default ProductsStone;

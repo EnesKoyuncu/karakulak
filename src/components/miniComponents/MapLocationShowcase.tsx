@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import "../../styles/miniComponentsStyle/MapLocationShowcase.css";
 import { useLanguage } from "@/hooks/useLanguage";
+import { mapLocationTexts } from "@/data/mapLocationShowcaseData";
 
 export default function MapLocationShowcase() {
   const { language } = useLanguage();
+  const texts = mapLocationTexts;
 
   return (
     <section className="map-location-section">
@@ -16,42 +18,53 @@ export default function MapLocationShowcase() {
           transition={{ duration: 0.6 }}
         >
           <h2>
-            {" "}
-            {language === "tr"
-              ? "KARAKULAK İLETİŞİM"
-              : "KARAKULAK CONTACT"}{" "}
+            {texts.sectionTitle[language as keyof typeof texts.sectionTitle]}
           </h2>
           <div className="info-divider"></div>
 
           <div className="contact-details">
-            <h3> {language === "tr" ? "MERKEZ OFİS" : "CENTRAL OFFICE"} </h3>
+            <h3>
+              {
+                texts.contactHeadings.centralOffice[
+                  language as keyof typeof texts.contactHeadings.centralOffice
+                ]
+              }
+            </h3>
             <p className="address">
-              {language === "tr"
-                ? "O.S.B. Mh.8 Sk.No:6 Kemalpaşa / İzmir"
-                : "OSB Neighborhood 8, Street No. 6, Kemalpaşa, İzmir, Turkey"}
+              {texts.address[language as keyof typeof texts.address]}
             </p>
 
             <div className="contact-item">
-              <span className="label">E-mail:</span>
-              <a href="mailto:info@ayalka.com.tr" className="value">
-                info@ayalka.com.tr
+              <span className="label">{texts.labels.email}</span>
+              <a
+                href={`mailto:${texts.contactDetails.email}`}
+                className="value"
+              >
+                {texts.contactDetails.email}
               </a>
             </div>
 
             <div className="contact-item">
               <span className="label">
-                {language === "tr" ? "Tel:" : "Phone:"}
+                {
+                  texts.labels.phone[
+                    language as keyof typeof texts.labels.phone
+                  ]
+                }
               </span>
-              <a href="tel:905326830891" className="value">
-                90 532 683 0891
+              <a
+                href={`tel:${texts.contactDetails.phoneNumber}`}
+                className="value"
+              >
+                {texts.contactDetails.phoneNumber}
               </a>
             </div>
 
             <div className="contact-item">
               <span className="label">
-                {language === "tr" ? "Faks:" : "Fax:"}
+                {texts.labels.fax[language as keyof typeof texts.labels.fax]}
               </span>
-              <span className="value">90 533 329 963</span>
+              <span className="value">{texts.contactDetails.faxNumber}</span>
             </div>
           </div>
         </motion.div>
@@ -71,6 +84,11 @@ export default function MapLocationShowcase() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            aria-label={
+              language === "tr"
+                ? "Karakulak Harita Konumu"
+                : "Karakulak Map Location"
+            }
           ></iframe>
         </motion.div>
       </div>

@@ -8,23 +8,10 @@ import "../styles/ProductAllInfo.css";
 import { SEO } from "./SEO";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ProductAdvantage } from "../context/ProductContext";
-
-interface ITranslation {
-  vehicleSpecifications: string;
-  generalFeatures: string;
-  advantages: string;
-  truckBrand: string;
-  wheelbase: string;
-  garbageBinVolume: string;
-  vehicleSpecsTableLabel: string;
-  vehicleSpecsCaption: string;
-  productPageMain: string;
-}
-
-interface ITranslationsLanguageSupport {
-  tr: ITranslation;
-  en: ITranslation;
-}
+import {
+  ITranslationsLanguageSupport,
+  translations,
+} from "@/data/productAllInfoData";
 
 const ProductAllInfo = () => {
   const { id } = useParams();
@@ -46,32 +33,6 @@ const ProductAllInfo = () => {
   if (!selectedProduct) {
     return null;
   }
-
-  // Dil bazlı arayüz metinleri (sabit metinler)
-  const translations = {
-    tr: {
-      vehicleSpecifications: "Araç Spesifikasyonları",
-      generalFeatures: "Genel Özellikler",
-      advantages: "Avantajlar",
-      truckBrand: "Marka",
-      wheelbase: "Dingil Mesafesi",
-      garbageBinVolume: "Çöp Kapasitesi",
-      vehicleSpecsTableLabel: "Araç Spesifikasyonları Tablosu",
-      vehicleSpecsCaption: "Araç Spesifikasyonları",
-      productPageMain: "Ürün Detayları",
-    },
-    en: {
-      vehicleSpecifications: "Vehicle Specifications",
-      generalFeatures: "General Features",
-      advantages: "Advantages",
-      truckBrand: "Truck Brand",
-      wheelbase: "Wheelbase",
-      garbageBinVolume: "Garbage Bin Volume",
-      vehicleSpecsTableLabel: "Vehicle Specifications Table",
-      vehicleSpecsCaption: "Vehicle Specifications",
-      productPageMain: "Product Details",
-    },
-  };
 
   // SEO için açıklama ve anahtar kelimeler; ürünün dil uyumlu alanlarını kullanıyoruz.
   const seoDescription =
