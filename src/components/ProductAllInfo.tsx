@@ -74,10 +74,10 @@ const ProductAllInfo = () => {
       {/* BURAYI TEKRAR Bİ KONTROL ET */}
       <SEO
         title={`${
-          selectedProduct.name[language as keyof TranslatedText]
+          selectedProduct.seoName[language as keyof TranslatedText]
         } | Karakulak Group Ürünleri`}
         description={
-          selectedProduct.description[language as keyof TranslatedText]
+          selectedProduct.seoDescription[language as keyof TranslatedText]
         }
         image="https://karakulakgroup.com/images/logo/karakulakgroupLogo.webp" // TODO : değiştirilcek logo geldiğinde
         author="Karakulak Group"

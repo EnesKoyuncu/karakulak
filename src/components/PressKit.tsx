@@ -80,6 +80,7 @@ export default function PressKit() {
           transition={{ duration: 0.6 }}
         >
           <h1>{texts.headerTitle}</h1>
+          <h2 className="visually-hidden">Karakulak Group</h2>
           <div className="title-underline" aria-hidden="true"></div>
         </motion.header>
 

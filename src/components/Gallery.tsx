@@ -106,6 +106,7 @@ const Gallery: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="gallery-title">{texts.headerTitle}</h1>
+          <h2 className="visually-hidden">Karakulak Group</h2>
           <div className="title-underline" aria-hidden="true"></div>
         </motion.header>
 

@@ -7,9 +7,17 @@
         "tr": "Çöp Kamyonu - Hidrolik Sıkıştırmalı Çöp Kasası",
         "en": "Garbage Truck - Hydraulic Compactor"
       },
+      "seoName": {
+        "tr": "Çöp Kamyonu",
+        "en": "Garbage Truck"
+      },
       "description": {
         "tr": "Karakulak Arkadan Yüklemeli tip hidrolik sıkıştırmalı çöp kasası/ çöp kamyonu. Atık yönetimi ihtiyacına göre geliştirilmiştir",
         "en": "Karakulak Rear Loading type hydraulically compressed garbage truck. Developed according to waste management needs"
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Çöp Kamyonu ürününün tanıtım sayfasıdır. Çöp Kamyonu aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz. ",
+        "en": "This is the product introduction page of Garbage Truck, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Garbage Truck vehicle."
       },
       "vehicleSpecifications": [
         {
@@ -290,9 +298,17 @@
         "tr": "MINI PACK",
         "en": "MINI PACK"
       },
+      "seoName": {
+        "tr": "MINI PACK",
+        "en": "MINI PACK"
+      },
       "description": {
         "tr": "MINIPAK \"Minipaker\", olarak da adlandırılan bu ekipman modeli, büyük şehirlerin karmaşık, dar sokaklarında veya hareket kabiliyeti olmayan dar alanlarda evsel atıkları toplayarak büyük hacimli çöp toplama ekipmanlarına, Semi-Treyler katı atık transfer ekipmanlarına ya da büyük damperli çöp araçlarına uydu ekipman olarak destek vermesi için üretilmektedir.",
         "en": "MINIPAK, also known as \"Minipaker\", is designed to support equipment used in waste transfer by collecting household waste in narrow, complex city streets or confined spaces, assisting large-volume garbage collection vehicles, semi-trailer solid waste transfer equipment, or large damper trucks."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Mini Pack ürününün tanıtım sayfasıdır. Mini Pack aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz. ",
+        "en": "This is the product introduction page of Mini Pack, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about the Mini Pack vehicle."
       },
       "images": [
         {
@@ -382,9 +398,17 @@
         "tr": "SU TANKERİ",
         "en": "WATER TANK"
       },
+      "seoName": {
+        "tr": "SU TANKERİ",
+        "en": "WATER TANK"
+      },
       "description": {
         "tr": "Karakulak su tankerleri, suyu taşımak ve dağıtmak için tasarlanmıştır.",
         "en": "KARAKULAK water tankers are designed for transporting and distributing water."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Su Tankeri ürününün tanıtım sayfasıdır. Su Tankeri aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz. ",
+        "en": "This is the product introduction page of Water Tanker, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Water Tanker vehicle."
       },
       "images": [
         {
@@ -460,9 +484,17 @@
         "tr": "VİDANJÖR",
         "en": "VACUUM TRUCK"
       },
+      "seoName": {
+        "tr": "VİDANJÖR",
+        "en": "VACUUM TRUCK"
+      },
       "description": {
         "tr": "Karakulak vidanjörleri, kanalizasyon atık ve çamurunu bir vakum pompası vasıtasıyla emmek ve taşımak için tasarlanmıştır.",
         "en": "Karakulak vacuum trucks are designed to suction and transport sewage waste and sludge using a vacuum pump."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Vidanjör ürününün tanıtım sayfasıdır. Vidanjör aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz. ",
+        "en": "This is the product introduction page of Vacuum Truck, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Vacuum Truck vehicle."
       },
       "images": [
         {
@@ -545,9 +577,17 @@
         "tr": "HOOKLIFT",
         "en": "HOOKLIFT"
       },
+      "seoName": {
+        "tr": "HOOKLIFT",
+        "en": "HOOKLIFT"
+      },
       "description": {
         "tr": "Karakulak hooklift (kancalı kaldırıcı), kapalı ya da açık konteynerlerin kamyon üzerine alınarak taşınması amacıyla kullanılmaktadır.",
         "en": "KARAKULAK hooklift is used for transporting closed or open containers by loading them onto a truck."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Hooklift ürününün tanıtım sayfasıdır. Hooklift aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz.",
+        "en": "This is the product introduction page of Hooklift, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Hooklift vehicle."
       },
       "images": [
         {
@@ -620,9 +660,17 @@
         "tr": "Skip Loader | Hidrolift",
         "en": "Skip Loader | Hydrolift"
       },
+      "seoName": {
+        "tr": "Skip Loader | Hidrolift",
+        "en": "Skip Loader | Hydrolift"
+      },
       "description": {
         "tr": "Ekipman, DIN 30720 standardına göre kamyon şasisi üzerine monte edilmiş platformuyla konteynerları kaldırmak ve çöpünü boşaltmak için tasarlanmıştır. Ekipman; 1 adet platform, 2 adet yükleme kolu, iniş ayakları ve hidrolik & pnömatik kurulumdan oluşur.",
         "en": "The equipment is designed according to DIN 30720 standard with a platform mounted on a truck chassis to lift containers and empty waste. It consists of one platform, two loading arms, landing legs, and a hydraulic & pneumatic system."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Skip Loader | Hidrolift ürününün tanıtım sayfasıdır. Hidrolift aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz. ",
+        "en": " This is the product introduction page of Skip Loader | Hydrolift, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Hydrolift vehicle."
       },
       "images": [
         {
@@ -689,9 +737,17 @@
         "tr": "Yandan Yüklemeli Çöp Kasası",
         "en": "Side-Loading Garbage Body"
       },
+      "seoName": {
+        "tr": "Yandan Yüklemeli Çöp Kasası",
+        "en": "Side-Loading Garbage Body"
+      },
       "description": {
         "tr": "Karakulak Çöp Kasaları (Çöp Kamyonları), çöplerin mekanik ve manuel olarak toplanması ve bertaraf alanlarına taşınması için tasarlanmıştır.",
         "en": "Karakulak Garbage Bodies (Garbage Trucks) are designed for the mechanical and manual collection and transportation of waste to disposal sites."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Yandan Yüklemeli Çöp Kasası ürününün tanıtım sayfasıdır. Aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz. ",
+        "en": " This is the product introduction page of Side-Loading Garbage Body, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our vehicle."
       },
       "images": [
         {
@@ -822,9 +878,17 @@
         "tr": "TELESKOPİK PLATFORM",
         "en": "TELESKOPIC PLATFORM"
       },
+      "seoName": {
+        "tr": "TELESKOPİK PLATFORM",
+        "en": "TELESKOPIC PLATFORM"
+      },
       "description": {
         "tr": "Sepetli teleskopik platform (teleskopik vinç) teknik olarak karakulak mühendisleri tarafından onaylanan yeterli şasiye monte edilecektir.",
         "en": "The basket-type telescopic platform (telescopic crane) will be mounted on a sufficiently approved chassis by Karakulak engineers."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Teleskopik Platform ürününün tanıtım sayfasıdır. Teleskopik Platform aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz.",
+        "en": "This is the product introduction page of Telescopic Platform, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Telescopic Platform vehicle."
       },
       "images": [
         {
@@ -908,9 +972,17 @@
         "tr": "KOMBİNE KANAL AÇMA ",
         "en": "COMBINED CANAL JETTING"
       },
+      "seoName": {
+        "tr": "KOMBİNE KANAL AÇMA ",
+        "en": "COMBINED CANAL JETTING"
+      },
       "description": {
         "tr": "KARAKULAK Kombine kanal ekipmanı, tıkanmış kanalizasyon ve drenaj borularını yüksek basınç pompası ile açar ve güçlü vakum sistemi sayesinde çamur ile drenajı tahliye eder.",
         "en": "KARAKULAK Combined Canal Jetting equipment is manufactured for two purposes: to clear blocked sewer and drainage lines using a high-pressure pump, and to suction and discharge sludge and drainage with a powerful vacuum pump."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Kanal Açma Aracı ürününün tanıtım sayfasıdır. Kanal Açma aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz.",
+        "en": " This is the product introduction page of Canal Jetting, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Canal Jetting vehicle."
       },
       "images": [
         {
@@ -992,9 +1064,17 @@
         "tr": "YOL SÜPÜRME ARACI",
         "en": "ROAD SWEEPER"
       },
+      "seoName": {
+        "tr": "YOL SÜPÜRME ARACI",
+        "en": "ROAD SWEEPER"
+      },
       "description": {
         "tr": "Karakulak Yol Süpürme ekipmanları, hız ve kalitesi bakımından kanıtlanmış performansa sahip, azami kapasiteye bağlı olarak farklı boyutlarda üretilmektedir.",
         "en": "Karakulak road sweepers are produced in various sizes based on maximum capacity, offering proven performance in terms of speed and quality."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Yol Süpürme Aracı ürününün tanıtım sayfasıdır. Yol Süpürme aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz.",
+        "en": "This is the product introduction page of Road Sweeper, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Road Sweeper vehicle."
       },
       "images": [
         {
@@ -1069,9 +1149,17 @@
         "tr": "İTFAİYE ARACI",
         "en": "FIRE TRUCK"
       },
+      "seoName": {
+        "tr": "İTFAİYE ARACI",
+        "en": "FIRE TRUCK"
+      },
       "description": {
         "tr": "Karakulak İtfaiye Araçları, şehir koşullarına göre ihtiyaç duyulan yerlerde itfaiyecilerin gereksinimlerini göz önünde bulundurarak dizayn edilmiştir.",
         "en": "Karakulak fire trucks are designed according to city conditions to meet the needs of firefighters where required."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan İtfaiye Aracı ürününün tanıtım sayfasıdır. İtfaiye aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz.",
+        "en": "This is the product introduction page of Fire Truck, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Fire Truck vehicle."
       },
       "images": [
         {
@@ -1162,9 +1250,17 @@
         "tr": "DAMPER ARACI",
         "en": "TIPPER TRUCK"
       },
+      "seoName": {
+        "tr": "DAMPER ARACI",
+        "en": "TIPPER TRUCK"
+      },
       "description": {
         "tr": "KARAKULAK damperli ekipmanlar, inşaat için kum, çakıl veya yıkım atıkları gibi gevşek malzemelerin taşınması veya geri dönüşüm tesislerine atıkların taşınması için tasarlanıp üretilmiştir.",
         "en": "KARAKULAK tipper trucks (damper) are designed and manufactured for transporting loose materials such as sand, gravel, or demolition waste for construction or recycling purposes."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Damper Aracı ürününün tanıtım sayfasıdır. Damper aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz.",
+        "en": "This is the product introduction page of Tipper Truck, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Tipper Truck vehicle."
       },
       "images": [
         {
@@ -1241,9 +1337,17 @@
         "tr": "Monoblok Çöp Kamyonu",
         "en": "Monoblock Garbage Truck"
       },
+      "seoName": {
+        "tr": "Monoblok Çöp Kamyonu",
+        "en": "Monoblock Garbage Truck"
+      },
       "description": {
         "tr": "Monoblok üst kompaktörler, toplamada hızlı ve ekonomik bir çözümdür. Modern, temiz ve yenilikçi bir görünüm sağlar.",
         "en": "Monoblock garbage compactors offer a fast and economical solution for collection, providing a modern, clean, and innovative appearance."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Monoblok Çöp Kamyonu ürününün tanıtım sayfasıdır. Monoblok Çöp Kamyonu aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz.",
+        "en": "This is the product introduction page of Monoblock Garbage Truck, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Monoblock Garbage Truck vehicle."
       },
       "images": [
         {
@@ -1349,9 +1453,17 @@
         "tr": "KONTEYNER YIKAMA",
         "en": "CONTAINER WASHER"
       },
+      "seoName": {
+        "tr": "KONTEYNER YIKAMA",
+        "en": "CONTAINER WASHER"
+      },
       "description": {
         "tr": "Konteyner yıkama ekipmanları, konteynerleri yıkamak için üretilmiştir.",
         "en": "Container washer equipment is manufactured for cleaning containers."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Konteyner Yıkama ürününün tanıtım sayfasıdır. Konteyner Yıkama aracımız hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz.",
+        "en": "This is the product introduction page of Container Washer, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Container Washer vehicle."
       },
       "images": [
         {
@@ -1433,9 +1545,17 @@
         "tr": "SEMİ TREYLER",
         "en": "SEMI-TRAILER"
       },
+      "seoName": {
+        "tr": "SEMİ TREYLER",
+        "en": "SEMI-TRAILER"
+      },
       "description": {
         "tr": "Semi treyler atık transfer ekipmanları, çöpleri ekonomik olarak geri dönüşüm tesislerine ve imha alanlarına taşımak için kullanılmaktadır.",
         "en": "Semi-trailer waste transfer equipment is used to economically transport collected waste to recycling or disposal facilities."
+      },
+      "seoDescription": {
+        "tr": "Karakulak Group araç üstü ekipman üretici şirketinin bir ürünü olan Semi Treyler ürününün tanıtım sayfasıdır. Semi Treyler hakkında bilgi almak için iletişim sayfamızdan bize ulaşabilirsiniz.",
+        "en": " This is the product introduction page of Semi Trailer, a product of Karakulak Group, a manufacturer of vehicle-mounted equipment. You can contact us from our contact page to get information about our Semi Trailer vehicle."
       },
       "images": [
         {

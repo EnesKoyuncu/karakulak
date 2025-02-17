@@ -29,7 +29,7 @@ export const translations: ITranslationsLanguageSupport = {
     seo: {
       title: "Satış Sonrası Hizmetler | Karakulak Group Müşteri Memnuniyeti",
       description:
-        "Karakulak Group olarak satış sonrası servis, garanti ve müşteri hizmetleri. Profesyonel servis ekibimiz ve yedek parça desteğimiz ile yanınızdayız. Baştan sona her aşamada müşteri memnuniyetini ön planda tutuyoruz. Hizmetlerimiz hakkında detaylı bilgi almak için iletişim sayfamızdaki iletişim bilgilerinden bize ulaşabilirsiniz.",
+        "Karakulak Group olarak satış sonrası servis, garanti ve müşteri hizmetleri. Profesyonel servis ekibimiz ve yedek parça desteğimiz ile yanınızdayız. Hizmetlerimiz hakkında detaylı bilgi almak için iletişim sayfamızdaki iletişim bilgilerinden bize ulaşabilirsiniz.",
       keywords: [
         "karakulak hizmetleri",
         "karakulak group hizmetleri",
@@ -90,7 +90,7 @@ export const translations: ITranslationsLanguageSupport = {
     seo: {
       title: "After-Sales Services | Karakulak Group Customer Satisfaction",
       description:
-        "As Karakulak Group, we provide after-sales services, warranties, and customer support. We are with you with our professional service team and spare parts support. We prioritize customer satisfaction at every stage from start to finish. For detailed information about our services, you can reach us through the contact information on our contact page.",
+        "As Karakulak Group, we provide after-sales services, warranties, and customer support. We are with you with our professional service team and spare parts support. For detailed information about our services, you can reach us through the contact information on our contact page.",
       keywords: [
         "karakulak services",
         "karakulak group services",

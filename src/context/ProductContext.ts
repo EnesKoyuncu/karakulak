@@ -54,7 +54,9 @@ export interface Product {
   id: string;
   category: string;
   name: TranslatedText;
+  seoName: TranslatedText;
   description: TranslatedText;
+  seoDescription: TranslatedText;
   images: ProductImage[];
   generalFeatures: TranslatedStringArray;
   technicalSpecifications?: TechnicalSpecifications;
