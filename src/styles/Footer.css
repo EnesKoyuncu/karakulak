@@ -20,6 +20,43 @@
   );
 }
 
+.footer-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-link-a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+
+  text-decoration: none;
+  color: #fff;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+
+  border: none;
+  border-radius: 1.25rem;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-link-a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.footer-link-icon {
+  font-size: 1.2rem;
+}
+
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -54,18 +91,45 @@
 }
 
 .social-links {
+  gap: 1rem;
   display: flex;
-  gap: 15px;
+  flex-direction: column;
 }
 
-.social-links a {
+.social-link-item a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   color: #999;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  transform-origin: left center;
 }
 
-.social-links a:hover {
-  color: #e74c3c;
+.social-link-item a:hover {
+  transform: scale(1.05);
+}
+
+.social-link-item i {
+  font-size: 1.8rem;
+  width: 2.5rem;
+  text-align: center;
+}
+
+.social-link-item span {
+  font-size: 1.5rem;
+}
+
+#facebook-link:hover {
+  color: #1877f2;
+}
+
+#instagram-link:hover {
+  color: #e4405f;
+}
+
+#youtube-link:hover {
+  color: #ff0000;
 }
 
 .footer-bottom {
@@ -119,8 +183,37 @@
     text-align: center;
   }
 
+  /* .social-link-item i {
+    font-size: 1.5rem;
+    width: 25px;
+  }
+
+  .social-link-item span {
+    font-size: 1.2rem;
+  } */
+
+  .footer-section.social {
+    text-align: center; /* Başlık ve içerikleri ortala */
+  }
+
   .social-links {
+    justify-content: center !important; /* Sosyal medya linklerini ortala */
+    display: flex !important;
+    flex-direction: column !important; /* Dikey sırala */
+    align-items: center !important; /* İçerikleri ortala */
+  }
+
+  .social-link-item {
+    justify-content: center; /* İkon ve yazıyı ortala */
+  }
+
+  .social-link-item a {
+    justify-content: center; /* İkon ve yazıyı ortala */
+  }
+
+  .footer-links {
     justify-content: center;
+    align-items: center;
   }
 
   .footer-bottom {

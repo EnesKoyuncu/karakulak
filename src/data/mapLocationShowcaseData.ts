@@ -59,7 +59,7 @@ export const mapLocationTexts: IMapLocationTexts = {
     },
   },
   contactDetails: {
-    email: "info@ayalka.com.tr",
+    email: "info@karakulakgroup.com",
     phoneNumber: "90 532 683 0891",
     faxNumber: "90 533 329 963",
   },

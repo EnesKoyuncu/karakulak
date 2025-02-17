@@ -49,7 +49,7 @@ export default function ChairmanOfTheBoard() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <blockquote>
-                  <p>
+                  <p style={{ textAlign: "justify" }}>
                     {language === "tr"
                       ? `Firmamız ve çalışanlarımız "her noktada kalite" anlayışını,
                     "SÜREKLİ İŞ GELİŞTİRME MODELİ" sistemi ve "TOPLAM KALİTE
@@ -58,7 +58,7 @@ export default function ChairmanOfTheBoard() {
                     memnuniyetini kalite odaklı olarak sağlamayı hedeflemiştir.`
                       : `Our company and employees have adopted the understanding of "quality at every point", the "CONTINUOUS BUSINESS IMPROVEMENT MODEL" system and "TOTAL QUALITY MANAGEMENT" as a principle, and aims to ensure customer satisfaction in a quality-oriented manner through expert individuals by attaching great importance to INSTITUTIONALIZATION.`}
                   </p>
-                  <p>
+                  <p style={{ textAlign: "justify" }}>
                     {language === "tr"
                       ? `Üretim aşamalarının her evresinde insan sağlığını ve
                     değerini, müşteri memnuniyetinden ve Karakulak kalitesinden
@@ -77,7 +77,7 @@ export default function ChairmanOfTheBoard() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <cite className="name">KERİM KARAKULAK</cite>
+                <cite className="name">HAMZA CAN KARAKULAK</cite>
                 <span className="title" aria-label="Pozisyon">
                   {language === "tr"
                     ? "Yönetim Kurulu Başkanı"

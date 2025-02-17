@@ -8,7 +8,7 @@ import { useCookieConsent } from "../hooks/useCookieConsent";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ITranslationLanguageSupport, translations } from "@/data/contactData"; // Yeni importlar
 
-import { ContactInfo } from "./miniComponents/ContactInfo";
+import { ContactInfo } from "./miniComponents/ContactSubComps/ContactInfo";
 
 const Contact: React.FC = () => {
   const { consent, setConsent } = useCookieConsent();

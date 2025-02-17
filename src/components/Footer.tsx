@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import "../styles/Footer.css";
 import { useLanguage } from "@/hooks/useLanguage";
-
+import { navItems, MenuItem } from "@/data/navItems";
+import { FaAngleRight } from "react-icons/fa";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { language } = useLanguage();
@@ -13,13 +15,34 @@ export default function Footer() {
       <div className="footer-content">
         <div className="footer-main">
           <div className="footer-section company-info">
-            <h3>KARAKULAK</h3>
+            <h3>KARAKULAK GROUP</h3>
             <p>
               {" "}
               {language === "tr"
                 ? "Araç Üstü Ekipman San.Tic. Ltd. Şti."
                 : "Vehicle Mounted Equipment Industry & Trade Ltd."}{" "}
             </p>
+
+            <ul className="footer-links">
+              {navItems.map((item, index) => {
+                if (item.addedFooter) {
+                  return (
+                    <li className="footer-link" key={index}>
+                      <a
+                        href={`/${language}` + (item.link || "#")}
+                        className="footer-link-a"
+                        aria-label={
+                          item.title[language as keyof MenuItem["title"]]
+                        }
+                      >
+                        <FaAngleRight className="footer-link-icon" />
+                        {item.title[language as keyof MenuItem["title"]]}
+                      </a>
+                    </li>
+                  );
+                }
+              })}
+            </ul>
           </div>
 
           <div className="footer-section contact">
@@ -33,24 +56,55 @@ export default function Footer() {
             <p>
               {" "}
               {language === "tr"
-                ? "Tel: +90 532 683 0891"
-                : "Phone: +90 532 683 0891 "}{" "}
+                ? "Tel: +90 555 555 5555" //TODO değişecek
+                : "Phone: +90 555 555 5555"}{" "}
             </p>
-            <p>Email: info@ayalka.com.tr</p>
+            <div className="footer-email">
+              <a
+                href="mailto:info@karakulakgroup.com"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                Email: info@karakulakgroup.com.tr
+              </a>
+            </div>
           </div>
 
           <div className="footer-section social">
-            <h4> {language === "tr" ? "Sosyal Medya" : "Social Media"} </h4>
+            <h4>{language === "tr" ? "Sosyal Medya" : "Social Media"}</h4>
             <div className="social-links">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-youtube"></i>
-              </a>
+              <div className="social-link-item">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="facebook-link"
+                >
+                  <i className="fab fa-facebook"></i>
+                  <span>KarakulakGroup</span>
+                </a>
+              </div>
+              <div className="social-link-item">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="instagram-link"
+                >
+                  <i className="fab fa-instagram"></i>
+                  <span>KarakulakGroup</span>
+                </a>
+              </div>
+              <div className="social-link-item">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="youtube-link"
+                >
+                  <i className="fab fa-youtube"></i>
+                  <span>KarakulakGroup</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -65,8 +119,8 @@ export default function Footer() {
           <div className="copyright">
             © 1998 – {currentYear}{" "}
             {language === "tr"
-              ? "Karakulak Araç Üstü Ekipman San.Tic. Ltd. Tüm Hakları Saklıdır"
-              : "Karakulak Vehicle Mounted Equipment Industry & Trade Ltd. All Rights Reserved"}
+              ? "Karakulak Group Araç Üstü Ekipman San.Tic. Ltd. Tüm Hakları Saklıdır"
+              : "Karakulak Group Vehicle Mounted Equipment Industry & Trade Ltd. All Rights Reserved"}
           </div>
           <div className="developer">
             {language === "tr" ? "Tasarım ve Yazılım:" : "Design & Software"}{" "}

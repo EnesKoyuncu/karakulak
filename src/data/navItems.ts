@@ -7,6 +7,7 @@ export interface MenuItem {
   id?: string;
   category?: string;
   submenu?: MenuItem[];
+  addedFooter?: boolean;
 }
 
 export const navItems: MenuItem[] = [
@@ -16,6 +17,7 @@ export const navItems: MenuItem[] = [
       en: "Homepage",
     },
     link: "/",
+    addedFooter: true,
   },
   {
     title: {
@@ -180,6 +182,7 @@ export const navItems: MenuItem[] = [
       en: "Press Kit",
     },
     link: "/press-kit",
+    addedFooter: true,
   },
   {
     title: {
@@ -187,6 +190,7 @@ export const navItems: MenuItem[] = [
       en: "Gallery",
     },
     link: "/gallery",
+    addedFooter: true,
   },
   {
     title: {
@@ -194,6 +198,7 @@ export const navItems: MenuItem[] = [
       en: "After Sales Services",
     },
     link: "/after-sales-services",
+    addedFooter: true,
   },
   {
     title: {
@@ -201,5 +206,6 @@ export const navItems: MenuItem[] = [
       en: "Contact",
     },
     link: "/contact",
+    addedFooter: true,
   },
 ];

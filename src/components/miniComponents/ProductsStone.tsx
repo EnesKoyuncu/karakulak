@@ -159,7 +159,7 @@ const Products: React.FC<ProductsProps> = ({
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <h2>{title}</h2>
+          <h2 style={{ textAlign: "center" }}>{title}</h2>
           <p className="description">{description}</p>
           {additionalInfo && (
             <p className="additional-info">{additionalInfo}</p>

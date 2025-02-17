@@ -287,8 +287,8 @@
       "id": "mini-pack",
       "category": "mini-pack",
       "name": {
-        "tr": "Karakulak Mini Pack",
-        "en": "Karakulak Mini Pack"
+        "tr": "MINI PACK",
+        "en": "MINI PACK"
       },
       "description": {
         "tr": "MINIPAK \"Minipaker\", olarak da adlandırılan bu ekipman modeli, büyük şehirlerin karmaşık, dar sokaklarında veya hareket kabiliyeti olmayan dar alanlarda evsel atıkları toplayarak büyük hacimli çöp toplama ekipmanlarına, Semi-Treyler katı atık transfer ekipmanlarına ya da büyük damperli çöp araçlarına uydu ekipman olarak destek vermesi için üretilmektedir.",
@@ -379,8 +379,8 @@
       "id": "water-tank",
       "category": "water-tank",
       "name": {
-        "tr": "KARAKULAK SU TANKERİ",
-        "en": "KARAKULAK WATER TANK"
+        "tr": "SU TANKERİ",
+        "en": "WATER TANK"
       },
       "description": {
         "tr": "Karakulak su tankerleri, suyu taşımak ve dağıtmak için tasarlanmıştır.",
@@ -457,8 +457,8 @@
       "id": "vacuum-truck",
       "category": "vacuum-truck",
       "name": {
-        "tr": "KARAKULAK VİDANJÖR",
-        "en": "KARAKULAK VACUUM TRUCK"
+        "tr": "VİDANJÖR",
+        "en": "VACUUM TRUCK"
       },
       "description": {
         "tr": "Karakulak vidanjörleri, kanalizasyon atık ve çamurunu bir vakum pompası vasıtasıyla emmek ve taşımak için tasarlanmıştır.",
@@ -542,8 +542,8 @@
       "id": "hooklift",
       "category": "hooklift",
       "name": {
-        "tr": "KARAKULAK HOOKLIFT",
-        "en": "KARAKULAK HOOKLIFT"
+        "tr": "HOOKLIFT",
+        "en": "HOOKLIFT"
       },
       "description": {
         "tr": "Karakulak hooklift (kancalı kaldırıcı), kapalı ya da açık konteynerlerin kamyon üzerine alınarak taşınması amacıyla kullanılmaktadır.",
@@ -617,8 +617,8 @@
       "id": "skip-loader",
       "category": "skip-loader",
       "name": {
-        "tr": "KARAKULAK SKIP LOADER | HİDROLİFT",
-        "en": "KARAKULAK SKIP LOADER | HYDROLIFT"
+        "tr": "Skip Loader | Hidrolift",
+        "en": "Skip Loader | Hydrolift"
       },
       "description": {
         "tr": "Ekipman, DIN 30720 standardına göre kamyon şasisi üzerine monte edilmiş platformuyla konteynerları kaldırmak ve çöpünü boşaltmak için tasarlanmıştır. Ekipman; 1 adet platform, 2 adet yükleme kolu, iniş ayakları ve hidrolik & pnömatik kurulumdan oluşur.",
@@ -686,7 +686,7 @@
       "id": "side-loading-garbage",
       "category": "side-loading-garbage",
       "name": {
-        "tr": "YANDAN YÜKLEMELİ ÇÖP KASASI",
+        "tr": "Yandan Yüklemeli Çöp Kasası",
         "en": "Side-Loading Garbage Body"
       },
       "description": {
@@ -819,8 +819,8 @@
       "id": "telescopic-platform",
       "category": "telescopic-platform",
       "name": {
-        "tr": "KARAKULAK TELESKOPİK PLATFORM",
-        "en": "KARAKULAK TELESKOPIC PLATFORM"
+        "tr": "TELESKOPİK PLATFORM",
+        "en": "TELESKOPIC PLATFORM"
       },
       "description": {
         "tr": "Sepetli teleskopik platform (teleskopik vinç) teknik olarak karakulak mühendisleri tarafından onaylanan yeterli şasiye monte edilecektir.",
@@ -905,8 +905,8 @@
       "id": "canal-jetting",
       "category": "canal-jetting",
       "name": {
-        "tr": "KARAKULAK KOMBİNE KANAL AÇMA ",
-        "en": "KARAKULAK COMBINED CANAL JETTING"
+        "tr": "KOMBİNE KANAL AÇMA ",
+        "en": "COMBINED CANAL JETTING"
       },
       "description": {
         "tr": "KARAKULAK Kombine kanal ekipmanı, tıkanmış kanalizasyon ve drenaj borularını yüksek basınç pompası ile açar ve güçlü vakum sistemi sayesinde çamur ile drenajı tahliye eder.",
@@ -989,7 +989,7 @@
       "id": "road-sweeper",
       "category": "road-sweeper",
       "name": {
-        "tr": "KARAKULAK YOL SÜPÜRME ARACI",
+        "tr": "YOL SÜPÜRME ARACI",
         "en": "ROAD SWEEPER"
       },
       "description": {
@@ -1238,8 +1238,8 @@
       "id": "monoblock-garbage",
       "category": "monoblock-garbage",
       "name": {
-        "tr": "MONOBLOCK ÇÖP KAMYONU",
-        "en": "MONOBLOCK GARBAGE TRUCK"
+        "tr": "Monoblok Çöp Kamyonu",
+        "en": "Monoblock Garbage Truck"
       },
       "description": {
         "tr": "Monoblok üst kompaktörler, toplamada hızlı ve ekonomik bir çözümdür. Modern, temiz ve yenilikçi bir görünüm sağlar.",

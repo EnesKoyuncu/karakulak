@@ -75,7 +75,7 @@ export default function Header() {
     >
       <div className="header-top">
         <div className="header-left">
-          <span className="header-top-info-mail">info@ayalka.com</span>
+          <span className="header-top-info-mail">info@karakulakgroup.com</span>
         </div>
         <div className="header-top-info-phone">+90 555 555 5555</div>
         <LanguageSwitcher className="header-top-language-switch desktop-only" />

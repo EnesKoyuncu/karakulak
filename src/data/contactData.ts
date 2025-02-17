@@ -85,13 +85,13 @@ export const translations: ITranslationLanguageSupport = {
     contactInfo: {
       generalManager: "GENEL MÜDÜR",
       exportManager: "İHRACAT MÜDÜRÜ",
-      generalManagerAssistant: "GENEL MÜDÜR YARDIMCISI",
+      generalManagerAssistant: "G. MÜDÜR YARDIMCISI",
       accounting: "MUHASEBE",
       generalManagerInfo: [
         {
-          href: "mailto:info@karakulakgroup.com.tr",
+          href: "mailto:info@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "info@karakulakgroup.com.tr",
+          text: "info@karakulakgroup.com",
         },
         {
           href: "tel:+905555555555",
@@ -101,14 +101,14 @@ export const translations: ITranslationLanguageSupport = {
       ],
       exportManagerInfo: [
         {
-          href: "mailto:ihracat@karakulakgroup.com.tr",
+          href: "mailto:ihracat@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "ihracat@karakulakgroup.com.tr",
+          text: "ihracat@karakulakgroup.com",
         },
         {
-          href: "mailto:export@karakulakgroup.com.tr",
+          href: "mailto:export@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "export@karakulak.com.tr",
+          text: "export@karakulak.com",
         },
         {
           href: "tel:+905555555555",
@@ -118,9 +118,9 @@ export const translations: ITranslationLanguageSupport = {
       ],
       generalManagerAssistantInfo: [
         {
-          href: "mailto:info@karakulak.com.tr",
+          href: "mailto:info@karakulak.com",
           icon: FaEnvelope,
-          text: "info@karakulak.com.tr",
+          text: "info@karakulak.com",
         },
         {
           href: "tel:+9055555555555",
@@ -130,9 +130,9 @@ export const translations: ITranslationLanguageSupport = {
       ],
       accountingInfo: [
         {
-          href: "mailto:ihracat@karakulakgroup.com.tr",
+          href: "mailto:ihracat@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "ihracat@karakulakgroup.com.tr",
+          text: "ihracat@karakulakgroup.com",
         },
       ],
     },
@@ -144,7 +144,7 @@ export const translations: ITranslationLanguageSupport = {
         phone2: "+90 555 555 5555",
         phone3: "+90 555 555 5555",
         phone4: "+90 555 555 5555",
-        email: "info@karakulakgroup.com.tr",
+        email: "info@karakulakgroup.com",
       },
       consentMessage:
         "Konumumuzu görmek için çerez politikamızı kabul etmeniz gerekmektedir.",
@@ -159,7 +159,7 @@ export const translations: ITranslationLanguageSupport = {
       description:
         "Contact Karakulak Group. This is a page where you can contact Karakulak Group and get information about different ways of communication. It includes the people working in the company and their contact information. For more information, you can send an e-mail to info@karakulakgroup.com.",
       keywords:
-        "contact karakulak, karakulak communication, contact karakulak group, karakulak group communication, contact karakulak vehicle mounted equipment, karakulak vehicle mounted equipment communication, contact karakulak group vehicle mounted equipment, karakulak group vehicle mounted equipment communication, karakulak phone number, karakulak telephone, karakulak group phone number, karakulak group telephone, karakulak address, karakulak group address, karakulak location, karakulak group location, vehicle mounted equipment contact, vehicle mounted equipment communication, caracal, vehicle upfitting, truck equipment, contact us, info@karakulakgroup.com.tr",
+        "contact karakulak, karakulak communication, contact karakulak group, karakulak group communication, contact karakulak vehicle mounted equipment, karakulak vehicle mounted equipment communication, contact karakulak group vehicle mounted equipment, karakulak group vehicle mounted equipment communication, karakulak phone number, karakulak telephone, karakulak group phone number, karakulak group telephone, karakulak address, karakulak group address, karakulak location, karakulak group location, vehicle mounted equipment contact, vehicle mounted equipment communication, caracal, vehicle upfitting, truck equipment, contact us, info@karakulakgroup.com",
     },
     hero: {
       bgAlt: "Contact page background image",
@@ -172,9 +172,9 @@ export const translations: ITranslationLanguageSupport = {
       accounting: "ACCOUNTING",
       generalManagerInfo: [
         {
-          href: "mailto:info@karakulakgroup.com.tr",
+          href: "mailto:info@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "info@karakulakgroup.com.tr",
+          text: "info@karakulakgroup.com",
         },
         {
           href: "tel:+905555555555",
@@ -184,14 +184,14 @@ export const translations: ITranslationLanguageSupport = {
       ],
       exportManagerInfo: [
         {
-          href: "mailto:ihracat@karakulakgroup.com.tr",
+          href: "mailto:ihracat@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "ihracat@karakulakgroup.com.tr",
+          text: "ihracat@karakulakgroup.com",
         },
         {
-          href: "mailto:export@karakulakgroup.com.tr",
+          href: "mailto:export@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "export@karakulakgroup.com.tr",
+          text: "export@karakulakgroup.com",
         },
         {
           href: "tel:+905555555555",
@@ -201,9 +201,9 @@ export const translations: ITranslationLanguageSupport = {
       ],
       generalManagerAssistantInfo: [
         {
-          href: "mailto:info@karakulakgroup.com.tr",
+          href: "mailto:info@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "info@karakulakgroup.com.tr",
+          text: "info@karakulakgroup.com",
         },
         {
           href: "tel:+905555555555",
@@ -213,9 +213,9 @@ export const translations: ITranslationLanguageSupport = {
       ],
       accountingInfo: [
         {
-          href: "mailto:info@karakulakgroup.com.tr",
+          href: "mailto:info@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "info@karakulakgroup.com.tr",
+          text: "info@karakulakgroup.com",
         },
       ],
     },
@@ -227,7 +227,7 @@ export const translations: ITranslationLanguageSupport = {
         phone2: "+90 555 555 5555",
         phone3: "+90 555 555 5555",
         phone4: "+90 555 555 5555",
-        email: "info@karakulakgroup.com.tr",
+        email: "info@karakulakgroup.com",
       },
       consentMessage: "You must accept our cookie policy to view our location.",
       consentButton: "Accept Cookies",
