@@ -25,7 +25,9 @@ interface RawProduct {
   id: string;
   category: string;
   name: { tr: string; en: string };
+  seoName: { tr: string; en: string };
   description: { tr: string; en: string };
+  seoDescription: { tr: string; en: string };
   vehicleSpecifications?: RawVehicleSpecification[];
   generalFeatures: { tr: string[]; en: string[] };
   // Avantajlar artık ayrı "tr" ve "en" dizileri olarak geliyor
