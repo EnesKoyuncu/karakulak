@@ -27,6 +27,7 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({
               target={item.target}
               rel={item.target ? "noopener noreferrer" : undefined}
               aria-label={item.text}
+              title={item.text}
             >
               <ItemIcon aria-hidden="true" />
               <span>{item.text}</span>

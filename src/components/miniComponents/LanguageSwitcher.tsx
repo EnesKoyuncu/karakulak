@@ -16,6 +16,9 @@ export const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
           key={lang}
           className={`lang-btn ${language === lang ? "active" : ""}`}
           onClick={() => changeLanguage(lang)}
+          aria-label={
+            lang === "tr" ? "Türkçe diline geç" : "Switch to English Language"
+          }
         >
           <img
             src={`/images/flags/${lang}-flag.png`}

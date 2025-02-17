@@ -98,6 +98,12 @@ export default function PressKit() {
                     alt={`${
                       item.title[language as keyof IPressKitItem["title"]]
                     } ${language === "tr" ? "Önizleme" : "Preview"}`}
+                    title={`${
+                      item.title[language as keyof IPressKitItem["title"]]
+                    } ${language === "tr" ? "Önizleme" : "Preview"}`}
+                    aria-label={`${
+                      item.title[language as keyof IPressKitItem["title"]]
+                    } ${language === "tr" ? "Önizleme" : "Preview"}`}
                   />
                   <figcaption className="overlay">
                     <motion.a
@@ -107,6 +113,9 @@ export default function PressKit() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       aria-label={texts.downloadAriaLabel(
+                        item.title[language as keyof IPressKitItem["title"]]
+                      )}
+                      title={texts.downloadAriaLabel(
                         item.title[language as keyof IPressKitItem["title"]]
                       )}
                     >
@@ -150,7 +159,21 @@ export default function PressKit() {
           <div className="company-brand" role="banner">
             <motion.img
               src="https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png" // TODO: Logo gelecek
-              alt="Karakulak Kurumsal Logo"
+              alt={
+                language === "tr"
+                  ? "Karakulak Group Logo"
+                  : "Karakulak Group Logo"
+              }
+              title={
+                language === "tr"
+                  ? "Karakulak Group Logo"
+                  : "Karakulak Group Logo"
+              }
+              aria-label={
+                language === "tr"
+                  ? "Karakulak Group Logo"
+                  : "Karakulak Group Logo"
+              }
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -226,6 +249,7 @@ export default function PressKit() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={texts.instagram.followLabel}
+                  title={texts.instagram.followLabel}
                 >
                   {texts.instagram.followLabel}
                 </motion.a>
@@ -269,6 +293,7 @@ export default function PressKit() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={texts.facebook.likeLabel}
+                  title={texts.facebook.likeLabel}
                 >
                   {texts.facebook.likeLabel}
                 </motion.a>
@@ -315,6 +340,7 @@ export default function PressKit() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={texts.linkedin.connectLabel}
+                  title={texts.linkedin.connectLabel}
                 >
                   {texts.linkedin.connectLabel}
                 </motion.a>

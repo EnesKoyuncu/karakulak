@@ -4,6 +4,7 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { navItems, MenuItem } from "@/data/navItems";
 import { FaAngleRight } from "react-icons/fa";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Link } from "react-router-dom";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { language } = useLanguage();
@@ -28,16 +29,23 @@ export default function Footer() {
                 if (item.addedFooter) {
                   return (
                     <li className="footer-link" key={index}>
-                      <a
-                        href={`/${language}` + (item.link || "#")}
+                      <Link
+                        to={`/${language}` + (item.link || "#")}
                         className="footer-link-a"
                         aria-label={
-                          item.title[language as keyof MenuItem["title"]]
+                          language === "tr"
+                            ? `${item.title.tr} sayfasına git`
+                            : `Go to ${item.title.en} page`
+                        }
+                        title={
+                          language === "tr"
+                            ? `${item.title.tr} sayfasına git`
+                            : `Go to ${item.title.en} page`
                         }
                       >
                         <FaAngleRight className="footer-link-icon" />
                         {item.title[language as keyof MenuItem["title"]]}
-                      </a>
+                      </Link>
                     </li>
                   );
                 }
@@ -63,6 +71,16 @@ export default function Footer() {
               <a
                 href="mailto:info@karakulakgroup.com"
                 style={{ textDecoration: "none", color: "white" }}
+                aria-label={
+                  language === "tr"
+                    ? "Karakulak Group İletişim Maili"
+                    : "Karakulak Group Contact Mail"
+                }
+                title={
+                  language === "tr"
+                    ? "Karakulak Group İletişim Maili"
+                    : "Karakulak Group Contact Mail"
+                }
               >
                 Email: info@karakulakgroup.com.tr
               </a>
@@ -74,10 +92,20 @@ export default function Footer() {
             <div className="social-links">
               <div className="social-link-item">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/ayalka.com.tr/" //TODO değişecek
                   target="_blank"
                   rel="noopener noreferrer"
                   id="facebook-link"
+                  aria-label={
+                    language === "tr"
+                      ? "Karakulak Group Facebook Sayfasına Gİt"
+                      : "Go to Karakulak Group Facebook Page"
+                  }
+                  title={
+                    language === "tr"
+                      ? "Karakulak Group Facebook Sayfasına Gİt"
+                      : "Go to Karakulak Group Facebook Page"
+                  }
                 >
                   <i className="fab fa-facebook"></i>
                   <span>KarakulakGroup</span>
@@ -85,10 +113,20 @@ export default function Footer() {
               </div>
               <div className="social-link-item">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/garbagetruckturkey/" //TODO değişecek
                   target="_blank"
                   rel="noopener noreferrer"
                   id="instagram-link"
+                  aria-label={
+                    language === "tr"
+                      ? "Karakulak Group İnstagram Sayfasına Gİt"
+                      : "Go to Karakulak Group Instagram Page"
+                  }
+                  title={
+                    language === "tr"
+                      ? "Karakulak Group İnstagram Sayfasına Gİt"
+                      : "Go to Karakulak Group Instagram Page"
+                  }
                 >
                   <i className="fab fa-instagram"></i>
                   <span>KarakulakGroup</span>
@@ -96,10 +134,20 @@ export default function Footer() {
               </div>
               <div className="social-link-item">
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@garbagetruckturkey5268" //TODO değişecek
                   target="_blank"
                   rel="noopener noreferrer"
                   id="youtube-link"
+                  aria-label={
+                    language === "tr"
+                      ? "Karakulak Group Youtube Sayfasına Gİt"
+                      : "Go to Karakulak Group Youtube Page"
+                  }
+                  title={
+                    language === "tr"
+                      ? "Karakulak Group Youtube Sayfasına Gİt"
+                      : "Go to Karakulak Group Youtube Page"
+                  }
                 >
                   <i className="fab fa-youtube"></i>
                   <span>KarakulakGroup</span>
@@ -128,8 +176,18 @@ export default function Footer() {
               href="https://github.com/eneskoyuncu"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={
+                language === "tr"
+                  ? "Enes Ertuğrul Koyuncu Github Sayfası"
+                  : "Enes Ertuğrul Koyuncu Github Page"
+              }
+              title={
+                language === "tr"
+                  ? "Enes Ertuğrul Koyuncu Github Sayfası"
+                  : "Enes Ertuğrul Koyuncu Github Page"
+              }
             >
-              Enes Koyuncu
+              Enes Ertuğrul Koyuncu
             </a>
           </div>
         </motion.div>

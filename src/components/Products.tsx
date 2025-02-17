@@ -96,17 +96,34 @@ const Products: React.FC = () => {
                 transition={{ duration: 0.3 }}
                 onHoverStart={() => setHoveredProduct(product.id)}
                 onHoverEnd={() => setHoveredProduct(null)}
+                aria-label={language === "tr" ? "Ürün Kartı" : "Product Card"}
               >
                 {contextProduct ? (
                   <Link
                     to={`/products/${contextProduct.category}/${contextProduct.id}`}
                     className="product-link"
                     onClick={handleProductClick}
+                    aria-label={
+                      language === "tr"
+                        ? "Ürünün Sayfasına Git"
+                        : "Go to Product Page"
+                    }
                   >
-                    <div className="product-image">
+                    <div
+                      className="product-image"
+                      aria-label={
+                        language === "tr"
+                          ? `${product.name.tr} Resmi`
+                          : `${product.name.en} Image`
+                      }
+                    >
                       <img
                         src={product.image}
                         alt={product.name[language as keyof IProduct["name"]]}
+                        title={product.name[language as keyof IProduct["name"]]}
+                        aria-label={
+                          product.name[language as keyof IProduct["name"]]
+                        }
                       />
                       <motion.div
                         className="product-overlay"
@@ -121,7 +138,14 @@ const Products: React.FC = () => {
                         </span>
                       </motion.div>
                     </div>
-                    <div className="product-content">
+                    <div
+                      className="product-content"
+                      aria-label={
+                        language === "tr"
+                          ? `${product.name.tr} Ürün Bilgileri`
+                          : `${product.name.en} Product Information`
+                      }
+                    >
                       <span className="product-category-tag">
                         {
                           product.category[
@@ -146,10 +170,31 @@ const Products: React.FC = () => {
                     <div className="product-image">
                       <img
                         src={product.image}
-                        alt={product.name[language as keyof IProduct["name"]]}
+                        alt={
+                          language === "tr"
+                            ? `${product.name.tr} Resmi`
+                            : `${product.name.en} Image`
+                        }
+                        aria-label={
+                          language === "tr"
+                            ? `${product.name.tr} Resmi`
+                            : `${product.name.en} Image`
+                        }
+                        title={
+                          language === "tr"
+                            ? `${product.name.tr} Resmi`
+                            : `${product.name.en} Image`
+                        }
                       />
                     </div>
-                    <div className="product-content">
+                    <div
+                      className="product-content"
+                      aria-label={
+                        language === "tr"
+                          ? `${product.name.tr} Ürün Yazılı Bilgileri`
+                          : `${product.name.en} Product Text Information`
+                      }
+                    >
                       <span className="product-category-tag">
                         {
                           product.category[
@@ -186,6 +231,20 @@ const Products: React.FC = () => {
           <button
             className="show-more-btn"
             onClick={() => setShowAll(!showAll)}
+            aria-label={
+              showAll
+                ? language === "tr"
+                  ? "Daha Az Göster"
+                  : "Show Less"
+                : language === "tr"
+                ? "Daha Fazla Göster"
+                : "Show More"
+            }
+            title={
+              language === "tr"
+                ? "Daha Fazla veya Az Göster Butonu"
+                : "Show More or Less Switch Button"
+            }
           >
             {showAll
               ? language === "tr"

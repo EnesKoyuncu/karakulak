@@ -94,11 +94,17 @@ const WhoWeAreMini: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <Link
-            to="/tarihce"
+            to={`/${language}` + "/history"}
             className="more-info-btn"
             onClick={() => {
               window.scrollTo(0, 0);
             }}
+            title={
+              language === "tr" ? "Tarihçe Sayfasına Git" : "Go to History Page"
+            }
+            aria-label={
+              language === "tr" ? "Tarihçe Sayfasına Git" : "Go to History Page"
+            }
           >
             {language === "tr" ? "Tarihçe" : "History"}
           </Link>

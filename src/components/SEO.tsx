@@ -80,6 +80,10 @@ export default function SEO({
         <meta name="keywords" content={keywords.join(", ")} />
       )}
 
+      {/* Yazar ve Yayınlayan xd */}
+      <meta name="author" content="Karakulak Group" />
+      <meta name="publisher" content="Karakulak Group" />
+
       {/* Arama Motoru Index ve Follow */}
       <meta name="robots" content="index, follow" />
 

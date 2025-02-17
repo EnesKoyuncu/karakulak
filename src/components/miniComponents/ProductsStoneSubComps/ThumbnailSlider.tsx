@@ -108,6 +108,14 @@ const ThumbnailSlider: React.FC<ThumbnailSliderProps> = ({
                   translations[language as keyof ITranslationsLanguageSupport]
                     .thumbnailAlt
                 } ${index + 1}`}
+                aria-label={`${title} - ${
+                  translations[language as keyof ITranslationsLanguageSupport]
+                    .thumbnailAlt
+                } ${index + 1}`}
+                title={`${title} - ${
+                  translations[language as keyof ITranslationsLanguageSupport]
+                    .thumbnailAlt
+                } ${index + 1}`}
                 loading="lazy"
               />
             </motion.div>
@@ -125,8 +133,12 @@ const ThumbnailSlider: React.FC<ThumbnailSliderProps> = ({
             translations[language as keyof ITranslationsLanguageSupport]
               .nextButton
           }
+          title={
+            translations[language as keyof ITranslationsLanguageSupport]
+              .nextButton
+          }
         >
-          <FaChevronRight />
+          <FaChevronRight aria-hidden="true" />
         </motion.button>
       )}
     </nav>

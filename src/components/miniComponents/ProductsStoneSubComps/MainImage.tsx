@@ -52,6 +52,14 @@ const MainImage: React.FC<MainImageProps> = ({
             translations[language as keyof ITranslationsLanguageSupport]
               .mainImageAlt
           }`}
+          aria-label={`${title} - ${
+            translations[language as keyof ITranslationsLanguageSupport]
+              .mainImageAlt
+          }`}
+          title={`${title} - ${
+            translations[language as keyof ITranslationsLanguageSupport]
+              .mainImageAlt
+          }`}
           className="main-image"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}

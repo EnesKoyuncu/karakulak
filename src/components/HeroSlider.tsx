@@ -83,6 +83,9 @@ export default function HeroSlider() {
             <div
               className="slide-background"
               style={{ backgroundImage: `url(${slide.image})` }}
+              aria-label={
+                language === "tr" ? "Slider Arka Planı" : "Slider Background"
+              }
             />
             <div className="slide-content">
               <motion.div
@@ -99,7 +102,13 @@ export default function HeroSlider() {
                     ]
                   }
                 </p>
-                <button className="cta-button">
+                <button
+                  className="cta-button"
+                  aria-label={
+                    language === "tr" ? "Daha Fazla Bilgi" : "Learn More"
+                  }
+                  title={language === "tr" ? "Daha Fazla Bilgi" : "Learn More"}
+                >
                   {language === "tr" ? "Daha Fazla Bilgi" : "Learn More"}
                 </button>
               </motion.div>

@@ -19,16 +19,6 @@ export default function HomePage() {
       />
 
       <main>
-        <h1 className="visually-hidden">
-          {language === "tr"
-            ? "Karakulak Group - Araç Üstü Ekipman Üreticisi"
-            : "Karakulak Group - On Vehicle Equipment Manufacturer"}
-        </h1>
-
-        <h2 className="visually-hidden">
-          {language === "tr" ? "Ana Sayfa" : "Home Page"}
-        </h2>
-
         <HeroSlider />
         <WhoWeAreMini />
         <Products />

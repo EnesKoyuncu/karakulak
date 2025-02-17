@@ -50,8 +50,7 @@ export const seoTexts: IseoTextsLanguageSupport = {
     ],
   },
   en: {
-    title:
-      "Karakulak Group | Vehicle-Mounted Equipment Manufacturer and Exporter",
+    title: "Karakulak Group | Vehicle-Mounted Equipment Manufacturer",
     description:
       "Karakulak Group is a leading manufacturer and exporter of vehicle-mounted equipment such as garbage containers, water tankers, vacuum trucks, and hooklifts, exporting to more than 50 countries. Established in 1990, Karakulak Group has been producing vehicle-mounted equipment for over 30 years.",
     keywords: [

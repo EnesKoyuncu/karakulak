@@ -85,6 +85,7 @@ const ProductAllInfo = () => {
         keywords={selectedProduct.keywords[language as keyof TranslatedText]}
         ogType="website"
       />
+      <h1 className="visually-hidden">Karakulak Group</h1>
 
       <main
         className="product-all-info-wrapper"

@@ -44,23 +44,6 @@ const ExportNetwork: React.FC = () => {
 
   return (
     <>
-      {/* <SEO
-        title={
-          language === "tr"
-            ? "İhracat Ağı | Ayalka Makina - 40+ Ülkeye İhracat"
-            : "Export Network | Ayalka Makina - Exporting to 40+ Countries"
-        }
-        description={
-          language === "tr"
-            ? "Ayalka Makina, 40'tan fazla ülkeye araç üstü ekipman ihracatı yapan global bir üreticidir. Avrupa, Asya ve Afrika'da güçlü bir ihracat ağına sahibiz."
-            : "Ayalka Makina is a global manufacturer exporting vehicle-mounted equipment to over 40 countries, with a strong export network across Europe, Asia, and Africa."
-        }
-        keywords={
-          language === "tr"
-            ? "ayalka ihracat, ayalka global, ayalka uluslararası, araç üstü ekipman ihracat, türk ihracat, global üretici"
-            : "ayalka export, ayalka global, ayalka international, vehicle-mounted equipment export, turkish export, global manufacturer"
-        }
-      /> */}
       <SEO
         title={seoTexts[language as keyof IseoTextsLanguageSupport].title}
         description={

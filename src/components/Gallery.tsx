@@ -124,6 +124,16 @@ const Gallery: React.FC = () => {
               }`}
               onClick={() => handleCategoryChange(category)}
               aria-pressed={selectedCategory === category}
+              aria-label={
+                language === "tr"
+                  ? `Kategori: ${category}`
+                  : `Category: ${category}`
+              }
+              title={
+                language === "tr"
+                  ? `Kategori: ${category}`
+                  : `Category: ${category}`
+              }
             >
               {category === "all"
                 ? texts.allCategory
@@ -155,6 +165,12 @@ const Gallery: React.FC = () => {
                   alt={
                     image.alt[language as keyof ITranslationsLanguageSupport]
                   } //TODO: Aslında bu kullanım yanlış ama geçici olarak kalsın
+                  aria-label={
+                    image.alt[language as keyof ITranslationsLanguageSupport]
+                  }
+                  title={
+                    image.alt[language as keyof ITranslationsLanguageSupport]
+                  }
                   loading={index < 6 ? "eager" : "lazy"}
                   width="300"
                   height="169"

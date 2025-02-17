@@ -1,4 +1,3 @@
-// data/mapLocationShowcaseData.ts
 export interface IMapLocationTexts {
   sectionTitle: {
     tr: string;
@@ -60,7 +59,7 @@ export const mapLocationTexts: IMapLocationTexts = {
   },
   contactDetails: {
     email: "info@karakulakgroup.com",
-    phoneNumber: "90 532 683 0891",
-    faxNumber: "90 533 329 963",
+    phoneNumber: "90 555 555 5555",
+    faxNumber: "90 555 555 5555",
   },
 };

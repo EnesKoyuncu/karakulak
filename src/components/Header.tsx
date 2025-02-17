@@ -75,7 +75,25 @@ export default function Header() {
     >
       <div className="header-top">
         <div className="header-left">
-          <span className="header-top-info-mail">info@karakulakgroup.com</span>
+          <span className="header-top-info-mail">
+            {" "}
+            <a
+              href="mailto:info@karakulakgroup.com"
+              aria-label={
+                language === "tr"
+                  ? "Şirket mailine mail at"
+                  : "Send mail to company mail"
+              }
+              title={
+                language === "tr"
+                  ? "Şirket mailine mail at"
+                  : "Send mail to company mail"
+              }
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              info@karakulakgroup.com
+            </a>{" "}
+          </span>
         </div>
         <div className="header-top-info-phone">+90 555 555 5555</div>
         <LanguageSwitcher className="header-top-language-switch desktop-only" />
@@ -83,8 +101,13 @@ export default function Header() {
       <div className="header-bottom">
         <motion.div className="header-bottom-logo-side" variants={itemVariants}>
           <Link
-            to={`/${language}/`}
+            to={`/${language}`}
             title={
+              language === "tr"
+                ? "Karakulak - Anasayfa"
+                : "Karakulak - Homepage"
+            }
+            aria-label={
               language === "tr"
                 ? "Karakulak - Anasayfa"
                 : "Karakulak - Homepage"
@@ -92,13 +115,18 @@ export default function Header() {
           >
             <img
               src="https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png" // TODO : Yeni logo geldiğinde düzenlencek + title
-              alt="Ayalka Logo"
+              alt={
+                language === "tr"
+                  ? "Karakulak Group Şirket Logosu"
+                  : "Karakulak Group Company Logo"
+              }
+              aria-label="Karakulak Group Logo"
               height={80}
               width={80}
               title={
                 language === "tr"
-                  ? "Karakulak Şirket Logosu"
-                  : "Karakulak Company Logo"
+                  ? "Karakulak Group Şirket Logosu"
+                  : "Karakulak Group Company Logo"
               }
             />
           </Link>
@@ -108,6 +136,7 @@ export default function Header() {
           className={`hamburger-btn ${isMobileMenuOpen ? "active" : ""}`}
           onClick={toggleMobileMenu}
           aria-label={language === "tr" ? "Menüyü Aç" : "Open Menu"}
+          title={language === "tr" ? "Menüyü Aç" : "Open Menu"}
         >
           <FontAwesomeIcon icon={isMobileMenuOpen ? faTimes : faBars} />
         </button>
@@ -140,12 +169,16 @@ export default function Header() {
                 ) : (
                   <Link
                     to={`/${language}` + (item.link || "#")}
-                    // to={item.link || "#"}
                     className="nav-link"
                     title={
                       language === "tr"
                         ? `Karakulak - ${item.title["tr"]} Sayfası`
                         : `Karakulak - ${item.title["en"]} Page`
+                    }
+                    aria-label={
+                      language === "tr"
+                        ? `Karakulak - ${item.title["tr"]} Sayfasına git`
+                        : `Go to Karakulak - ${item.title["en"]} Page`
                     }
                   >
                     {item.title[language as keyof MenuItem["title"]]}
@@ -170,7 +203,19 @@ export default function Header() {
                           transition={{ delay: subIndex * 0.1 }}
                           onClick={() => handleProductSelect(sub)}
                         >
-                          <span className="dropdown-link">
+                          <span
+                            className="dropdown-link"
+                            title={
+                              language === "tr"
+                                ? `Karakulak - ${sub.title["tr"]} Sayfası`
+                                : `Karakulak - ${sub.title["en"]} Page`
+                            }
+                            aria-label={
+                              language === "tr"
+                                ? `Karakulak - ${sub.title["tr"]} Sayfasına git`
+                                : `Go to Karakulak - ${sub.title["en"]} Page`
+                            }
+                          >
                             {sub.title[language as keyof MenuItem["title"]]}
                           </span>
                         </motion.li>

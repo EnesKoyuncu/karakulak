@@ -39,6 +39,16 @@ export default function MapLocationShowcase() {
               <a
                 href={`mailto:${texts.contactDetails.email}`}
                 className="value"
+                aria-label={
+                  language === "tr"
+                    ? "İletişim Mailimize Mesaj Gönder"
+                    : "Send Mail to Contact Mail"
+                }
+                title={
+                  language === "tr"
+                    ? "İletişim Mailimize Mesaj Gönder"
+                    : "Send Mail to Contact Mail"
+                }
               >
                 {texts.contactDetails.email}
               </a>
@@ -55,6 +65,16 @@ export default function MapLocationShowcase() {
               <a
                 href={`tel:${texts.contactDetails.phoneNumber}`}
                 className="value"
+                aria-label={
+                  language === "tr"
+                    ? "İletişim Telefon Numaramızı Ara"
+                    : "Call Our Contact Phone Number"
+                }
+                title={
+                  language === "tr"
+                    ? "İletişim Telefon Numaramızı Ara"
+                    : "Call Our Contact Phone Number"
+                }
               >
                 {texts.contactDetails.phoneNumber}
               </a>

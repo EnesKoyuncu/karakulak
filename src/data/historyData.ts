@@ -1,4 +1,3 @@
-// data/historyData.ts
 export interface IHistoryTexts {
   title: {
     tr: string;

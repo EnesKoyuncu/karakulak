@@ -132,6 +132,16 @@ const Contact: React.FC = () => {
                 <a
                   href={`tel:${texts.map.contactItems.phone1}`}
                   className="contact-item"
+                  aria-label={
+                    language === "tr"
+                      ? "Ofis Telefon Numaramızı Ara"
+                      : "Call Our Office Phone Number"
+                  }
+                  title={
+                    language === "tr"
+                      ? "Ofis Telefon Numaramızı Ara"
+                      : "Call Our Office Phone Number"
+                  }
                 >
                   <FaPhone aria-hidden="true" />
                   <span>{texts.map.contactItems.phone1}</span>
@@ -139,6 +149,16 @@ const Contact: React.FC = () => {
                 <a
                   href={`tel:${texts.map.contactItems.phone2}`}
                   className="contact-item"
+                  aria-label={
+                    language === "tr"
+                      ? "Ofis Telefon Numaramızı Ara"
+                      : "Call Our Office Phone Number"
+                  }
+                  title={
+                    language === "tr"
+                      ? "Ofis Telefon Numaramızı Ara"
+                      : "Call Our Office Phone Number"
+                  }
                 >
                   <FaPhone aria-hidden="true" />
                   <span>{texts.map.contactItems.phone2}</span>
@@ -146,6 +166,16 @@ const Contact: React.FC = () => {
                 <a
                   href={`tel:${texts.map.contactItems.phone3}`}
                   className="contact-item"
+                  aria-label={
+                    language === "tr"
+                      ? "Ofis Telefon Numaramızı Ara"
+                      : "Call Our Office Phone Number"
+                  }
+                  title={
+                    language === "tr"
+                      ? "Ofis Telefon Numaramızı Ara"
+                      : "Call Our Office Phone Number"
+                  }
                 >
                   <FaPhone aria-hidden="true" />
                   <span>{texts.map.contactItems.phone3}</span>
@@ -153,6 +183,16 @@ const Contact: React.FC = () => {
                 <a
                   href={`tel:${texts.map.contactItems.phone4}`}
                   className="contact-item"
+                  aria-label={
+                    language === "tr"
+                      ? "Ofis Telefon Numaramızı Ara"
+                      : "Call Our Office Phone Number"
+                  }
+                  title={
+                    language === "tr"
+                      ? "Ofis Telefon Numaramızı Ara"
+                      : "Call Our Office Phone Number"
+                  }
                 >
                   <FaPhone aria-hidden="true" />
                   <span>{texts.map.contactItems.phone4}</span>
@@ -160,6 +200,16 @@ const Contact: React.FC = () => {
                 <a
                   href={`mailto:${texts.map.contactItems.email}`}
                   className="contact-item"
+                  aria-label={
+                    language === "tr"
+                      ? "İletişim Mailize Mail Gönder"
+                      : "Send Mail to Our Contact Mail"
+                  }
+                  title={
+                    language === "tr"
+                      ? "İletişim Mailize Mail Gönder"
+                      : "Send Mail to Our Contact Mail"
+                  }
                 >
                   <FaEnvelope aria-hidden="true" />
                   <span>{texts.map.contactItems.email}</span>

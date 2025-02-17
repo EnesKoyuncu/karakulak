@@ -39,6 +39,9 @@ export default function ChairmanOfTheBoard() {
                   ? "YÖNETİM KURULU BAŞKANI"
                   : "CHAIRMAN OF THE BOARD"}{" "}
               </h1>
+              <h2 className="visually-hidden">
+                {language === "tr" ? "Mesajımız:" : "Our Message: "}
+              </h2>
               <div className="title-underline" aria-hidden="true"></div>
 
               <motion.div
