@@ -2,7 +2,10 @@
   "products": [
     {
       "id": "garbage-truck",
-      "category": "garbage-truck",
+      "category": {
+        "tr": "çöp kamyonu",
+        "en": "garbage-truck"
+      },
       "name": {
         "tr": "Çöp Kamyonu - Hidrolik Sıkıştırmalı Çöp Kasası",
         "en": "Garbage Truck - Hydraulic Compactor"
@@ -293,7 +296,10 @@
     },
     {
       "id": "mini-pack",
-      "category": "mini-pack",
+      "category": {
+        "tr": "mini-pack",
+        "en": "mini-pack"
+      },
       "name": {
         "tr": "MINI PACK",
         "en": "MINI PACK"
@@ -393,7 +399,10 @@
     },
     {
       "id": "water-tank",
-      "category": "water-tank",
+      "category": {
+        "tr": "su tankeri",
+        "en": "water-tank"
+      },
       "name": {
         "tr": "SU TANKERİ",
         "en": "WATER TANK"
@@ -479,7 +488,10 @@
     },
     {
       "id": "vacuum-truck",
-      "category": "vacuum-truck",
+      "category": {
+        "tr": "vidanjör",
+        "en": "vacuum-truck"
+      },
       "name": {
         "tr": "VİDANJÖR",
         "en": "VACUUM TRUCK"
@@ -572,7 +584,10 @@
     },
     {
       "id": "hooklift",
-      "category": "hooklift",
+      "category": {
+        "tr": "hooklift",
+        "en": "hooklift"
+      },
       "name": {
         "tr": "HOOKLIFT",
         "en": "HOOKLIFT"
@@ -655,10 +670,13 @@
     },
     {
       "id": "skip-loader",
-      "category": "skip-loader",
+      "category": {
+        "tr": "hidrolift",
+        "en": "skip-loader"
+      },
       "name": {
-        "tr": "Skip Loader | Hidrolift",
-        "en": "Skip Loader | Hydrolift"
+        "tr": "Hidrolift",
+        "en": "Skip Loader"
       },
       "seoName": {
         "tr": "Skip Loader | Hidrolift",
@@ -732,7 +750,10 @@
     },
     {
       "id": "side-loading-garbage",
-      "category": "side-loading-garbage",
+      "category": {
+        "tr": "yandan yüklemeli çöp kasası",
+        "en": "side-loading-garbage"
+      },
       "name": {
         "tr": "Yandan Yüklemeli Çöp Kasası",
         "en": "Side-Loading Garbage Body"
@@ -873,7 +894,10 @@
     },
     {
       "id": "telescopic-platform",
-      "category": "telescopic-platform",
+      "category": {
+        "tr": "teleskopik platform",
+        "en": "telescopic-platform"
+      },
       "name": {
         "tr": "TELESKOPİK PLATFORM",
         "en": "TELESKOPIC PLATFORM"
@@ -967,7 +991,10 @@
     },
     {
       "id": "canal-jetting",
-      "category": "canal-jetting",
+      "category": {
+        "tr": "kanal açma",
+        "en": "canal jetting"
+      },
       "name": {
         "tr": "KOMBİNE KANAL AÇMA ",
         "en": "COMBINED CANAL JETTING"
@@ -1059,7 +1086,10 @@
     },
     {
       "id": "road-sweeper",
-      "category": "road-sweeper",
+      "category": {
+        "tr": "yol süpürme",
+        "en": "road sweeper"
+      },
       "name": {
         "tr": "YOL SÜPÜRME ARACI",
         "en": "ROAD SWEEPER"
@@ -1144,7 +1174,10 @@
     },
     {
       "id": "fire-truck",
-      "category": "fire-truck",
+      "category": {
+        "tr": "itfaiye aracı",
+        "en": "fire truck"
+      },
       "name": {
         "tr": "İTFAİYE ARACI",
         "en": "FIRE TRUCK"
@@ -1245,7 +1278,10 @@
     },
     {
       "id": "tipper-truck",
-      "category": "tipper-truck",
+      "category": {
+        "tr": "damper aracı",
+        "en": "tipper truck"
+      },
       "name": {
         "tr": "DAMPER ARACI",
         "en": "TIPPER TRUCK"
@@ -1332,7 +1368,10 @@
     },
     {
       "id": "monoblock-garbage",
-      "category": "monoblock-garbage",
+      "category": {
+        "tr": "monoblok çöp kamyonu",
+        "en": "monoblock-garbage"
+      },
       "name": {
         "tr": "Monoblok Çöp Kamyonu",
         "en": "Monoblock Garbage Truck"
@@ -1448,7 +1487,10 @@
     },
     {
       "id": "container-washer",
-      "category": "container-washer",
+      "category": {
+        "tr": "konteyner yıkama",
+        "en": "container washer"
+      },
       "name": {
         "tr": "KONTEYNER YIKAMA",
         "en": "CONTAINER WASHER"
@@ -1540,7 +1582,10 @@
     },
     {
       "id": "semi-trailer",
-      "category": "semi-trailer",
+      "category": {
+        "tr": "semi treyler",
+        "en": "semi-trailer"
+      },
       "name": {
         "tr": "SEMİ TREYLER",
         "en": "SEMI-TRAILER"

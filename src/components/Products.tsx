@@ -11,6 +11,8 @@ import {
   categories,
 } from "@/data/productsData";
 
+import { TranslatedText } from "@/context/ProductContext";
+
 const Products: React.FC = () => {
   const { products: contextProducts } = useProducts();
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
@@ -32,7 +34,9 @@ const Products: React.FC = () => {
     : filteredProducts.slice(0, 6);
 
   const findContextProduct = (routeCategory: string) => {
-    return contextProducts.find((p) => p.category === routeCategory);
+    return contextProducts.find(
+      (p) => p.category[language as keyof TranslatedText] === routeCategory
+    );
   };
 
   useEffect(() => {

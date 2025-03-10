@@ -16,6 +16,7 @@ import {
   translations,
   ITranslationsLanguageSupport,
 } from "@/data/galleryData";
+import { TranslatedText } from "@/context/ProductContext";
 
 const Gallery: React.FC = () => {
   const { products } = useProducts();
@@ -23,7 +24,7 @@ const Gallery: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loading, setLoading] = useState(true);
-  const { language } = useLanguage();
+  const { language } = useLanguage() as { language: keyof TranslatedText };
 
   const texts = translations[language as keyof ITranslationsLanguageSupport];
 
@@ -32,12 +33,12 @@ const Gallery: React.FC = () => {
     return products.flatMap((product) =>
       product.images.map((image) => ({
         src: image.url,
-        category: product.category,
+        category: product.category[language as keyof TranslatedText],
         alt: image.alt,
         loaded: false,
       }))
     );
-  }, [products]);
+  }, [products, language]);
 
   // Seçili kategoriye göre filtrele
   const filteredImages = useMemo(() => {
@@ -48,7 +49,10 @@ const Gallery: React.FC = () => {
 
   // Kategorileri hesapla
   const categories = useMemo(() => {
-    return ["all", ...new Set(products.map((product) => product.category))];
+    return [
+      "all",
+      ...new Set(products.map((product) => product.category as TranslatedText)),
+    ];
   }, [products]);
 
   // İlk 6 resmi önbelleğe al
@@ -119,26 +123,49 @@ const Gallery: React.FC = () => {
         >
           {categories.map((category) => (
             <button
-              key={category}
+              key={typeof category === "string" ? category : category[language]}
               className={`filter-btn ${
                 selectedCategory === category ? "active" : ""
               }`}
-              onClick={() => handleCategoryChange(category)}
+              onClick={() =>
+                handleCategoryChange(
+                  typeof category === "string" ? category : category[language]
+                )
+              }
               aria-pressed={selectedCategory === category}
               aria-label={
                 language === "tr"
-                  ? `Kategori: ${category}`
-                  : `Category: ${category}`
+                  ? `Kategori: ${
+                      typeof category === "string"
+                        ? category
+                        : category[language]
+                    }`
+                  : `Category: ${
+                      typeof category === "string"
+                        ? category
+                        : category[language]
+                    }`
               }
               title={
                 language === "tr"
-                  ? `Kategori: ${category}`
-                  : `Category: ${category}`
+                  ? `Kategori: ${
+                      typeof category === "string"
+                        ? category
+                        : category[language]
+                    }`
+                  : `Category: ${
+                      typeof category === "string"
+                        ? category
+                        : category[language]
+                    }`
               }
             >
               {category === "all"
                 ? texts.allCategory
-                : category.replace(/-/g, " ")}
+                : (typeof category === "string"
+                    ? category
+                    : category[language]
+                  ).replace(/-/g, " ")}
             </button>
           ))}
         </motion.nav>

@@ -23,7 +23,7 @@ interface RawAdvantageItem {
 
 interface RawProduct {
   id: string;
-  category: string;
+  category: { tr: string; en: string };
   name: { tr: string; en: string };
   seoName: { tr: string; en: string };
   description: { tr: string; en: string };

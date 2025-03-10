@@ -52,7 +52,7 @@ export interface ProductAdvantage {
 
 export interface Product {
   id: string;
-  category: string;
+  category: TranslatedText;
   name: TranslatedText;
   seoName: TranslatedText;
   description: TranslatedText;
