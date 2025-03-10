@@ -40,6 +40,7 @@ const ExportNetwork = lazy(() => import("./components/ExportNetwork"));
 const PressKit = lazy(() => import("./components/PressKit"));
 
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Analytics için wrapper component
 const AnalyticsWrapper: React.FC<{ children: React.ReactNode }> = ({
@@ -202,6 +203,7 @@ function App() {
         <Router>
           <AppContent />
           <Analytics />
+          <SpeedInsights />
         </Router>
       </ErrorBoundary>
     </CookieConsentProvider>
