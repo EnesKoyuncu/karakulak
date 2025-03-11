@@ -39,6 +39,7 @@ const ExportNetwork = lazy(() => import("./components/ExportNetwork"));
 
 const PressKit = lazy(() => import("./components/PressKit"));
 
+// TODO: Bu analytics ve speedinsight gereksiz pahalı, 10.04.2025 tarihinde kaldırılacak.
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 // Analytics için wrapper component

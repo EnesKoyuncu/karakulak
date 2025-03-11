@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Anasayfa -->
+    <url>
+        <loc>https://www.karakulakgroup.com/en/</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/" />
+    </url>
+
+    <!-- Kurumsal Sayfaları -->
+
+    <!-- Kurumsal1  Chairman of the Board -->
+    <url>
+        <loc>https://www.karakulakgroup.com/en/chairman-of-the-board</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/chairman-of-the-board" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/chairman-of-the-board" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/chairman-of-the-board</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/chairman-of-the-board" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/chairman-of-the-board" />
+    </url>
+
+    <!-- Kurumsal2 History -->
+    <url>
+        <loc>https://www.karakulakgroup.com/en/history</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/history" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/history" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/history</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/history" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/history" />
+    </url>
+
+    <!-- Kurumsal3 Export Network -->
+    <url>
+        <loc>https://www.karakulakgroup.com/en/export-network</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/export-network" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/export-network" />
+    </url>
+
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/export-network</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/export-network" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/export-network" />
+    </url>
+
+
+    <!-- Press kit page -->
+    <url>
+        <loc>https://www.karakulakgroup.com/en/press-kit</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/press-kit" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/press-kit" />
+    </url>
+
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/press-kit</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/press-kit" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/press-kit" />
+    </url>
+
+    <!-- Gallery page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/gallery</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/gallery" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/gallery" />
+    </url>
+     <url>
+        <loc>https://www.karakulakgroup.com/tr/gallery</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/gallery" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/gallery" />
+    </url>
+
+    <!-- ? After Sales Services Page -->
+    
+     <url>
+        <loc>https://www.karakulakgroup.com/en/after-sales-services</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/after-sales-services" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/after-sales-services" />
+    </url>
+     <url>
+        <loc>https://www.karakulakgroup.com/tr/after-sales-services</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/after-sales-services" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/after-sales-services" />
+    </url>
+
+
+
+
+    <!-- ? Contact Page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/contact</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/contact" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/contact" />
+    </url>
+     <url>
+        <loc>https://www.karakulakgroup.com/tr/contact</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/contact" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/contact" />
+    </url>
+
+
+
+    <!-- ! Ürün Sayfaları -->
+
+
+
+    <!-- ? Garbage Truck Page -->
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/garbage-truck/garbage-truck</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/garbage-truck/garbage-truck" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/garbage-truck/garbage-truck" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/garbage-truck/garbage-truck</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/garbage-truck/garbage-truck" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/garbage-truck/garbage-truck" />
+    </url>
+
+
+    <!-- ? Mini Pack Page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/mini-pack/mini-pack</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/mini-pack/mini-pack" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/mini-pack/mini-pack" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/mini-pack/mini-pack</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/mini-pack/mini-pack" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/mini-pack/mini-pack" />
+    </url>
+
+    <!-- ? Water Tank Page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/water-tank/water-tank</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/water-tank/water-tank" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/water-tank/water-tank" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/water-tank/water-tank</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/water-tank/water-tank" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/water-tank/water-tank" />
+    </url>
+
+    <!-- ? Vacuum Truck Page -->
+
+     <url>
+        <loc>https://www.karakulakgroup.com/en/products/vacuum-truck/vacuum-truck</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/vacuum-truck/vacuum-truck" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/vacuum-truck/vacuum-truck" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/vacuum-truck/vacuum-truck</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/vacuum-truck/vacuum-truck" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/vacuum-truck/vacuum-truck" />
+    </url>
+
+
+    <!-- ? Hooklift Page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/hooklift/hooklift</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/hooklift/hooklift" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/hooklift/hooklift" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/hooklift/hooklift</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/hooklift/hooklift" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/hooklift/hooklift" />
+    </url>
+
+
+    <!-- ? Skip Loader Page -->
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/skip-loader/skip-loader</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/skip-loader/skip-loader" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/skip-loader/skip-loader" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/skip-loader/skip-loader</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/skip-loader/skip-loader" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/skip-loader/skip-loader" />
+    </url>
+
+    <!-- ? Side Loading Garbage Page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/side-loading-garbage/side-loading-garbage</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/side-loading-garbage/side-loading-garbage" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/side-loading-garbage/side-loading-garbage" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/side-loading-garbage/side-loading-garbage</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/side-loading-garbage/side-loading-garbage" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/side-loading-garbage/side-loading-garbage" />
+    </url>
+
+
+    <!-- ? Telescopic Platform Page -->
+     <url>
+        <loc>https://www.karakulakgroup.com/en/products/telescopic-platform/telescopic-platform</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/telescopic-platform/telescopic-platform" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/telescopic-platform/telescopic-platform" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/telescopic-platform/telescopic-platform</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/telescopic-platform/telescopic-platform" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/telescopic-platform/telescopic-platform" />
+    </url>
+
+    <!-- ? Canal Jetting Page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/canal-jetting/canal-jetting</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/canal-jetting/canal-jetting" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/canal-jetting/canal-jetting" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/canal-jetting/canal-jetting</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/canal-jetting/canal-jetting" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/canal-jetting/canal-jetting" />
+    </url>
+    
+    <!-- ? Road Sweeper Page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/road-sweeper/road-sweeper</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/road-sweeper/road-sweeper" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/road-sweeper/road-sweeper" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/road-sweeper/road-sweeper</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/road-sweeper/road-sweeper" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/road-sweeper/road-sweeper" />
+    </url>
+
+
+    <!-- ? Fire Truck Page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/fire-truck/fire-truck</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/fire-truck/fire-truck" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/fire-truck/fire-truck" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/fire-truck/fire-truck</loc>
+        <lastmod></lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/fire-truck/fire-truck" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/fire-truck/fire-truck" />
+    </url>
+
+    <!-- ? Tipper Truck Page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/tipper-truck/tipper-truck</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/tipper-truck/tipper-truck" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/tipper-truck/tipper-truck" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/tipper-truck/tipper-truck</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/tipper-truck/tipper-truck" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/tipper-truck/tipper-truck" />
+    </url>
+
+
+    <!-- ? Monoblock Garbage Truck Page -->
+    
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/monoblock-garbage/monoblock-garbage</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/monoblock-garbage/monoblock-garbage" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/monoblock-garbage/monoblock-garbage" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/monoblock-garbage/monoblock-garbage</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/monoblock-garbage/monoblock-garbage" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/monoblock-garbage/monoblock-garbage" />
+    </url>
+
+
+    <!-- ? Container Washer Page -->
+
+    <url>
+        <loc>https://www.karakulakgroup.com/en/products/container-washer/container-washer</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/container-washer/container-washer" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/container-washer/container-washer" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/container-washer/container-washer</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/container-washer/container-washer" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/container-washer/container-washer" />
+    </url>
+
+
+    <!-- ? Semi Trailer Page -->
+
+     <url>
+        <loc>https://www.karakulakgroup.com/en/products/semi-trailer/semi-trailer</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/semi-trailer/semi-trailer" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/semi-trailer/semi-trailer" />
+    </url>
+    <url>
+        <loc>https://www.karakulakgroup.com/tr/products/semi-trailer/semi-trailer</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/products/semi-trailer/semi-trailer" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/products/semi-trailer/semi-trailer" />
+    </url>
+
+    <!-- Diğer Ürünler ve Sayfalar için benzer şekilde ekleyin -->
+
+</urlset>
