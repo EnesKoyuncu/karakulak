@@ -3,6 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
     <!-- Anasayfa -->
+    <!-- Anasayfa -->
     <url>
         <loc>https://www.karakulakgroup.com/en/</loc>
         <lastmod>2025-03-05</lastmod>
@@ -17,6 +18,23 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/" />
         <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/" />
     </url>
+
+
+    <url>
+        <loc>https://karakulakgroup.com/en/</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/" />
+    </url>
+    <url>
+        <loc>https://karakulakgroup.com/tr/</loc>
+        <lastmod>2025-03-05</lastmod>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.karakulakgroup.com/en/" />
+        <xhtml:link rel="alternate" hreflang="tr" href="https://www.karakulakgroup.com/tr/" />
+    </url>
+
 
     <!-- Kurumsal Sayfaları -->
 

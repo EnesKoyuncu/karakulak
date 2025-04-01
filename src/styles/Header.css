@@ -66,6 +66,7 @@
 .header-bottom-logo-side img {
   width: auto;
   height: 4rem;
+  /* ! Burası image'in boyutunu ayarlayan kısım yani etkin kısım */
 }
 
 .header-bottom-menu-side {

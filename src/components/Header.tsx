@@ -114,15 +114,15 @@ export default function Header() {
             }
           >
             <img
-              src="https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png" // TODO : Yeni logo geldiğinde düzenlencek + title
+              src="/karakulakLogo.svg" // TODO : Yeni logo geldiğinde düzenlencek + title
               alt={
                 language === "tr"
                   ? "Karakulak Group Şirket Logosu"
                   : "Karakulak Group Company Logo"
               }
               aria-label="Karakulak Group Logo"
-              height={80}
-              width={80}
+              height={240}
+              width={240}
               title={
                 language === "tr"
                   ? "Karakulak Group Şirket Logosu"

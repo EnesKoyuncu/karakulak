@@ -25,7 +25,7 @@ export default function SEO({
   const { language } = useLanguage();
 
   // Temel URL ve Canonical URL
-  const baseUrl = "https://karakulakgroup.com";
+  const baseUrl = "https://www.karakulakgroup.com";
   const isErrorPage = location.pathname === "/404";
   const canonicalUrl = isErrorPage
     ? baseUrl
