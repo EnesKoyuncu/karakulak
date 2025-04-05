@@ -12,7 +12,7 @@ export interface ISlideContent {
 
 export const slides: ISlideContent[] = [
   {
-    image: "/images/slider/Slider1.webp",
+    image: "/images/slider/slider1.webp",
     title: {
       tr: "Türkiye'nin Lider Araç Üstü Ekipman Üreticisi",
       en: "Turkey's Leading Vehicle Mounted Equipment Manufacturer",
