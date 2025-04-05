@@ -95,7 +95,7 @@ export default function Header() {
             </a>{" "}
           </span>
         </div>
-        <div className="header-top-info-phone">+90 555 555 5555</div>
+        <div className="header-top-info-phone">+90 531 482 8128</div>  {/* Gizem Numara */}
         <LanguageSwitcher className="header-top-language-switch desktop-only" />
       </div>
       <div className="header-bottom">

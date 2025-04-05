@@ -12,7 +12,7 @@ export interface ISlideContent {
 
 export const slides: ISlideContent[] = [
   {
-    image: "/images/slider/slider1.webp",
+    image: "/images/slider/Slider1.webp",
     title: {
       tr: "Türkiye'nin Lider Araç Üstü Ekipman Üreticisi",
       en: "Turkey's Leading Vehicle Mounted Equipment Manufacturer",
@@ -23,7 +23,7 @@ export const slides: ISlideContent[] = [
     },
   },
   {
-    image: "/images/slider/slider5.webp",
+    image: "/images/slider/Slider2.webp",
     title: {
       tr: "Global Pazarda Güçlü Bir Marka",
       en: "A Strong Brand in the Global Market",
@@ -35,7 +35,7 @@ export const slides: ISlideContent[] = [
   },
 
   {
-    image: "/images/slider/slider4.webp",
+    image: "/images/slider/Slider3.webp",
     title: {
       tr: "Yenilikçi Teknolojiler",
       en: "Innovative Technologies",

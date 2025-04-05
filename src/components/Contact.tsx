@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
             />
             <ContactInfo
               title={texts.contactInfo.exportManager}
-              byWho="Tuçe Kır"
+              byWho="Gizem Karakulak"
               info={texts.contactInfo.exportManagerInfo}
             />
             <ContactInfo

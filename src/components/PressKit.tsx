@@ -18,6 +18,9 @@ import {
   pressKitItems,
 } from "@/data/pressKitData";
 
+import fullLogo from "/images/logo/karakulakLogo.svg";
+
+
 const defaultTiltOptions = {
   reverse: false,
   max: 15,
@@ -65,7 +68,7 @@ export default function PressKit() {
       <SEO
         title={texts.seo.title}
         description={texts.seo.description}
-        image="https://karakulakgroup.com/images/karakulakgroupLogo.webp" // TODO : değiştirilcek logo geldiğinde
+        image="https://karakulakgroup.com/karakulakgroupLogo.svg" // TODO : değiştirilcek logo geldiğinde
         author="Karakulak Group"
         publisher="Karakulak Group"
         keywords={texts.seo.keywords}
@@ -159,7 +162,7 @@ export default function PressKit() {
         >
           <div className="company-brand" role="banner">
             <motion.img
-              src="https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png" // TODO: Logo gelecek
+              src= {fullLogo} 
               alt={
                 language === "tr"
                   ? "Karakulak Group Logo"
@@ -243,7 +246,7 @@ export default function PressKit() {
                   </div>
                 </div>
                 <motion.a
-                  href="https://www.instagram.com/garbagetruckturkey/"
+                  href="https://www.instagram.com/karakulakgrup/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="platform-link instagram-link"

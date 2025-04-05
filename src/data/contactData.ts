@@ -101,19 +101,19 @@ export const translations: ITranslationLanguageSupport = {
       ],
       exportManagerInfo: [
         {
-          href: "mailto:ihracat@karakulakgroup.com",
+          href: "mailto:info@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "ihracat@karakulakgroup.com",
+          text: "info@karakulakgroup.com",
         },
         {
-          href: "mailto:export@karakulakgroup.com",
+          href: "mailto:info@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "export@karakulak.com",
+          text: "info@karakulak.com",
         },
         {
-          href: "tel:+905555555555",
+          href: "tel:+905314828128",
           icon: FaPhone,
-          text: "+90 555 555 5555",
+          text: "+90 531 482 8128",
         },
       ],
       generalManagerAssistantInfo: [
@@ -130,9 +130,9 @@ export const translations: ITranslationLanguageSupport = {
       ],
       accountingInfo: [
         {
-          href: "mailto:ihracat@karakulakgroup.com",
+          href: "mailto:karakulakgroup@gmail.com",
           icon: FaEnvelope,
-          text: "ihracat@karakulakgroup.com",
+          text: "karakulakgroup@gmail.com",
         },
       ],
     },
@@ -184,19 +184,19 @@ export const translations: ITranslationLanguageSupport = {
       ],
       exportManagerInfo: [
         {
-          href: "mailto:ihracat@karakulakgroup.com",
+          href: "mailto:gizemkarakulak@gmail.com",
           icon: FaEnvelope,
-          text: "ihracat@karakulakgroup.com",
+          text: "gizemkarakulak@gmail.com",
         },
         {
-          href: "mailto:export@karakulakgroup.com",
+          href: "mailto:info@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "export@karakulakgroup.com",
+          text: "info@karakulakgroup.com",
         },
         {
-          href: "tel:+905555555555",
+          href: "tel:+905314828128",
           icon: FaPhone,
-          text: "+90 555 555 5555",
+          text: "+90 531 482 8128",
         },
       ],
       generalManagerAssistantInfo: [
@@ -213,9 +213,9 @@ export const translations: ITranslationLanguageSupport = {
       ],
       accountingInfo: [
         {
-          href: "mailto:info@karakulakgroup.com",
+          href: "mailto:karakulakgroup@gmail.com",
           icon: FaEnvelope,
-          text: "info@karakulakgroup.com",
+          text: "karakulakgroup@gmail.com",
         },
       ],
     },

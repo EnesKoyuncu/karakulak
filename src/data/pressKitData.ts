@@ -1,5 +1,9 @@
 // TODO : Bu sayfada değiştirilmesi gereken kısımlar var.
 
+
+import fullLogo from "/images/logo/karakulakLogo.svg";
+import logoSade from "/images/logo/karakulakOnlyLogo.svg";
+import logoPdf from "/images/logo/karakulakLogoPdf.pdf"; //TODO Değişecek
 // ! Çeviri Kısmı
 export interface SEO {
   title: string;
@@ -154,7 +158,7 @@ export interface IPressKitItem {
   title: { tr: string; en: string };
   description: { tr: string; en: string };
   fileUrl: string;
-  type: "png" | "pdf";
+  type: "png" | "pdf" | "svg";
   preview: string;
 }
 
@@ -163,25 +167,25 @@ export const pressKitItems: IPressKitItem[] = [
     id: 1,
     title: { tr: "LOGO", en: "LOGO" },
     description: {
-      tr: "Karakulak kurumsal logosu (PNG)",
-      en: "Karakulak corporate logo (PNG)",
+      tr: "Karakulak kurumsal logosu (SVG)",
+      en: "Karakulak corporate logo (SVG)",
     },
-    fileUrl: "/images/logo/karakulakGroupLogo.webp", //TODO Değişecek
-    type: "png",
+    fileUrl: fullLogo, //TODO Değişecek
+    type: "svg",
     preview:
-      "https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png", //TODO Değişecek
+      fullLogo, //TODO Değişecek
   },
   {
     id: 2,
     title: { tr: "LOGO SADE", en: "SIMPLE LOGO" },
     description: {
-      tr: "Karakulak sade logo versiyonu (PNG)",
-      en: "Karakulak simple logo version (PNG)",
+      tr: "Karakulak sade logo versiyonu (SVG)",
+      en: "Karakulak simple logo version (SVG)",
     },
-    fileUrl: "/images/logo/karakulakGroupLogoSade.png", //TODO Değişecek
-    type: "png", //TODO Değişecek
+    fileUrl: logoSade, //TODO Değişecek
+    type: "svg", //TODO Değişecek
     preview:
-      "https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png", //TODO Değişecek
+      logoSade, //TODO Değişecek
   },
   {
     id: 3,
@@ -190,9 +194,9 @@ export const pressKitItems: IPressKitItem[] = [
       tr: "Karakulak vektörel logo (PDF)",
       en: "Karakulak vector logo (PDF)",
     },
-    fileUrl: "/press-kit/ayalka-logo-vector.pdf", //TODO Değişecek
+    fileUrl: logoPdf, //TODO Değişecek
     type: "pdf",
     preview:
-      "https://ayalka.com.tr/wp-content/uploads/2019/02/cropped-ayalkaufak.png", //TODO Değişecek
+      fullLogo, //TODO Değişecek
   },
 ];
