@@ -184,9 +184,9 @@ export const translations: ITranslationLanguageSupport = {
       ],
       exportManagerInfo: [
         {
-          href: "mailto:gizemkarakulak@gmail.com",
+          href: "mailto:info@karakulakgroup.com",
           icon: FaEnvelope,
-          text: "gizemkarakulak@gmail.com",
+          text: "info@karakulakgroup.com",
         },
         {
           href: "mailto:info@karakulakgroup.com",
