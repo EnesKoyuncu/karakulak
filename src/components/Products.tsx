@@ -50,6 +50,7 @@ const Products: React.FC = () => {
 
   const handleProductClick = () => {
     window.scrollTo(0, 0);
+    console.log("Product clicked");
   };
 
   return (
@@ -104,7 +105,7 @@ const Products: React.FC = () => {
               >
                 {contextProduct ? (
                   <Link
-                    to={`/products/${contextProduct.category}/${contextProduct.id}`}
+                    to={`products/${contextProduct.id}/${contextProduct.id}`}
                     className="product-link"
                     onClick={handleProductClick}
                     aria-label={

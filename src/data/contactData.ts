@@ -138,10 +138,10 @@ export const translations: ITranslationLanguageSupport = {
     },
     map: {
       officeTitle: "MERKEZ OFİS",
-      address: "İskele Köyü Ankara Caddesi No: 99/1 Çankırı/Merkez",
+      address: "O.S.B. Mh.8 Sk.No:6 Kemalpaşa / İzmir",
       contactItems: {
-        phone1: "+90 555 555 5555",
-        phone2: "+90 555 555 5555",
+        phone1: "+90 536 842 14 32",
+        phone2: "+90 531 482 81 28",
         phone3: "+90 555 555 5555",
         phone4: "+90 555 555 5555",
         email: "info@karakulakgroup.com",
@@ -221,10 +221,10 @@ export const translations: ITranslationLanguageSupport = {
     },
     map: {
       officeTitle: "HEAD OFFICE",
-      address: "İskele Köyü Ankara Caddesi No: 99/1 Çankırı/Merkez",
+      address: "OSB Neighborhood 8, Street No. 6, Kemalpaşa, İzmir, Turkey",
       contactItems: {
-        phone1: "+90 555 555 5555",
-        phone2: "+90 555 555 5555",
+        phone1: "+90 536 842 14 32",
+        phone2: "+90 531 482 81 28",
         phone3: "+90 555 555 5555",
         phone4: "+90 555 555 5555",
         email: "info@karakulakgroup.com",

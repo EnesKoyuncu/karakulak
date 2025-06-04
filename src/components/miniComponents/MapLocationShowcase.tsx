@@ -82,9 +82,9 @@ export default function MapLocationShowcase() {
 
             <div className="contact-item">
               <span className="label">
-                {texts.labels.fax[language as keyof typeof texts.labels.fax]}
+                {texts.labels.phone2[language as keyof typeof texts.labels.phone2]}
               </span>
-              <span className="value">{texts.contactDetails.faxNumber}</span>
+              <span className="value">{texts.contactDetails.phone2number}</span>
             </div>
           </div>
         </motion.div>

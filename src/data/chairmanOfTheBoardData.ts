@@ -15,6 +15,8 @@ export const seoTexts: IseoTextsLanguageSupport = {
     description:
       "Karakulak Group Yönetim Kurulu Başkanı Hamza Can Karakulak'ın mesajı bu sayfa üzerinde yer almaktadır. Kalite odaklı üretim, müşteri memnuniyeti ve kurumsallaşma ilkelerimiz hakkında bilgi alın. Daha fazlası için iletişim sayfamızdaki iletişim bilgilierinden bize ulaşabilirsiniz.",
     keywords: [
+      "garbage truck",
+      "garbagetruck",
       "hamza can karakulak",
       "karakulak",
       "karakulak group",

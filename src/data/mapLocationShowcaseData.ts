@@ -19,7 +19,7 @@ export interface IMapLocationTexts {
       tr: string;
       en: string;
     };
-    fax: {
+    phone2: {
       tr: string;
       en: string;
     };
@@ -27,7 +27,7 @@ export interface IMapLocationTexts {
   contactDetails: {
     email: string;
     phoneNumber: string;
-    faxNumber: string;
+    phone2number: string;
   };
 }
 
@@ -52,14 +52,14 @@ export const mapLocationTexts: IMapLocationTexts = {
       tr: "Tel:",
       en: "Phone:",
     },
-    fax: {
-      tr: "Faks:",
-      en: "Fax:",
+    phone2: {
+      tr: "Tel2:",
+      en: "Phone2:",
     },
   },
   contactDetails: {
     email: "info@karakulakgroup.com",
-    phoneNumber: "90 555 555 5555",
-    faxNumber: "90 555 555 5555",
+    phoneNumber: "+90 536 842 14 32",
+    phone2number: "+90 531 482 81 28",
   },
 };

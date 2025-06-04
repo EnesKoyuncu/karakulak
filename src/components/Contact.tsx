@@ -7,7 +7,7 @@ import SEO from "@/components/SEO";
 import { useCookieConsent } from "../hooks/useCookieConsent";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ITranslationLanguageSupport, translations } from "@/data/contactData"; // Yeni importlar
-
+import { TextScramble } from "./ui/TextScramble";
 import { ContactInfo } from "./miniComponents/ContactSubComps/ContactInfo";
 
 const Contact: React.FC = () => {
@@ -54,7 +54,21 @@ const Contact: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
-            <h1 className="hero-title">{texts.hero.title}</h1>
+            <TextScramble
+              
+              className="hero-title"
+              as="h1"
+              duration={1.5}
+              speed={0.05}
+              characterSet={texts.hero.title}
+              trigger={true}
+              onScrambleComplete={() => {
+                console.log("Scramble complete!");
+              }}
+            >
+            {/* <h1 className="hero-title">{texts.hero.title}</h1> */}
+            {texts.hero.title}  
+            </TextScramble>
           </motion.div>
         </Parallax>
       </header>
@@ -101,7 +115,7 @@ const Contact: React.FC = () => {
                       ? "Ayalka Makina Konum Haritası"
                       : "Ayalka Makina Location Map"
                   }
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.8106391253986!2d27.339486776491437!3d38.43510997257307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b962058436e8f1%3A0x6e731f5a4891c0e2!2sAyalka%20Makina!5e0!3m2!1str!2str!4v1693840561520!5m2!1str!2str"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.8876871840584!2d27.417751576192293!3d38.42451897258198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDI1JzI4LjMiTiAyN8KwMjUnMTEuOCJF!5e0!3m2!1str!2str!4v1709821844315!5m2!1str!2str"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
@@ -163,7 +177,7 @@ const Contact: React.FC = () => {
                   <FaPhone aria-hidden="true" />
                   <span>{texts.map.contactItems.phone2}</span>
                 </a>
-                <a
+                {/* <a
                   href={`tel:${texts.map.contactItems.phone3}`}
                   className="contact-item"
                   aria-label={
@@ -196,7 +210,7 @@ const Contact: React.FC = () => {
                 >
                   <FaPhone aria-hidden="true" />
                   <span>{texts.map.contactItems.phone4}</span>
-                </a>
+                </a> */}
                 <a
                   href={`mailto:${texts.map.contactItems.email}`}
                   className="contact-item"

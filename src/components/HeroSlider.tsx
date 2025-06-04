@@ -102,7 +102,8 @@ export default function HeroSlider() {
                     ]
                   }
                 </p>
-                <button
+                <a
+                href="https://www.karakulakgroup.com/en/products/garbage-truck/garbage-truck"
                   className="cta-button"
                   aria-label={
                     language === "tr" ? "Daha Fazla Bilgi" : "Learn More"
@@ -110,7 +111,7 @@ export default function HeroSlider() {
                   title={language === "tr" ? "Daha Fazla Bilgi" : "Learn More"}
                 >
                   {language === "tr" ? "Daha Fazla Bilgi" : "Learn More"}
-                </button>
+                </a>
               </motion.div>
             </div>
           </div>

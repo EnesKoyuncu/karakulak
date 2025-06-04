@@ -148,7 +148,9 @@
           "Çöp Toplama Kamyonu",
           "garbage truck turkey",
           "çöp sıkıştırıcı turkey",
-          "çöp kamyonu hidrolik sistemi"
+          "çöp kamyonu hidrolik sistemi",
+          "garbage truck",
+          "garbagetruck"
         ],
         "en": [
           "Karakulak Garbage Body",
@@ -159,7 +161,9 @@
           "Refuse Truck",
           "garbage truck turkey",
           "garbage compactor turkey",
-          "garbage truck hydraulic system"
+          "garbage truck hydraulic system",
+          "garbage truck",
+          "garbagetruck"
         ]
       },
       "images": [
@@ -386,14 +390,18 @@
           "çöp taksi",
           "monoblok çöp aktarma",
           "monoblok çöp kamyonu",
-          "minipak çöp kamyonu"
+          "minipak çöp kamyonu",
+          "garbage truck",
+          "garbagetruck"
         ],
         "en": [
           "minipak garbage transfer",
           "garbage taxi",
           "monoblock garbage transfer",
           "monoblock garbage truck",
-          "minipak garbage truck"
+          "minipak garbage truck",
+          "garbage truck",
+          "garbagetruck"
         ]
       }
     },
@@ -475,14 +483,18 @@
           "karakulak water tank",
           "watertank",
           "karakulak üstten monitörlü su tankeri",
-          "ön sulamalı su tankeri"
+          "ön sulamalı su tankeri",
+          "garbage truck",
+          "garbagetruck"
         ],
         "en": [
           "karakulak water tanker",
           "karakulak water tank",
           "watertank",
           "karakulak overhead monitored water tanker",
-          "pre-rinsed water tanker"
+          "pre-rinsed water tanker",
+          "garbage truck",
+          "garbagetruck"
         ]
       }
     },
@@ -570,7 +582,9 @@
           "vidanjor kamyonu",
           "vidanjor aracı",
           "vidanjor kamyonu imalatçısı",
-          "vidanjor kamyonu üreticisi"
+          "vidanjor kamyonu üreticisi",
+          "garbage truck",
+          "garbagetruck"
         ],
         "en": [
           "karakulak vacuum truck",
@@ -578,7 +592,9 @@
           "karakulak vacuum tanker",
           "vacuum truck",
           "vacuum truck manufacturer",
-          "vacuum truck producer"
+          "vacuum truck producer",
+          "garbage truck",
+          "garbagetruck"
         ]
       }
     },

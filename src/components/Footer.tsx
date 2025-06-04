@@ -64,8 +64,8 @@ export default function Footer() {
             <p>
               {" "}
               {language === "tr"
-                ? "Tel: +90 555 555 5555" //TODO değişecek
-                : "Phone: +90 555 555 5555"}{" "}
+                ? "Tel: +9 0536 842 14 32" //TODO değişecek
+                : "Phone: +90 536 842 14 32"}{" "}
             </p>
             <div className="footer-email">
               <a

@@ -83,7 +83,7 @@ const ExportNetwork: React.FC = () => {
               }
             >
               <Globe
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
+                globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
                 pointsData={filteredCountries}
                 pointLat={(d) => (d as Country).coordinates[0]}
                 pointLng={(d) => (d as Country).coordinates[1]}

@@ -21,8 +21,8 @@ main.contact-page {
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.7),
-    rgba(231, 76, 60, 0.7)
+    rgba(231, 76, 60, 0.9),
+    rgba(0, 0, 0, 0.7)
   );
   border-radius: 1rem;
 }
@@ -31,17 +31,18 @@ main.contact-page {
   position: relative;
   z-index: 1;
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   padding: 20px 40px;
   border-radius: 1rem;
   backdrop-filter: blur(10px);
   /* border: 1px solid rgba(255, 255, 255, 0.1); */
-  border: 3px solid rgba(255, 255, 255, 0.705);
+  border: 3px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   min-width: 300px;
 }
 
-.hero-title {
+/*! DEĞİŞİKLİK ÖNCESİ */
+/* .hero-title {
   font-size: 2.5rem;
   font-weight: 700;
   color: white;
@@ -61,6 +62,78 @@ main.contact-page {
   height: 3px;
   background: #e74c3c;
   border-radius: 2px;
+} */
+
+/* ! Test2  */
+/* .hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem); 
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.98); 
+  margin: 0;
+  letter-spacing: 0.5px; 
+  text-transform: uppercase;
+  position: relative;
+  font-family: 'Montserrat', sans-serif; 
+  padding-bottom: 8px; 
+  display: inline-block; 
+  cursor: default;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hero-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%; 
+  height: 1.5px;
+  background: linear-gradient(90deg, #e74c3c, transparent); 
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.hero-title:hover::after {
+  width: 100%;
+} */
+
+
+.hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.98);
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 8px;
+  display: inline-block;
+  cursor: default;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hero-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Ortadan başlatıyoruz */
+  width: 0; /* Başlangıçta genişlik sıfır */
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(231, 76, 60, 0.7), transparent); /* İki yöne gradient */
+  transform: translateX(-50%); /* Tam ortalamak için */
+  /* animation: centerExpand 3s infinite ease-in-out; */
+  animation: centerExpand 2.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+
+@keyframes centerExpand {
+  0%, 100% {
+    width: 0;
+    left: 50%;
+  }
+  50% {
+    width: 100%;
+    left: 50%;
+  }
 }
 
 /* Contact Container */

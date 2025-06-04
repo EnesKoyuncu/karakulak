@@ -31,6 +31,7 @@ const MainImage: React.FC<MainImageProps> = ({
   return (
     <motion.figure
       className="main-image-container"
+      // style={{ cursor: isDragging ? "grabbing" : "grab" , maxWidth: 600, maxHeight: 600, width: "100%",  backgroundColor: "orangeRed" }}
       role="button"
       tabIndex={0}
       aria-label={

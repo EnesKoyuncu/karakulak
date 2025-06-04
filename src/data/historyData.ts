@@ -97,6 +97,8 @@ export const seoTexts: IseoTextsLanguageSupport = {
     description:
       "1998'den günümüze Karakulak Group'un kuruluş ve gelişim hikayesi. ISO9001:2000 ve CE kalite standartlarında üretim yapan modern tesisimiz, vizyonumuz, geleceğe yönelik planlarımız ve  kalite anlayışımız hakkında bilgi edinin. Daha fazlası için iletişim sayfasında bulunan iletişim bilgilerimizden bize ulaşabilirsiniz.",
     keywords: [
+      "garbage truck",
+      "garbagetruck",
       "karakulak tarihçe",
       "karakulak group tarihçe",
       "karakulak kuruluş",
@@ -120,6 +122,8 @@ export const seoTexts: IseoTextsLanguageSupport = {
     description:
       "The story of Karakulak Group's establishment and development from 1998 to the present. Learn about our modern facility producing with ISO9001:2000 and CE quality standards, our vision, future plans, and our approach to quality. For more information, you can reach us through the contact details on our contact page.",
     keywords: [
+      "garbage truck",
+      "garbagetruck",
       "karakulak history",
       "karakulak group history",
       "karakulak establishment",

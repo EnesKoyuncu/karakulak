@@ -46,6 +46,7 @@ const Products: React.FC<ProductsProps> = ({
       }
     };
 
+    // Değişen ekran ölçeğine göre öne çıkan küçük foto sayısını kontrol eder.
     updateVisibleThumbnails();
     window.addEventListener("resize", updateVisibleThumbnails);
     return () => {
@@ -57,6 +58,8 @@ const Products: React.FC<ProductsProps> = ({
     setIsDragging(true);
   };
 
+
+  // Sıradaki başlangıç fotosu olmadığı müddetçe maks 1saniye aralıklarla fare hareketine göre bir önce veya sonraki resme kaydırır.
   const handleDragEnd = (
     _event: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo
@@ -102,7 +105,7 @@ const Products: React.FC<ProductsProps> = ({
           <h2>{title}</h2>
           <p className="description">{description}</p>
           {additionalInfo && (
-            <p className="additional-info">{additionalInfo}</p>
+            <p className="additional-info">{additionalInfo} asdasdasdasdasdsad</p>
           )}
         </section>
       </article>
@@ -118,6 +121,8 @@ const Products: React.FC<ProductsProps> = ({
             translations[language as keyof ITranslationsLanguageSupport]
               .productImagesSection
           }
+          style={{ cursor: isDragging ? "grabbing" : "grab" , maxWidth: 800, maxHeight: 600, width: "100%" }}
+
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
